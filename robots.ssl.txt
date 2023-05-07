@@ -1,0 +1,8 @@
+HOST: http://remont.santehnika.kg
+
+User-agent: *
+Disallow: 
+Disallow: send.php
+Disallow: /phpmailer827thfa9w3ght23poughawphg8awpo
+Disallow: /js
+Disallow: /libs
