@@ -1,0 +1,495 @@
+<!doctype html>
+<html lang="en-US">
+<head><meta charset="UTF-8"><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>class RocketLazyLoadScripts{constructor(){this.triggerEvents=["keydown","mousedown","mousemove","touchmove","touchstart","touchend","wheel"],this.userEventHandler=this._triggerListener.bind(this),this.touchStartHandler=this._onTouchStart.bind(this),this.touchMoveHandler=this._onTouchMove.bind(this),this.touchEndHandler=this._onTouchEnd.bind(this),this.clickHandler=this._onClick.bind(this),this.interceptedClicks=[],window.addEventListener("pageshow",(e=>{this.persisted=e.persisted})),window.addEventListener("DOMContentLoaded",(()=>{this._preconnect3rdParties()})),this.delayedScripts={normal:[],async:[],defer:[]},this.allJQueries=[]}_addUserInteractionListener(e){document.hidden?e._triggerListener():(this.triggerEvents.forEach((t=>window.addEventListener(t,e.userEventHandler,{passive:!0}))),window.addEventListener("touchstart",e.touchStartHandler,{passive:!0}),window.addEventListener("mousedown",e.touchStartHandler),document.addEventListener("visibilitychange",e.userEventHandler))}_removeUserInteractionListener(){this.triggerEvents.forEach((e=>window.removeEventListener(e,this.userEventHandler,{passive:!0}))),document.removeEventListener("visibilitychange",this.userEventHandler)}_onTouchStart(e){"HTML"!==e.target.tagName&&(window.addEventListener("touchend",this.touchEndHandler),window.addEventListener("mouseup",this.touchEndHandler),window.addEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.addEventListener("mousemove",this.touchMoveHandler),e.target.addEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"onclick","rocket-onclick"))}_onTouchMove(e){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler),e.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"rocket-onclick","onclick")}_onTouchEnd(e){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler)}_onClick(e){e.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"rocket-onclick","onclick"),this.interceptedClicks.push(e),e.preventDefault(),e.stopPropagation(),e.stopImmediatePropagation()}_replayClicks(){window.removeEventListener("touchstart",this.touchStartHandler,{passive:!0}),window.removeEventListener("mousedown",this.touchStartHandler),this.interceptedClicks.forEach((e=>{e.target.dispatchEvent(new MouseEvent("click",{view:e.view,bubbles:!0,cancelable:!0}))}))}_renameDOMAttribute(e,t,n){e.hasAttribute&&e.hasAttribute(t)&&(event.target.setAttribute(n,event.target.getAttribute(t)),event.target.removeAttribute(t))}_triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}_preconnect3rdParties(){let e=[];document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((t=>{if(t.hasAttribute("src")){const n=new URL(t.src).origin;n!==location.origin&&e.push({src:n,crossOrigin:t.crossOrigin||"module"===t.getAttribute("data-rocket-type")})}})),e=[...new Map(e.map((e=>[JSON.stringify(e),e]))).values()],this._batchInjectResourceHints(e,"preconnect")}async _loadEverythingNow(){this.lastBreath=Date.now(),this._delayEventListeners(),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async);try{await this._triggerDOMContentLoaded(),await this._triggerWindowLoad()}catch(e){}window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this._replayClicks()}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((e=>{e.hasAttribute("src")?e.hasAttribute("async")&&!1!==e.async?this.delayedScripts.async.push(e):e.hasAttribute("defer")&&!1!==e.defer||"module"===e.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(e):this.delayedScripts.normal.push(e):this.delayedScripts.normal.push(e)}))}async _transformScript(e){return await this._littleBreath(),new Promise((t=>{const n=document.createElement("script");[...e.attributes].forEach((e=>{let t=e.nodeName;"type"!==t&&("data-rocket-type"===t&&(t="type"),n.setAttribute(t,e.nodeValue))})),e.hasAttribute("src")?(n.addEventListener("load",t),n.addEventListener("error",t)):(n.text=e.text,t());try{e.parentNode.replaceChild(n,e)}catch(e){t()}}))}async _loadScriptsFromList(e){const t=e.shift();return t?(await this._transformScript(t),this._loadScriptsFromList(e)):Promise.resolve()}_preloadAllScripts(){this._batchInjectResourceHints([...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async],"preload")}_batchInjectResourceHints(e,t){var n=document.createDocumentFragment();e.forEach((e=>{if(e.src){const i=document.createElement("link");i.href=e.src,i.rel=t,"preconnect"!==t&&(i.as="script"),e.getAttribute&&"module"===e.getAttribute("data-rocket-type")&&(i.crossOrigin=!0),e.crossOrigin&&(i.crossOrigin=e.crossOrigin),n.appendChild(i)}})),document.head.appendChild(n)}_delayEventListeners(){let e={};function t(t,n){!function(t){function n(n){return e[t].eventsToRewrite.indexOf(n)>=0?"rocket-"+n:n}e[t]||(e[t]={originalFunctions:{add:t.addEventListener,remove:t.removeEventListener},eventsToRewrite:[]},t.addEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.add.apply(t,arguments)},t.removeEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.remove.apply(t,arguments)})}(t),e[t].eventsToRewrite.push(n)}function n(e,t){let n=e[t];Object.defineProperty(e,t,{get:()=>n||function(){},set(i){e["rocket"+t]=n=i}})}t(document,"DOMContentLoaded"),t(window,"DOMContentLoaded"),t(window,"load"),t(window,"pageshow"),t(document,"readystatechange"),n(document,"onreadystatechange"),n(window,"onload"),n(window,"onpageshow")}_delayJQueryReady(e){let t=window.jQuery;Object.defineProperty(window,"jQuery",{get:()=>t,set(n){if(n&&n.fn&&!e.allJQueries.includes(n)){n.fn.ready=n.fn.init.prototype.ready=function(t){e.domReadyFired?t.bind(document)(n):document.addEventListener("rocket-DOMContentLoaded",(()=>t.bind(document)(n)))};const t=n.fn.on;n.fn.on=n.fn.init.prototype.on=function(){if(this[0]===window){function e(e){return e.split(" ").map((e=>"load"===e||0===e.indexOf("load.")?"rocket-jquery-load":e)).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=e(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach((t=>{delete Object.assign(arguments[0],{[e(t)]:arguments[0][t]})[t]}))}return t.apply(this,arguments),this},e.allJQueries.push(n)}t=n}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._littleBreath(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._littleBreath(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._littleBreath(),window.dispatchEvent(new Event("rocket-load")),await this._littleBreath(),window.rocketonload&&window.rocketonload(),await this._littleBreath(),this.allJQueries.forEach((e=>e(window).trigger("rocket-jquery-load"))),await this._littleBreath();const e=new Event("rocket-pageshow");e.persisted=this.persisted,window.dispatchEvent(e),await this._littleBreath(),window.rocketonpageshow&&window.rocketonpageshow({persisted:this.persisted})}_handleDocumentWrite(){const e=new Map;document.write=document.writeln=function(t){const n=document.currentScript,i=document.createRange(),r=n.parentElement;let o=e.get(n);void 0===o&&(o=n.nextSibling,e.set(n,o));const s=document.createDocumentFragment();i.setStart(s,0),s.appendChild(i.createContextualFragment(t)),r.insertBefore(s,o)}}async _littleBreath(){Date.now()-this.lastBreath>45&&(await this._requestAnimFrame(),this.lastBreath=Date.now())}async _requestAnimFrame(){return document.hidden?new Promise((e=>setTimeout(e))):new Promise((e=>requestAnimationFrame(e)))}static run(){const e=new RocketLazyLoadScripts;e._addUserInteractionListener(e)}}RocketLazyLoadScripts.run();</script>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="profile" href="http://gmpg.org/xfn/11">
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+
+    <meta name='robots' content='noindex, nofollow' />
+
+	<!-- This site is optimized with the Yoast SEO plugin v20.1 - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>MyHeritage Affiliates Program - Become a MyHeritage Partner</title>
+	<meta name="description" content="Partner with MyHeritage, global leader for family history and DNA testing, and start earning today. Learn about the affiliate program and sign up here" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="MyHeritage Affiliates Program - Become a MyHeritage Partner" />
+	<meta property="og:description" content="Partner with MyHeritage, global leader for family history and DNA testing, and start earning today. Learn about the affiliate program and sign up here" />
+	<meta property="og:url" content="https://cm.myheritage.com/affiliates/" />
+	<meta property="article:publisher" content="https://www.facebook.com/myheritage" />
+	<meta property="article:modified_time" content="2023-03-23T17:06:27+00:00" />
+	<meta property="og:image" content="https://cm.myheritage.com/wp-content/uploads/2021/10/mobile-image.png" />
+	<meta property="og:image:width" content="788" />
+	<meta property="og:image:height" content="463" />
+	<meta property="og:image:type" content="image/png" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:image" content="https://cm.myheritage.com/wp-content/uploads/2021/10/mobile-image.png" />
+	<meta name="twitter:site" content="@myheritage" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://cm.myheritage.com/affiliates/","url":"https://cm.myheritage.com/affiliates/","name":"MyHeritage Affiliates Program - Become a MyHeritage Partner","isPartOf":{"@id":"https://cm.myheritage.com/#website"},"datePublished":"2021-10-26T09:44:50+00:00","dateModified":"2023-03-23T17:06:27+00:00","description":"Partner with MyHeritage, global leader for family history and DNA testing, and start earning today. Learn about the affiliate program and sign up here","breadcrumb":{"@id":"https://cm.myheritage.com/affiliates/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://cm.myheritage.com/affiliates/"]}]},{"@type":"BreadcrumbList","@id":"https://cm.myheritage.com/affiliates/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://cm.myheritage.com/"},{"@type":"ListItem","position":2,"name":"Affiliates"}]},{"@type":"WebSite","@id":"https://cm.myheritage.com/#website","url":"https://cm.myheritage.com/","name":"","description":"","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://cm.myheritage.com/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"en-US"}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel='dns-prefetch' href='https://static.addtoany.com' />
+<link rel='dns-prefetch' href='https://cdn.jsdelivr.net' />
+
+<style type="text/css">img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='wp-block-library-css' href='https://cm.myheritage.com/wp-includes/css/dist/block-library/style.min.css?ver=6.1.1' type='text/css' media='all' />
+<link rel='stylesheet' id='classic-theme-styles-css' href='https://cm.myheritage.com/wp-includes/css/classic-themes.min.css?ver=1' type='text/css' media='all' />
+<style id='global-styles-inline-css' type='text/css'>body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;}:where(.is-layout-flex){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}
+</style>
+<link rel='stylesheet' id='mh-translation-css' href='https://cm.myheritage.com/wp-content/plugins/myHeritage_translation_header_footers/mh-translation.css?ver=1682350279' type='text/css' media='all' />
+<link rel='stylesheet' id='magnific-popup-css' href='https://cm.myheritage.com/wp-content/plugins/wp-magnific-popup/mpopup/magnific-popup.css?ver=6.1.1' type='text/css' media='all' />
+<style id='magnific-popup-inline-css' type='text/css'>.mfp-iframe-holder .mfp-content { max-width: 900px; }
+</style>
+<link rel='stylesheet' id='mh-custom-gbs-css' href='https://cm.myheritage.com/wp-content/plugins/mh-custom-gbs/public/dist/css/main.min.css?ver=1672208199' type='text/css' media='all' />
+<link rel='stylesheet' id='vendor-css' href='https://cm.myheritage.com/wp-content/themes/myheritage-lp/assets/dist/css/vendors.min.css?ver=1672208198' type='text/css' media='all' />
+<link rel='stylesheet' id='my_heritage_lp-css' href='https://cm.myheritage.com/wp-content/themes/myheritage-lp/assets/dist/css/main.min.css?ver=1683562339' type='text/css' media='all' />
+<link rel='stylesheet' id='fancybox-css-css' href='https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css?ver=3.5.7' type='text/css' media='all' />
+<link rel='stylesheet' id='addtoany-css' href='https://cm.myheritage.com/wp-content/plugins/add-to-any/addtoany.min.css?ver=1.16' type='text/css' media='all' />
+<script type='text/javascript' id='addtoany-core-js-before'>
+window.a2a_config=window.a2a_config||{};a2a_config.callbacks=[];a2a_config.overlays=[];a2a_config.templates={};
+</script>
+<script type='text/javascript' async src='https://static.addtoany.com/menu/page.js' id='addtoany-core-js'></script>
+<script type='text/javascript' src='https://cm.myheritage.com/wp-includes/js/jquery/jquery.min.js?ver=3.6.1' id='jquery-core-js'></script>
+<script type='text/javascript' src='https://cm.myheritage.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2' id='jquery-migrate-js'></script>
+<script type='text/javascript' async src='https://cm.myheritage.com/wp-content/plugins/add-to-any/addtoany.min.js?ver=1.1' id='addtoany-jquery-js'></script>
+<script data-minify="1" type='text/javascript' src='https://cm.myheritage.com/wp-content/cache/min/1/wp-content/plugins/myHeritage_translation_header_footers/script.js?ver=1683209578' id='mh-api-header-js-js'></script>
+<script type='text/javascript' src='https://cm.myheritage.com/wp-content/plugins/wp-magnific-popup/mpopup/jquery.magnific-popup.min.js?ver=6.1.1' id='magnific-popup-js'></script>
+<script data-minify="1" type='text/javascript' src='https://cm.myheritage.com/wp-content/cache/min/1/wp-content/plugins/wp-magnific-popup/js/wpmp.js?ver=1683209578' id='wpmp-js'></script>
+<script type='text/javascript' id='mh-custom-gbs-js-extra'>
+/* <![CDATA[ */
+var pricingAjax = {"ajaxurl":"https:\/\/cm.myheritage.com\/wp-admin\/admin-ajax.php","security":"abfb79315d","post_id":"3664"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://cm.myheritage.com/wp-content/plugins/mh-custom-gbs/public/dist/js/main.min.js?ver=1672208199' id='mh-custom-gbs-js'></script>
+<link rel="https://api.w.org/" href="https://cm.myheritage.com/wp-json/" /><link rel="alternate" type="application/json" href="https://cm.myheritage.com/wp-json/wp/v2/pages/3664" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://cm.myheritage.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://cm.myheritage.com/wp-includes/wlwmanifest.xml" />
+<link rel='shortlink' href='https://cm.myheritage.com/?p=3664' />
+<link rel="alternate" type="application/json+oembed" href="https://cm.myheritage.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fcm.myheritage.com%2Faffiliates%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://cm.myheritage.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fcm.myheritage.com%2Faffiliates%2F&amp;format=xml" />
+
+	        <script src="https://cf.mhcache.com/FP/Assets/Cache/ExternalSiteGtmLoader/ExternalSiteGtmLoader_v1MV0d320f9e14041b4e71495551591f4f22.js"></script>
+	        <script>
+	            (function() {
+	                if (typeof window.GtmLoader != undefined) {
+	                    window.GtmLoader.init();
+	                    window.loadOneTrustContainer();
+	                    window.loadNonMandatoryContainer();
+	                }
+	            })();
+	        </script>
+	                            <script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+            var wpmp_options = {
+                image: {"class":"mh_popup","vertical_fit":"1","disable_on":"400"},
+                gallery: {"class":"popup-gallery","disable_on":"400"},
+                iframe: {"class":"mh_video_popup","width":"900","disable_on":"400"},
+                div: {"class":"mpopup_div","disable_on":"400"},
+                image_loading_text: 'Loading image #%curr%...',
+                image_error_text: '<a href="%url%">The image #%curr%</a> could not be loaded.'
+            };
+        </script>
+    <script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+             var dyiAjaxUrl = "https://cm.myheritage.com/wp-admin/admin-ajax.php";
+           </script><link rel="icon" href="https://cm.myheritage.com/wp-content/uploads/2018/02/favicon-16x16-2.png" sizes="32x32" />
+<link rel="icon" href="https://cm.myheritage.com/wp-content/uploads/2018/02/favicon-16x16-2.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://cm.myheritage.com/wp-content/uploads/2018/02/favicon-16x16-2.png" />
+<meta name="msapplication-TileImage" content="https://cm.myheritage.com/wp-content/uploads/2018/02/favicon-16x16-2.png" />
+<noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript></head>
+
+<body class="page-template page-template-mh-flexible-template page-template-mh-flexible-template-php page page-id-3664 ltr">
+<div id="page_gbs">
+    <div id="content_gbs">
+        
+        <header class="header-modal">
+            <div class="container">
+                <a href="https://cm.myheritage.com/affiliates" class="header-modal__logo">
+                    <picture>
+                        <source media="(max-width: 767px)" srcset="https://cm.myheritage.com/wp-content/uploads/2021/10/MH-affiliates.png">
+                        <source media="(min-width: 768px)" srcset="https://cm.myheritage.com/wp-content/uploads/2021/10/MyHeritage-1.png">
+                        <img src="https://cm.myheritage.com/wp-content/uploads/2021/10/MyHeritage-1.png" alt="Affiliates">
+                    </picture>
+                </a>
+            </div>
+        </header>
+
+        <header class="header-modal header-modal--sticky">
+            <div class="container">
+                <a href="https://cm.myheritage.com/affiliates" class="header-modal__logo">
+                    <picture>
+                        <source media="(max-width: 767px)" srcset="https://cm.myheritage.com/wp-content/uploads/2021/10/MH-affiliates.png">
+                        <source media="(min-width: 768px)" srcset="https://cm.myheritage.com/wp-content/uploads/2021/10/MyHeritage-1.png">
+                        <img src="https://cm.myheritage.com/wp-content/uploads/2021/10/MyHeritage-1.png" alt="Affiliates">
+                    </picture>
+                </a>
+
+                <a data-toggle="modal" data-target="#hsFormModal" class=" hs-open-modal c-button">Apply Now</a>            </div>
+        </header>
+
+            <style>.mhgb-section-hero_with_stats {
+            background-color: #EAFBF8        }
+    </style>
+    
+<section id="mhgb-section-hero_with_stats-1" class="mhgb-section mhgb-section-hero_with_stats">
+    <div class="mhgb-section-hero_with_stats__container">
+                    <div class="mhgb-section-hero_with_stats__image mhgb-section-hero_with_stats__image--mobile uses-lottie">
+                <div data-lottie="https://cm.myheritage.com/wp-content/uploads/2021/10/1_Clock_Mobile.json" class="lottie-js"></div>
+                <div class="separator"></div>
+            </div>
+            
+        <div class="mhgb-section-hero_with_stats__content">
+            <h2 class="mhgb-section-hero_with_stats__content__title">Elevate your profits <br>as a MyHeritage partner</h2><div class="mhgb-section-hero_with_stats__content__text"><p>Partner with the global leader for family history and start earning today</p>
+</div>            <div class="mhgb-section-hero_with_stats__content__cta mhgb-section-hero_with_stats__content__cta--desktop">
+                <a data-toggle="modal" data-target="#hsFormModal" class=" hs-open-modal c-button">Apply Now</a>            </div>
+                            <div class="mhgb-section-hero_with_stats__stats">
+                                            <div class="mhgb-section-hero_with_stats__stats__item">
+                                                            <div class="mhgb-section-hero_with_stats__stats__item__img">
+                                    <picture>
+<source type="image/webp" srcset="https://cm.myheritage.com/wp-content/uploads/2021/10/users.png.webp"/>
+<img src="https://cm.myheritage.com/wp-content/uploads/2021/10/users.png" alt=""/>
+</picture>
+
+                                </div>
+                                                            <div class="mhgb-section-hero_with_stats__stats__item__data">
+                                <span>56 Million Users</span><span>Worldwide</span>                            </div>
+                        </div>
+
+                                                    <div class="separator"></div>
+                                                    <div class="mhgb-section-hero_with_stats__stats__item">
+                                                            <div class="mhgb-section-hero_with_stats__stats__item__img">
+                                    <picture>
+<source type="image/webp" srcset="https://cm.myheritage.com/wp-content/uploads/2021/10/languages.png.webp"/>
+<img src="https://cm.myheritage.com/wp-content/uploads/2021/10/languages.png" alt=""/>
+</picture>
+
+                                </div>
+                                                            <div class="mhgb-section-hero_with_stats__stats__item__data">
+                                <span>42 Languages</span><span>Supported</span>                            </div>
+                        </div>
+
+                                                <div class="mhgb-section-hero_with_stats__stats__item">
+                                                            <div class="mhgb-section-hero_with_stats__stats__item__img">
+                                    <picture>
+<source type="image/webp" srcset="https://cm.myheritage.com/wp-content/uploads/2021/10/historical-records.png.webp"/>
+<img src="https://cm.myheritage.com/wp-content/uploads/2021/10/historical-records.png" alt=""/>
+</picture>
+
+                                </div>
+                                                            <div class="mhgb-section-hero_with_stats__stats__item__data">
+                                <span>19.4 Billion</span><span>Historical records</span>                            </div>
+                        </div>
+
+                                                    <div class="separator"></div>
+                                                    <div class="mhgb-section-hero_with_stats__stats__item">
+                                                            <div class="mhgb-section-hero_with_stats__stats__item__img">
+                                    <picture>
+<source type="image/webp" srcset="https://cm.myheritage.com/wp-content/uploads/2021/10/dna.png.webp"/>
+<img src="https://cm.myheritage.com/wp-content/uploads/2021/10/dna.png" alt=""/>
+</picture>
+
+                                </div>
+                                                            <div class="mhgb-section-hero_with_stats__stats__item__data">
+                                <span>7 Million</span><span>DNA database</span>                            </div>
+                        </div>
+
+                                        </div>
+                
+            <div class="mhgb-section-hero_with_stats__content__cta mhgb-section-hero_with_stats__content__cta--mobile c-button--centered">
+                <a data-toggle="modal" data-target="#hsFormModal" class=" hs-open-modal c-button">Apply Now</a>            </div>
+        </div>
+
+                    <div class="mhgb-section-hero_with_stats__image mhgb-section-hero_with_stats__image--desktop">
+                                    <div data-lottie="https://cm.myheritage.com/wp-content/uploads/2021/10/1_Clock-1.json" class="lottie-js"></div>
+                                </div>
+            
+    </div>
+</section>
+
+<section id="mhgb-section-connected_items-1" class="mhgb-section mhgb-section-connected_items">
+    <div class="container">
+        <h2 class="mhgb-section-connected_items__title">Join the MyHeritage Affiliate Program</h2>            <div class="mhgb-section-connected_items__icons">
+                                    <div class="mhgb-section-connected_items__icons__item">
+                                                    <div class="mhgb-section-connected_items__icons__item__img uses-lottie">
+                                <div data-delay="500" data-lottie="https://cm.myheritage.com/wp-content/uploads/2021/10/press.json" class="lottie-js"></div>
+                            </div>
+                        <h4>Sign Up</h4><p>for the affiliate program</p>                    </div>
+                                        <div class="mhgb-section-connected_items__icons__item">
+                                                    <div class="mhgb-section-connected_items__icons__item__img uses-lottie">
+                                <div data-delay="1800" data-lottie="https://cm.myheritage.com/wp-content/uploads/2021/10/2_2_People.json" class="lottie-js"></div>
+                            </div>
+                        <h4>Promote MyHeritage</h4><p>on your channels</p>                    </div>
+                                        <div class="mhgb-section-connected_items__icons__item">
+                                                    <div class="mhgb-section-connected_items__icons__item__img uses-lottie">
+                                <div data-delay="3100" data-lottie="https://cm.myheritage.com/wp-content/uploads/2021/10/2_3_Money.json" class="lottie-js"></div>
+                            </div>
+                        <h4>Get Paid</h4><p>for the traffic you bring</p>                    </div>
+                                </div>
+            
+        <div class="mhgb-section-connected_items__cta c-button--centered">
+            <a data-toggle="modal" data-target="#hsFormModal" class=" hs-open-modal c-button">Apply Now</a>        </div>
+
+    </div>
+</section>
+    <style>.mhgb-section-alternating_boxes {
+            background-color: #FFFAEBB2        }
+    </style>
+    
+<section id="mhgb-section-alternating_boxes-1" class="mhgb-section mhgb-section-alternating_boxes">
+    <div class="container">
+        <h2 class="mhgb-section-alternating_boxes__title">What you’ll be promoting</h2>            <div class="mhgb-section-alternating_boxes__items">
+                                    <div class="mhgb-section-alternating_boxes__item">
+                        <div class="mhgb-section-alternating_boxes__item__content">
+                            <h3>MyHeritage family <br>tree platform</h3><p><p>Powered by cutting-edge technologies, the MyHeritage platform makes discovering family history easier than ever.</p>
+</p>                        </div>
+                        <div data-lottie="https://cm.myheritage.com/wp-content/uploads/2021/10/3_2_Glass.json" class="lottie-js mhgb-section-alternating_boxes__item__img"></div>                    </div>
+                                        <div class="mhgb-section-alternating_boxes__item">
+                        <div class="mhgb-section-alternating_boxes__item__content">
+                            <h3>MyHeritage DNA kit</h3><p><p>A simple cheek-swab DNA test that provides a detailed breakdown of your ethnic origins from among 42 ethnicities and 2100+ geographic regions —more than any other consumer DNA test on the market.</p>
+</p>                        </div>
+                        <div data-lottie="https://cm.myheritage.com/wp-content/uploads/2021/10/3_1_Tablet.json" class="lottie-js mhgb-section-alternating_boxes__item__img"></div>                    </div>
+                                </div>
+            
+    </div>
+</section>
+
+<section id="mhgb-section-content_boxes-1" class="mhgb-section mhgb-section-content_boxes">
+    <div class="container">
+        <h2 class="mhgb-section-content_boxes__title">Why partner with MyHeritage?</h2>            <div class="mhgb-section-content_boxes__items">
+                                    <div class="mhgb-section-content_boxes__item">
+                        <div class="mhgb-section-content_boxes__item__img"><picture>
+<source type="image/webp" srcset="https://cm.myheritage.com/wp-content/uploads/2021/10/Screenshot_5.png.webp"/>
+<img src="https://cm.myheritage.com/wp-content/uploads/2021/10/Screenshot_5.png"/>
+</picture>
+</div><h3>Easy to promote and <br>easy to earn</h3><p><p>MyHeritage affiliates enjoy simple-to-set-up campaigns, seamless tracking, and access to innovative localized ad units.</p>
+</p>                    </div>
+                                        <div class="mhgb-section-content_boxes__item">
+                        <div class="mhgb-section-content_boxes__item__img"><picture>
+<source type="image/webp" srcset="https://cm.myheritage.com/wp-content/uploads/2021/10/Screenshot_6.png.webp"/>
+<img src="https://cm.myheritage.com/wp-content/uploads/2021/10/Screenshot_6.png"/>
+</picture>
+</div><h3>Meaningful products</h3><p><p>As a MyHeritage affiliate, you’ll promote products that are universally appealing and bring value to people’s lives as they connect to their family history and discover their origins.</p>
+</p>                    </div>
+                                        <div class="mhgb-section-content_boxes__item">
+                        <div class="mhgb-section-content_boxes__item__img"><picture>
+<source type="image/webp" srcset="https://cm.myheritage.com/wp-content/uploads/2021/10/Group-702.png.webp"/>
+<img src="https://cm.myheritage.com/wp-content/uploads/2021/10/Group-702.png"/>
+</picture>
+</div><h3>Trusted by millions</h3><p><p>MyHeritage is the leading global service for family history — just ask one of our 90 million users worldwide.<br />
+The MyHeritage platform is available in 42 languages.</p>
+</p>                    </div>
+                                </div>
+            
+    </div>
+</section>
+<section id="mhgb-section-faq-1" class="mhgb-section mhgb-section-faq mhgb-section-faq--boxed">
+    <div class="mhgb-flexible-template__container">
+            <style>#mhgb-section-faq .mhgb-component__heading-with-separator__title {
+                color: #333333;
+            }
+                </style>
+    
+<div id="mhgb-section-faq" class="mhgb-component__heading-with-separator mhgb-component__heading-with-separator--center">
+    <div class="mhgb-component__heading-with-separator__title">FAQ</div></div>
+
+        <div class="mhgb-section-faq__faq">
+                                <div class="mhgb-section-faq__faq__item">
+                                                    <svg width="26" height="25" viewBox="0 0 26 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M13.2508 2.28955L13.2508 23.2896" stroke="#F56932" stroke-width="3" stroke-linecap="round"/>
+                                <path d="M2 12.7898L24.5 12.7898" stroke="#F56932" stroke-width="3" stroke-linecap="round"/>
+                            </svg>
+                                                    <div class="mhgb-section-faq__faq__item__content">
+                            <div class="mhgb-section-faq__faq__item__title">
+                                                                    <svg width="26" height="25" viewBox="0 0 26 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M13.2508 2.28955L13.2508 23.2896" stroke="#F56932" stroke-width="3" stroke-linecap="round"/>
+                                        <path d="M2 12.7898L24.5 12.7898" stroke="#F56932" stroke-width="3" stroke-linecap="round"/>
+                                    </svg>
+                                                                    <h3>Who can become a MyHeritage affiliate?</h3>
+                            </div>
+                            <div class="mhgb-section-faq__faq__item__text">
+                                <p><span style="font-weight: 400;">We’re happy to work with sites of all kinds — whether you run a big media outlet or a small blog about genealogy.</span></p>
+<p><span style="font-weight: 400;">If you’re an influencer with a strong social media presence, please check out our influencer page: <a href="https://influencers.myheritage.com/" target="_blank" rel="noopener">https://influencers.myheritage.com/</a></span></p>
+                            </div>
+                        </div>
+                    </div>
+                                        <div class="mhgb-section-faq__faq__item">
+                                                    <svg width="26" height="25" viewBox="0 0 26 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M13.2508 2.28955L13.2508 23.2896" stroke="#F56932" stroke-width="3" stroke-linecap="round"/>
+                                <path d="M2 12.7898L24.5 12.7898" stroke="#F56932" stroke-width="3" stroke-linecap="round"/>
+                            </svg>
+                                                    <div class="mhgb-section-faq__faq__item__content">
+                            <div class="mhgb-section-faq__faq__item__title">
+                                                                    <svg width="26" height="25" viewBox="0 0 26 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M13.2508 2.28955L13.2508 23.2896" stroke="#F56932" stroke-width="3" stroke-linecap="round"/>
+                                        <path d="M2 12.7898L24.5 12.7898" stroke="#F56932" stroke-width="3" stroke-linecap="round"/>
+                                    </svg>
+                                                                    <h3>How often will I get paid?</h3>
+                            </div>
+                            <div class="mhgb-section-faq__faq__item__text">
+                                <p><span style="font-weight: 400;">We pay on a net+30 basis.</span></p>
+                            </div>
+                        </div>
+                    </div>
+                                        <div class="mhgb-section-faq__faq__item">
+                                                    <svg width="26" height="25" viewBox="0 0 26 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M13.2508 2.28955L13.2508 23.2896" stroke="#F56932" stroke-width="3" stroke-linecap="round"/>
+                                <path d="M2 12.7898L24.5 12.7898" stroke="#F56932" stroke-width="3" stroke-linecap="round"/>
+                            </svg>
+                                                    <div class="mhgb-section-faq__faq__item__content">
+                            <div class="mhgb-section-faq__faq__item__title">
+                                                                    <svg width="26" height="25" viewBox="0 0 26 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M13.2508 2.28955L13.2508 23.2896" stroke="#F56932" stroke-width="3" stroke-linecap="round"/>
+                                        <path d="M2 12.7898L24.5 12.7898" stroke="#F56932" stroke-width="3" stroke-linecap="round"/>
+                                    </svg>
+                                                                    <h3>How will I be able to track campaign performance?</h3>
+                            </div>
+                            <div class="mhgb-section-faq__faq__item__text">
+                                <p><span style="font-weight: 400;">You’ll have access to daily stats that include information on your sales and earnings.</span></p>
+                            </div>
+                        </div>
+                    </div>
+                            </div>
+    </div>
+</section>    <style>.mhgb-section-cta_box {
+            background-color: #EAFBF8        }
+    </style>
+    
+<section id="mhgb-section-cta_box-1" class="mhgb-section mhgb-section-cta_box">
+            <div class="mhgb-section-cta_box__img">
+            <div data-lottie="https://cm.myheritage.com/wp-content/uploads/2021/10/4_Phone.json" class="lottie-js"></div>
+        </div>
+        
+    <h3 class="mhgb-section-cta_box__title">Interested? Contact Us</h3><div class="mhgb-section-cta_box__text"><p>Fill out a short application, and we’ll be in touch soon.</p>
+</div>        <div class="mhgb-section-cta_box__cta c-button--centered">
+            <a data-toggle="modal" data-target="#hsFormModal" class=" hs-open-modal c-button">Apply Now</a>        </div>
+        
+</section>
+
+                    <script charset="utf-8" type="text/javascript" src="https://js.hsforms.net/forms/v2-legacy.js"></script>
+            <script charset="utf-8" type="text/javascript" src="https://js.hsforms.net/forms/v2.js"></script>
+            <script>
+                hbspt.forms.create({
+                    region: "na1",
+                    portalId: "3454136",
+                    formId: "f439c7ca-2957-4c40-9147-ed48ce578d42",
+                    target: '#modalBody',
+                    onFormSubmit: function() {
+                        jQuery('h5.modal-title').hide();
+                    },
+                    onFormReady: function() {
+                        jQuery('.modal-loader').fadeOut(300, function() {
+                            jQuery('h5.modal-title').fadeIn();
+                        });
+                    }
+                });
+            </script>
+
+            <div class="modal fade" id="hsFormModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Become a MyHeritage Affiliate</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body" id="modalBody">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+<footer class="footer footer__no-menu">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 footer__no-menu__left">
+                <a href="//" class="footer__no-menu__logo">
+                    <div class="footer__no-menu__logo__normal">
+                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="163" height="29" viewBox="0 0 163 29"><defs><path id="a" d="M163 29H0V0h163z"></path></defs><g fill="none" fill-rule="evenodd"><mask id="b" fill="#fff"><use xlink:href="#a"></use></mask><path fill="#FFF" d="M31.06 13.494C30.99 6.288 25.194.445 17.96.445c-7.236 0-13.102 5.842-13.102 13.05 0 6.3 4.483 11.557 10.409 12.746 1.982.398 2.255-4.628 1.713-7.961-.01 0-.598-.035-.794-.043-.407-.016-.792.448-1.04.538-.425.154-.505-.267-.811-.267-.268 0-.627.416-1.617.229-1-.19-1.325-1.09-1.325-1.09l-.3-.158c-1.021-.254-1.077-1.365-1.083-1.428-.058-.544.895-.955.627-1.124-1.156-.73-.784-1.304-.773-1.333.148-.387.709-1.223.503-1.353-.567-.36.364-2.453 1.182-3.035.124-.662.84-1.746 1.534-1.975-.038-.751 1.017-1.177 1.017-1.177.738-.237.221-.845 1.637-.748.331.022.321-.353 1.143-.371.238-.005.5-.19 1.227-.19 1.276-.055 1.217.804 1.644.658.54-.184 2.337.694 2.523 2.501.807-.062 2.925 2.261 2.863 3.975 1.393 1.558-.505 3.033-.581 3.319.054.161.335.87.223 1.418-.131.642-.948 1.342-.982 1.367-.573.41-.996.874-1.678.747-.703-.131-.57-.777-.779-.934a2.66 2.66 0 0 1-2.004.67 16.22 16.22 0 0 0-.53-.06c-.419 2.454-.36 7.936 1.386 7.933 5.262-.8 10.939-5.847 10.87-12.855zm-27.266 0C3.794 6.547 9.246.48 16.12.08 6.265-.826 0 6.143 0 13.494c0 7.35 6.411 14.457 16.12 13.414-6.874-.4-12.326-6.467-12.326-13.414zM19.797.08c6.874.4 12.326 6.467 12.326 13.414S26.67 26.51 19.796 26.908c9.96.873 16.12-6.064 16.12-13.414S29.78-.778 19.797.08zm76.48 14.522h-4.282v-.054c0-.97.193-1.712.58-2.224.387-.512.93-.769 1.63-.769.718 0 1.26.27 1.63.81.165.251.28.53.344.835.065.306.097.72.097 1.24v.162zm3.383-1.82c-.304-.961-.778-1.766-1.422-2.413-.461-.467-1.05-.826-1.768-1.078a6.973 6.973 0 0 0-2.32-.378c-.94 0-1.768.153-2.487.459-.718.306-1.372.773-1.96 1.401a6.19 6.19 0 0 0-1.354 2.319c-.277.863-.415 1.914-.415 3.155 0 1.078.157 2.058.47 2.938.313.881.76 1.631 1.34 2.251a5.956 5.956 0 0 0 2.113 1.443c.828.341 1.75.512 2.762.512 1.824 0 3.496-.557 5.014-1.672.223-.146.252-.366.1-.567l-.94-1.413c-.233-.37-.463-.273-.652-.137-1.029.729-2.101 1.093-3.218 1.093-.958 0-1.695-.287-2.21-.863-.516-.575-.773-1.402-.773-2.48v-.108h7.61c.656 0 .566-.836.566-.836 0-1.455-.152-2.664-.456-3.626zm55.215 1.766c0-.97.193-1.712.58-2.224.387-.512.93-.769 1.63-.769.718 0 1.26.27 1.63.81.165.251.28.53.344.835.065.306.097.72.097 1.24v.162h-4.281v-.054zm7.555 2.696c.656 0 .566-.836.566-.836 0-1.455-.152-2.664-.456-3.626-.304-.961-.778-1.766-1.422-2.413-.461-.467-1.05-.826-1.768-1.078a6.974 6.974 0 0 0-2.32-.378c-.94 0-1.769.153-2.487.459-.718.306-1.372.773-1.961 1.401a6.192 6.192 0 0 0-1.353 2.319c-.277.863-.415 1.914-.415 3.155 0 1.078.157 2.058.47 2.938.313.881.76 1.631 1.34 2.251a5.955 5.955 0 0 0 2.113 1.443c.828.341 1.749.512 2.762.512 1.824 0 3.496-.557 5.014-1.672.223-.146.252-.366.1-.567l-.94-1.413c-.233-.37-.463-.273-.652-.137-1.029.729-2.102 1.093-3.218 1.093-.958 0-1.695-.287-2.21-.863-.516-.575-.774-1.402-.774-2.48v-.108h7.611zm-19.35-1.618c-.645 0-1.17-.152-1.574-.458-.405-.305-.608-.809-.608-1.51 0-.647.194-1.15.58-1.51.387-.359.93-.539 1.63-.539.7 0 1.247.18 1.644.54.395.36.594.862.594 1.51 0 1.312-.756 1.967-2.266 1.967zm6.215-3.882c.516 0 .976-.08 1.382-.242.289-.116.578-.282.867-.498.24-.162.267-.441.084-.675l-.925-1.37c-.21-.346-.387-.449-.76-.207-.311.225-.642.41-.993.552a4.026 4.026 0 0 1-1.533.31c-.24 0-.493-.027-.76-.08a34.39 34.39 0 0 1-.98-.216 14.045 14.045 0 0 0-1.354-.27 8.619 8.619 0 0 0-1.187-.08c-.903 0-1.722.112-2.459.336-.737.225-1.363.54-1.878.944a4.253 4.253 0 0 0-1.202 1.47 4.245 4.245 0 0 0-.427 1.913c0 2.05 1.012 3.326 3.038 3.829-.59.144-1.055.306-1.395.485-.341.18-.599.369-.774.566a1.5 1.5 0 0 0-.345.62 2.596 2.596 0 0 0-.083.647c0 .468.097.854.29 1.16.194.306.456.521.787.647.645.27 1.777.413 3.398.431l1.574.027c.737.018 1.354.14 1.851.364.497.225.746.651.746 1.28 0 .288-.083.553-.249.796a2.027 2.027 0 0 1-.662.607c-.295.18-.636.3-1.023.364a8.15 8.15 0 0 1-1.298.094c-.866 0-1.524-.144-1.975-.432-.451-.287-.677-.71-.677-1.267 0-.197.01-.355.028-.471.018-.118.064-.461-.273-.418h-3.014a4.275 4.275 0 0 0-.221.526c-.074.206-.11.498-.11.876 0 .934.387 1.752 1.16 2.453.644.575 1.445.966 2.403 1.173.957.206 1.942.31 2.955.31 1.105 0 2.155-.135 3.15-.405.994-.27 1.804-.727 2.43-1.374.755-.792 1.133-1.744 1.133-2.858 0-1.222-.406-2.202-1.216-2.939a4.212 4.212 0 0 0-1.713-.944c-.644-.18-1.5-.278-2.568-.296l-1.989-.027c-.405 0-.608-.108-.608-.324 0-.197.125-.381.373-.552.249-.17.612-.365 1.091-.58.147.018.249.027.304.027h.249c.755 0 1.45-.103 2.085-.31a5.48 5.48 0 0 0 1.657-.85c.47-.359.834-.79 1.092-1.294a3.549 3.549 0 0 0 .386-1.644c0-.467-.069-.88-.207-1.24a3.528 3.528 0 0 0-.621-1.025c.11.018.253.036.428.054.175.018.354.027.538.027zm-17.484 8.196a3.01 3.01 0 0 1-.912.701 2.308 2.308 0 0 1-1.022.243c-.479 0-.87-.166-1.174-.499-.304-.332-.455-.768-.455-1.307 0-.827.253-1.384.76-1.672.506-.287 1.403-.432 2.692-.432h.166l-.055 2.966zm4.268.903a2.342 2.342 0 0 1-.567-1.429 15.066 15.066 0 0 1-.027-.984l.083-4.637v-.944c0-.251-.014-.467-.042-.646a9.632 9.632 0 0 0-.083-.472 2.657 2.657 0 0 0-.124-.418c-.276-.773-.806-1.366-1.589-1.78-.782-.413-1.772-.62-2.969-.62a9.47 9.47 0 0 0-1.892.189c-.617.126-1.275.333-1.975.62-.497.198-.912.378-1.243.54-.193.093-.391.2-.596.318-.337.208-.3.46-.207.68.284.467.75 1.234 1.049 1.723.217.333.472.305.752.163.599-.361 1.168-.649 1.709-.863.68-.27 1.316-.404 1.906-.404.68 0 1.128.148 1.34.445.211.296.318.831.318 1.604v.566a3.536 3.536 0 0 0-.415-.027h-.414c-2.265 0-3.964.382-5.097 1.146-1.132.764-1.699 1.964-1.699 3.6 0 1.383.415 2.449 1.244 3.194.828.746 2.034 1.12 3.618 1.12 1.179 0 2.127-.253 2.845-.756.147-.09.29-.198.428-.324.138-.125.281-.26.428-.404.184.36.456.683.815.97.212.17.437.316.668.452.362.214.615.136.895-.17.38-.416.95-1.047 1.272-1.453.134-.168.21-.403-.03-.602a3.231 3.231 0 0 1-.401-.397zm-12.599.021c-.054-.234-.29-.244-.446-.203-.16.042-.295.075-.408.102a2.393 2.393 0 0 1-.538.067c-.645 0-1.073-.148-1.285-.445-.212-.297-.317-.885-.317-1.766V11.69h2.375l.753-1.988c.135-.381-.098-.492-.306-.492h-2.822c0-.701.018-1.416.055-2.143.022-.445.052-.872.088-1.28.068-.669-.405-.62-.704-.565l-2.975.726a12.521 12.521 0 0 0-.124 1.51c-.01.485-.014 1.07-.014 1.752h-1.409v2.48h1.409v7.495a18.935 18.935 0 0 0 .041 1.321c.01.144.032.28.07.405.036.126.082.26.138.404.22.612.676 1.101 1.367 1.47.69.368 1.506.552 2.444.552.894 0 1.81-.173 2.751-.52.138-.058.236-.156.202-.367l-.345-1.586zM113.565 8.94c-.701.109-2.283.35-2.995.459-.34.059-.36.163-.36.38v12.86c0 .298.178.376.394.376h2.982c.259 0 .326-.071.326-.354V9.24c0-.332-.116-.337-.347-.3zm-1.449-5.768a2.29 2.29 0 0 0-1.643.647 2.114 2.114 0 0 0-.677 1.59c0 .63.221 1.16.663 1.591a2.21 2.21 0 0 0 1.602.647c.644 0 1.188-.215 1.63-.647.442-.431.663-.961.663-1.59a2.16 2.16 0 0 0-.65-1.591 2.165 2.165 0 0 0-1.588-.647zm-3.266 5.77a3.476 3.476 0 0 0-.677-.055c-.7 0-1.326.198-1.878.593a6.868 6.868 0 0 0-1.437 1.375c-.055-.736-.248-1.392-.58-1.968l-3.314.863c.147.396.271.935.373 1.618.1.683.151 1.492.151 2.426v8.818c0 .185.094.403.395.403h2.898c.237 0 .409-.069.409-.403v-9.357c.681-.773 1.436-1.16 2.265-1.16.191 0 .38.004.567.046.34.05.556.104.677-.292l.677-2.108c.165-.517-.09-.688-.526-.8zM86.385 4.275h-3.151c-.37 0-.425.11-.425.428v6.851h-5.524V4.704c0-.396-.186-.442-.557-.428h-2.82c-.406 0-.462.133-.462.442v17.865c0 .33.155.43.356.43h3.067c.225 0 .416-.05.416-.416v-7.941h5.524v7.934c0 .292.194.424.432.424h3.116c.261 0 .375-.146.375-.403V4.691c0-.343-.116-.415-.347-.415zM72.202 9.21h-3.044c-.331 0-.4.052-.486.346-.462 1.43-2.018 6.232-2.018 6.232-.11.324-.217.666-.318 1.025-.101.36-.18.656-.234.89a72.649 72.649 0 0 0-.29 1.334 14.498 14.498 0 0 0-.152.876l-.746-2.858-2.34-7.67c-.095-.304-.297-.365-.55-.342l-2.907.332c-.349.04-.4.218-.308.452l4.53 13.187h.94a8.118 8.118 0 0 0-.222.512 5.71 5.71 0 0 1-.165.39c-.055.118-.116.23-.18.338-.064.108-.143.233-.235.377-.313.485-.662.863-1.05 1.133a4.35 4.35 0 0 1-1.049.526c-.27.097-.537.185-.8.264-.291.1-.334.332-.215.552.25.467.646 1.205.87 1.626.126.249.373.3.6.252.49-.09.96-.216 1.41-.376a6.475 6.475 0 0 0 1.588-.822c.258-.18.497-.396.718-.647.221-.252.437-.553.65-.903.21-.35.427-.774.648-1.268.221-.494.451-1.074.69-1.739l4.986-13.603c.14-.394-.075-.416-.321-.416zM57.366 4.685c-.042-.329-.164-.409-.5-.409h-4.043c-.24 0-.436.063-.529.42l-2.479 8.881a36.054 36.054 0 0 0-.69 3.047A13.68 13.68 0 0 0 49 15.95a66.258 66.258 0 0 1-.138-.66 19.236 19.236 0 0 0-.166-.728c-.064-.26-.142-.562-.234-.904l-2.405-8.975c-.131-.403-.359-.407-.624-.407h-4.05c-.324 0-.4.177-.421.435L39.249 22.59c-.026.313.155.417.465.424h2.82c.298 0 .498-.062.54-.403l.637-9.384a55.73 55.73 0 0 0 .082-1.699c.037-.52.056-1.042.056-1.563.092.503.211 1.043.359 1.617.147.593.285 1.124.414 1.59l2.623 9.44c.086.277.21.402.511.402h2.407c.388-.014.484-.06.596-.39l2.923-9.855c.166-.575.3-1.065.4-1.47.102-.404.208-.876.318-1.415 0 .503.014 1.002.042 1.496.027.495.06 1.038.097 1.631 0 0 .594 7.932.694 9.67.018.31.177.333.404.333h3.032c.194 0 .37-.09.335-.403-.275-2.457-1.412-15.447-1.638-17.926z" mask="url(#b)"></path></g></svg>                     </div>
+                    <div class="footer__no-menu__logo__hover">
+                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="163" height="29" viewBox="0 0 163 29"><defs><path id="a" d="M163 29H0V0h163z"></path></defs><g fill="none" fill-rule="evenodd"><path fill="#f56932" d="M31.06 13.494C30.99 6.288 25.194.445 17.96.445c-7.236 0-13.102 5.842-13.102 13.05 0 6.3 4.483 11.557 10.409 12.746 1.982.398 2.255-4.628 1.713-7.961-.01 0-.598-.035-.794-.043-.407-.016-.792.448-1.04.538-.425.154-.505-.267-.811-.267-.268 0-.627.416-1.617.229-1-.19-1.325-1.09-1.325-1.09l-.3-.158c-1.021-.254-1.077-1.365-1.083-1.428-.058-.544.895-.955.627-1.124-1.156-.73-.784-1.304-.773-1.333.148-.387.709-1.223.503-1.353-.567-.36.364-2.453 1.182-3.035.124-.662.84-1.746 1.534-1.975-.038-.751 1.017-1.177 1.017-1.177.738-.237.221-.845 1.637-.748.331.022.321-.353 1.143-.371.238-.005.5-.19 1.227-.19 1.276-.055 1.217.804 1.644.658.54-.184 2.337.694 2.523 2.501.807-.062 2.925 2.261 2.863 3.975 1.393 1.558-.505 3.033-.581 3.319.054.161.335.87.223 1.418-.131.642-.948 1.342-.982 1.367-.573.41-.996.874-1.678.747-.703-.131-.57-.777-.779-.934a2.66 2.66 0 0 1-2.004.67 16.22 16.22 0 0 0-.53-.06c-.419 2.454-.36 7.936 1.386 7.933 5.262-.8 10.939-5.847 10.87-12.855zm-27.266 0C3.794 6.547 9.246.48 16.12.08 6.265-.826 0 6.143 0 13.494c0 7.35 6.411 14.457 16.12 13.414-6.874-.4-12.326-6.467-12.326-13.414zM19.797.08c6.874.4 12.326 6.467 12.326 13.414S26.67 26.51 19.796 26.908c9.96.873 16.12-6.064 16.12-13.414S29.78-.778 19.797.08zm76.48 14.522h-4.282v-.054c0-.97.193-1.712.58-2.224.387-.512.93-.769 1.63-.769.718 0 1.26.27 1.63.81.165.251.28.53.344.835.065.306.097.72.097 1.24v.162zm3.383-1.82c-.304-.961-.778-1.766-1.422-2.413-.461-.467-1.05-.826-1.768-1.078a6.973 6.973 0 0 0-2.32-.378c-.94 0-1.768.153-2.487.459-.718.306-1.372.773-1.96 1.401a6.19 6.19 0 0 0-1.354 2.319c-.277.863-.415 1.914-.415 3.155 0 1.078.157 2.058.47 2.938.313.881.76 1.631 1.34 2.251a5.956 5.956 0 0 0 2.113 1.443c.828.341 1.75.512 2.762.512 1.824 0 3.496-.557 5.014-1.672.223-.146.252-.366.1-.567l-.94-1.413c-.233-.37-.463-.273-.652-.137-1.029.729-2.101 1.093-3.218 1.093-.958 0-1.695-.287-2.21-.863-.516-.575-.773-1.402-.773-2.48v-.108h7.61c.656 0 .566-.836.566-.836 0-1.455-.152-2.664-.456-3.626zm55.215 1.766c0-.97.193-1.712.58-2.224.387-.512.93-.769 1.63-.769.718 0 1.26.27 1.63.81.165.251.28.53.344.835.065.306.097.72.097 1.24v.162h-4.281v-.054zm7.555 2.696c.656 0 .566-.836.566-.836 0-1.455-.152-2.664-.456-3.626-.304-.961-.778-1.766-1.422-2.413-.461-.467-1.05-.826-1.768-1.078a6.974 6.974 0 0 0-2.32-.378c-.94 0-1.769.153-2.487.459-.718.306-1.372.773-1.961 1.401a6.192 6.192 0 0 0-1.353 2.319c-.277.863-.415 1.914-.415 3.155 0 1.078.157 2.058.47 2.938.313.881.76 1.631 1.34 2.251a5.955 5.955 0 0 0 2.113 1.443c.828.341 1.749.512 2.762.512 1.824 0 3.496-.557 5.014-1.672.223-.146.252-.366.1-.567l-.94-1.413c-.233-.37-.463-.273-.652-.137-1.029.729-2.102 1.093-3.218 1.093-.958 0-1.695-.287-2.21-.863-.516-.575-.774-1.402-.774-2.48v-.108h7.611zm-19.35-1.618c-.645 0-1.17-.152-1.574-.458-.405-.305-.608-.809-.608-1.51 0-.647.194-1.15.58-1.51.387-.359.93-.539 1.63-.539.7 0 1.247.18 1.644.54.395.36.594.862.594 1.51 0 1.312-.756 1.967-2.266 1.967zm6.215-3.882c.516 0 .976-.08 1.382-.242.289-.116.578-.282.867-.498.24-.162.267-.441.084-.675l-.925-1.37c-.21-.346-.387-.449-.76-.207-.311.225-.642.41-.993.552a4.026 4.026 0 0 1-1.533.31c-.24 0-.493-.027-.76-.08a34.39 34.39 0 0 1-.98-.216 14.045 14.045 0 0 0-1.354-.27 8.619 8.619 0 0 0-1.187-.08c-.903 0-1.722.112-2.459.336-.737.225-1.363.54-1.878.944a4.253 4.253 0 0 0-1.202 1.47 4.245 4.245 0 0 0-.427 1.913c0 2.05 1.012 3.326 3.038 3.829-.59.144-1.055.306-1.395.485-.341.18-.599.369-.774.566a1.5 1.5 0 0 0-.345.62 2.596 2.596 0 0 0-.083.647c0 .468.097.854.29 1.16.194.306.456.521.787.647.645.27 1.777.413 3.398.431l1.574.027c.737.018 1.354.14 1.851.364.497.225.746.651.746 1.28 0 .288-.083.553-.249.796a2.027 2.027 0 0 1-.662.607c-.295.18-.636.3-1.023.364a8.15 8.15 0 0 1-1.298.094c-.866 0-1.524-.144-1.975-.432-.451-.287-.677-.71-.677-1.267 0-.197.01-.355.028-.471.018-.118.064-.461-.273-.418h-3.014a4.275 4.275 0 0 0-.221.526c-.074.206-.11.498-.11.876 0 .934.387 1.752 1.16 2.453.644.575 1.445.966 2.403 1.173.957.206 1.942.31 2.955.31 1.105 0 2.155-.135 3.15-.405.994-.27 1.804-.727 2.43-1.374.755-.792 1.133-1.744 1.133-2.858 0-1.222-.406-2.202-1.216-2.939a4.212 4.212 0 0 0-1.713-.944c-.644-.18-1.5-.278-2.568-.296l-1.989-.027c-.405 0-.608-.108-.608-.324 0-.197.125-.381.373-.552.249-.17.612-.365 1.091-.58.147.018.249.027.304.027h.249c.755 0 1.45-.103 2.085-.31a5.48 5.48 0 0 0 1.657-.85c.47-.359.834-.79 1.092-1.294a3.549 3.549 0 0 0 .386-1.644c0-.467-.069-.88-.207-1.24a3.528 3.528 0 0 0-.621-1.025c.11.018.253.036.428.054.175.018.354.027.538.027zm-17.484 8.196a3.01 3.01 0 0 1-.912.701 2.308 2.308 0 0 1-1.022.243c-.479 0-.87-.166-1.174-.499-.304-.332-.455-.768-.455-1.307 0-.827.253-1.384.76-1.672.506-.287 1.403-.432 2.692-.432h.166l-.055 2.966zm4.268.903a2.342 2.342 0 0 1-.567-1.429 15.066 15.066 0 0 1-.027-.984l.083-4.637v-.944c0-.251-.014-.467-.042-.646a9.632 9.632 0 0 0-.083-.472 2.657 2.657 0 0 0-.124-.418c-.276-.773-.806-1.366-1.589-1.78-.782-.413-1.772-.62-2.969-.62a9.47 9.47 0 0 0-1.892.189c-.617.126-1.275.333-1.975.62-.497.198-.912.378-1.243.54-.193.093-.391.2-.596.318-.337.208-.3.46-.207.68.284.467.75 1.234 1.049 1.723.217.333.472.305.752.163.599-.361 1.168-.649 1.709-.863.68-.27 1.316-.404 1.906-.404.68 0 1.128.148 1.34.445.211.296.318.831.318 1.604v.566a3.536 3.536 0 0 0-.415-.027h-.414c-2.265 0-3.964.382-5.097 1.146-1.132.764-1.699 1.964-1.699 3.6 0 1.383.415 2.449 1.244 3.194.828.746 2.034 1.12 3.618 1.12 1.179 0 2.127-.253 2.845-.756.147-.09.29-.198.428-.324.138-.125.281-.26.428-.404.184.36.456.683.815.97.212.17.437.316.668.452.362.214.615.136.895-.17.38-.416.95-1.047 1.272-1.453.134-.168.21-.403-.03-.602a3.231 3.231 0 0 1-.401-.397zm-12.599.021c-.054-.234-.29-.244-.446-.203-.16.042-.295.075-.408.102a2.393 2.393 0 0 1-.538.067c-.645 0-1.073-.148-1.285-.445-.212-.297-.317-.885-.317-1.766V11.69h2.375l.753-1.988c.135-.381-.098-.492-.306-.492h-2.822c0-.701.018-1.416.055-2.143.022-.445.052-.872.088-1.28.068-.669-.405-.62-.704-.565l-2.975.726a12.521 12.521 0 0 0-.124 1.51c-.01.485-.014 1.07-.014 1.752h-1.409v2.48h1.409v7.495a18.935 18.935 0 0 0 .041 1.321c.01.144.032.28.07.405.036.126.082.26.138.404.22.612.676 1.101 1.367 1.47.69.368 1.506.552 2.444.552.894 0 1.81-.173 2.751-.52.138-.058.236-.156.202-.367l-.345-1.586zM113.565 8.94c-.701.109-2.283.35-2.995.459-.34.059-.36.163-.36.38v12.86c0 .298.178.376.394.376h2.982c.259 0 .326-.071.326-.354V9.24c0-.332-.116-.337-.347-.3zm-1.449-5.768a2.29 2.29 0 0 0-1.643.647 2.114 2.114 0 0 0-.677 1.59c0 .63.221 1.16.663 1.591a2.21 2.21 0 0 0 1.602.647c.644 0 1.188-.215 1.63-.647.442-.431.663-.961.663-1.59a2.16 2.16 0 0 0-.65-1.591 2.165 2.165 0 0 0-1.588-.647zm-3.266 5.77a3.476 3.476 0 0 0-.677-.055c-.7 0-1.326.198-1.878.593a6.868 6.868 0 0 0-1.437 1.375c-.055-.736-.248-1.392-.58-1.968l-3.314.863c.147.396.271.935.373 1.618.1.683.151 1.492.151 2.426v8.818c0 .185.094.403.395.403h2.898c.237 0 .409-.069.409-.403v-9.357c.681-.773 1.436-1.16 2.265-1.16.191 0 .38.004.567.046.34.05.556.104.677-.292l.677-2.108c.165-.517-.09-.688-.526-.8zM86.385 4.275h-3.151c-.37 0-.425.11-.425.428v6.851h-5.524V4.704c0-.396-.186-.442-.557-.428h-2.82c-.406 0-.462.133-.462.442v17.865c0 .33.155.43.356.43h3.067c.225 0 .416-.05.416-.416v-7.941h5.524v7.934c0 .292.194.424.432.424h3.116c.261 0 .375-.146.375-.403V4.691c0-.343-.116-.415-.347-.415zM72.202 9.21h-3.044c-.331 0-.4.052-.486.346-.462 1.43-2.018 6.232-2.018 6.232-.11.324-.217.666-.318 1.025-.101.36-.18.656-.234.89a72.649 72.649 0 0 0-.29 1.334 14.498 14.498 0 0 0-.152.876l-.746-2.858-2.34-7.67c-.095-.304-.297-.365-.55-.342l-2.907.332c-.349.04-.4.218-.308.452l4.53 13.187h.94a8.118 8.118 0 0 0-.222.512 5.71 5.71 0 0 1-.165.39c-.055.118-.116.23-.18.338-.064.108-.143.233-.235.377-.313.485-.662.863-1.05 1.133a4.35 4.35 0 0 1-1.049.526c-.27.097-.537.185-.8.264-.291.1-.334.332-.215.552.25.467.646 1.205.87 1.626.126.249.373.3.6.252.49-.09.96-.216 1.41-.376a6.475 6.475 0 0 0 1.588-.822c.258-.18.497-.396.718-.647.221-.252.437-.553.65-.903.21-.35.427-.774.648-1.268.221-.494.451-1.074.69-1.739l4.986-13.603c.14-.394-.075-.416-.321-.416zM57.366 4.685c-.042-.329-.164-.409-.5-.409h-4.043c-.24 0-.436.063-.529.42l-2.479 8.881a36.054 36.054 0 0 0-.69 3.047A13.68 13.68 0 0 0 49 15.95a66.258 66.258 0 0 1-.138-.66 19.236 19.236 0 0 0-.166-.728c-.064-.26-.142-.562-.234-.904l-2.405-8.975c-.131-.403-.359-.407-.624-.407h-4.05c-.324 0-.4.177-.421.435L39.249 22.59c-.026.313.155.417.465.424h2.82c.298 0 .498-.062.54-.403l.637-9.384a55.73 55.73 0 0 0 .082-1.699c.037-.52.056-1.042.056-1.563.092.503.211 1.043.359 1.617.147.593.285 1.124.414 1.59l2.623 9.44c.086.277.21.402.511.402h2.407c.388-.014.484-.06.596-.39l2.923-9.855c.166-.575.3-1.065.4-1.47.102-.404.208-.876.318-1.415 0 .503.014 1.002.042 1.496.027.495.06 1.038.097 1.631 0 0 .594 7.932.694 9.67.018.31.177.333.404.333h3.032c.194 0 .37-.09.335-.403-.275-2.457-1.412-15.447-1.638-17.926z"></path></g></svg>                     </div>
+                </a>
+                <span>Copyright © 2023 MyHeritage Ltd.</span>            </div>
+            <div class="col-lg-4 footer__no-menu__right">
+                                    <div class="footer__no-menu__social-icons">
+                        <ul>
+                            <li><a href="https://www.instagram.com/myheritage_official/" target="_blank"><i class="fab fa-instagram"></i></a></li><li><a href="https://www.youtube.com/channel/UCT_enUFr_ZjlfuA6s55y_Lw" target="_blank"><i class="fab fa-youtube"></i></a></li><li><a href="https://www.facebook.com/myheritage/" target="_blank"><i class="fab fa-facebook-f"></i></a></li><li><a href="https://twitter.com/MyHeritage" target="_blank"><i class="fab fa-twitter"></i></a></li>                        </ul>
+                    </div>
+                    
+                <picture class="footer__no-menu__right-image">
+<source type="image/webp" srcset="https://cm.myheritage.com/wp-content/uploads/2021/10/logo-bbb-alt@2x.png.webp"/>
+<img src="https://cm.myheritage.com/wp-content/uploads/2021/10/logo-bbb-alt@2x.png" alt=""/>
+</picture>
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+            <script type="rocketlazyloadscript">
+                (function () {
+                    document.addEventListener("DOMContentLoaded", function (e) {
+                        if (document.hasOwnProperty("visibilityState") && document.visibilityState === "prerender") {
+                            return;
+                        }
+
+                        if (navigator.webdriver || /bot|crawler|spider|crawling/i.test(navigator.userAgent)) {
+                            return;
+                        }
+
+                        let referrer_url = null;
+
+                        if (typeof document.referrer === 'string' && document.referrer.length > 0) {
+                            referrer_url = document.referrer;
+                        }
+
+                        const params = location.search.slice(1).split('&').reduce((acc, s) => {
+                            const [k, v] = s.split('=')
+                            return Object.assign(acc, {[k]: v})
+                        }, {})
+
+                        const url = "https://cm.myheritage.com/wp-json/iawp/search"
+                        const body = {
+                            referrer_url,
+                            utm_source: params.utm_source,
+                            utm_medium: params.utm_medium,
+                            utm_campaign: params.utm_campaign,
+                            utm_term: params.utm_term,
+                            utm_content: params.utm_content,
+                            ...{"payload":{"resource":"singular","singular_id":3664,"page":1},"signature":"2c942bf81f76711abc5e22fa121f4beb"}                        }
+                        const xhr = new XMLHttpRequest()
+                        xhr.open("POST", url, true)
+                        xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8")
+                        xhr.send(JSON.stringify(body))
+                    })
+                })();
+            </script>
+            <script type='text/javascript' src='https://cm.myheritage.com/wp-content/themes/myheritage-lp/assets/dist/js/vendors.min.js?ver=1672208198' id='vendor-js'></script>
+<script type='text/javascript' src='https://cm.myheritage.com/wp-content/themes/myheritage-lp/assets/js/jquery.touchSwipe.min.js?ver=1672208198' id='my_heritage_ts-js'></script>
+<script data-minify="1" type='text/javascript' src='https://cm.myheritage.com/wp-content/cache/min/1/wp-content/themes/myheritage-lp/assets/js/dcm_loader.js?ver=1683209578' id='my_heritage_dcm-js'></script>
+<script data-minify="1" type='text/javascript' src='https://cm.myheritage.com/wp-content/cache/min/1/wp-content/themes/myheritage-lp/assets/js/imgLiquid.js?ver=1683209578' id='my_heritage_imgLiquid-js'></script>
+<script data-minify="1" type='text/javascript' src='https://cm.myheritage.com/wp-content/cache/min/1/wp-content/themes/myheritage-lp/assets/js/jquery.collapse.js?ver=1683209578' id='my_heritage_collapse-js'></script>
+<script data-minify="1" type='text/javascript' src='https://cm.myheritage.com/wp-content/cache/min/1/wp-content/themes/myheritage-lp/assets/js/waypoints.js?ver=1683209578' id='my_heritage_waypoints-js'></script>
+<script data-minify="1" type='text/javascript' src='https://cm.myheritage.com/wp-content/cache/min/1/wp-content/themes/myheritage-lp/assets/js/lity.js?ver=1683209578' id='my_heritage_lity-js'></script>
+<script type='text/javascript' src='https://cm.myheritage.com/wp-content/themes/myheritage-lp/assets/dist/js/main.min.js?ver=1682330757' id='my_heritage_lp-js'></script>
+<script data-minify="1" type='text/javascript' src='https://cm.myheritage.com/wp-content/cache/min/1/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js?ver=1683209579' id='fancybox-js-js'></script>
+<script>window.lazyLoadOptions={elements_selector:"iframe[data-lazy-src]",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}};window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(var i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async src="https://cm.myheritage.com/wp-content/plugins/wp-rocket/assets/js/lazyload/17.5/lazyload.min.js"></script></body>
+</html>
+
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me -->

@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+
+<html lang="RU" dir="LTR">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <link rel="preconnect" href="https://cf.mhcache.com" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script type="text/javascript">
+      var currentUserAccountID = 1000000000;
+      var currentPageManagerClass = 'DnaUploadAgreementsPageManager';
+      var languageCode = 'RU';
+      var displayLanguageDirection = 'left';
+      var displayLanguageOppositeDirection = 'right';
+      var imageDir = 'img';
+    </script>
+    <title>DNA Informed Consent - MyHeritage</title>
+    <meta
+      name="keywords"
+      content="Генеалогия, Семейное дерево, Моя родословная, Загрузить бесплатно ПО family tree, Исторические записи, Бесплатный поиск семейных деревьев, Родословная, Семейная история, Предки, Корни+, Старые семейные фото, Исторические фото, Фамилии, Фамилия, Коллекция генеалогических записей, Реестры рождения бракосочетания и смерти, Старые газеты, Перепись населения США, Перепись населения Великобритании"
+    />
+    <meta property="og:site_name" content="MyHeritage" />
+    <meta
+      property="og:image"
+      content="https://cf.mhcache.com/FP/Assets/Images/Social/mh_logo_350x350.png"
+    />
+    <meta property="og:image:width" content="350" />
+    <meta property="og:image:height" content="350" />
+    <script>
+      var deferredScripts = (function () {
+        var list = [];
+        return {
+          add: function (func) {
+            list.push(func);
+          },
+          run: function () {
+            list.forEach(function (func) {
+              func();
+            });
+          },
+        };
+      })();
+    </script>
+    <script type="text/javascript">
+      function getParamsToRemove() {
+        return ['authenticate', 'auth'];
+      }
+
+      function removeParamFromUrl(url, removeParamsArray) {
+        var fragment = url.split('#');
+        var urlParts = fragment[0].split('?');
+
+        if (urlParts.length >= 2) {
+          var urlBase = urlParts.shift(); // Get first part, and remove from array
+          var queryString = urlParts.join('?'); // Join it back
+
+          var params = queryString.split(/[&;]/g);
+          for (var i = params.length; i-- > 0; ) {
+            // Reverse iteration as may be destructive
+            var param = params[i].split('=');
+            if (removeParamsArray.indexOf(param[0]) !== -1) {
+              // Idiom for array.contains
+              params.splice(i, 1);
+            }
+          }
+          url = urlBase + (params.length > 0 ? '?' + params.join('&') : '');
+          if (fragment[1]) {
+            url += '#' + fragment[1];
+          }
+        }
+
+        return url;
+      }
+    </script>
+    <script
+      src="https://cf.mhcache.com/FP/Assets/Cache/output/sentryBrowserLibrary.min_v1MV19bf37e0c4e2b4a668a85c336cd0831b.js"
+      type="text/javascript"
+      crossorigin="anonymous"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        function init() {
+          Sentry.init(getConfig());
+          Sentry.configureScope(function (scope) {
+            scope.setTag('server_host_name', 'www.myheritage.com');
+            scope.setTag('current_page_manager_class', window.currentPageManagerClass || null);
+            scope.setTag(
+              'canonical-page-id',
+              'htdocs/FP/dna-upload-agreements.php?action=showInformedConsent',
+            );
+            scope.setTag('lang', window.languageCode || null);
+            scope.setTag({ is_embed: '' });
+            scope.setUser({ id: 'T_v5j94ax6bv7clm71_17a6857ybc4sre9m' });
+          });
+        }
+
+        function getConfig() {
+          var scriptRegexArr = [
+            /https?:\/\/\w*\.?myheritage/,
+            /https?:\/\/\w*\.mhcache.com/,
+            /https:\/\/www.myheritage-storage.com/,
+          ];
+          return {
+            dsn: 'https://56f5f1f845634f1d867501809aa8082b@sentry.io/152140',
+            environment: 'production',
+            serverName: 'web-14',
+            release: 'trunk-b384f64ad34087f41bffd82b19d5fd805fef3020',
+            beforeSend: function (event, hint) {
+              // See docs about using hint: https://docs.sentry.io/platforms/javascript/configuration/filtering/#event-hints
+              try {
+                if (!shouldExcludeErrorFromReportingModule(event, hint)) {
+                  event.tags = event.tags || {};
+                  event.extra = event.extra || {};
+                  event.request = event.request || { url: '' };
+                  removeParamsFromUrl(event);
+                  handleCanonicalPageId(event);
+                  handleGtmDataLayer(event);
+                  handleCustomMetadata(event);
+                  return event;
+                }
+              } catch (e) {
+                // Our processing failed for some reason, let sentry do its thing and don't filter the event
+                return event;
+              }
+
+              return null;
+            },
+            allowUrls: scriptRegexArr,
+          };
+        }
+
+        function removeParamsFromUrl(event) {
+          event.request.url = removeParamFromUrl(event.request.url, getParamsToRemove());
+        }
+
+        function handleCanonicalPageId(event) {
+          if (
+            typeof gtmDataLayer != 'undefined' &&
+            gtmDataLayer.length > 0 &&
+            gtmDataLayer[0]['canonical-page-id']
+          ) {
+            event.extra.original_url = event.request.url;
+            event.request.url = gtmDataLayer[0]['canonical-page-id'];
+          }
+        }
+
+        function handleGtmDataLayer(event) {
+          if (typeof gtmDataLayer != 'undefined' && gtmDataLayer.length > 0) {
+            var vars = gtmDataLayer[0];
+
+            for (var key in vars) {
+              if (vars.hasOwnProperty(key)) {
+                var val = vars[key];
+                if (val && val !== '0000-00-00 00:00:00') {
+                  var valType = typeof val;
+                  if (valType === 'string' || valType === 'number') {
+                    event.tags[key] = val;
+                  } else {
+                    event.extra[key] = val;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        function handleCustomMetadata(event) {
+          event.extra['feature-flags'] = '[]';
+          event.tags['has_clientSideErrorHandler'] = !!window.clientSideErrorHandler;
+        }
+
+        function shouldExcludeErrorFromReportingModule(event, hint) {
+          var shouldExclude;
+
+          if (event.request.url.indexOf('https://') !== 0) {
+            shouldExclude = true;
+          } else if (window.clientSideErrorHandler) {
+            var error;
+            if (hint && hint.originalException) {
+              error = hint.originalException;
+            } else {
+              error =
+                event.exception &&
+                Array.isArray(event.exception.values) &&
+                event.exception.values[0];
+            }
+            shouldExclude = !!window.clientSideErrorHandler.getExcludeErrorReason(error, 'Sentry');
+          } else {
+            shouldExclude = true;
+          }
+
+          return shouldExclude;
+        }
+        if (typeof Sentry !== 'undefined') {
+          init();
+        }
+      })();
+    </script>
+
+    <link
+      href="https://cf.mhcache.com/FP/Assets/Cache/main/base-responsive_ltr_v1MV739091cd9324f554c556955c87859a93o.css"
+      rel="stylesheet"
+      type="text/css"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://cf.mhcache.com/FP/Assets/Cache/Themes/Themes_bundle_ltr_v1MV22c06333c41b64102ec096b0038b9c32o.css"
+      rel="stylesheet"
+      type="text/css"
+      crossorigin="anonymous"
+    />
+
+    <link
+      href="https://cf.mhcache.com/FP/Assets/Cache/DnaUploadAgreements/DnaUploadAgreements_ltr_v1MVbafe7fe76acce613fabff0b5d05f294bo.css"
+      rel="stylesheet"
+      type="text/css"
+      crossorigin="anonymous"
+    />
+
+    <script type="text/javascript">
+      var isStandardPage = true;
+      var isTablet = false;
+      var isMobile = false;
+      var isBot = false;
+      var currentSiteId = 1;
+      var isUploadFlowRevampEnabled = false;
+      var mhXsrfToken =
+        'D_7apuxf11b587496c_bo6u1493d7c5a7hc.1683692892.e7c48210206162dd70b8a909da652373';
+      var scriptOrigin = '913ZMNZRqBTjqIiyEjfaRwDBl3sdk5fuvk39flAPViUOUhaZqy39U+6CUzIgqF4s';
+      var clientSideErrorConfiguration = JSON.parse(
+        '{"exclude":[{"message":"elt\\\\.parentNode","userAgent":"Safari"},{"message":"__gCrWeb"},{"message":"DOM Exception 18","userAgent":"CriOS"},{"message":"\\\\[canonical id\\\\].*Unexpected error"},{"message":"getExtension"},{"userAgent":"Opera"},{"userAgent":"android.*firefox"},{"userAgent":"fxios"},{"message":"Array\\\\.from"},{"message":"from"},{"source":"connect\\\\.facebook"},{"source":"googleads\\\\.g"},{"source":"googleadservices"},{"source":"googletagmanager"},{"source":"gstatic"},{"source":"kaspersky"},{"source":"checkoutshopper"},{"source":"dwin1"},{"message":"jQuery is not defined"},{"message":"$ is not defined"},{"userAgent":"PhantomJS"},{"message":"removeNightMode"},{"message":"mwg-internal"},{"message":"BetterJsPop"},{"message":"mraid"},{"message":"checkMRAID"},{"message":"jQueryAppsee"},{"message":"MoatMAK"},{"message":"default\\\\.queit\\\\.in"},{"message":"} could not be cloned"},{"message":"__firefox__\\\\."},{"message":"MmJsBridge"},{"message":"_isMatchingDomain is not defined"},{"message":"InvalidStateError","userAgent":"firefox"},{"message":"UnknownError","userAgent":"firefox"},{"userAgent":"MSIE ([2-9]|(10))\\\\."},{"message":"_ is not defined"},{"message":"disp is not defined"},{"userAgent":"Bytespider"},{"userAgent":"YandexBot"},{"message":"InvalidStateError","userAgent":"Safari"},{"message":"The object is in an invalid state"},{"message":"\\\\[canonical id\\\\]","userAgent":" Request aborted"},{"message":"a\\\\[b\\\\]\\\\.target\\\\.className\\\\.indexOf is not a function","userAgent":"Safari"},{"message":"redefine non\\\\-configurable property","userAgent":"firefox"},{"message":"digest already in progress"},{"message":"System.ServiceModel.CommunicationObjectFaultedException"},{"message":"Unexpected token <","userAgent":"Chrome\\\\\\/(75|76)"},{"message":"favicon.ico"},{"message":"webkit.messageHandlers"},{"message":"Network Error"},{"message":"Request aborted"},{"message":"this.each is not a function","userAgent":"MiuiBrowser"},{"message":"Object Not Found Matching Id","userAgent":"Chrome,","source":"Edge"},{"message":"_AutofillCallbackHandler"},{"message":"Object Not Found Matching Id"},{"message":"Non-Error promise rejection captured with value"},{"message":"_leaflet_pos"},{"message":"timeout of 0ms exceeded"},{"message":"Hydration failed because the initial UI does not match what was rendered on the server"},{"message":"There was an error while hydrating"},{"message":"Minified React error #418"},{"message":"Minified React error #423"},{"message":"The request is not allowed by the user agent or the platform in the current context, possibly because the user denied permission"},{"message":"sendEventV3"}],"stackTraceIgnoreLinesRules":[],"monitoredErrorRules":[{"activityId":"XFrameOptions","regex":"x-frame-options"},{"activityId":"PerformancePolyfill","regex":"performance"}],"excludeUnsupportedBrowsersEnabled":true}',
+      );
+      var shouldWriteActivityIndicatorBeAlwaysAsync = true;
+      var languageDirection = 'LTR';
+      var isFtb = false;
+      var optOut = false;
+      var process = { env: { NODE_ENV: 'production' } };
+      var currentPageCanonicalId =
+        'htdocs\/FP\/dna-upload-agreements.php?action=showInformedConsent';
+      var cookiePreferencesClientData = JSON.parse(
+        '{"isCookiePreferencesExposed":true,"isUseSameSettingsDialogForAllBannersExposed":true,"isUnsupportedBrowser":false,"isCookiePreferencesOptInExposed":false,"isIntrusiveBanner":false,"isFetchDataOnlyOnServerExposed":true,"isLoadedByExternalSite":false,"bannerText":"\\u041f\\u0440\\u043e\\u0434\\u043e\\u043b\\u0436\\u0430\\u044f \\u0438\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u0442\\u044c \\u043d\\u0430\\u0448 \\u0441\\u0430\\u0439\\u0442, \\u0412\\u044b \\u0441\\u043e\\u0433\\u043b\\u0430\\u0448\\u0430\\u0435\\u0442\\u0435\\u0441\\u044c \\u0441 \\u043d\\u0430\\u0448\\u0435\\u0439 <a id=\\"cpb_cookie_policy_link\\" href=\\"https:\\/\\/www.myheritage.com\\/cookie-policy?lang=RU\\" class=\\"link\\" target=\\"_blank\\" rel=\\"noopener\\" data-automations=\\"cpb_cookie_policy_link\\">\\u043f\\u043e\\u043b\\u0438\\u0442\\u0438\\u043a\\u043e\\u0439 \\u043e\\u0442\\u043d\\u043e\\u0441\\u0438\\u0442\\u0435\\u043b\\u044c\\u043d\\u043e cookie-\\u0444\\u0430\\u0439\\u043b\\u043e\\u0432<\\/a>. \\u0412\\u044b \\u043c\\u043e\\u0436\\u0435\\u0442\\u0435 <a id=\\"cpb_cookie_preferences_link\\" href=\\"#\\" class=\\"link\\" target=\\"_blank\\" rel=\\"noopener\\" data-automations=\\"cpb_cookie_preferences_link\\">\\u043e\\u0442\\u043a\\u0430\\u0437\\u0430\\u0442\\u044c\\u0441\\u044f<\\/a> \\u043e\\u0442 \\u043d\\u0435\\u043a\\u043e\\u0442\\u043e\\u0440\\u044b\\u0445 cookie-\\u0444\\u0430\\u0439\\u043b\\u043e\\u0432.","cookieAcceptAllButtonText":"\\u041f\\u0440\\u0438\\u043d\\u044f\\u0442\\u044c \\u0432\\u0441\\u0435","cookieAcceptOnlyMandatoryButtonText":"\\u041f\\u0440\\u0438\\u043d\\u044f\\u0442\\u044c \\u043e\\u0431\\u044f\\u0437\\u0430\\u0442\\u0435\\u043b\\u044c\\u043d\\u044b\\u0435 \\u043f\\u043e\\u043b\\u044f","userCountry":"KG","userGender":false,"fgToken":"2.179c5e5ca6da13642b272fa8e8e7b614.1000000000.1683606492.1440.1140854913.547276eb94286b9666883a2d1b73e7588a9ca4c80f1c54348f8a17dc07901994","guestId":"T_v5j94ax6bv7clm71_17a6857ybc4sre9m","accountId":1000000000,"isGuest":true,"cookiePreferencesDialogStrings":{"FamilyTreeWizard":{"Save":"\\u0421\\u043e\\u0445\\u0440\\u0430\\u043d\\u0438\\u0442\\u044c"},"Events":{"Name":"\\u0418\\u043c\\u044f","Duration":"\\u0414\\u043b\\u0438\\u0442\\u0435\\u043b\\u044c\\u043d\\u043e\\u0441\\u0442\\u044c","Html description":"\\u041e\\u043f\\u0438\\u0441\\u0430\\u043d\\u0438\\u0435"},"AccountCenter":{"Remaining day":"\\u041e\\u0434\\u0438\\u043d \\u0434\\u0435\\u043d\\u044c","Remaining days":"%1 \\u0434\\u043d\\u0435\\u0439","Remaining year":"\\u041e\\u0434\\u0438\\u043d \\u0433\\u043e\\u0434","Remaining years":"\\u043b\\u0435\\u0442: %1"},"SubscriptionPlans":{"Duration months value":"{duration} \\u043c\\u0435\\u0441\\u044f\\u0446\\u0435\\u0432","1 month":"1 \\u043c\\u0435\\u0441\\u044f\\u0446"},"GlossaryGood":{"General_verb_To Close":"\\u0417\\u0430\\u043a\\u0440\\u044b\\u0442\\u044c"},"GenealogySearchDictionary":{"Age in minutes":"%1 \\u043c\\u0438\\u043d\\u0443\\u0442(-\\u044b)","Age in hours":"%1 \\u0447\\u0430\\u0441\\u0430(-\\u043e\\u0432)"},"Privacy":{"Cookies preferences popup title":"\\u041d\\u0430\\u0441\\u0442\\u0440\\u043e\\u0439\\u043a\\u0438 \\u0444\\u0430\\u0439\\u043b\\u043e\\u0432 cookie","Cookies preferences popup about cookies title":"\\u041e \\u0444\\u0430\\u0439\\u043b\\u0430\\u0445 cookie","Cookies preferences popup about cookies tab title":"\\u041e \\u0444\\u0430\\u0439\\u043b\\u0430\\u0445 cookie","Cookies preferences popup mandatory cookies title":"\\u041e\\u0431\\u044f\\u0437\\u0430\\u0442\\u0435\\u043b\\u044c\\u043d\\u044b\\u0435 \\u0444\\u0430\\u0439\\u043b\\u044b cookie","Cookies preferences popup mandatory cookies tab title":"\\u041e\\u0431\\u044f\\u0437\\u0430\\u0442\\u0435\\u043b\\u044c-<br>\\u043d\\u044b\\u0435 \\u0444\\u0430\\u0439\\u043b\\u044b <br>cookie","Cookies preferences popup active option":"\\u0412\\u043a\\u043b\\u044e\\u0447\\u0435\\u043d\\u044b","Cookies preferences popup always active option":"\\u0412\\u0441\\u0435\\u0433\\u0434\\u0430 \\u0432\\u043a\\u043b\\u044e\\u0447\\u0435\\u043d\\u044b","Cookies preferences popup cookie policy text":"\\u0414\\u0430\\u043d\\u043d\\u0430\\u044f [link url=&quot;https:\\/\\/www.myheritage.com\\/cookie-policy?lang=RU&quot; target=&quot;_blank&quot; title=&quot;\\u041f\\u043e\\u043b\\u0438\\u0442\\u0438\\u043a\\u0430 \\u0444\\u0430\\u0439\\u043b\\u043e\\u0432 cookie&quot; class=&quot;link&quot;] \\u043e\\u0431\\u044a\\u044f\\u0441\\u043d\\u044f\\u0435\\u0442, \\u0447\\u0442\\u043e \\u0442\\u0430\\u043a\\u043e\\u0435 \\u0444\\u0430\\u0439\\u043b\\u044b cookie, \\u0440\\u0430\\u0437\\u043d\\u044b\\u0435 \\u0442\\u0438\\u043f\\u044b \\u0444\\u0430\\u0439\\u043b\\u043e\\u0432 cookie, \\u043a\\u0430\\u043a \\u043c\\u044b \\u0438\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u0443\\u0435\\u043c \\u0438\\u0445, \\u043a\\u043e\\u0433\\u0434\\u0430 \\u0412\\u044b \\u043f\\u043e\\u0441\\u0435\\u0449\\u0430\\u0435\\u0442\\u0435 \\u043d\\u0430\\u0448 \\u0441\\u0430\\u0439\\u0442 [link url=&quot;https:\\/\\/www.myheritage.com\\/index.php?lang=RU&quot; target=&quot;blank&quot; title=&quot;https:\\/\\/www.myheritage.com\\/index.php?lang=RU&quot; id=&quot;cookie_policy_home_page_id&quot; class=&quot;link&quot;] \\u0438 \\u043a\\u0430\\u043a \\u0412\\u044b \\u043c\\u043e\\u0436\\u0435\\u0442\\u0435 \\u043a\\u043e\\u043d\\u0442\\u0440\\u043e\\u043b\\u0438\\u0440\\u043e\\u0432\\u0430\\u0442\\u044c \\u043d\\u0430\\u0448\\u0435 \\u0438\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u043d\\u0438\\u0435 \\u0444\\u0430\\u0439\\u043b\\u043e\\u0432 cookie.","CookiePolicy Title":"\\u041f\\u043e\\u043b\\u0438\\u0442\\u0438\\u043a\\u0430 \\u0432 \\u043e\\u0442\\u043d\\u043e\\u0448\\u0435\\u043d\\u0438\\u0438 \\u0444\\u0430\\u0439\\u043b\\u043e\\u0432 cookie","CookiePolicy tab Title":"\\u041f\\u043e\\u043b\\u0438\\u0442\\u0438\\u043a\\u0430 \\u0432 \\u043e\\u0442\\u043d\\u043e\\u0448\\u0435\\u043d\\u0438\\u0438 \\u0444\\u0430\\u0439\\u043b\\u043e\\u0432 cookie","Cookies preferences popup about cookies tab title opt in":"\\u041e cookie-\\u0444\\u0430\\u0439\\u043b\\u0430\\u0445 \\u0438 \\u043d\\u0430\\u0448\\u0438\\u0445 \\u043f\\u0440\\u0430\\u0432\\u0438\\u043b\\u0430\\u0445 \\u0438\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u043d\\u0438\\u044f cookie-\\u0444\\u0430\\u0439\\u043b\\u043e\\u0432","Cookies preferences popup about cookies text opt in paragraph 1":"\\u041a\\u043e\\u0433\\u0434\\u0430 \\u0432\\u044b \\u043f\\u043e\\u0441\\u0435\\u0449\\u0430\\u0435\\u0442\\u0435 \\u043b\\u044e\\u0431\\u043e\\u0439 \\u0441\\u0430\\u0439\\u0442, \\u043e\\u043d \\u043c\\u043e\\u0436\\u0435\\u0442 \\u0441\\u043e\\u0445\\u0440\\u0430\\u043d\\u044f\\u0442\\u044c \\u0438\\u043b\\u0438 \\u0438\\u0437\\u0432\\u043b\\u0435\\u043a\\u0430\\u0442\\u044c \\u0438\\u043d\\u0444\\u043e\\u0440\\u043c\\u0430\\u0446\\u0438\\u044e \\u0432 \\u0432\\u0430\\u0448\\u0435\\u043c \\u0431\\u0440\\u0430\\u0443\\u0437\\u0435\\u0440\\u0435, \\u0432 \\u043e\\u0441\\u043d\\u043e\\u0432\\u043d\\u043e\\u043c \\u0432 \\u0432\\u0438\\u0434\\u0435 cookie-\\u0444\\u0430\\u0439\\u043b\\u043e\\u0432, \\u0432\\u043a\\u043b\\u044e\\u0447\\u0430\\u044f \\u0441\\u0442\\u043e\\u0440\\u043e\\u043d\\u043d\\u0438\\u0435 cookie-\\u0444\\u0430\\u0439\\u043b\\u044b, \\u043a\\u0430\\u043a \\u0431\\u043e\\u043b\\u0435\\u0435 \\u043f\\u043e\\u0434\\u0440\\u043e\\u0431\\u043d\\u043e \\u043e\\u043f\\u0438\\u0441\\u0430\\u043d\\u043e \\u043d\\u0438\\u0436\\u0435. \\u042d\\u0442\\u0430 \\u0438\\u043d\\u0444\\u043e\\u0440\\u043c\\u0430\\u0446\\u0438\\u044f \\u043c\\u043e\\u0436\\u0435\\u0442 \\u043a\\u0430\\u0441\\u0430\\u0442\\u044c\\u0441\\u044f \\u0432\\u0430\\u0441, \\u0432\\u0430\\u0448\\u0438\\u0445 \\u043f\\u0440\\u0435\\u0434\\u043f\\u043e\\u0447\\u0442\\u0435\\u043d\\u0438\\u0439 \\u0438\\u043b\\u0438 \\u0432\\u0430\\u0448\\u0435\\u0433\\u043e \\u0443\\u0441\\u0442\\u0440\\u043e\\u0439\\u0441\\u0442\\u0432\\u0430 \\u0438 \\u0438\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u0443\\u0435\\u0442\\u0441\\u044f \\u0434\\u043b\\u044f \\u043e\\u0431\\u0435\\u0441\\u043f\\u0435\\u0447\\u0435\\u043d\\u0438\\u044f \\u043d\\u0430\\u0434\\u043b\\u0435\\u0436\\u0430\\u0449\\u0435\\u0433\\u043e \\u0444\\u0443\\u043d\\u043a\\u0446\\u0438\\u043e\\u043d\\u0438\\u0440\\u043e\\u0432\\u0430\\u043d\\u0438\\u044f \\u0438 \\u0431\\u0435\\u0437\\u043e\\u043f\\u0430\\u0441\\u043d\\u043e\\u0441\\u0442\\u0438 \\u043d\\u0430\\u0448\\u0435\\u0433\\u043e \\u0441\\u0430\\u0439\\u0442\\u0430 \\u0432 \\u0430\\u043d\\u0430\\u043b\\u0438\\u0442\\u0438\\u0447\\u0435\\u0441\\u043a\\u0438\\u0445 \\u0438 \\u043c\\u0430\\u0440\\u043a\\u0435\\u0442\\u0438\\u043d\\u0433\\u043e\\u0432\\u044b\\u0445 \\u0446\\u0435\\u043b\\u044f\\u0445. \\u041d\\u0430\\u0436\\u0438\\u043c\\u0430\\u0439\\u0442\\u0435 \\u043d\\u0430 \\u0437\\u0430\\u0433\\u043e\\u043b\\u043e\\u0432\\u043a\\u0438 \\u043a\\u0430\\u0442\\u0435\\u0433\\u043e\\u0440\\u0438\\u0439, \\u0447\\u0442\\u043e\\u0431\\u044b \\u0443\\u0437\\u043d\\u0430\\u0442\\u044c \\u0431\\u043e\\u043b\\u044c\\u0448\\u0435 \\u0438 \\u0438\\u0437\\u043c\\u0435\\u043d\\u0438\\u0442\\u044c \\u043d\\u0430\\u0441\\u0442\\u0440\\u043e\\u0439\\u043a\\u0438 \\u043f\\u043e \\u0443\\u043c\\u043e\\u043b\\u0447\\u0430\\u043d\\u0438\\u044e. \\u041f\\u043e\\u0441\\u043a\\u043e\\u043b\\u044c\\u043a\\u0443 \\u043c\\u044b \\u0443\\u0432\\u0430\\u0436\\u0430\\u0435\\u043c \\u043a\\u043e\\u043d\\u0444\\u0438\\u0434\\u0435\\u043d\\u0446\\u0438\\u0430\\u043b\\u044c\\u043d\\u043e\\u0441\\u0442\\u044c \\u0432\\u0430\\u0448\\u0435\\u0439 \\u0438\\u043d\\u0444\\u043e\\u0440\\u043c\\u0430\\u0446\\u0438\\u0438, \\u0432\\u044b \\u043c\\u043e\\u0436\\u0435\\u0442\\u0435 \\u0437\\u0430\\u043f\\u0440\\u0435\\u0442\\u0438\\u0442\\u044c \\u0438\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u043d\\u0438\\u0435 \\u043d\\u0435\\u043a\\u043e\\u0442\\u043e\\u0440\\u044b\\u0445 \\u0442\\u0438\\u043f\\u043e\\u0432 cookie-\\u0444\\u0430\\u0439\\u043b\\u043e\\u0432.","Cookies preferences popup about cookies text opt in paragraph 2":"\\u0414\\u0430\\u0432 \\u0441\\u043e\\u0433\\u043b\\u0430\\u0441\\u0438\\u0435 \\u043d\\u0430 \\u0438\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u043d\\u0438\\u0435 cookie-\\u0444\\u0430\\u0439\\u043b\\u043e\\u0432, \\u0432\\u044b \\u043c\\u043e\\u0436\\u0435\\u0442\\u0435 \\u043e\\u0442\\u043e\\u0437\\u0432\\u0430\\u0442\\u044c \\u0435\\u0433\\u043e \\u0432 \\u043b\\u044e\\u0431\\u043e\\u0435 \\u0432\\u0440\\u0435\\u043c\\u044f \\u043f\\u0443\\u0442\\u0435\\u043c \\u043d\\u0430\\u0436\\u0430\\u0442\\u0438\\u044f \\u043d\\u0430 \\u0441\\u0441\\u044b\\u043b\\u043a\\u0443 \\u00ab\\u041d\\u0430\\u0441\\u0442\\u0440\\u043e\\u0439\\u043a\\u0438 cookie-\\u0444\\u0430\\u0439\\u043b\\u043e\\u0432\\u00bb \\u0432 \\u043d\\u0438\\u0436\\u043d\\u0435\\u043c \\u043a\\u043e\\u043b\\u043e\\u043d\\u0442\\u0438\\u0442\\u0443\\u043b\\u0435. \\u041e\\u0431\\u0440\\u0430\\u0442\\u0438\\u0442\\u0435 \\u0432\\u043d\\u0438\\u043c\\u0430\\u043d\\u0438\\u0435, \\u0447\\u0442\\u043e \\u043d\\u0435\\u043a\\u043e\\u0442\\u043e\\u0440\\u044b\\u043c\\u0438 \\u0441\\u0442\\u043e\\u0440\\u043e\\u043d\\u043d\\u0438\\u043c\\u0438 cookie-\\u0444\\u0430\\u0439\\u043b\\u0430\\u043c\\u0438 \\u043c\\u043e\\u0436\\u043d\\u043e \\u0443\\u043f\\u0440\\u0430\\u0432\\u043b\\u044f\\u0442\\u044c \\u0442\\u043e\\u043b\\u044c\\u043a\\u043e \\u0447\\u0435\\u0440\\u0435\\u0437 \\u0432\\u0430\\u0448 \\u0431\\u0440\\u0430\\u0443\\u0437\\u0435\\u0440.","Cookies preferences popup about cookies text opt in paragraph 3":"\\u0418\\u043c\\u0435\\u0439\\u0442\\u0435 \\u0432 \\u0432\\u0438\\u0434\\u0443, \\u0447\\u0442\\u043e \\u043e\\u0442\\u043a\\u0430\\u0437 \\u043e\\u0442 \\u043b\\u044e\\u0431\\u043e\\u0433\\u043e \\u0442\\u0438\\u043f\\u0430 \\u044d\\u0442\\u0438\\u0445 cookie-\\u0444\\u0430\\u0439\\u043b\\u043e\\u0432 \\u043c\\u043e\\u0436\\u0435\\u0442 \\u043f\\u043e\\u0432\\u043b\\u0438\\u044f\\u0442\\u044c \\u043d\\u0430 \\u0438\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u043d\\u0438\\u0435 \\u0432\\u0430\\u043c\\u0438 \\u0441\\u0430\\u0439\\u0442\\u0430 \\u0438 \\u0443\\u0441\\u043b\\u0443\\u0433, \\u043a\\u043e\\u0442\\u043e\\u0440\\u044b\\u0435 \\u043c\\u044b \\u043c\\u043e\\u0436\\u0435\\u043c \\u043f\\u0440\\u0435\\u0434\\u043b\\u043e\\u0436\\u0438\\u0442\\u044c.","Cookies preferences popup about cookies text opt in paragraph 4":"\\u0414\\u043b\\u044f \\u043f\\u043e\\u043b\\u0443\\u0447\\u0435\\u043d\\u0438\\u044f \\u0434\\u043e\\u043f\\u043e\\u043b\\u043d\\u0438\\u0442\\u0435\\u043b\\u044c\\u043d\\u043e\\u0439 \\u0438\\u043d\\u0444\\u043e\\u0440\\u043c\\u0430\\u0446\\u0438\\u0438 \\u0441\\u043c. \\u043d\\u0430\\u0448\\u0438 \\u043f\\u043e\\u043b\\u043d\\u044b\\u0435 [link url=&quot;{cookie_policy_link}&quot; target=&quot;blank&quot; title=&quot;\\u041f\\u0440\\u0430\\u0432\\u0438\\u043b\\u0430 \\u0438\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u043d\\u0438\\u044f cookie-\\u0444\\u0430\\u0439\\u043b\\u043e\\u0432&quot;] \\u0438 [link url=&quot;{privacy_policy_link}&quot; target=&quot;blank&quot; title=&quot;\\u041f\\u043e\\u043b\\u0438\\u0442\\u0438\\u043a\\u0443 \\u043a\\u043e\\u043d\\u0444\\u0438\\u0434\\u0435\\u043d\\u0446\\u0438\\u0430\\u043b\\u044c\\u043d\\u043e\\u0441\\u0442\\u0438&quot;].","Cookies preferences popup mandatory cookies text opt in paragraph 1":"\\u041e\\u0431\\u044f\\u0437\\u0430\\u0442\\u0435\\u043b\\u044c\\u043d\\u044b\\u0435 cookie-\\u0444\\u0430\\u0439\\u043b\\u044b \\u043d\\u0435\\u043e\\u0431\\u0445\\u043e\\u0434\\u0438\\u043c\\u044b \\u0434\\u043b\\u044f \\u043f\\u0440\\u0430\\u0432\\u0438\\u043b\\u044c\\u043d\\u043e\\u0439 \\u0440\\u0430\\u0431\\u043e\\u0442\\u044b \\u0438 \\u043e\\u0442\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u044f \\u0441\\u0430\\u0439\\u0442\\u0430, \\u0438 \\u0438\\u0445 \\u043d\\u0435\\u043b\\u044c\\u0437\\u044f \\u043e\\u0442\\u043a\\u043b\\u044e\\u0447\\u0438\\u0442\\u044c \\u041e\\u043d\\u0438 \\u0438\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u0443\\u044e\\u0442\\u0441\\u044f \\u0434\\u043b\\u044f \\u043f\\u0440\\u0435\\u0434\\u043e\\u0442\\u0432\\u0440\\u0430\\u0449\\u0435\\u043d\\u0438\\u044f \\u0443\\u0433\\u0440\\u043e\\u0437 \\u0431\\u0435\\u0437\\u043e\\u043f\\u0430\\u0441\\u043d\\u043e\\u0441\\u0442\\u0438 (\\u043d\\u0430\\u043f\\u0440\\u0438\\u043c\\u0435\\u0440, \\u0441 \\u043f\\u043e\\u043c\\u043e\\u0449\\u044c\\u044e cookie-\\u0444\\u0430\\u0439\\u043b\\u043e\\u0432 \\u043e\\u0442 Google reCAPTCHA), \\u0432\\u0445\\u043e\\u0434\\u0430 \\u0432 \\u0441\\u0438\\u0441\\u0442\\u0435\\u043c\\u0443, \\u0441\\u043e\\u0433\\u043b\\u0430\\u0441\\u043e\\u0432\\u0430\\u043d\\u0438\\u044f \\u043d\\u0430\\u0448\\u0438\\u0445 \\u043f\\u0440\\u0435\\u0434\\u043b\\u043e\\u0436\\u0435\\u043d\\u0438\\u0439 \\u0443\\u0441\\u043b\\u0443\\u0433 \\u0441 \\u0432\\u0430\\u0448\\u0438\\u043c \\u043c\\u0435\\u0441\\u0442\\u043e\\u043f\\u043e\\u043b\\u043e\\u0436\\u0435\\u043d\\u0438\\u0435\\u043c, \\u0437\\u0430\\u043f\\u043e\\u043b\\u043d\\u0435\\u043d\\u0438\\u044f \\u0444\\u043e\\u0440\\u043c \\u0438 \\u0437\\u0430\\u043f\\u043e\\u043c\\u0438\\u043d\\u0430\\u043d\\u0438\\u044f \\u0442\\u043e\\u0432\\u0430\\u0440\\u043e\\u0432 \\u0432 \\u0432\\u0430\\u0448\\u0435\\u0439 \\u043a\\u043e\\u0440\\u0437\\u0438\\u043d\\u0435 \\u043f\\u043e\\u043a\\u0443\\u043f\\u043e\\u043a. \\u041c\\u044b \\u043c\\u043e\\u0436\\u0435\\u043c \\u0445\\u0440\\u0430\\u043d\\u0438\\u0442\\u044c cookie-\\u0444\\u0430\\u0439\\u043b\\u044b \\u043f\\u0435\\u0440\\u0432\\u043e\\u0433\\u043e \\u043b\\u0438\\u0446\\u0430 (first-party cookies) \\u0434\\u043e \\u043e\\u0434\\u043d\\u043e\\u0433\\u043e \\u0433\\u043e\\u0434\\u0430.","Cookies preferences popup mandatory cookies text opt in paragraph 2":"\\u041d\\u0435\\u043a\\u043e\\u0442\\u043e\\u0440\\u044b\\u0435 \\u043e\\u0431\\u044f\\u0437\\u0430\\u0442\\u0435\\u043b\\u044c\\u043d\\u044b\\u0435 cookie-\\u0444\\u0430\\u0439\\u043b\\u044b \\u0443\\u043f\\u0440\\u0430\\u0432\\u043b\\u044f\\u044e\\u0442\\u0441\\u044f \\u0438\\u043b\\u0438 \\u0440\\u0430\\u0437\\u043c\\u0435\\u0449\\u0430\\u044e\\u0442\\u0441\\u044f \\u0434\\u043b\\u044f \\u043d\\u0430\\u0441 \\u0442\\u0440\\u0435\\u0442\\u044c\\u0438\\u043c\\u0438 \\u0441\\u0442\\u043e\\u0440\\u043e\\u043d\\u0430\\u043c\\u0438 \\u0441\\u043b\\u0435\\u0434\\u0443\\u044e\\u0449\\u0438\\u043c \\u043e\\u0431\\u0440\\u0430\\u0437\\u043e\\u043c:","Click to show cookie list":"\\u041f\\u043e\\u043a\\u0430\\u0437\\u0430\\u0442\\u044c cookie-\\u0444\\u0430\\u0439\\u043b\\u044b","Click to hide cookie list":"\\u0421\\u043a\\u0440\\u044b\\u0442\\u044c cookie-\\u0444\\u0430\\u0439\\u043b\\u044b","Cookie provider":"\\u041f\\u043e\\u0441\\u0442\\u0430\\u0432\\u0449\\u0438\\u043a \\u0443\\u0441\\u043b\\u0443\\u0433","Cookies preferences popup analytics cookies title":"\\u0410\\u043d\\u0430\\u043b\\u0438\\u0442\\u0438-<br>\\u0447\\u0435\\u0441\\u043a\\u0438\\u0435 <br>\\u0444\\u0430\\u0439\\u043b\\u044b cookie","Cookies preferences popup analytics cookies tab title":"\\u0410\\u043d\\u0430\\u043b\\u0438\\u0442\\u0438\\u0447\\u0435\\u0441\\u043a\\u0438\\u0435 cookie-\\u0444\\u0430\\u0439\\u043b\\u044b","Cookies preferences popup analytics cookies text paragraph 1":"\\u0410\\u043d\\u0430\\u043b\\u0438\\u0442\\u0438\\u0447\\u0435\\u0441\\u043a\\u0438\\u0435 cookie-\\u0444\\u0430\\u0439\\u043b\\u044b \\u0441\\u043e\\u0431\\u0438\\u0440\\u0430\\u044e\\u0442 \\u0438\\u043d\\u0444\\u043e\\u0440\\u043c\\u0430\\u0446\\u0438\\u044e \\u043e \\u0442\\u043e\\u043c, \\u043a\\u0430\\u043a \\u0432\\u044b \\u0432\\u0437\\u0430\\u0438\\u043c\\u043e\\u0434\\u0435\\u0439\\u0441\\u0442\\u0432\\u0443\\u0435\\u0442\\u0435 \\u0441 \\u0441\\u0430\\u0439\\u0442\\u043e\\u043c. \\u041e\\u043d\\u0438 \\u043f\\u043e\\u0437\\u0432\\u043e\\u043b\\u044f\\u044e\\u0442 \\u043d\\u0430\\u043c \\u043f\\u043e\\u0434\\u0441\\u0447\\u0438\\u0442\\u044b\\u0432\\u0430\\u0442\\u044c \\u043f\\u043e\\u0441\\u0435\\u0449\\u0435\\u043d\\u0438\\u044f \\u0438 \\u0438\\u0441\\u0442\\u043e\\u0447\\u043d\\u0438\\u043a\\u0438 \\u0442\\u0440\\u0430\\u0444\\u0438\\u043a\\u0430, \\u0447\\u0442\\u043e\\u0431\\u044b \\u0438\\u0437\\u043c\\u0435\\u0440\\u0438\\u0442\\u044c \\u0438 \\u0443\\u043b\\u0443\\u0447\\u0448\\u0438\\u0442\\u044c \\u043f\\u0440\\u043e\\u0438\\u0437\\u0432\\u043e\\u0434\\u0438\\u0442\\u0435\\u043b\\u044c\\u043d\\u043e\\u0441\\u0442\\u044c \\u043d\\u0430\\u0448\\u0435\\u0433\\u043e \\u0441\\u0430\\u0439\\u0442\\u0430, \\u043f\\u043e\\u043d\\u044f\\u0442\\u044c, \\u0447\\u0442\\u043e \\u0438\\u043d\\u0442\\u0435\\u0440\\u0435\\u0441\\u0443\\u0435\\u0442 \\u043d\\u0430\\u0448\\u0438\\u0445 \\u043f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u0442\\u0435\\u043b\\u0435\\u0439, \\u0438 \\u0438\\u0437\\u043c\\u0435\\u0440\\u0438\\u0442\\u044c \\u044d\\u0444\\u0444\\u0435\\u043a\\u0442\\u0438\\u0432\\u043d\\u043e\\u0441\\u0442\\u044c \\u043d\\u0430\\u0448\\u0435\\u0433\\u043e \\u043a\\u043e\\u043d\\u0442\\u0435\\u043d\\u0442\\u0430.","Cookies preferences popup analytics cookies text paragraph 2":"\\u0410\\u043d\\u0430\\u043b\\u0438\\u0442\\u0438\\u0447\\u0435\\u0441\\u043a\\u0438\\u0435 cookie-\\u0444\\u0430\\u0439\\u043b\\u044b \\u0443\\u043f\\u0440\\u0430\\u0432\\u043b\\u044f\\u044e\\u0442\\u0441\\u044f \\u0438\\u043b\\u0438 \\u0440\\u0430\\u0437\\u043c\\u0435\\u0449\\u0430\\u044e\\u0442\\u0441\\u044f \\u0434\\u043b\\u044f \\u043d\\u0430\\u0441 \\u0442\\u0440\\u0435\\u0442\\u044c\\u0438\\u043c\\u0438 \\u0441\\u0442\\u043e\\u0440\\u043e\\u043d\\u0430\\u043c\\u0438 \\u0441\\u043b\\u0435\\u0434\\u0443\\u044e\\u0449\\u0438\\u043c \\u043e\\u0431\\u0440\\u0430\\u0437\\u043e\\u043c:","Cookies preferences popup advertising cookies title":"\\u0420\\u0435\\u043a\\u043b\\u0430\\u043c\\u043d\\u044b\\u0435 cookie-\\u0444\\u0430\\u0439\\u043b\\u044b","Cookies preferences popup advertising cookies tab title":"\\u0420\\u0435\\u043a\\u043b\\u0430\\u043c\\u043d\\u044b\\u0435 <br>\\u0444\\u0430\\u0439\\u043b\\u044b<br>cookie","Cookies preferences popup advertising cookies text paragraph 1":"\\u0420\\u0435\\u043a\\u043b\\u0430\\u043c\\u043d\\u044b\\u0435 cookie-\\u0444\\u0430\\u0439\\u043b\\u044b (\\u0438\\u043b\\u0438 \\u0446\\u0435\\u043b\\u0435\\u0432\\u044b\\u0435 cookie-\\u0444\\u0430\\u0439\\u043b\\u044b) \\u0438\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u0443\\u044e\\u0442\\u0441\\u044f \\u0434\\u043b\\u044f \\u043b\\u0443\\u0447\\u0448\\u0435\\u0433\\u043e \\u043f\\u043e\\u043d\\u0438\\u043c\\u0430\\u043d\\u0438\\u044f \\u0432\\u0430\\u0448\\u0438\\u0445 \\u0438\\u043d\\u0442\\u0435\\u0440\\u0435\\u0441\\u043e\\u0432, \\u0432 \\u0442\\u043e\\u043c \\u0447\\u0438\\u0441\\u043b\\u0435 \\u0434\\u043b\\u044f \\u0442\\u043e\\u0433\\u043e, \\u0447\\u0442\\u043e\\u0431\\u044b \\u043f\\u043e\\u043d\\u044f\\u0442\\u044c, \\u043d\\u0430 \\u043a\\u0430\\u043a\\u0438\\u0435 \\u0441\\u0430\\u0439\\u0442\\u044b \\u0438 \\u0440\\u0435\\u043a\\u043b\\u0430\\u043c\\u043d\\u044b\\u0435 \\u043e\\u0431\\u044a\\u044f\\u0432\\u043b\\u0435\\u043d\\u0438\\u044f \\u0432\\u044b \\u043f\\u0435\\u0440\\u0435\\u0445\\u043e\\u0434\\u0438\\u0442\\u0435, \\u0430 \\u0442\\u0430\\u043a\\u0436\\u0435 \\u0434\\u043b\\u044f \\u043f\\u0440\\u0435\\u0434\\u043e\\u0441\\u0442\\u0430\\u0432\\u043b\\u0435\\u043d\\u0438\\u044f \\u043f\\u0435\\u0440\\u0441\\u043e\\u043d\\u0430\\u043b\\u0438\\u0437\\u0438\\u0440\\u043e\\u0432\\u0430\\u043d\\u043d\\u043e\\u0439 \\u0440\\u0435\\u043a\\u043b\\u0430\\u043c\\u044b, \\u043a\\u043e\\u0442\\u043e\\u0440\\u0430\\u044f \\u043c\\u043e\\u0436\\u0435\\u0442 \\u0432\\u0430\\u0441 \\u0437\\u0430\\u0438\\u043d\\u0442\\u0435\\u0440\\u0435\\u0441\\u043e\\u0432\\u0430\\u0442\\u044c. \\u041e\\u043d\\u0438 \\u0442\\u0430\\u043a\\u0436\\u0435 \\u043e\\u0433\\u0440\\u0430\\u043d\\u0438\\u0447\\u0438\\u0432\\u0430\\u044e\\u0442 \\u043a\\u043e\\u043b\\u0438\\u0447\\u0435\\u0441\\u0442\\u0432\\u043e \\u043f\\u0440\\u043e\\u0441\\u043c\\u043e\\u0442\\u0440\\u043e\\u0432 \\u0440\\u0435\\u043a\\u043b\\u0430\\u043c\\u044b \\u0438 \\u043f\\u043e\\u043c\\u043e\\u0433\\u0430\\u044e\\u0442 \\u043d\\u0430\\u043c \\u0438\\u0437\\u043c\\u0435\\u0440\\u044f\\u0442\\u044c \\u044d\\u0444\\u0444\\u0435\\u043a\\u0442\\u0438\\u0432\\u043d\\u043e\\u0441\\u0442\\u044c \\u043d\\u0430\\u0448\\u0438\\u0445 \\u0440\\u0435\\u043a\\u043b\\u0430\\u043c\\u043d\\u044b\\u0445 \\u043a\\u0430\\u043c\\u043f\\u0430\\u043d\\u0438\\u0439. \\u041e\\u0442\\u043a\\u043b\\u044e\\u0447\\u0438\\u0432 \\u044d\\u0442\\u0438 cookie-\\u0444\\u0430\\u0439\\u043b\\u044b, \\u0432\\u044b \\u043b\\u0438\\u0448\\u0438\\u0442\\u0435\\u0441\\u044c \\u0442\\u0430\\u043a\\u0438\\u0445 \\u043f\\u0440\\u0435\\u0438\\u043c\\u0443\\u0449\\u0435\\u0441\\u0442\\u0432, \\u043a\\u0430\\u043a \\u0442\\u0430\\u0440\\u0433\\u0435\\u0442\\u0438\\u0440\\u043e\\u0432\\u0430\\u043d\\u043d\\u0430\\u044f \\u0440\\u0435\\u043a\\u043b\\u0430\\u043c\\u0430, \\u043a\\u043e\\u0442\\u043e\\u0440\\u0430\\u044f \\u043f\\u043e\\u0437\\u0432\\u043e\\u043b\\u0438\\u0442 \\u0432\\u0430\\u043c \\u0443\\u0437\\u043d\\u0430\\u0432\\u0430\\u0442\\u044c \\u043e \\u043d\\u0430\\u0448\\u0438\\u0445 \\u0437\\u0430\\u043c\\u0435\\u0447\\u0430\\u0442\\u0435\\u043b\\u044c\\u043d\\u044b\\u0445 \\u043f\\u0440\\u043e\\u0434\\u0443\\u043a\\u0442\\u0430\\u0445, \\u0430 \\u0442\\u0430\\u043a\\u0436\\u0435 \\u043f\\u043e\\u043b\\u0443\\u0447\\u0430\\u0442\\u044c \\u0441\\u043f\\u0435\\u0446\\u0438\\u0430\\u043b\\u044c\\u043d\\u044b\\u0435 \\u043f\\u0440\\u0435\\u0434\\u043b\\u043e\\u0436\\u0435\\u043d\\u0438\\u044f, \\u043d\\u043e\\u0432\\u043e\\u0441\\u0442\\u0438 \\u0438 \\u0438\\u043d\\u0444\\u043e\\u0440\\u043c\\u0430\\u0446\\u0438\\u044e.","Cookies preferences popup advertising cookies text paragraph 2":"\\u0420\\u0435\\u043a\\u043b\\u0430\\u043c\\u043d\\u044b\\u0435 cookie-\\u0444\\u0430\\u0439\\u043b\\u044b \\u0443\\u043f\\u0440\\u0430\\u0432\\u043b\\u044f\\u044e\\u0442\\u0441\\u044f \\u0438\\u043b\\u0438 \\u0440\\u0430\\u0437\\u043c\\u0435\\u0449\\u0430\\u044e\\u0442\\u0441\\u044f \\u0434\\u043b\\u044f \\u043d\\u0430\\u0441 \\u0442\\u0440\\u0435\\u0442\\u044c\\u0438\\u043c\\u0438 \\u0441\\u0442\\u043e\\u0440\\u043e\\u043d\\u0430\\u043c\\u0438 \\u0441\\u043b\\u0435\\u0434\\u0443\\u044e\\u0449\\u0438\\u043c \\u043e\\u0431\\u0440\\u0430\\u0437\\u043e\\u043c:","Toggle option opt in":"\\u041f\\u0440\\u0438\\u043d\\u044f\\u0442\\u044c","Toggle option opt out":"\\u041e\\u0442\\u043a\\u0430\\u0437\\u0430\\u0442\\u044c\\u0441\\u044f","Cookies preferences popup accept all cookies button":"\\u041f\\u0440\\u0438\\u043d\\u044f\\u0442\\u044c \\u0432\\u0441\\u0435 cookie-\\u0444\\u0430\\u0439\\u043b\\u044b","Cookie duration one minute":"\\u041e\\u0434\\u043d\\u0430 \\u043c\\u0438\\u043d\\u0443\\u0442\\u0430","Cookie duration session":"\\u0421\\u0435\\u0430\\u043d\\u0441","Cookie duration permanent":"\\u041f\\u043e\\u0441\\u0442\\u043e\\u044f\\u043d\\u043d\\u044b\\u0439","Cookie duration weeks":"{number_of_weeks} \\u043d\\u0435\\u0434\\u0435\\u043b\\u044c(\\u0438)","Cookie duration up to years":"\\u0414\\u043e {years}-\\u0445 \\u043b\\u0435\\u0442","Mandatory cookie description 2":"\\u0423\\u0441\\u0442\\u0430\\u043d\\u0430\\u0432\\u043b\\u0438\\u0432\\u0430\\u0435\\u0442\\u0441\\u044f, \\u043a\\u043e\\u0433\\u0434\\u0430 \\u0432\\u044b \\u0440\\u0430\\u0437\\u043c\\u0435\\u0449\\u0430\\u0435\\u0442\\u0435 \\u0437\\u0430\\u043a\\u0430\\u0437 \\u043d\\u0430 \\u0441\\u0442\\u0440\\u0430\\u043d\\u0438\\u0446\\u0435 \\u043e\\u043f\\u043b\\u0430\\u0442\\u044b MyHeritage. \\u0424\\u0430\\u0439\\u043b\\u044b cookie \\u0441\\u0438\\u0441\\u0442\\u0435\\u043c\\u044b CloudFare \\u0438\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u0443\\u044e\\u0442\\u0441\\u044f \\u0442\\u043e\\u0433\\u0434\\u0430, \\u043a\\u043e\\u0433\\u0434\\u0430 \\u043d\\u0435\\u0441\\u043a\\u043e\\u043b\\u044c\\u043a\\u043e \\u043f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u0442\\u0435\\u043b\\u0435\\u0439 \\u043f\\u043e\\u043b\\u044c\\u0437\\u0443\\u044e\\u0442\\u0441\\u044f \\u043e\\u0434\\u043d\\u0438\\u043c \\u0438 \\u0442\\u0435\\u043c \\u0436\\u0435 IP-\\u0430\\u0434\\u0440\\u0435\\u0441\\u043e\\u043c. \\u041a\\u0430\\u0436\\u0434\\u043e\\u043c\\u0443 \\u043f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u0442\\u0435\\u043b\\u044e \\u043f\\u0440\\u0438\\u0441\\u0432\\u0430\\u0438\\u0432\\u0430\\u0435\\u0442\\u0441\\u044f \\u0443\\u043d\\u0438\\u043a\\u0430\\u043b\\u044c\\u043d\\u044b\\u0439 \\u0444\\u0430\\u0439\\u043b cookie, \\u0447\\u0442\\u043e\\u0431\\u044b \\u043f\\u0440\\u0435\\u0434\\u043e\\u0442\\u0432\\u0440\\u0430\\u0442\\u0438\\u0442\\u044c \\u043e\\u0433\\u0440\\u0430\\u043d\\u0438\\u0447\\u0435\\u043d\\u0438\\u0435 \\u0441\\u043a\\u043e\\u0440\\u043e\\u0441\\u0442\\u0438 \\u0441\\u0432\\u044f\\u0437\\u0438 \\u0434\\u043b\\u044f \\u0432\\u0441\\u0435\\u0445 \\u043f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u0442\\u0435\\u043b\\u0435\\u0439 \\u0432 \\u0442\\u043e\\u043c \\u0441\\u043b\\u0443\\u0447\\u0430\\u0435, \\u0435\\u0441\\u043b\\u0438 \\u043e\\u0434\\u0438\\u043d \\u0438\\u0437 \\u043d\\u0438\\u0445 \\u043f\\u0440\\u0435\\u0432\\u044b\\u0441\\u0438\\u0442 \\u043f\\u0440\\u0435\\u0434\\u0435\\u043b \\u0441\\u043a\\u043e\\u0440\\u043e\\u0441\\u0442\\u0438.","Mandatory cookie description 3":"\\u0423\\u0441\\u0442\\u0430\\u043d\\u0430\\u0432\\u043b\\u0438\\u0432\\u0430\\u0435\\u0442\\u0441\\u044f \\u0432 \\u043c\\u043e\\u043c\\u0435\\u043d\\u0442 \\u0440\\u0435\\u0433\\u0438\\u0441\\u0442\\u0440\\u0430\\u0446\\u0438\\u0438 \\u0438\\u043b\\u0438 \\u0432\\u0445\\u043e\\u0434\\u0430 \\u0432 MyHeritage \\u0441 \\u0438\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u043d\\u0438\\u0435\\u043c \\u0443\\u0447\\u0435\\u0442\\u043d\\u043e\\u0439 \\u0437\\u0430\\u043f\\u0438\\u0441\\u0438 Google. \\u0418\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u0443\\u0435\\u0442\\u0441\\u044f \\u0434\\u043b\\u044f \\u0430\\u0432\\u0442\\u043e\\u0440\\u0438\\u0437\\u0430\\u0446\\u0438\\u0438 \\u043f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u0442\\u0435\\u043b\\u0435\\u0439, \\u0447\\u0442\\u043e\\u0431\\u044b \\u0432\\u043e\\u0437\\u043c\\u043e\\u0436\\u043d\\u043e\\u0441\\u0442\\u044c \\u0434\\u043e\\u0441\\u0442\\u0443\\u043f\\u0430 \\u043a \\u0443\\u0447\\u0435\\u0442\\u043d\\u043e\\u0439 \\u0437\\u0430\\u043f\\u0438\\u0441\\u0438 \\u0438\\u043c\\u0435\\u043b \\u0442\\u043e\\u043b\\u044c\\u043a\\u043e \\u0435\\u0435 \\u0432\\u043b\\u0430\\u0434\\u0435\\u043b\\u0435\\u0446. \\u042d\\u0442\\u0438 \\u0444\\u0430\\u0439\\u043b\\u044b cookie \\u0441\\u043e\\u0434\\u0435\\u0440\\u0436\\u0430\\u0442 \\u043f\\u043e\\u0434\\u043f\\u0438\\u0441\\u0430\\u043d\\u043d\\u044b\\u0435 \\u044d\\u043b\\u0435\\u043a\\u0442\\u0440\\u043e\\u043d\\u043d\\u043e-\\u0446\\u0438\\u0444\\u0440\\u043e\\u0432\\u043e\\u0439 \\u043f\\u043e\\u0434\\u043f\\u0438\\u0441\\u044c\\u044e \\u0438 \\u0437\\u0430\\u0448\\u0438\\u0444\\u0440\\u043e\\u0432\\u0430\\u043d\\u043d\\u044b\\u0435 \\u0434\\u0430\\u043d\\u043d\\u044b\\u0435 \\u043e\\u0431 \\u0438\\u0434\\u0435\\u043d\\u0442\\u0438\\u0444\\u0438\\u043a\\u0430\\u0446\\u0438\\u043e\\u043d\\u043d\\u043e\\u043c \\u043d\\u043e\\u043c\\u0435\\u0440\\u0435 \\u0443\\u0447\\u0435\\u0442\\u043d\\u043e\\u0439 \\u0437\\u0430\\u043f\\u0438\\u0441\\u0438 Google \\u043f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u0442\\u0435\\u043b\\u044f \\u0438 \\u0434\\u0430\\u043d\\u043d\\u044b\\u0435 \\u043e \\u0432\\u0440\\u0435\\u043c\\u0435\\u043d\\u0438 \\u043f\\u043e\\u0441\\u043b\\u0435\\u0434\\u043d\\u0435\\u0433\\u043e \\u0432\\u0445\\u043e\\u0434\\u0430 \\u0432 \\u0443\\u0447\\u0435\\u0442\\u043d\\u0443\\u044e \\u0437\\u0430\\u043f\\u0438\\u0441\\u044c. \\u0421\\u043e\\u0447\\u0435\\u0442\\u0430\\u043d\\u0438\\u0435 \\u044d\\u0442\\u0438\\u0445 \\u0444\\u0430\\u0439\\u043b\\u043e\\u0432 cookie \\u043f\\u043e\\u0437\\u0432\\u043e\\u043b\\u044f\\u0435\\u0442 Google \\u0431\\u043b\\u043e\\u043a\\u0438\\u0440\\u043e\\u0432\\u0430\\u0442\\u044c \\u043c\\u043d\\u043e\\u0433\\u0438\\u0435 \\u0432\\u0438\\u0434\\u044b \\u0430\\u0442\\u0430\\u043a, \\u0432 \\u0447\\u0430\\u0441\\u0442\\u043d\\u043e\\u0441\\u0442\\u0438 \\u043f\\u043e\\u043f\\u044b\\u0442\\u043a\\u0438 \\u043f\\u043e\\u0445\\u0438\\u0449\\u0435\\u043d\\u0438\\u044f \\u0434\\u0430\\u043d\\u043d\\u044b\\u0445 \\u0444\\u043e\\u0440\\u043c, \\u0437\\u0430\\u043f\\u043e\\u043b\\u043d\\u0435\\u043d\\u043d\\u044b\\u0445 \\u0438 \\u043e\\u0442\\u043f\\u0440\\u0430\\u0432\\u043b\\u0435\\u043d\\u043d\\u044b\\u0445 \\u0432 \\u0441\\u0435\\u0440\\u0432\\u0438\\u0441\\u0430\\u0445 Google.","Mandatory cookie description 6":"\\u0423\\u0441\\u0442\\u0430\\u043d\\u0430\\u0432\\u043b\\u0438\\u0432\\u0430\\u0435\\u0442\\u0441\\u044f \\u0432 \\u043c\\u043e\\u043c\\u0435\\u043d\\u0442 \\u0440\\u0435\\u0433\\u0438\\u0441\\u0442\\u0440\\u0430\\u0446\\u0438\\u0438 \\u0438\\u043b\\u0438 \\u0432\\u0445\\u043e\\u0434\\u0430 \\u0432 MyHeritage \\u0441 \\u0438\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u043d\\u0438\\u0435\\u043c \\u0443\\u0447\\u0435\\u0442\\u043d\\u043e\\u0439 \\u0437\\u0430\\u043f\\u0438\\u0441\\u0438 Facebook. \\u0418\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u0443\\u0435\\u0442\\u0441\\u044f \\u0434\\u043b\\u044f \\u0437\\u0430\\u043f\\u043e\\u043c\\u0438\\u043d\\u0430\\u043d\\u0438\\u044f \\u0440\\u0435\\u0433\\u0438\\u0441\\u0442\\u0440\\u0430\\u0446\\u0438\\u043e\\u043d\\u043d\\u043e\\u0439 \\u0438\\u043d\\u0444\\u043e\\u0440\\u043c\\u0430\\u0446\\u0438\\u0438.","Mandatory cookie description 8":"\\u0423\\u0441\\u0442\\u0430\\u043d\\u0430\\u0432\\u043b\\u0438\\u0432\\u0430\\u0435\\u0442\\u0441\\u044f \\u0432 \\u043c\\u043e\\u043c\\u0435\\u043d\\u0442 \\u0440\\u0435\\u0433\\u0438\\u0441\\u0442\\u0440\\u0430\\u0446\\u0438\\u0438 \\u0438\\u043b\\u0438 \\u0432\\u0445\\u043e\\u0434\\u0430 \\u0432 MyHeritage \\u0441 \\u0438\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u043d\\u0438\\u0435\\u043c \\u0443\\u0447\\u0435\\u0442\\u043d\\u043e\\u0439 \\u0437\\u0430\\u043f\\u0438\\u0441\\u0438 Facebook. \\u0418\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u0443\\u0435\\u0442\\u0441\\u044f \\u0434\\u043b\\u044f \\u0438\\u0434\\u0435\\u043d\\u0442\\u0438\\u0444\\u0438\\u043a\\u0430\\u0446\\u0438\\u0438 \\u0438 \\u0430\\u0443\\u0442\\u0435\\u043d\\u0442\\u0438\\u0444\\u0438\\u043a\\u0430\\u0446\\u0438\\u0438 \\u0431\\u0440\\u0430\\u0443\\u0437\\u0435\\u0440\\u0430.","Mandatory cookie description 10":"\\u0423\\u0441\\u0442\\u0430\\u043d\\u0430\\u0432\\u043b\\u0438\\u0432\\u0430\\u0435\\u0442\\u0441\\u044f \\u0432 \\u043c\\u043e\\u043c\\u0435\\u043d\\u0442 \\u0440\\u0435\\u0433\\u0438\\u0441\\u0442\\u0440\\u0430\\u0446\\u0438\\u0438 \\u0438\\u043b\\u0438 \\u0432\\u0445\\u043e\\u0434\\u0430 \\u0432 MyHeritage \\u0441 \\u0438\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u043d\\u0438\\u0435\\u043c \\u0443\\u0447\\u0435\\u0442\\u043d\\u043e\\u0439 \\u0437\\u0430\\u043f\\u0438\\u0441\\u0438 Facebook. \\u041e\\u043f\\u0440\\u0435\\u0434\\u0435\\u043b\\u044f\\u0435\\u0442 \\u0438\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u0443\\u0435\\u043c\\u044b\\u0439 \\u0432\\u0435\\u0431-\\u0431\\u0440\\u0430\\u0443\\u0437\\u0435\\u0440 \\u0438 \\u043e\\u0431\\u0435\\u0441\\u043f\\u0435\\u0447\\u0438\\u0432\\u0430\\u0435\\u0442 \\u0431\\u0435\\u0437\\u043e\\u043f\\u0430\\u0441\\u043d\\u043e\\u0435 \\u0441\\u043e\\u0435\\u0434\\u0438\\u043d\\u0435\\u043d\\u0438\\u0435 \\u0441 Facebook.","Mandatory cookie description 11":"\\u0423\\u0441\\u0442\\u0430\\u043d\\u0430\\u0432\\u043b\\u0438\\u0432\\u0430\\u0435\\u0442\\u0441\\u044f \\u0441\\u0435\\u0440\\u0432\\u0438\\u0441\\u043e\\u043c Google reCAPTCHA, \\u043a\\u043e\\u0442\\u043e\\u0440\\u044b\\u0439 \\u0437\\u0430\\u0449\\u0438\\u0449\\u0430\\u0435\\u0442 \\u0432\\u0435\\u0431-\\u0441\\u0430\\u0439\\u0442 \\u043e\\u0442 \\u043c\\u043e\\u0448\\u0435\\u043d\\u043d\\u0438\\u0447\\u0435\\u0441\\u0442\\u0432\\u0430 \\u0438 \\u0437\\u043b\\u043e\\u0443\\u043c\\u044b\\u0448\\u043b\\u0435\\u043d\\u043d\\u044b\\u0445 \\u0434\\u0435\\u0439\\u0441\\u0442\\u0432\\u0438\\u0439.","Mandatory cookie description 13":"\\u0423\\u0441\\u0442\\u0430\\u043d\\u0430\\u0432\\u043b\\u0438\\u0432\\u0430\\u0435\\u0442\\u0441\\u044f \\u0441\\u0435\\u0440\\u0432\\u0438\\u0441\\u043e\\u043c \\u043a\\u0438\\u0431\\u0435\\u0440\\u0431\\u0435\\u0437\\u043e\\u043f\\u0430\\u0441\\u043d\\u043e\\u0441\\u0442\\u0438 Imperva. \\u0418\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u0443\\u0435\\u0442\\u0441\\u044f \\u0434\\u043b\\u044f \\u0443\\u043f\\u0440\\u0430\\u0432\\u043b\\u0435\\u043d\\u0438\\u044f \\u0441\\u0435\\u0441\\u0441\\u0438\\u044f\\u043c\\u0438. \\u0421 \\u043f\\u043e\\u043c\\u043e\\u0449\\u044c\\u044e \\u0434\\u0430\\u043d\\u043d\\u043e\\u0433\\u043e \\u0444\\u0430\\u0439\\u043b\\u0430 cookie \\u0437\\u0430\\u043f\\u0440\\u043e\\u0441\\u044b HTTP \\u0440\\u0430\\u0441\\u043f\\u0440\\u0435\\u0434\\u0435\\u043b\\u044f\\u044e\\u0442\\u0441\\u044f \\u043c\\u0435\\u0436\\u0434\\u0443 \\u0441\\u0435\\u0441\\u0441\\u0438\\u044f\\u043c\\u0438. \\u041f\\u043e\\u0432\\u0442\\u043e\\u0440\\u043d\\u044b\\u0439 \\u0437\\u0430\\u043f\\u0443\\u0441\\u043a \\u0431\\u0440\\u0430\\u0443\\u0437\\u0435\\u0440\\u0430 \\u0438 \\u043e\\u0442\\u043a\\u0440\\u044b\\u0442\\u0438\\u0435 \\u0442\\u043e\\u0433\\u043e \\u0436\\u0435 \\u0441\\u0430\\u0439\\u0442\\u0430 \\u0441\\u0447\\u0438\\u0442\\u0430\\u0435\\u0442\\u0441\\u044f \\u043e\\u0442\\u0434\\u0435\\u043b\\u044c\\u043d\\u044b\\u043c \\u043f\\u043e\\u0441\\u0435\\u0449\\u0435\\u043d\\u0438\\u0435\\u043c.","Mandatory cookie description 14":"\\u0423\\u0441\\u0442\\u0430\\u043d\\u0430\\u0432\\u043b\\u0438\\u0432\\u0430\\u0435\\u0442\\u0441\\u044f \\u0441\\u0435\\u0440\\u0432\\u0438\\u0441\\u043e\\u043c \\u043a\\u0438\\u0431\\u0435\\u0440\\u0431\\u0435\\u0437\\u043e\\u043f\\u0430\\u0441\\u043d\\u043e\\u0441\\u0442\\u0438 Imperva. \\u0424\\u0430\\u0439\\u043b cookie, \\u043f\\u043e \\u043a\\u043e\\u0442\\u043e\\u0440\\u043e\\u043c\\u0443 \\u043e\\u043f\\u0440\\u0435\\u0434\\u0435\\u043b\\u044f\\u044e\\u0442 \\u043f\\u0440\\u0438\\u043d\\u0430\\u0434\\u043b\\u0435\\u0436\\u043d\\u043e\\u0441\\u0442\\u044c \\u0441\\u0435\\u0441\\u0441\\u0438\\u0438 \\u043a\\u043e\\u043d\\u043a\\u0440\\u0435\\u0442\\u043d\\u043e\\u043c\\u0443 \\u043f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u0442\\u0435\\u043b\\u044e (\\u043f\\u043e\\u0441\\u0435\\u0442\\u0438\\u0442\\u0435\\u043b\\u044e, \\u0438\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u0443\\u044e\\u0449\\u0435\\u043c\\u0443 \\u043a\\u043e\\u043d\\u043a\\u0440\\u0435\\u0442\\u043d\\u044b\\u0439 \\u0431\\u0440\\u0430\\u0443\\u0437\\u0435\\u0440 \\u043d\\u0430 \\u043a\\u043e\\u043d\\u043a\\u0440\\u0435\\u0442\\u043d\\u043e\\u043c \\u043a\\u043e\\u043c\\u043f\\u044c\\u044e\\u0442\\u0435\\u0440\\u0435).","Mandatory cookie description 15":"\\u0423\\u0441\\u0442\\u0430\\u043d\\u0430\\u0432\\u043b\\u0438\\u0432\\u0430\\u0435\\u0442\\u0441\\u044f \\u0441\\u0435\\u0440\\u0432\\u0438\\u0441\\u043e\\u043c \\u043a\\u0438\\u0431\\u0435\\u0440\\u0431\\u0435\\u0437\\u043e\\u043f\\u0430\\u0441\\u043d\\u043e\\u0441\\u0442\\u0438 Imperva. \\u041e\\u0431\\u0435\\u0441\\u043f\\u0435\\u0447\\u0438\\u0432\\u0430\\u0435\\u0442 \\u043d\\u0430\\u043f\\u0440\\u0430\\u0432\\u043b\\u0435\\u043d\\u0438\\u0435 \\u0437\\u0430\\u043f\\u0440\\u043e\\u0441\\u043e\\u0432 \\u043a\\u043b\\u0438\\u0435\\u043d\\u0442\\u0430 \\u043e\\u0434\\u043d\\u043e\\u043c\\u0443 \\u0438 \\u0442\\u043e\\u043c\\u0443 \\u0436\\u0435 \\u0441\\u0435\\u0440\\u0432\\u0435\\u0440\\u0443 \\u0438\\u0441\\u0442\\u043e\\u0447\\u043d\\u0438\\u043a\\u0430.","Mandatory cookie description 16":"\\u0423\\u0441\\u0442\\u0430\\u043d\\u0430\\u0432\\u043b\\u0438\\u0432\\u0430\\u0435\\u0442\\u0441\\u044f \\u0432 \\u043c\\u043e\\u043c\\u0435\\u043d\\u0442 \\u0440\\u0435\\u0433\\u0438\\u0441\\u0442\\u0440\\u0430\\u0446\\u0438\\u0438 \\u0438\\u043b\\u0438 \\u0432\\u0445\\u043e\\u0434\\u0430 \\u0432 MyHeritage \\u0441 \\u0438\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u043d\\u0438\\u0435\\u043c \\u0443\\u0447\\u0435\\u0442\\u043d\\u043e\\u0439 \\u0437\\u0430\\u043f\\u0438\\u0441\\u0438 Facebook. \\u042d\\u0442\\u043e \\u0438\\u0434\\u0435\\u043d\\u0442\\u0438\\u0444\\u0438\\u043a\\u0430\\u0442\\u043e\\u0440 \\u0437\\u0430\\u043f\\u0440\\u043e\\u0441\\u0430 \\u043d\\u0430 \\u0432\\u0445\\u043e\\u0434, \\u043a\\u043e\\u0442\\u043e\\u0440\\u044b\\u0439 \\u0431\\u0443\\u0434\\u0435\\u0442 \\u043e\\u0442\\u043c\\u0435\\u0447\\u0435\\u043d, \\u043a\\u0430\\u043a \\u0442\\u043e\\u043b\\u044c\\u043a\\u043e \\u0432\\u044b \\u0432\\u043e\\u0439\\u0434\\u0435\\u0442\\u0435 \\u0432 \\u0441\\u0438\\u0441\\u0442\\u0435\\u043c\\u0443.","Mandatory cookie description 18":"\\u0423\\u0441\\u0442\\u0430\\u043d\\u0430\\u0432\\u043b\\u0438\\u0432\\u0430\\u0435\\u0442\\u0441\\u044f \\u0432\\u0438\\u0434\\u0435\\u043e\\u0441\\u0435\\u0440\\u0432\\u0438\\u0441\\u043e\\u043c Vimeo. MyHeritage \\u0438\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u0443\\u0435\\u0442 Vimeo \\u0434\\u043b\\u044f \\u0432\\u0441\\u0442\\u0440\\u0430\\u0438\\u0432\\u0430\\u043d\\u0438\\u044f \\u0432\\u0438\\u0434\\u0435\\u043e\\u0440\\u043e\\u043b\\u0438\\u043a\\u043e\\u0432 \\u043e \\u0442\\u043e\\u043c, \\u043a\\u0430\\u043a \\u0438\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u0442\\u044c \\u043f\\u0440\\u043e\\u0434\\u0443\\u043a\\u0442\\u044b MyHeritage. \\u041a\\u043e\\u0433\\u0434\\u0430 \\u0432\\u044b \\u043d\\u0430\\u0436\\u0438\\u043c\\u0430\\u0435\\u0442\\u0435 \\u043d\\u0430 \\u043a\\u043d\\u043e\\u043f\\u043a\\u0443 \\u0432\\u043e\\u0441\\u043f\\u0440\\u043e\\u0438\\u0437\\u0432\\u0435\\u0434\\u0435\\u043d\\u0438\\u044f, Vimeo \\u0443\\u0441\\u0442\\u0430\\u043d\\u0430\\u0432\\u043b\\u0438\\u0432\\u0430\\u0435\\u0442 \\u044d\\u0442\\u043e\\u0442 \\u0444\\u0430\\u0439\\u043b cookie, \\u0447\\u0442\\u043e\\u0431\\u044b \\u0432\\u0438\\u0434\\u0435\\u043e \\u043d\\u0430\\u0447\\u0430\\u043b\\u043e \\u0432\\u043e\\u0441\\u043f\\u0440\\u043e\\u0438\\u0437\\u0432\\u043e\\u0434\\u0438\\u0442\\u044c\\u0441\\u044f \\u0438 \\u0447\\u0442\\u043e\\u0431\\u044b \\u0441\\u043e\\u0431\\u0440\\u0430\\u0442\\u044c \\u0430\\u043d\\u0430\\u043b\\u0438\\u0442\\u0438\\u0447\\u0435\\u0441\\u043a\\u0438\\u0435 \\u0434\\u0430\\u043d\\u043d\\u044b\\u0435, \\u043d\\u0430\\u043f\\u0440\\u0438\\u043c\\u0435\\u0440 \\u0438\\u043d\\u0444\\u043e\\u0440\\u043c\\u0430\\u0446\\u0438\\u044e \\u043e \\u0442\\u043e\\u043c, \\u043a\\u0430\\u043a \\u0434\\u043e\\u043b\\u0433\\u043e \\u0437\\u0440\\u0438\\u0442\\u0435\\u043b\\u044c \\u043f\\u0440\\u043e\\u0441\\u043c\\u0430\\u0442\\u0440\\u0438\\u0432\\u0430\\u043b \\u0432\\u0438\\u0434\\u0435\\u043e. \\u042d\\u0442\\u043e\\u0442 \\u0444\\u0430\\u0439\\u043b cookie \\u043d\\u0435 \\u043e\\u0441\\u0443\\u0449\\u0435\\u0441\\u0442\\u0432\\u043b\\u044f\\u0435\\u0442 \\u043d\\u0430\\u0431\\u043b\\u044e\\u0434\\u0435\\u043d\\u0438\\u044f \\u0437\\u0430 \\u0447\\u0430\\u0441\\u0442\\u043d\\u044b\\u043c\\u0438 \\u043b\\u0438\\u0446\\u0430\\u043c\\u0438.","Mandatory cookie description 20":"\\u0418\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u0443\\u0435\\u0442\\u0441\\u044f \\u0434\\u043b\\u044f \\u0441\\u0438\\u0441\\u0442\\u0435\\u043c\\u044b \\u0435\\u0434\\u0438\\u043d\\u043e\\u0433\\u043e \\u0432\\u0445\\u043e\\u0434\\u0430 Google.","Mandatory cookie description 22":"\\u0423\\u0441\\u0442\\u0430\\u043d\\u0430\\u0432\\u043b\\u0438\\u0432\\u0430\\u0435\\u0442\\u0441\\u044f \\u0432 \\u043c\\u043e\\u043c\\u0435\\u043d\\u0442 \\u0440\\u0435\\u0433\\u0438\\u0441\\u0442\\u0440\\u0430\\u0446\\u0438\\u0438 \\u0438\\u043b\\u0438 \\u0432\\u0445\\u043e\\u0434\\u0430 \\u0432 MyHeritage \\u0441 \\u0438\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u043d\\u0438\\u0435\\u043c \\u0443\\u0447\\u0435\\u0442\\u043d\\u043e\\u0439 \\u0437\\u0430\\u043f\\u0438\\u0441\\u0438 Google.","Mandatory cookie description 23":"\\u0423\\u0441\\u0442\\u0430\\u043d\\u0430\\u0432\\u043b\\u0438\\u0432\\u0430\\u0435\\u0442\\u0441\\u044f \\u0441\\u0435\\u0440\\u0432\\u0438\\u0441\\u043e\\u043c \\u043e\\u043d\\u043b\\u0430\\u0439\\u043d-\\u043f\\u043b\\u0430\\u0442\\u0435\\u0436\\u0435\\u0439 Stripe, \\u043a\\u043e\\u0433\\u0434\\u0430 \\u0432\\u044b \\u0440\\u0430\\u0437\\u043c\\u0435\\u0449\\u0430\\u0435\\u0442\\u0435 \\u0437\\u0430\\u043a\\u0430\\u0437. \\u0418\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u0443\\u0435\\u0442\\u0441\\u044f \\u0434\\u043b\\u044f \\u043f\\u0440\\u0435\\u0434\\u043e\\u0442\\u0432\\u0440\\u0430\\u0449\\u0435\\u043d\\u0438\\u044f \\u043c\\u043e\\u0448\\u0435\\u043d\\u043d\\u0438\\u0447\\u0435\\u0441\\u0442\\u0432\\u0430.","Mandatory cookie description 24":"\\u0423\\u0441\\u0442\\u0430\\u043d\\u0430\\u0432\\u043b\\u0438\\u0432\\u0430\\u0435\\u0442\\u0441\\u044f \\u0432 \\u043c\\u043e\\u043c\\u0435\\u043d\\u0442 \\u0432\\u0445\\u043e\\u0434\\u0430 \\u0438\\u043b\\u0438 \\u0440\\u0435\\u0433\\u0438\\u0441\\u0442\\u0440\\u0430\\u0446\\u0438\\u0438 \\u0432 MyHeritage \\u0441 \\u0438\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u043d\\u0438\\u0435\\u043c \\u0443\\u0447\\u0435\\u0442\\u043d\\u043e\\u0439 \\u0437\\u0430\\u043f\\u0438\\u0441\\u0438 Google. \\u0421\\u043e\\u0434\\u0435\\u0440\\u0436\\u0438\\u0442 \\u0443\\u043d\\u0438\\u043a\\u0430\\u043b\\u044c\\u043d\\u044b\\u0439 \\u0438\\u0434\\u0435\\u043d\\u0442\\u0438\\u0444\\u0438\\u043a\\u0430\\u0446\\u0438\\u043e\\u043d\\u043d\\u044b\\u0439 \\u043d\\u043e\\u043c\\u0435\\u0440, \\u0438\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u0443\\u044e\\u0449\\u0438\\u0439\\u0441\\u044f \\u0434\\u043b\\u044f \\u0441\\u043e\\u0445\\u0440\\u0430\\u043d\\u0435\\u043d\\u0438\\u044f \\u0432\\u0430\\u0448\\u0438\\u0445 \\u043d\\u0430\\u0441\\u0442\\u0440\\u043e\\u0435\\u043a, \\u0432 \\u0442\\u043e\\u043c \\u0447\\u0438\\u0441\\u043b\\u0435 \\u043f\\u0440\\u0435\\u0434\\u043f\\u043e\\u0447\\u0438\\u0442\\u0430\\u0435\\u043c\\u043e\\u0433\\u043e \\u044f\\u0437\\u044b\\u043a\\u0430, \\u043a\\u043e\\u043b\\u0438\\u0447\\u0435\\u0441\\u0442\\u0432\\u0430 \\u0440\\u0435\\u0437\\u0443\\u043b\\u044c\\u0442\\u0430\\u0442\\u043e\\u0432 \\u043f\\u043e\\u0438\\u0441\\u043a\\u0430, \\u0432\\u044b\\u0434\\u0430\\u0432\\u0430\\u0435\\u043c\\u044b\\u0445 \\u043d\\u0430 \\u0441\\u0442\\u0440\\u0430\\u043d\\u0438\\u0446\\u0443 (\\u043d\\u0430\\u043f\\u0440\\u0438\\u043c\\u0435\\u0440, 10 \\u0438\\u043b\\u0438 20), \\u0438 \\u043f\\u0440\\u043e\\u0447\\u0435\\u0439 \\u0438\\u043d\\u0444\\u043e\\u0440\\u043c\\u0430\\u0446\\u0438\\u0438, \\u043d\\u0430\\u043f\\u0440\\u0438\\u043c\\u0435\\u0440 \\u0445\\u043e\\u0442\\u0438\\u0442\\u0435 \\u043b\\u0438 \\u0432\\u044b, \\u0447\\u0442\\u043e\\u0431\\u044b \\u0444\\u0438\\u043b\\u044c\\u0442\\u0440 SafeSearch \\u043e\\u0442 Google \\u0431\\u044b\\u043b \\u0430\\u043a\\u0442\\u0438\\u0432\\u0438\\u0440\\u043e\\u0432\\u0430\\u043d.","Mandatory cookie description 25":"\\u0418\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u0443\\u0435\\u0442\\u0441\\u044f \\u0434\\u043b\\u044f \\u0445\\u0440\\u0430\\u043d\\u0435\\u043d\\u0438\\u044f \\u043d\\u0430\\u0441\\u0442\\u0440\\u043e\\u0435\\u043a cookie-\\u0444\\u0430\\u0439\\u043b\\u043e\\u0432.","Mandatory cookie description 26":"\\u0418\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u0443\\u0435\\u0442\\u0441\\u044f \\u0434\\u043b\\u044f \\u0438\\u0434\\u0435\\u043d\\u0442\\u0438\\u0444\\u0438\\u043a\\u0430\\u0446\\u0438\\u0438.","Mandatory cookie description 27":"\\u0421\\u043e\\u0445\\u0440\\u0430\\u043d\\u044f\\u0435\\u0442 \\u043f\\u0440\\u0435\\u0434\\u043f\\u043e\\u0447\\u0442\\u0435\\u043d\\u0438\\u044f \\u043f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u0442\\u0435\\u043b\\u044f \\u0434\\u043b\\u044f \\u043e\\u043f\\u0442\\u0438\\u043c\\u0438\\u0437\\u0430\\u0446\\u0438\\u0438 \\u0438\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u043d\\u0438\\u044f \\u0441\\u0430\\u0439\\u0442\\u0430.","Mandatory cookie description 28":"\\u0421\\u043e\\u0445\\u0440\\u0430\\u043d\\u044f\\u0435\\u0442 \\u043f\\u0440\\u0435\\u0434\\u043f\\u043e\\u0447\\u0442\\u0435\\u043d\\u0438\\u044f \\u043f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u0442\\u0435\\u043b\\u044f \\u0434\\u043b\\u044f \\u043e\\u043f\\u0442\\u0438\\u043c\\u0438\\u0437\\u0430\\u0446\\u0438\\u0438 \\u0438\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u043d\\u0438\\u044f \\u0441\\u0430\\u0439\\u0442\\u0430.","Mandatory cookie description 29":"\\u0425\\u0440\\u0430\\u043d\\u0438\\u0442 \\u043a\\u043e\\u043b\\u0438\\u0447\\u0435\\u0441\\u0442\\u0432\\u043e \\u0440\\u0435\\u0437\\u0443\\u043b\\u044c\\u0442\\u0430\\u0442\\u043e\\u0432, \\u043a\\u043e\\u0442\\u043e\\u0440\\u044b\\u0435 \\u043e\\u0442\\u043e\\u0431\\u0440\\u0430\\u0436\\u0430\\u044e\\u0442\\u0441\\u044f \\u043d\\u0430 \\u0441\\u0442\\u0440\\u0430\\u043d\\u0438\\u0446\\u0435 MyHeritage SuperSearch \\u2013 \\u0438\\u043d\\u0441\\u0442\\u0440\\u0443\\u043c\\u0435\\u043d\\u0442\\u0430, \\u043e\\u0441\\u0443\\u0449\\u0435\\u0441\\u0442\\u0432\\u043b\\u044f\\u044e\\u0449\\u0435\\u0433\\u043e \\u043f\\u043e\\u0438\\u0441\\u043a \\u0438\\u0441\\u0442\\u043e\\u0440\\u0438\\u0447\\u0435\\u0441\\u043a\\u0438\\u0445 \\u0437\\u0430\\u043f\\u0438\\u0441\\u0435\\u0439.","Mandatory cookie description 30":"\\u0418\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u0443\\u0435\\u0442\\u0441\\u044f \\u0434\\u043b\\u044f \\u0443\\u043b\\u0443\\u0447\\u0448\\u0435\\u043d\\u0438\\u044f \\u0440\\u0430\\u0431\\u043e\\u0442\\u044b \\u0441\\u0430\\u0439\\u0442\\u0430.","Mandatory cookie description 31":"\\u0421\\u043e\\u0445\\u0440\\u0430\\u043d\\u044f\\u0435\\u0442 \\u043f\\u0440\\u0435\\u0434\\u043f\\u043e\\u0447\\u0442\\u0435\\u043d\\u0438\\u044f \\u043f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u0442\\u0435\\u043b\\u044f \\u0434\\u043b\\u044f \\u043e\\u043f\\u0442\\u0438\\u043c\\u0438\\u0437\\u0430\\u0446\\u0438\\u0438 \\u0438\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u043d\\u0438\\u044f \\u0441\\u0430\\u0439\\u0442\\u0430.","Mandatory cookie description 32":"\\u0418\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u0443\\u0435\\u0442\\u0441\\u044f \\u0434\\u043b\\u044f \\u0445\\u0440\\u0430\\u043d\\u0435\\u043d\\u0438\\u044f \\u043d\\u0430\\u0441\\u0442\\u0440\\u043e\\u0435\\u043a cookie-\\u0444\\u0430\\u0439\\u043b\\u043e\\u0432.","Mandatory cookie description 33":"\\u0418\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u0443\\u0435\\u0442\\u0441\\u044f \\u0434\\u043b\\u044f \\u0438\\u0434\\u0435\\u043d\\u0442\\u0438\\u0444\\u0438\\u043a\\u0430\\u0446\\u0438\\u0438.","Mandatory cookie description 34":"\\u0421\\u043e\\u0445\\u0440\\u0430\\u043d\\u044f\\u0435\\u0442 \\u043f\\u0440\\u0435\\u0434\\u043f\\u043e\\u0447\\u0442\\u0435\\u043d\\u0438\\u044f \\u043f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u0442\\u0435\\u043b\\u044f \\u0434\\u043b\\u044f \\u043e\\u043f\\u0442\\u0438\\u043c\\u0438\\u0437\\u0430\\u0446\\u0438\\u0438 \\u0438\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u043d\\u0438\\u044f \\u0441\\u0430\\u0439\\u0442\\u0430.","Mandatory cookie description 35":"\\u0418\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u0443\\u0435\\u0442\\u0441\\u044f \\u0434\\u043b\\u044f \\u0438\\u0434\\u0435\\u043d\\u0442\\u0438\\u0444\\u0438\\u043a\\u0430\\u0446\\u0438\\u0438.","Mandatory cookie description 36":"\\u0421\\u043e\\u0445\\u0440\\u0430\\u043d\\u044f\\u0435\\u0442 \\u0434\\u0430\\u043d\\u043d\\u044b\\u0435 \\u043e \\u0442\\u0435\\u043a\\u0443\\u0449\\u0435\\u043c \\u0447\\u0430\\u0441\\u043e\\u0432\\u043e\\u043c \\u043f\\u043e\\u044f\\u0441\\u0435, \\u0443\\u043a\\u0430\\u0437\\u0430\\u043d\\u043d\\u043e\\u043c \\u0432 \\u0431\\u0440\\u0430\\u0443\\u0437\\u0435\\u0440\\u0435.","Mandatory cookie description 37":"\\u0421\\u043e\\u0445\\u0440\\u0430\\u043d\\u044f\\u0435\\u0442 \\u043f\\u0440\\u0435\\u0434\\u043f\\u043e\\u0447\\u0442\\u0435\\u043d\\u0438\\u044f \\u043f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u0442\\u0435\\u043b\\u044f \\u0434\\u043b\\u044f \\u043e\\u043f\\u0442\\u0438\\u043c\\u0438\\u0437\\u0430\\u0446\\u0438\\u0438 \\u0438\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u043d\\u0438\\u044f \\u0441\\u0430\\u0439\\u0442\\u0430.","Mandatory cookie description 38":"\\u0421\\u043e\\u0445\\u0440\\u0430\\u043d\\u044f\\u0435\\u0442 \\u0434\\u0430\\u043d\\u043d\\u044b\\u0435 \\u043e \\u0442\\u0435\\u043a\\u0443\\u0449\\u0435\\u043c \\u0432\\u044b\\u0431\\u043e\\u0440\\u0435 \\u044f\\u0437\\u044b\\u043a\\u0430.","Mandatory cookie description 39":"\\u0418\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u0443\\u0435\\u0442\\u0441\\u044f \\u0434\\u043b\\u044f \\u0438\\u0434\\u0435\\u043d\\u0442\\u0438\\u0444\\u0438\\u043a\\u0430\\u0446\\u0438\\u0438.","Mandatory cookie description 40":"\\u0421\\u043e\\u0445\\u0440\\u0430\\u043d\\u044f\\u0435\\u0442 \\u043f\\u0440\\u0435\\u0434\\u043f\\u043e\\u0447\\u0442\\u0435\\u043d\\u0438\\u044f \\u043f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u0442\\u0435\\u043b\\u044f \\u0434\\u043b\\u044f \\u043e\\u043f\\u0442\\u0438\\u043c\\u0438\\u0437\\u0430\\u0446\\u0438\\u0438 \\u0438\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u043d\\u0438\\u044f \\u0441\\u0430\\u0439\\u0442\\u0430.","Mandatory cookie description 41":"\\u0418\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u0443\\u0435\\u0442\\u0441\\u044f \\u0434\\u043b\\u044f \\u0445\\u0440\\u0430\\u043d\\u0435\\u043d\\u0438\\u044f \\u043d\\u0430\\u0441\\u0442\\u0440\\u043e\\u0435\\u043a cookie-\\u0444\\u0430\\u0439\\u043b\\u043e\\u0432.","Mandatory cookie description 42":"\\u0421\\u043e\\u0445\\u0440\\u0430\\u043d\\u044f\\u0435\\u0442 \\u043f\\u0440\\u0435\\u0434\\u043f\\u043e\\u0447\\u0442\\u0435\\u043d\\u0438\\u044f \\u043f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u0442\\u0435\\u043b\\u044f \\u0434\\u043b\\u044f \\u043e\\u043f\\u0442\\u0438\\u043c\\u0438\\u0437\\u0430\\u0446\\u0438\\u0438 \\u0438\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u043d\\u0438\\u044f \\u0441\\u0430\\u0439\\u0442\\u0430.","Mandatory cookie description 43":"\\u0421\\u043e\\u0445\\u0440\\u0430\\u043d\\u044f\\u0435\\u0442 \\u043f\\u0440\\u0435\\u0434\\u043f\\u043e\\u0447\\u0442\\u0435\\u043d\\u0438\\u044f \\u043f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u0442\\u0435\\u043b\\u044f \\u0434\\u043b\\u044f \\u043e\\u043f\\u0442\\u0438\\u043c\\u0438\\u0437\\u0430\\u0446\\u0438\\u0438 \\u0438\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u043d\\u0438\\u044f \\u0441\\u0430\\u0439\\u0442\\u0430.","Analytics cookie description 3":"\\u0418\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u0443\\u0435\\u0442\\u0441\\u044f \\u0441\\u0435\\u0440\\u0432\\u0438\\u0441\\u043e\\u043c Google Analytics \\u0434\\u043b\\u044f \\u0434\\u0438\\u0444\\u0444\\u0435\\u0440\\u0435\\u043d\\u0446\\u0438\\u0430\\u0446\\u0438\\u0438 \\u043f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u0442\\u0435\\u043b\\u0435\\u0439.","Analytics cookie description 5":"\\u0424\\u0430\\u0439\\u043b \\u0441ookie \\u0441\\u0438\\u0441\\u0442\\u0435\\u043c\\u044b Google Analytics. \\u0418\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u0443\\u0435\\u0442\\u0441\\u044f \\u0434\\u043b\\u044f \\u0441\\u0431\\u043e\\u0440\\u0430 \\u0438\\u043d\\u0444\\u043e\\u0440\\u043c\\u0430\\u0446\\u0438\\u0438 \\u043e \\u0442\\u043e\\u043c, \\u043a\\u0430\\u043a \\u043f\\u043e\\u0441\\u0435\\u0442\\u0438\\u0442\\u0435\\u043b\\u0438 \\u0438\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u0443\\u044e\\u0442 \\u0432\\u0435\\u0431-\\u0441\\u0430\\u0439\\u0442 MyHeritage.","Analytics cookie description 6":"\\u0424\\u0430\\u0439\\u043b cookie \\u0441\\u0438\\u0441\\u0442\\u0435\\u043c\\u044b \\u043e\\u0431\\u0440\\u0430\\u0431\\u043e\\u0442\\u043a\\u0438 \\u0442\\u044d\\u0433\\u043e\\u0432 Google. \\u0418\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u0443\\u0435\\u0442\\u0441\\u044f \\u0434\\u043b\\u044f \\u0443\\u0432\\u0435\\u043b\\u0438\\u0447\\u0435\\u043d\\u0438\\u044f \\u0441\\u043a\\u043e\\u0440\\u043e\\u0441\\u0442\\u0438 \\u043e\\u0431\\u0440\\u0430\\u0431\\u043e\\u0442\\u043a\\u0438 \\u0437\\u0430\\u043f\\u0440\\u043e\\u0441\\u043e\\u0432.","Advertising cookie description 1":"\\u0418\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u0443\\u0435\\u0442\\u0441\\u044f \\u0434\\u043b\\u044f \\u0438\\u0434\\u0435\\u043d\\u0442\\u0438\\u0444\\u0438\\u043a\\u0430\\u0446\\u0438\\u0438 \\u0430\\u0432\\u0442\\u043e\\u0440\\u0438\\u0437\\u043e\\u0432\\u0430\\u0432\\u0448\\u0435\\u0433\\u043e\\u0441\\u044f \\u043f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u0442\\u0435\\u043b\\u044f \\u0441\\u0430\\u0439\\u0442\\u0430\\u043c\\u0438, \\u043d\\u0435 \\u0432\\u0445\\u043e\\u0434\\u044f\\u0449\\u0438\\u043c\\u0438 \\u0432 \\u0441\\u0438\\u0441\\u0442\\u0435\\u043c\\u0443 Google, \\u0438 \\u0441\\u043e\\u0434\\u0435\\u0440\\u0436\\u0438\\u0442 \\u0438\\u043d\\u0444\\u043e\\u0440\\u043c\\u0430\\u0446\\u0438\\u044e \\u043e \\u0442\\u043e\\u043c, \\u0434\\u0430\\u0432\\u0430\\u043b \\u043b\\u0438 \\u043f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u0442\\u0435\\u043b\\u044c \\u0441\\u0432\\u043e\\u0435 \\u0441\\u043e\\u0433\\u043b\\u0430\\u0441\\u0438\\u0435 \\u043d\\u0430 \\u043f\\u0435\\u0440\\u0441\\u043e\\u043d\\u0430\\u043b\\u0438\\u0437\\u0430\\u0446\\u0438\\u044e \\u0440\\u0435\\u043a\\u043b\\u0430\\u043c\\u044b.","Advertising cookie description 2":"\\u0424\\u0430\\u0439\\u043b cookie \\u043a\\u043e\\u043c\\u043f\\u0430\\u043d\\u0438\\u0438 Microsoft \\u043a\\u043e\\u0442\\u043e\\u0440\\u044b\\u0439 \\u0441\\u043e\\u0434\\u0435\\u0440\\u0436\\u0438\\u0442 \\u0433\\u043b\\u043e\\u0431\\u0430\\u043b\\u044c\\u043d\\u044b\\u0439 \\u0443\\u043d\\u0438\\u043a\\u0430\\u043b\\u044c\\u043d\\u044b\\u0439 \\u0438\\u0434\\u0435\\u043d\\u0442\\u0438\\u0444\\u0438\\u043a\\u0430\\u0446\\u0438\\u043e\\u043d\\u043d\\u044b\\u0439 \\u043d\\u043e\\u043c\\u0435\\u0440 (GUID), \\u043f\\u0440\\u0438\\u0441\\u0432\\u043e\\u0435\\u043d\\u043d\\u044b\\u0439 \\u0432\\u0430\\u0448\\u0435\\u043c\\u0443 \\u0431\\u0440\\u0430\\u0443\\u0437\\u0435\\u0440\\u0443. \\u0423\\u0441\\u0442\\u0430\\u043d\\u0430\\u0432\\u043b\\u0438\\u0432\\u0430\\u0435\\u0442\\u0441\\u044f, \\u043a\\u043e\\u0433\\u0434\\u0430 \\u0432\\u044b \\u0432\\u0437\\u0430\\u0438\\u043c\\u043e\\u0434\\u0435\\u0439\\u0441\\u0442\\u0432\\u0443\\u0435\\u0442\\u0435 \\u0441 \\u0440\\u0435\\u0441\\u0443\\u0440\\u0441\\u0430\\u043c\\u0438 Microsoft, \\u0432\\u043a\\u043b\\u044e\\u0447\\u0430\\u044f \\u043c\\u0435\\u0442\\u043a\\u0443 UET, \\u0438\\u043b\\u0438 \\u043f\\u043e\\u0441\\u0435\\u0449\\u0430\\u0435\\u0442\\u0435 \\u0440\\u0435\\u0441\\u0443\\u0440\\u0441\\u044b Microsoft \\u043f\\u0440\\u0438 \\u043f\\u043e\\u043c\\u043e\\u0449\\u0438 \\u0441\\u0432\\u043e\\u0435\\u0433\\u043e \\u0431\\u0440\\u0430\\u0443\\u0437\\u0435\\u0440\\u0430. Microsoft Advertising \\u043d\\u0435 \\u043e\\u0441\\u0443\\u0449\\u0435\\u0441\\u0442\\u0432\\u043b\\u044f\\u0435\\u0442 \\u043f\\u0440\\u043e\\u0434\\u0430\\u0436\\u0438 \\u044d\\u0442\\u0438\\u0445 \\u0434\\u0430\\u043d\\u043d\\u044b\\u0445 \\u0442\\u0440\\u0435\\u0442\\u044c\\u0438\\u043c \\u043b\\u0438\\u0446\\u0430\\u043c, \\u0430 \\u0442\\u0430\\u043a\\u0436\\u0435 \\u043d\\u0435 \\u0440\\u0430\\u0441\\u043f\\u0440\\u043e\\u0441\\u0442\\u0440\\u0430\\u043d\\u044f\\u0435\\u0442 \\u0438\\u0445 \\u0441\\u0440\\u0435\\u0434\\u0438 \\u0434\\u0440\\u0443\\u0433\\u0438\\u0445 \\u0440\\u0435\\u043a\\u043b\\u0430\\u043c\\u043e\\u0434\\u0430\\u0442\\u0435\\u043b\\u0435\\u0439.","Advertising cookie description 4":"RoktRecogniser \\u2014 \\u044d\\u0442\\u043e \\u0442\\u0435\\u0445\\u043d\\u043e\\u043b\\u043e\\u0433\\u0438\\u044f \\u043e\\u0442\\u0441\\u043b\\u0435\\u0436\\u0438\\u0432\\u0430\\u043d\\u0438\\u044f, \\u043a\\u043e\\u0442\\u043e\\u0440\\u0430\\u044f \\u043f\\u043e\\u043c\\u043e\\u0433\\u0430\\u0435\\u0442 \\u043d\\u0430\\u043c \\u043e\\u043f\\u0440\\u0435\\u0434\\u0435\\u043b\\u0438\\u0442\\u044c, \\u0447\\u0442\\u043e \\u0412\\u044b \\u044f\\u0432\\u043b\\u044f\\u0435\\u0442\\u0435\\u0441\\u044c \\u043e\\u0434\\u043d\\u0438\\u043c \\u0438 \\u0442\\u0435\\u043c \\u0436\\u0435 \\u043f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u0442\\u0435\\u043b\\u0435\\u043c \\u043d\\u0430 \\u0440\\u0430\\u0437\\u043d\\u044b\\u0445 \\u0443\\u0441\\u0442\\u0440\\u043e\\u0439\\u0441\\u0442\\u0432\\u0430\\u0445 \\u0438 \\u0432 \\u0440\\u0430\\u0437\\u043d\\u044b\\u0445 \\u0431\\u0440\\u0430\\u0443\\u0437\\u0435\\u0440\\u0430\\u0445, \\u0438\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u0443\\u044f \\u043e\\u0442\\u0441\\u043b\\u0435\\u0436\\u0438\\u0432\\u0430\\u043d\\u0438\\u0435 \\u0432 \\u0441\\u043e\\u043e\\u0442\\u0432\\u0435\\u0442\\u0441\\u0442\\u0432\\u0438\\u0438 \\u0441 \\u043d\\u0430\\u0441\\u0442\\u0440\\u043e\\u0439\\u043a\\u0430\\u043c\\u0438 \\u0412\\u0430\\u0448\\u0435\\u0433\\u043e \\u0431\\u0440\\u0430\\u0443\\u0437\\u0435\\u0440\\u0430, \\u043f\\u0440\\u043e\\u0442\\u043e\\u043a\\u043e\\u043b eTag, \\u0434\\u0430\\u043d\\u043d\\u044b\\u0435 1-\\u0433\\u043e \\u0438 3-\\u0433\\u043e \\u043b\\u0438\\u0446\\u0430, \\u0430 \\u0442\\u0430\\u043a\\u0436\\u0435 \\u043b\\u043e\\u043a\\u0430\\u043b\\u044c\\u043d\\u043e\\u0435 \\u0445\\u0440\\u0430\\u043d\\u0438\\u043b\\u0438\\u0449\\u0435 1-\\u0433\\u043e \\u0438 3-\\u0433\\u043e \\u043b\\u0438\\u0446\\u0430. \\u042d\\u0442\\u0438 \\u0434\\u043e\\u043f\\u043e\\u043b\\u043d\\u0438\\u0442\\u0435\\u043b\\u044c\\u043d\\u044b\\u0435 \\u043f\\u0430\\u0440\\u0430\\u043c\\u0435\\u0442\\u0440\\u044b \\u043f\\u043e\\u0437\\u0432\\u043e\\u043b\\u044f\\u044e\\u0442 Rokt \\u043e\\u0442\\u0441\\u043b\\u0435\\u0436\\u0438\\u0432\\u0430\\u0442\\u044c \\u043f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u0442\\u0435\\u043b\\u044f \\u043f\\u043e\\u043c\\u0438\\u043c\\u043e \\u0435\\u0433\\u043e \\u0430\\u0434\\u0440\\u0435\\u0441\\u0430 \\u044d\\u043b\\u0435\\u043a\\u0442\\u0440\\u043e\\u043d\\u043d\\u043e\\u0439 \\u043f\\u043e\\u0447\\u0442\\u044b \\u043f\\u043e\\u0441\\u043b\\u0435 \\u0442\\u043e\\u0433\\u043e, \\u043a\\u0430\\u043a \\u043e\\u043d \\u0432\\u044b\\u0431\\u0440\\u0430\\u043b \\u043f\\u0440\\u0435\\u0434\\u043b\\u043e\\u0436\\u0435\\u043d\\u0438\\u044f Rokt.","Advertising cookie description 11":"\\u0418\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u0443\\u0435\\u0442\\u0441\\u044f \\u0434\\u043b\\u044f \\u0440\\u0435\\u043a\\u043b\\u0430\\u043c\\u044b, \\u0432 \\u0442\\u043e\\u043c \\u0447\\u0438\\u0441\\u043b\\u0435 \\u0434\\u043b\\u044f \\u0434\\u0435\\u043c\\u043e\\u043d\\u0441\\u0442\\u0440\\u0430\\u0446\\u0438\\u0438 \\u0438 \\u043f\\u0440\\u0435\\u0434\\u043e\\u0441\\u0442\\u0430\\u0432\\u043b\\u0435\\u043d\\u0438\\u044f \\u0440\\u0435\\u043a\\u043b\\u0430\\u043c\\u044b, \\u043f\\u0435\\u0440\\u0441\\u043e\\u043d\\u0430\\u043b\\u0438\\u0437\\u0430\\u0446\\u0438\\u0438 \\u0440\\u0435\\u043a\\u043b\\u0430\\u043c\\u043d\\u044b\\u0445 \\u0441\\u043e\\u043e\\u0431\\u0449\\u0435\\u043d\\u0438\\u0439 (\\u0432 \\u0437\\u0430\\u0432\\u0438\\u0441\\u0438\\u043c\\u043e\\u0441\\u0442\\u0438 \\u043e\\u0442 \\u043d\\u0430\\u0441\\u0442\\u0440\\u043e\\u0435\\u043a \\u043f\\u043e\\u043a\\u0430\\u0437\\u0430 \\u0440\\u0435\\u043a\\u043b\\u0430\\u043c\\u044b \\u043f\\u043e \\u0430\\u0434\\u0440\\u0435\\u0441\\u0443 g.co\\/adsettings), \\u043e\\u0433\\u0440\\u0430\\u043d\\u0438\\u0447\\u0435\\u043d\\u0438\\u044f \\u043a\\u043e\\u043b\\u0438\\u0447\\u0435\\u0441\\u0442\\u0432\\u0430 \\u043f\\u043e\\u043a\\u0430\\u0437\\u043e\\u0432 \\u0440\\u0435\\u043a\\u043b\\u0430\\u043c\\u043d\\u044b\\u0445 \\u043e\\u0431\\u044a\\u044f\\u0432\\u043b\\u0435\\u043d\\u0438\\u0439 \\u043f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u0442\\u0435\\u043b\\u044e, \\u043e\\u0442\\u043a\\u043b\\u044e\\u0447\\u0435\\u043d\\u0438\\u044f \\u043f\\u043e\\u043a\\u0430\\u0437\\u0430 \\u0440\\u0435\\u043a\\u043b\\u0430\\u043c\\u043d\\u044b\\u0445 \\u043e\\u0431\\u044a\\u044f\\u0432\\u043b\\u0435\\u043d\\u0438\\u0439 \\u043f\\u043e \\u0432\\u0430\\u0448\\u0435\\u043c\\u0443 \\u0432\\u044b\\u0431\\u043e\\u0440\\u0443 \\u0438 \\u0438\\u0437\\u043c\\u0435\\u0440\\u0435\\u043d\\u0438\\u044f \\u043f\\u043e\\u043a\\u0430\\u0437\\u0430\\u0442\\u0435\\u043b\\u0435\\u0439 \\u044d\\u0444\\u0444\\u0435\\u043a\\u0442\\u0438\\u0432\\u043d\\u043e\\u0441\\u0442\\u0438 \\u0440\\u0435\\u043a\\u043b\\u0430\\u043c\\u043d\\u044b\\u0445 \\u043e\\u0431\\u044a\\u044f\\u0432\\u043b\\u0435\\u043d\\u0438\\u0439.","Advertising cookie description 12":"\\u0418\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u0443\\u0435\\u0442\\u0441\\u044f \\u0434\\u043b\\u044f \\u043f\\u0440\\u0435\\u0434\\u043e\\u0441\\u0442\\u0430\\u0432\\u043b\\u0435\\u043d\\u0438\\u044f, \\u043e\\u0446\\u0435\\u043d\\u043a\\u0438 \\u0438 \\u043f\\u043e\\u0432\\u044b\\u0448\\u0435\\u043d\\u0438\\u044f \\u0440\\u0435\\u043b\\u0435\\u0432\\u0430\\u043d\\u0442\\u043d\\u043e\\u0441\\u0442\\u0438 \\u0440\\u0435\\u043a\\u043b\\u0430\\u043c\\u043d\\u044b\\u0445 \\u043e\\u0431\\u044a\\u044f\\u0432\\u043b\\u0435\\u043d\\u0438\\u0439.","Advertising cookie description 13":"\\u041f\\u043e\\u0437\\u0432\\u043e\\u043b\\u044f\\u0435\\u0442 \\u0438\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u0442\\u044c \\u0444\\u0443\\u043d\\u043a\\u0446\\u0438\\u0438 Twitter \\u0431\\u0435\\u0437 \\u043d\\u0435\\u043e\\u0431\\u0445\\u043e\\u0434\\u0438\\u043c\\u043e\\u0441\\u0442\\u0438 \\u0432\\u0445\\u043e\\u0434\\u0430 \\u0432 \\u0441\\u0438\\u0441\\u0442\\u0435\\u043c\\u0443.","Advertising cookie description 14":"\\u0424\\u0430\\u0439\\u043b cookie \\u0441\\u043e\\u0446\\u0438\\u0430\\u043b\\u044c\\u043d\\u043e\\u0439 \\u0441\\u0435\\u0442\\u0438 Twitter, \\u0441\\u043e\\u0434\\u0435\\u0440\\u0436\\u0430\\u0449\\u0438\\u0439\\u0441\\u044f \\u043d\\u0430 \\u0441\\u0442\\u0440\\u0430\\u043d\\u0438\\u0446\\u0430\\u0445 \\u0441 \\u043a\\u043d\\u043e\\u043f\\u043a\\u043e\\u0439 \\u00abTweet\\u00bb \\u0438 \\u0441\\u043b\\u0443\\u0436\\u0430\\u0449\\u0438\\u0439 \\u0434\\u043b\\u044f \\u0438\\u0434\\u0435\\u043d\\u0442\\u0438\\u0444\\u0438\\u043a\\u0430\\u0446\\u0438\\u0438 \\u043f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u0442\\u0435\\u043b\\u044f \\u0441 \\u0443\\u043d\\u0438\\u043a\\u0430\\u043b\\u044c\\u043d\\u044b\\u043c \\u043d\\u043e\\u043c\\u0435\\u0440\\u043e\\u043c \\u0432 \\u0441\\u0435\\u0442\\u0438 Twitter.","Advertising cookie description 15":"\\u0423\\u0441\\u0442\\u0430\\u043d\\u0430\\u0432\\u043b\\u0438\\u0432\\u0430\\u0435\\u0442\\u0441\\u044f \\u0432 \\u0446\\u0435\\u043b\\u044f\\u0445 \\u0438\\u043d\\u0442\\u0435\\u0433\\u0440\\u0430\\u0446\\u0438\\u0438 Twitter \\u0441 \\u0434\\u0440\\u0443\\u0433\\u0438\\u043c\\u0438 \\u0441\\u043e\\u0446\\u0438\\u0430\\u043b\\u044c\\u043d\\u044b\\u043c\\u0438 \\u0441\\u0435\\u0442\\u044f\\u043c\\u0438.","Advertising cookie description 16":"\\u0418\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u0443\\u0435\\u0442\\u0441\\u044f \\u0434\\u043b\\u044f \\u0438\\u0437\\u043c\\u0435\\u0440\\u0435\\u043d\\u0438\\u044f \\u043f\\u043e\\u043a\\u0430\\u0437\\u0430\\u0442\\u0435\\u043b\\u0435\\u0439 \\u0440\\u0435\\u043a\\u043b\\u0430\\u043c\\u043d\\u043e\\u0433\\u043e \\u043e\\u0431\\u044a\\u044f\\u0432\\u043b\\u0435\\u043d\\u0438\\u044f \\u0438 \\u0440\\u0435\\u043a\\u043b\\u0430\\u043c\\u043d\\u043e\\u0439 \\u043a\\u0430\\u043c\\u043f\\u0430\\u043d\\u0438\\u0438 \\u0438 \\u043a\\u043e\\u044d\\u0444\\u0444\\u0438\\u0446\\u0438\\u0435\\u043d\\u0442\\u043e\\u0432 \\u043f\\u0435\\u0440\\u0435\\u0432\\u043e\\u0434\\u0430 \\u0440\\u0435\\u043a\\u043b\\u0430\\u043c\\u043d\\u044b\\u0445 \\u043e\\u0431\\u044a\\u044f\\u0432\\u043b\\u0435\\u043d\\u0438\\u0439 Google \\u043d\\u0430 \\u0441\\u0430\\u0439\\u0442\\u0435, \\u043a\\u043e\\u0442\\u043e\\u0440\\u044b\\u0439 \\u0432\\u044b \\u043f\\u043e\\u0441\\u0435\\u0449\\u0430\\u0435\\u0442\\u0435.","Advertising cookie description 17":"\\u041f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u0442\\u0435\\u043b\\u0438 \\u043f\\u043e\\u043c\\u043e\\u0433\\u0430\\u044e\\u0442 \\u0440\\u0435\\u043a\\u043b\\u0430\\u043c\\u043e\\u0434\\u0430\\u0442\\u0435\\u043b\\u044f\\u043c \\u043e\\u043f\\u0440\\u0435\\u0434\\u0435\\u043b\\u0438\\u0442\\u044c, \\u043a\\u0430\\u043a \\u0447\\u0430\\u0441\\u0442\\u043e \\u043f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u0442\\u0435\\u043b\\u0438, \\u0437\\u0430\\u043f\\u0443\\u0441\\u043a\\u0430\\u044e\\u0449\\u0438\\u0435 \\u0440\\u0435\\u043a\\u043b\\u0430\\u043c\\u043d\\u0443\\u044e \\u0441\\u0441\\u044b\\u043b\\u043a\\u0443, \\u0441\\u043e\\u0432\\u0435\\u0440\\u0448\\u0430\\u044e\\u0442 \\u0434\\u0435\\u0439\\u0441\\u0442\\u0432\\u0438\\u044f \\u043d\\u0430 \\u0438\\u0445 \\u0441\\u0430\\u0439\\u0442\\u0430\\u0445, \\u043d\\u0430\\u043f\\u0440\\u0438\\u043c\\u0435\\u0440 \\u0441\\u043e\\u0432\\u0435\\u0440\\u0448\\u0430\\u044e\\u0442 \\u043f\\u043e\\u043a\\u0443\\u043f\\u043a\\u0443. \\u0424\\u0430\\u0439\\u043b\\u044b cookie, \\u0438\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u0443\\u044e\\u0449\\u0438\\u0435\\u0441\\u044f \\u0434\\u043b\\u044f \\u0438\\u0437\\u043c\\u0435\\u0440\\u0435\\u043d\\u0438\\u044f \\u043a\\u043e\\u044d\\u0444\\u0444\\u0438\\u0446\\u0438\\u0435\\u043d\\u0442\\u043e\\u0432 \\u043f\\u0435\\u0440\\u0435\\u0432\\u043e\\u0434\\u0430, \\u043d\\u0435 \\u0438\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u0443\\u044e\\u0442\\u0441\\u044f \\u0434\\u043b\\u044f \\u043f\\u0435\\u0440\\u0441\\u043e\\u043d\\u0430\\u043b\\u0438\\u0437\\u0430\\u0446\\u0438\\u0438 \\u0440\\u0435\\u043a\\u043b\\u0430\\u043c\\u043d\\u044b\\u0445 \\u043e\\u0431\\u044a\\u044f\\u0432\\u043b\\u0435\\u043d\\u0438\\u0439.","Advertising cookie description 20":"\\u041e\\u0441\\u0443\\u0449\\u0435\\u0441\\u0442\\u0432\\u043b\\u044f\\u0435\\u0442 \\u0438\\u0434\\u0435\\u043d\\u0442\\u0438\\u0444\\u0438\\u043a\\u0430\\u0446\\u0438\\u044e \\u0431\\u0440\\u0430\\u0443\\u0437\\u0435\\u0440\\u043e\\u0432 \\u0441 \\u0446\\u0435\\u043b\\u044c\\u044e \\u043f\\u0440\\u0435\\u0434\\u043e\\u0441\\u0442\\u0430\\u0432\\u043b\\u0435\\u043d\\u0438\\u044f \\u0443\\u0441\\u043b\\u0443\\u0433 \\u043f\\u043e \\u0440\\u0435\\u043a\\u043b\\u0430\\u043c\\u0435 \\u0438 \\u0430\\u043d\\u0430\\u043b\\u0438\\u0442\\u0438\\u043a\\u0435 \\u0441\\u0430\\u0439\\u0442\\u0430.","Advertising cookie description 22":"\\u0418\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u0443\\u0435\\u0442\\u0441\\u044f \\u0434\\u043b\\u044f \\u043f\\u0435\\u0440\\u0435\\u0434\\u0430\\u0447\\u0438 \\u043e\\u043f\\u0442\\u0438\\u043c\\u0430\\u043b\\u044c\\u043d\\u043e\\u0433\\u043e \\u0438\\u043d\\u0442\\u0435\\u0440\\u0444\\u0435\\u0439\\u0441\\u0430 \\u043d\\u0430 \\u044d\\u043a\\u0440\\u0430\\u043d \\u0432\\u0430\\u0448\\u0435\\u0433\\u043e \\u0443\\u0441\\u0442\\u0440\\u043e\\u0439\\u0441\\u0442\\u0432\\u0430.","Advertising cookie description 23":"\\u0421\\u0438\\u0441\\u0442\\u0435\\u043c\\u0430 \\u0443\\u043d\\u0438\\u0432\\u0435\\u0440\\u0441\\u0430\\u043b\\u044c\\u043d\\u043e\\u0433\\u043e \\u043e\\u0442\\u0441\\u043b\\u0435\\u0436\\u0438\\u0432\\u0430\\u043d\\u0438\\u044f \\u0441\\u043e\\u0431\\u044b\\u0442\\u0438\\u0439 (UET) \\u043f\\u0440\\u0438\\u0441\\u0432\\u0430\\u0438\\u0432\\u0430\\u0435\\u0442 \\u0443\\u043d\\u0438\\u043a\\u0430\\u043b\\u044c\\u043d\\u044b\\u0439 \\u0430\\u043d\\u043e\\u043d\\u0438\\u043c\\u043d\\u044b\\u0439 \\u0438\\u0434\\u0435\\u043d\\u0442\\u0438\\u0444\\u0438\\u043a\\u0430\\u0446\\u0438\\u043e\\u043d\\u043d\\u044b\\u0439 \\u043d\\u043e\\u043c\\u0435\\u0440 \\u043f\\u043e\\u0441\\u0435\\u0442\\u0438\\u0442\\u0435\\u043b\\u044f. UET \\u0441\\u043e\\u0445\\u0440\\u0430\\u043d\\u044f\\u0435\\u0442 \\u044d\\u0442\\u0438 \\u0434\\u0430\\u043d\\u043d\\u044b\\u0435 \\u0432 \\u0441\\u043e\\u0431\\u0441\\u0442\\u0432\\u0435\\u043d\\u043d\\u043e\\u043c \\u0444\\u0430\\u0439\\u043b\\u0435 cookie. Microsoft Advertising \\u043d\\u0435 \\u043e\\u0441\\u0443\\u0449\\u0435\\u0441\\u0442\\u0432\\u043b\\u044f\\u0435\\u0442 \\u043f\\u0440\\u043e\\u0434\\u0430\\u0436\\u0438 \\u044d\\u0442\\u0438\\u0445 \\u0434\\u0430\\u043d\\u043d\\u044b\\u0445 \\u0442\\u0440\\u0435\\u0442\\u044c\\u0438\\u043c \\u043b\\u0438\\u0446\\u0430\\u043c, \\u0430 \\u0442\\u0430\\u043a\\u0436\\u0435 \\u043d\\u0435 \\u0440\\u0430\\u0441\\u043f\\u0440\\u043e\\u0441\\u0442\\u0440\\u0430\\u043d\\u044f\\u0435\\u0442 \\u0438\\u0445 \\u0441\\u0440\\u0435\\u0434\\u0438 \\u0434\\u0440\\u0443\\u0433\\u0438\\u0445 \\u0440\\u0435\\u043a\\u043b\\u0430\\u043c\\u043e\\u0434\\u0430\\u0442\\u0435\\u043b\\u0435\\u0439.","Advertising cookie description 24":"\\u0421\\u043e\\u0434\\u0435\\u0440\\u0436\\u0438\\u0442 \\u0438\\u0434\\u0435\\u043d\\u0442\\u0438\\u0444\\u0438\\u043a\\u0430\\u0446\\u0438\\u043e\\u043d\\u043d\\u044b\\u0439 \\u043d\\u043e\\u043c\\u0435\\u0440 \\u0441\\u0435\\u0441\\u0441\\u0438\\u0438 \\u0434\\u043b\\u044f \\u043e\\u0442\\u0434\\u0435\\u043b\\u044c\\u043d\\u043e\\u0439 \\u0441\\u0435\\u0441\\u0441\\u0438\\u0438 \\u043d\\u0430 \\u0441\\u0430\\u0439\\u0442\\u0435. Microsoft Advertising \\u043d\\u0435 \\u043e\\u0441\\u0443\\u0449\\u0435\\u0441\\u0442\\u0432\\u043b\\u044f\\u0435\\u0442 \\u043f\\u0440\\u043e\\u0434\\u0430\\u0436\\u0438 \\u044d\\u0442\\u0438\\u0445 \\u0434\\u0430\\u043d\\u043d\\u044b\\u0445 \\u0442\\u0440\\u0435\\u0442\\u044c\\u0438\\u043c \\u043b\\u0438\\u0446\\u0430\\u043c, \\u0430 \\u0442\\u0430\\u043a\\u0436\\u0435 \\u043d\\u0435 \\u0440\\u0430\\u0441\\u043f\\u0440\\u043e\\u0441\\u0442\\u0440\\u0430\\u043d\\u044f\\u0435\\u0442 \\u0438\\u0445 \\u0441\\u0440\\u0435\\u0434\\u0438 \\u0434\\u0440\\u0443\\u0433\\u0438\\u0445 \\u0440\\u0435\\u043a\\u043b\\u0430\\u043c\\u043e\\u0434\\u0430\\u0442\\u0435\\u043b\\u0435\\u0439.","Advertising cookie description 25":"\\u0418\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u0443\\u0435\\u0442\\u0441\\u044f, \\u0447\\u0442\\u043e\\u0431\\u044b \\u043f\\u0440\\u043e\\u0432\\u0435\\u0440\\u0438\\u0442\\u044c, \\u0432\\u043a\\u043b\\u044e\\u0447\\u0435\\u043d\\u0430 \\u043b\\u0438 \\u043f\\u043e\\u0434\\u0434\\u0435\\u0440\\u0436\\u043a\\u0430 \\u0444\\u0430\\u0439\\u043b\\u043e\\u0432 cookie \\u0432 \\u0431\\u0440\\u0430\\u0443\\u0437\\u0435\\u0440\\u0435 \\u043f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u0442\\u0435\\u043b\\u044f.","Advertising cookie description 26":"\\u0423\\u043a\\u0430\\u0437\\u044b\\u0432\\u0430\\u0435\\u0442, \\u0447\\u0442\\u043e \\u043f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u0442\\u0435\\u043b\\u044c \\u043d\\u0430\\u0436\\u0430\\u043b \\u043d\\u0430 \\u044d\\u043b\\u0435\\u043c\\u0435\\u043d\\u0442, \\u0440\\u0435\\u043a\\u043e\\u043c\\u0435\\u043d\\u0434\\u0443\\u0435\\u043c\\u044b\\u0439 \\u0441\\u0435\\u0440\\u0432\\u0438\\u0441\\u0430\\u043c\\u0438 Taboola."}},"cookiePolicyLink":"https:\\/\\/www.myheritage.com\\/cookie-policy?lang=RU","privacyPolicyLink":"https:\\/\\/www.myheritage.com\\/privacy-policy?lang=RU","dialogDependencies":{"js":[["https:\\/\\/cf.mhcache.com\\/FP\\/Assets\\/Cache\\/output\\/reactLibrary.min_v1MV106c78b1e2efdafb02b70d1c44357014.js","https:\\/\\/cf.mhcache.com\\/FP\\/Assets\\/Cache\\/output\\/reduxLibrary.min_v1MVe15ea1f0a54822dfb9c1c8a6e422d08f.js","https:\\/\\/cf.mhcache.com\\/FP\\/Assets\\/Cache\\/output\\/propTypesLibrary.min_v1MVfeceab9f7e1ea50e983ab69b28a02cdd.js"],["https:\\/\\/cf.mhcache.com\\/FP\\/Assets\\/Cache\\/output\\/reactDomLibrary.min_v1MV919eccb1dfb465608b50294c4fa49d49.js","https:\\/\\/cf.mhcache.com\\/FP\\/Assets\\/Cache\\/output\\/reduxThunkLibrary.min_v1MV44360c33da9651b52a7d1d55e5ec85e1.js","https:\\/\\/cf.mhcache.com\\/FP\\/Assets\\/Cache\\/output\\/immutableLibrary.min_v1MVac5911e0e6bc2c342bad36ac78734b9f.js"],["https:\\/\\/cf.mhcache.com\\/FP\\/Assets\\/Cache\\/output\\/reactReduxLibrary.min_v1MV76332da6793d9403981c193f87ff062e.js","https:\\/\\/cf.mhcache.com\\/FP\\/Assets\\/Cache\\/output\\/reactRouterDeprecatedLibrary.min_v1MV3c56802fb832b5faee1d7ce43daecd1f.js"],["https:\\/\\/cf.mhcache.com\\/FP\\/Assets\\/Cache\\/output\\/CookiesPreferencesDialogBundled_v1MV10b51b8086a9c7accaec8c46d4f3342e.js"]],"css":["https:\\/\\/cf.mhcache.com\\/FP\\/Assets\\/Cache\\/CookiesPreferencesDialog\\/CookiesPreferencesDialog_bundle_ltr_v1MVb5c0255e00925678d7e04d569732305bo.css"]},"bannerDependencies":{"js":[["https:\\/\\/cf.mhcache.com\\/FP\\/Assets\\/Cache\\/output\\/CookiePreferencesBannerVanillaBundled_v1MV76dcb1b1c63273510608c915a8e9dc28.js"]],"css":["https:\\/\\/cf.mhcache.com\\/FP\\/Assets\\/Cache\\/CookiePreferencesBannerVanilla\\/CookiePreferencesBannerVanilla_bundle_ltr_v1MVef7f2e728e28d1e0da40dc8e88b56fdao.css"]},"optionalDependencies":{"underscore":"https:\\/\\/cf.mhcache.com\\/FP\\/Assets\\/Cache\\/output\\/underscoreLibrary.min_v1MV5f3eec73075cad7184e1aa9ac0a50356.js"},"persistencyCookiePreferences":{"opt_in_flags":null,"opt_date":null}}',
+      );
+      var googleAnalyticsExposedInIframe = true;
+
+      var mhRequestId = '0A8101D1:9E2C_0A81021A:1F90_6459CBDC_26FF6BC5:4E80';
+      var shouldLoadExtendedContainer = true;
+      var isCovidDomain = false;
+      var clientLoggerConfiguration = JSON.parse(
+        '{"newRelicLoggerConfig":{"exposed":false},"consoleLoggerConfig":{"exposed":false},"endpointLoggerConfig":{"exposed":false,"bufferingTime":10000,"maxBufferItems":10},"minimumLogLevel":"error","maxLogLimit":100,"contextIdentifiers":{"PageCanonicalId":"htdocs\\/FP\\/dna-upload-agreements.php?action=showInformedConsent","mhRequestId":"0A8101D1:9E2C_0A81021A:1F90_6459CBDC_26FF6BC5:4E80"}}',
+      );
+      var isServiceWorkerRegisterExposed = false;
+      var serviceWorkerLogLevel = 'debug';
+      var isServiceWorkerFgqlCachingExposed = false;
+      var serviceWorkerFgqlConfig = '[]';
+      var performanceReportingConfig = { isPerformanceReportingExposed: false };
+      var isEnableRevokePwaFgqlCacheByMessageExposed = true;
+      var isClientSideStatisticsReportingExposed = true;
+      var isClientSideTrackingEventReportingExposed = true;
+      var recaptchaSiteKeys = {
+        checkbox: '6Lfl53oaAAAAAI8UdTAKTtb36fCXgQiIwH0Gd1U7',
+        score: '6LesHXsaAAAAAFaRbXEx8Tb1AYyPnr40MPVVvlrK',
+      };
+      var langPopupDialogExposed = true;
+      var signupLoginPopupDialogExposed = true;
+      var dialogWithoutJqueryExposed = true;
+      var lazyScriptDownloaderWithoutJQueryExposed = true;
+      var illegalPasswordCharacters = [];
+      var isMobileNotificationPanelVariantExposed = false;
+      var isGoogleIdentityServicesExposed = true;
+      var notificationPanelURL = '//FP/get-notification-panel.php?lang=RU&title=&body=&icon=&type=';
+      var languageDirection = 'LTR';
+      var MB_OK = 1;
+      var MB_CLOSE = 512;
+    </script>
+
+    <script type="text/javascript">
+      var GTM_ACCOUNT_ID = 'GTM-J44C';
+      var gtmDataLayer = [
+        {
+          user_type: 'guest',
+          pageViewURL: '\/dna-upload-agreements',
+          'canonical-page-id': 'htdocs\/FP\/dna-upload-agreements.php?action=showInformedConsent',
+          pageDomainName: 'myheritage.com',
+          ftb_version: 'none',
+          ip_country: 'KG',
+          ip_state_or_province: 'GB',
+          should_load_extended_gtm_container: 'true',
+          device: 'desktop',
+          ever_had_data_subscription: 'never-had-data-subscription',
+          ever_had_ftb_heartbeat: 'never-had-ftb-heartbeat',
+          ftb_download_intent: 'had-ftb-download-intent',
+          highest_ever_site_plan: 'basic',
+          highest_ever_user_type: 'guest',
+          free_trial_status: 'no_free_trial',
+          individuals_all_trees_in_all_sites: 0,
+          is_site_creator: 'not-a-site-creator',
+          registration_reason: 'no-registration-reason',
+          num_supersearch_searches: 0,
+          site_of_interest: 'not-in-site-of-interest',
+          site_visits: 1,
+          free_trial_start_date: '0000-00-00 00:00:00',
+          ftb_download_intent_time: '2023-05-08 23:27:41',
+          last_visit: '2023-05-08 23:27:19',
+          most_recent_expired_site: '0000-00-00 00:00:00',
+          nearest_expiration_non_recurring_site_subscription: '0000-00-00 00:00:00',
+          registration_date: '0000-00-00 00:00:00',
+          ever_visited_homepage: 'visited-homepage',
+          last_mobile_sighting: '0000-00-00 00:00:00',
+          last_seen_device_type: 'unknown-device-type',
+          browser_name: null,
+          r_marketing_events: '',
+          days_from_registration: '-',
+          num_visits_paywall: 0,
+          last_visit_paywall: '0000-00-00 00:00:00',
+          num_visits_checkout: 0,
+          last_visit_checkout: '0000-00-00 00:00:00',
+          paid_clicks: 0,
+          num_sites: 0,
+          num_kits_purchased: 0,
+          request_id: '0A8101D1:9E2C_0A81021A:1F90_6459CBDC_26FF6BC5:4E80',
+          existing_subscription_types: 'N\/A',
+          current_subscriptions: 'guest',
+          in_free_trial: 'not-in-free-trial',
+          connection_protocol_type: 'https',
+        },
+      ];
+    </script>
+
+    <script type="text/javascript">
+      // Because the request is made from an iframe it wont be monkey patched with the csrf-token.
+      var onLoadGoalConversionURL =
+        '//FP/Company/conversionTracker.php?langISOCode=ru_RU&csrf_token=D_7apuxf11b587496c_bo6u1493d7c5a7hc.1683692892.e7c48210206162dd70b8a909da652373';
+      var goalTrackingBaseURL =
+        '//FP/Company/conversionTracker.php?langISOCode=ru_RU&type=___TYPE___&csrf_token=D_7apuxf11b587496c_bo6u1493d7c5a7hc.1683692892.e7c48210206162dd70b8a909da652373';
+    </script>
+    <link href="https://cf.mhcache.com/favicon.ico?v=3" rel="icon" />
+    <meta name="theme-color" content="#e76f2f" />
+    <script type="text/javascript">
+      var ASSET_DOMAIN_ALIAS_GENERAL = 'cf.mhcache.com';
+    </script>
+    <script
+      src="https://cf.mhcache.com/FP/Assets/Cache/output/RecaptchaInitiatorBundled_v1MVb5715b22b9f7375267b40228fd907acb.js"
+      type="text/javascript"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://www.google.com/recaptcha/enterprise.js?onload=onRecaptchaLoaded&amp;render=6LesHXsaAAAAAFaRbXEx8Tb1AYyPnr40MPVVvlrK"
+      type="text/javascript"
+    ></script>
+  </head>
+  <body
+    class="MasterBackground mh_responsive mh_desktop lang_RU"
+    onload="window.updatePageStatistics && window.updatePageStatistics();window.loadCookiePreferencesBanner && window.loadCookiePreferencesBanner();window.loadNonMandatoryContainer && window.loadNonMandatoryContainer();"
+  >
+    <script></script>
+
+    <div id="pk_master_wrapper">
+      <div id="pk_master_content_container">
+        <!-- I am web-14  -->
+        <a name="notificationPanelAnchor"></a>
+        <iframe id="notificationPanelIFrame" src="" style="display: none"></iframe>
+        <div class="container-fluid">
+          <div class="pk_master_main row">
+            <div id="notificationPanel" style="margin: 0 10px; display: none"></div>
+            <div class="clear"></div>
+          </div>
+        </div>
+
+        <div class="container-fluid">
+          <div class="pk_master_main row">
+            <div id="main_content_container" class="grid_12" role="main">
+              <!-- Main Start -->
+              <div class="dna_consent_agreement">
+                <h3 class="title">DNA Informed Consent — MyHeritage DNA Research Project</h3>
+                <p class="update_date">updated on October 28, 2021</p>
+                <br />
+                <br /><!-- Markup is in the translations, therefore we use it this way and not separated tags -->
+                <div>
+                  The MyHeritage DNA Research Project (the <b>&quot;Project&quot;</b>) is a program
+                  designed by MyHeritage to better understand human genetics, genealogy, and
+                  anthropology. <br /><br />
+                  Any user who uploads DNA markers, nucleotides, variations or haplogroups (&quot;<b
+                    >DNA Results</b
+                  >&quot;) to the MyHeritage website (the &quot;<b>Website</b>&quot;), whether their
+                  own or as an authorized agent of the owner of the DNA Results, in order to use
+                  MyHeritage's services, products, software, and applications for the DNA features
+                  on the Website (including but not limited to ethnicity estimates and DNA Matches)
+                  (the &quot;<b>DNA Services</b>&quot;), and any user who submits a DNA sample to
+                  MyHeritage using a MyHeritage DNA kit in order to use the DNA Services
+                  (collectively, the &quot;<b>DNA Users</b>&quot;) may voluntarily participate in
+                  the Project. <br /><br />
+                  We process personal information about DNA Users to conduct the Project. We do so
+                  on the basis of explicit consent.
+                  <br /><br />
+                  THE INFORMATION PROVIDED HERE (<b>&quot;INFORMED CONSENT&quot;</b>) AND IN OUR
+                  <a
+                    id=""
+                    href="//FP/Company/popup.php?p=privacy_policy"
+                    class="green"
+                    target="_blank"
+                    rel="noopener"
+                    >PRIVACY POLICY</a
+                  >
+                  SHOULD BE CAREFULLY REVIEWED TO DECIDE WHETHER YOU WANT TO CONSENT TO OUR
+                  PROCESSING ACTIVITIES. <br /><br />
+                  Should you have any questions, please contact us at
+                  <a
+                    id=""
+                    href="http://www.myheritage.com/contact-us"
+                    class="green"
+                    target="_blank"
+                    rel="noopener"
+                    >//contact-us</a
+                  ><br />
+                  <br />
+                  <h4 class="sub_title"><b>Important privacy protection</b></h4>
+                  <br />
+                  <b
+                    >MyHeritage will never sell or license your genetic information, your health
+                    information, or any of your other personal information (such as your name and
+                    email address) to any third parties, including insurance companies, government
+                    agencies, other corporations, or employers.</b
+                  ><br />
+                  <br />
+                  If you are the parent or guardian of a minor who may wish to participate in the
+                  Project, you should talk with your child and go over the information in this
+                  Informed Consent with him/her before you and your child decide to participate in
+                  the Project.
+                  <br /><br />
+                  <b>A. What information do we collect?</b><br /><br />The Project collects,
+                  preserves and analyzes genetic information, genealogical lineage, historical
+                  records, photographs, surveys, health questionnaires, and other information that
+                  you provide in the course of your use of our DNA Services (collectively, &quot;<b
+                    >Personal Information for Research</b
+                  >&quot;). <br /><br />We also process your contact details to invite you to
+                  complete questionnaires. Please read our
+                  <a
+                    id=""
+                    href="//FP/Company/popup.php?p=privacy_policy"
+                    class="green"
+                    target="_blank"
+                    rel="noopener"
+                    >Privacy Policy</a
+                  >
+                  to know more about such processing. <br /><br />
+                  <b>B. How do we use Personal Information for Research in the Project?</b
+                  ><br /><br />We process the Personal Information for Research in order to conduct
+                  research studies designed to further our understanding of genealogy, anthropology,
+                  cultures, human evolution and migration, human genetics, population genetics,
+                  epidemiology, population health issues, and regional health issues.
+                  <br /><br />Examples of research conducted in the past by MyHeritage under the
+                  Project include the development of
+                  <a
+                    id=""
+                    href="https://blog.myheritage.com/2020/12/myheritage-launches-genetic-groups/"
+                    class="genetic_group_blog"
+                    target="_blank"
+                    rel="noopener"
+                    >Genetic Groups</a
+                  >, refinement of Ethnicity Estimates, the development of new Polygenic Risk
+                  Scores, and other new features that became part of the DNA Services.
+                  <br /><br />We will not: (1) conduct research on topics unrelated to the Project,
+                  or (2) use Personal Information for Research beyond what is described in this
+                  Informed Consent. Should we wish to increase the scope of the research, we will
+                  re-contact you to seek your specific consent. <br /><br />MyHeritage may publish
+                  the results of some of the research conducted under the Project in scientific
+                  papers to benefit the community. Such results will be made available only on an
+                  aggregate basis and will not include any personal information about you.
+                  <br /><br />
+                  <b>C. How can I take part in the Project?</b><br /><br />To participate in the
+                  Project, and after having read this Informed Consent and our Privacy Policy, tick
+                  the box indicating your consent to the processing activities conducted as part of
+                  the Project. This serves as expression of your explicit consent to the processing
+                  of special categories of personal information. <br /><br />
+                  <b>D. How can I withdraw my consent?</b><br /><br />Participation in the Project
+                  is purely voluntary. You may withdraw your consent to our processing of your
+                  Personal Information for Research as part of the Project at any time. If you
+                  choose to withdraw your consent, you may do so by going to 'Settings' > 'My
+                  Privacy' > 'My DNA preferences', and uncheck the DNA kits in relation to which you
+                  wish to withdraw your consent. Upon your withdrawal, we will cease using your DNA
+                  Results. Please note that due to the de-identification of certain Personal
+                  Information for Research, any research or studies using anonymized or aggregate
+                  information that has already begun, studies that have been completed, and any
+                  study results or findings that have been published prior to your withdrawal cannot
+                  be reversed, undone, or removed. <br /><br />
+                  <b
+                    >E. Will MyHeritage transfer Personal Information for Research to other
+                    countries?</b
+                  ><br /><br />Information obtained through the Project will be stored in our secure
+                  databases in the United States. MyHeritage takes appropriate steps to ensure that
+                  transfers of personal information take place in accordance with applicable law and
+                  are carefully managed to protect your privacy rights and interests.
+                  <br /><br />Accordingly, transfers are limited to countries which are recognized
+                  as providing an adequate level of legal protection or where we can be satisfied
+                  that alternative safeguards are in place to protect your privacy rights. In
+                  particular, if you are a resident of a European Economic Area country, we rely on
+                  the EU Commission standard contractual clauses. Contact us for more information
+                  about the safeguards we have in place. <br /><br />
+                  <b
+                    >F. How will MyHeritage and its affiliates protect Personal Information for
+                    Research?</b
+                  ><br /><br />We use a combination of physical, technical, and administrative
+                  procedures to protect the privacy and security of information. For example, we
+                  restrict access to our data center and databases by using industry standard
+                  physical and logical protocols, encrypted Internet connections to the Website, and
+                  all MyHeritage owned computer servers employ appropriate security controls. As
+                  Personal Information for Research is shared between and among us, it will be
+                  protected through the use of encryption. <br /><br />Whenever Personal Information
+                  for Research from multiple individuals is aggregated, personal identifiers (such
+                  as names, birth dates and specific locations, etc.) from those participants will
+                  be removed. <br /><br />Only specifically authorized individuals at MyHeritage
+                  have access to your genetic information and the Personal Information for Research.
+                  <br /><br />
+                  <b>G. Questions?</b><br /><br />If you have any questions or concerns about how
+                  MyHeritage uses your Personal Information for Research or about the Project,
+                  please contact us using the details below.<br /><br />Our Contact Details:
+                  <br /><br />MyHeritage Ltd.<br />PO box 50, Terminal Park<br />Or Yehuda
+                  6037606<br />Israel<br />Contact form:
+                  <a
+                    id=""
+                    href="http://www.myheritage.com/contact-us"
+                    class="green"
+                    target="_blank"
+                    rel="noopener"
+                    >//contact-us</a
+                  ><br />Email: privacy@myheritage.com <br /><br />
+                  <h4 class="sub_title">
+                    <b>Other important information on your participation</b>
+                  </h4>
+                  <br />
+                  <b>A. What are the benefits of participating?</b><br /><br />It is not anticipated
+                  that the Project will provide significant benefit to an individual participant,
+                  and Project results will not be communicated by MyHeritage to you should you
+                  choose to participate.<br /><br />The research under the Project is conducted
+                  internally by the MyHeritage Science Team and the MyHeritage product and
+                  engineering teams. If fruits of the Project are published from time to time, this
+                  will assist academics and researchers to better understand the human species,
+                  learn or confirm certain facts and make predictions about future trends. Thus, the
+                  more Personal Information for Research is contributed to the Project, the better
+                  any potential results could be. <br /><br />
+                  <b>B. Are there any risks to participating?</b><br /><br />Your DNA Results may
+                  reveal information about you or your biological family (blood relatives) that you
+                  did not know, and thus, it is not possible to predict all unintended consequences
+                  or risks. However, there is no physical risk to allowing your information to be
+                  processed as part of the Project. While the Personal Information for Research
+                  shared (for example, through publication) in the context of the Project will not
+                  contain information that typically permits identification of an individual, such
+                  as a name or address, people may develop processes that would allow someone to
+                  re-identify the previously de-identified data. We apply a variety of controls to
+                  maintain the anonymity and integrity of our systems and to prevent such actions.
+                  However, as with other technological controls, there is no guarantee against
+                  unauthorized or nefarious actors. <br /><br />While there may be additional risks
+                  to participation that are currently unforeseeable, MyHeritage will continually
+                  work to prevent negative impact to our individual participants. <br /><br />
+                  <b>C. Could my participation end without my consent?</b><br /><br />Yes. We may
+                  terminate the Project at any time and in our discretion, without your consent.
+                  <br /><br />
+                  <b>D. What are the costs and will I receive compensation?</b
+                  ><br /><br />MyHeritage will not charge participants any fees in order to be part
+                  of the Project and there will be no financial compensation paid to Project
+                  participants. It is not anticipated that the Project will provide significantly
+                  benefit to an individual participant, and Project results will not be communicated
+                  by MyHeritage to you should you choose to participate.
+                </div>
+              </div>
+              <!-- Main End -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="pk_master_footer_container">
+        <!-- Footer Start -->
+        <!-- Footer End -->
+      </div>
+
+      <script
+        src="https://cf.mhcache.com/FP/Assets/Cache/output/globalVendorsLibrary.min_v1MVb81d6fd0e9fa1ef93d543b164eba9f5d.js"
+        type="text/javascript"
+        crossorigin="anonymous"
+      ></script>
+      <script
+        src="https://cf.mhcache.com/FP/Assets/Cache/output/axiosLibrary.min_v1MVcacd1410688a13d794683efa0c9bb69a.js"
+        type="text/javascript"
+        crossorigin="anonymous"
+      ></script>
+      <script
+        src="https://cf.mhcache.com/FP/Assets/Cache/HTML5/modernizr_v1MVc9c5234726c2de1b83bf668f34918c76.js"
+        type="text/javascript"
+        crossorigin="anonymous"
+      ></script>
+      <script
+        src="https://cf.mhcache.com/FP/Assets/Cache/output/underscoreLibrary.min_v1MV5f3eec73075cad7184e1aa9ac0a50356.js"
+        type="text/javascript"
+        crossorigin="anonymous"
+      ></script>
+      <script
+        src="https://cf.mhcache.com/FP/Assets/Cache/output/MainMandatoryBasicBundled_v1MV65a387a323f5421fb8fea89b50f4ac83.js"
+        type="text/javascript"
+        crossorigin="anonymous"
+      ></script>
+      <script type="text/javascript">
+        var fileDependencies = {
+          js: [
+            [
+              'https:\/\/cf.mhcache.com\/FP\/Assets\/Cache\/jQuery\/jquery-thin_v1MV4b8196669318a28888e9ef4d9bd29e12.js',
+            ],
+            [
+              'https:\/\/cf.mhcache.com\/FP\/Assets\/Cache\/output\/MainLazyBasicBundled_v1MVf02e0f7d02782e9a313250d0384d7cb0.js',
+            ],
+          ],
+        };
+        window.addEventListener('DOMContentLoaded', function () {
+          window.lazyAssetLoad &&
+            window.lazyAssetLoad(fileDependencies, 'MasterPage.LazyLoadFailure');
+        });
+      </script>
+
+      <script>
+        window.features &&
+          window.features.exposureService &&
+          window.features.exposureService.setFeatureFlags({
+            'Performance.ReportClientStatisticsWithBeacon.Exposure': {
+              isFeatureEnabled: false,
+              configValue: '5',
+            },
+          });
+      </script>
+
+      <div style="z-index: 2050" id="dragCover">&nbsp;</div>
+
+      <script></script>
+    </div>
+    <script>
+      deferredScripts.run();
+    </script>
+    <div
+      id="popup_container"
+      aria-live="assertive"
+      aria-relevant="additions"
+      aria-atomic="true"
+      aria-label="Popup"
+    ></div>
+    <iframe
+      id="gtm_iframe"
+      src="https://myheritage-container.com/informed-consent?gtm_iframe=1&amp;action=showInformedConsent&amp;lang=RU"
+    ></iframe>
+    <script
+      src="https://cf.mhcache.com/FP/Assets/Cache/output/ServiceWorkerBootstrapperBundled_v1MV25b80da1b8376dcd7c5cb17e4fb7c12b.js"
+      type="text/javascript"
+      nonce="710c03e5c710c8d586041d2587c9abac"
+      defer
+    ></script>
+  </body>
+</html>

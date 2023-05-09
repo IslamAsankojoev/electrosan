@@ -1,0 +1,1203 @@
+<!doctype html>
+<html lang="en-US">
+<head><meta charset="UTF-8"><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>class RocketLazyLoadScripts{constructor(){this.triggerEvents=["keydown","mousedown","mousemove","touchmove","touchstart","touchend","wheel"],this.userEventHandler=this._triggerListener.bind(this),this.touchStartHandler=this._onTouchStart.bind(this),this.touchMoveHandler=this._onTouchMove.bind(this),this.touchEndHandler=this._onTouchEnd.bind(this),this.clickHandler=this._onClick.bind(this),this.interceptedClicks=[],window.addEventListener("pageshow",(e=>{this.persisted=e.persisted})),window.addEventListener("DOMContentLoaded",(()=>{this._preconnect3rdParties()})),this.delayedScripts={normal:[],async:[],defer:[]},this.allJQueries=[]}_addUserInteractionListener(e){document.hidden?e._triggerListener():(this.triggerEvents.forEach((t=>window.addEventListener(t,e.userEventHandler,{passive:!0}))),window.addEventListener("touchstart",e.touchStartHandler,{passive:!0}),window.addEventListener("mousedown",e.touchStartHandler),document.addEventListener("visibilitychange",e.userEventHandler))}_removeUserInteractionListener(){this.triggerEvents.forEach((e=>window.removeEventListener(e,this.userEventHandler,{passive:!0}))),document.removeEventListener("visibilitychange",this.userEventHandler)}_onTouchStart(e){"HTML"!==e.target.tagName&&(window.addEventListener("touchend",this.touchEndHandler),window.addEventListener("mouseup",this.touchEndHandler),window.addEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.addEventListener("mousemove",this.touchMoveHandler),e.target.addEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"onclick","rocket-onclick"))}_onTouchMove(e){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler),e.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"rocket-onclick","onclick")}_onTouchEnd(e){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler)}_onClick(e){e.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"rocket-onclick","onclick"),this.interceptedClicks.push(e),e.preventDefault(),e.stopPropagation(),e.stopImmediatePropagation()}_replayClicks(){window.removeEventListener("touchstart",this.touchStartHandler,{passive:!0}),window.removeEventListener("mousedown",this.touchStartHandler),this.interceptedClicks.forEach((e=>{e.target.dispatchEvent(new MouseEvent("click",{view:e.view,bubbles:!0,cancelable:!0}))}))}_renameDOMAttribute(e,t,n){e.hasAttribute&&e.hasAttribute(t)&&(event.target.setAttribute(n,event.target.getAttribute(t)),event.target.removeAttribute(t))}_triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}_preconnect3rdParties(){let e=[];document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((t=>{if(t.hasAttribute("src")){const n=new URL(t.src).origin;n!==location.origin&&e.push({src:n,crossOrigin:t.crossOrigin||"module"===t.getAttribute("data-rocket-type")})}})),e=[...new Map(e.map((e=>[JSON.stringify(e),e]))).values()],this._batchInjectResourceHints(e,"preconnect")}async _loadEverythingNow(){this.lastBreath=Date.now(),this._delayEventListeners(),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async);try{await this._triggerDOMContentLoaded(),await this._triggerWindowLoad()}catch(e){}window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this._replayClicks()}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((e=>{e.hasAttribute("src")?e.hasAttribute("async")&&!1!==e.async?this.delayedScripts.async.push(e):e.hasAttribute("defer")&&!1!==e.defer||"module"===e.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(e):this.delayedScripts.normal.push(e):this.delayedScripts.normal.push(e)}))}async _transformScript(e){return await this._littleBreath(),new Promise((t=>{const n=document.createElement("script");[...e.attributes].forEach((e=>{let t=e.nodeName;"type"!==t&&("data-rocket-type"===t&&(t="type"),n.setAttribute(t,e.nodeValue))})),e.hasAttribute("src")?(n.addEventListener("load",t),n.addEventListener("error",t)):(n.text=e.text,t());try{e.parentNode.replaceChild(n,e)}catch(e){t()}}))}async _loadScriptsFromList(e){const t=e.shift();return t?(await this._transformScript(t),this._loadScriptsFromList(e)):Promise.resolve()}_preloadAllScripts(){this._batchInjectResourceHints([...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async],"preload")}_batchInjectResourceHints(e,t){var n=document.createDocumentFragment();e.forEach((e=>{if(e.src){const i=document.createElement("link");i.href=e.src,i.rel=t,"preconnect"!==t&&(i.as="script"),e.getAttribute&&"module"===e.getAttribute("data-rocket-type")&&(i.crossOrigin=!0),e.crossOrigin&&(i.crossOrigin=e.crossOrigin),n.appendChild(i)}})),document.head.appendChild(n)}_delayEventListeners(){let e={};function t(t,n){!function(t){function n(n){return e[t].eventsToRewrite.indexOf(n)>=0?"rocket-"+n:n}e[t]||(e[t]={originalFunctions:{add:t.addEventListener,remove:t.removeEventListener},eventsToRewrite:[]},t.addEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.add.apply(t,arguments)},t.removeEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.remove.apply(t,arguments)})}(t),e[t].eventsToRewrite.push(n)}function n(e,t){let n=e[t];Object.defineProperty(e,t,{get:()=>n||function(){},set(i){e["rocket"+t]=n=i}})}t(document,"DOMContentLoaded"),t(window,"DOMContentLoaded"),t(window,"load"),t(window,"pageshow"),t(document,"readystatechange"),n(document,"onreadystatechange"),n(window,"onload"),n(window,"onpageshow")}_delayJQueryReady(e){let t=window.jQuery;Object.defineProperty(window,"jQuery",{get:()=>t,set(n){if(n&&n.fn&&!e.allJQueries.includes(n)){n.fn.ready=n.fn.init.prototype.ready=function(t){e.domReadyFired?t.bind(document)(n):document.addEventListener("rocket-DOMContentLoaded",(()=>t.bind(document)(n)))};const t=n.fn.on;n.fn.on=n.fn.init.prototype.on=function(){if(this[0]===window){function e(e){return e.split(" ").map((e=>"load"===e||0===e.indexOf("load.")?"rocket-jquery-load":e)).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=e(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach((t=>{delete Object.assign(arguments[0],{[e(t)]:arguments[0][t]})[t]}))}return t.apply(this,arguments),this},e.allJQueries.push(n)}t=n}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._littleBreath(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._littleBreath(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._littleBreath(),window.dispatchEvent(new Event("rocket-load")),await this._littleBreath(),window.rocketonload&&window.rocketonload(),await this._littleBreath(),this.allJQueries.forEach((e=>e(window).trigger("rocket-jquery-load"))),await this._littleBreath();const e=new Event("rocket-pageshow");e.persisted=this.persisted,window.dispatchEvent(e),await this._littleBreath(),window.rocketonpageshow&&window.rocketonpageshow({persisted:this.persisted})}_handleDocumentWrite(){const e=new Map;document.write=document.writeln=function(t){const n=document.currentScript,i=document.createRange(),r=n.parentElement;let o=e.get(n);void 0===o&&(o=n.nextSibling,e.set(n,o));const s=document.createDocumentFragment();i.setStart(s,0),s.appendChild(i.createContextualFragment(t)),r.insertBefore(s,o)}}async _littleBreath(){Date.now()-this.lastBreath>45&&(await this._requestAnimFrame(),this.lastBreath=Date.now())}async _requestAnimFrame(){return document.hidden?new Promise((e=>setTimeout(e))):new Promise((e=>requestAnimationFrame(e)))}static run(){const e=new RocketLazyLoadScripts;e._addUserInteractionListener(e)}}RocketLazyLoadScripts.run();</script>
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+	<link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+	<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+
+	<!-- This site is optimized with the Yoast SEO plugin v20.1 - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>1950 U.S. Census: Search Your Family Records by Name | MyHeritage</title>
+	<meta name="description" content="The 1950 U.S. census can provide a fascinating window into the lives of your ancestors during the very middle of the 20th century" />
+	<link rel="canonical" href="1950census.html" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="1950 U.S. Census: Search Your Family Records by Name | MyHeritage" />
+	<meta property="og:description" content="The 1950 U.S. census can provide a fascinating window into the lives of your ancestors during the very middle of the 20th century" />
+	<meta property="og:url" content="//census/us/1950census" />
+	<meta property="article:publisher" content="https://www.facebook.com/myheritage" />
+	<meta property="article:modified_time" content="2022-08-15T10:07:48+00:00" />
+	<meta property="og:image" content="https://cm.myheritage.com/wp-content/uploads/2022/03/1950_-900X576-2.png" />
+	<meta property="og:image:width" content="900" />
+	<meta property="og:image:height" content="576" />
+	<meta property="og:image:type" content="image/png" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:image" content="https://cm.myheritage.com/wp-content/uploads/2022/03/1950_-900X576-2.png" />
+	<meta name="twitter:site" content="@myheritage" />
+	<meta name="twitter:label1" content="Est. reading time" />
+	<meta name="twitter:data1" content="14 minutes" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://cm.myheritage.com/census/us/1950census/","url":"//census/us/1950census","name":"1950 U.S. Census: Search Your Family Records by Name | MyHeritage","isPartOf":{"@id":"https://cm.myheritage.com/#website"},"primaryImageOfPage":{"@id":"//census/us/1950census#primaryimage"},"image":{"@id":"//census/us/1950census#primaryimage"},"thumbnailUrl":"https://cm.myheritage.com/wp-content/uploads/2022/03/1950_-900X576-2.png","datePublished":"2022-02-15T12:45:03+00:00","dateModified":"2022-08-15T10:07:48+00:00","description":"The 1950 U.S. census can provide a fascinating window into the lives of your ancestors during the very middle of the 20th century","breadcrumb":{"@id":"//census/us/1950census#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["//census/us/1950census"]}]},{"@type":"ImageObject","inLanguage":"en-US","@id":"//census/us/1950census#primaryimage","url":"https://cm.myheritage.com/wp-content/uploads/2022/03/1950_-900X576-2.png","contentUrl":"https://cm.myheritage.com/wp-content/uploads/2022/03/1950_-900X576-2.png","width":900,"height":576},{"@type":"BreadcrumbList","@id":"//census/us/1950census#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://cm.myheritage.com/"},{"@type":"ListItem","position":2,"name":"Census Records: Find Your Family in Censuses From All Over the World","item":"https://cm.myheritage.com/census/"},{"@type":"ListItem","position":3,"name":"U.S. Census","item":"https://cm.myheritage.com/census/us/"},{"@type":"ListItem","position":4,"name":"The 1950 U.S. Census: Discover Your Family History from 1950"}]},{"@type":"WebSite","@id":"https://cm.myheritage.com/#website","url":"https://cm.myheritage.com/","name":"","description":"","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://cm.myheritage.com/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"en-US"}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel='dns-prefetch' href='https://static.addtoany.com' />
+<link rel='dns-prefetch' href='https://cdn.jsdelivr.net' />
+
+<style type="text/css">img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='wp-block-library-css' href='https://cm.myheritage.com/wp-includes/css/dist/block-library/style.min.css?ver=6.1.1' type='text/css' media='all' />
+<link rel='stylesheet' id='classic-theme-styles-css' href='https://cm.myheritage.com/wp-includes/css/classic-themes.min.css?ver=1' type='text/css' media='all' />
+<style id='global-styles-inline-css' type='text/css'>body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;}:where(.is-layout-flex){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}
+</style>
+<link rel='stylesheet' id='mh-translation-css' href='https://cm.myheritage.com/wp-content/plugins/myHeritage_translation_header_footers/mh-translation.css?ver=1682350279' type='text/css' media='all' />
+<link rel='stylesheet' id='magnific-popup-css' href='https://cm.myheritage.com/wp-content/plugins/wp-magnific-popup/mpopup/magnific-popup.css?ver=6.1.1' type='text/css' media='all' />
+<style id='magnific-popup-inline-css' type='text/css'>.mfp-iframe-holder .mfp-content { max-width: 900px; }
+</style>
+<link rel='stylesheet' id='vendor-css' href='https://cm.myheritage.com/wp-content/themes/myheritage-lp/assets/dist/css/vendors.min.css?ver=1672208198' type='text/css' media='all' />
+<link rel='stylesheet' id='my_heritage_lp-css' href='https://cm.myheritage.com/wp-content/themes/myheritage-lp/assets/dist/css/main.min.css?ver=1683562339' type='text/css' media='all' />
+<link rel='stylesheet' id='fancybox-css-css' href='https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css?ver=3.5.7' type='text/css' media='all' />
+<link rel='stylesheet' id='jq-modal-css' href='https://cm.myheritage.com/wp-content/themes/myheritage-lp/assets/css/jquery.modal.min.css?ver=6.1.1' type='text/css' media='all' />
+<link rel='stylesheet' id='jq-bs-modal-css' href='https://cm.myheritage.com/wp-content/themes/myheritage-lp/assets/css/bootstrap-modal.min.css?ver=6.1.1' type='text/css' media='all' />
+<link rel='stylesheet' id='addtoany-css' href='https://cm.myheritage.com/wp-content/plugins/add-to-any/addtoany.min.css?ver=1.16' type='text/css' media='all' />
+<script type='text/javascript' id='addtoany-core-js-before'>
+window.a2a_config=window.a2a_config||{};a2a_config.callbacks=[];a2a_config.overlays=[];a2a_config.templates={};
+</script>
+<script type='text/javascript' async src='https://static.addtoany.com/menu/page.js' id='addtoany-core-js'></script>
+<script type='text/javascript' src='https://cm.myheritage.com/wp-includes/js/jquery/jquery.min.js?ver=3.6.1' id='jquery-core-js'></script>
+<script type='text/javascript' src='https://cm.myheritage.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2' id='jquery-migrate-js'></script>
+<script type='text/javascript' async src='https://cm.myheritage.com/wp-content/plugins/add-to-any/addtoany.min.js?ver=1.1' id='addtoany-jquery-js'></script>
+<script data-minify="1" type='text/javascript' src='https://cm.myheritage.com/wp-content/cache/min/1/wp-content/plugins/myHeritage_translation_header_footers/script.js?ver=1683209578' id='mh-api-header-js-js'></script>
+<script type='text/javascript' src='https://cm.myheritage.com/wp-content/plugins/wp-magnific-popup/mpopup/jquery.magnific-popup.min.js?ver=6.1.1' id='magnific-popup-js'></script>
+<script data-minify="1" type='text/javascript' src='https://cm.myheritage.com/wp-content/cache/min/1/wp-content/plugins/wp-magnific-popup/js/wpmp.js?ver=1683209578' id='wpmp-js'></script>
+<script type='text/javascript' src='https://cm.myheritage.com/wp-content/themes/myheritage-lp/assets/js/jquery-scrolltofixed-min.js?ver=6.1.1' id='scrolltofixed-js'></script>
+<script type='text/javascript' src='https://cm.myheritage.com/wp-content/themes/myheritage-lp/assets/js/jquery.modal.min.js?ver=6.1.1' id='jq-modal-js'></script>
+<script type='text/javascript' src='https://cm.myheritage.com/wp-content/themes/myheritage-lp/assets/js/jquery.fitvids.min.js?ver=6.1.1' id='jq-fitvids-js'></script>
+<script type='text/javascript' src='https://cm.myheritage.com/wp-content/themes/myheritage-lp/assets/js/bootstrap-modals.min.js?ver=6.1.1' id='jq-bs-modal-js'></script>
+<link rel="https://api.w.org/" href="https://cm.myheritage.com/wp-json/" /><link rel="alternate" type="application/json" href="https://cm.myheritage.com/wp-json/wp/v2/pages/3839" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://cm.myheritage.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://cm.myheritage.com/wp-includes/wlwmanifest.xml" />
+<link rel='shortlink' href='https://cm.myheritage.com/?p=3839' />
+<link rel="alternate" type="application/json+oembed" href="https://cm.myheritage.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fcm.myheritage.com%2Fcensus%2Fus%2F1950census%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://cm.myheritage.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fcm.myheritage.com%2Fcensus%2Fus%2F1950census%2F&amp;format=xml" />
+
+	        <script src="https://cf.mhcache.com/FP/Assets/Cache/ExternalSiteGtmLoader/ExternalSiteGtmLoader_v1MV0d320f9e14041b4e71495551591f4f22.js"></script>
+	        <script>
+	            (function() {
+	                if (typeof window.GtmLoader != undefined) {
+	                    window.GtmLoader.init();
+	                    window.loadOneTrustContainer();
+	                    window.loadNonMandatoryContainer();
+	                }
+	            })();
+	        </script>
+	        <meta name="google-site-verification" content="COXIzUZdLV_NGCRbfhOt4uKGejPL9ON7RVJOt19EIS8" />
+<style>body.page-template-dna-test-new.census-article #page #content .article-content a { color: #e56b30 }
+</style>                                                                <script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+            var wpmp_options = {
+                image: {"class":"mh_popup","vertical_fit":"1","disable_on":"400"},
+                gallery: {"class":"popup-gallery","disable_on":"400"},
+                iframe: {"class":"mh_video_popup","width":"900","disable_on":"400"},
+                div: {"class":"mpopup_div","disable_on":"400"},
+                image_loading_text: 'Loading image #%curr%...',
+                image_error_text: '<a href="%url%">The image #%curr%</a> could not be loaded.'
+            };
+        </script>
+    <script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+             var dyiAjaxUrl = "https://cm.myheritage.com/wp-admin/admin-ajax.php";
+           </script><link rel="icon" href="https://cm.myheritage.com/wp-content/uploads/2018/02/favicon-16x16-2.png" sizes="32x32" />
+<link rel="icon" href="https://cm.myheritage.com/wp-content/uploads/2018/02/favicon-16x16-2.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://cm.myheritage.com/wp-content/uploads/2018/02/favicon-16x16-2.png" />
+<meta name="msapplication-TileImage" content="https://cm.myheritage.com/wp-content/uploads/2018/02/favicon-16x16-2.png" />
+<noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript></head>
+
+<body class="page-template page-template-page-templates page-template-dna-test-new page-template-page-templatesdna-test-new-php page page-id-3839 page-child parent-pageid-3882 census-article">
+<iframe loading="lazy" width="0" height="0" src="about:blank" scrolling="no" frameborder="0" style="display: none;visibility:hidden" data-rocket-lazyload="fitvidscompatible" data-lazy-src="//tc/"></iframe><noscript><iframe width="0" height="0" src="//tc/" scrolling="no" frameborder="0" style="display: none;visibility:hidden"></iframe></noscript><div id="page" class="site">
+	<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+	<header id="masthead" class="site-header">
+		<div class="wrapper">
+							<div class="site-branding">
+					<div class="site-title  flexbox align-items-center">
+											 													 							<a href="//" class="">
+							<img src="https://cm.myheritage.com/wp-content/themes/myheritage-lp/assets/dist/img/myheritage-logo-f8f5ee.png" alt="My Heritage" class="header-logo logo-f8f5ee" />
+						</a>
+					</div>
+				</div><!-- .site-branding -->
+						<nav id="site-navigation" class="main-navigation" role="navigation">
+							
+				<div class="navbar-header">
+                    <span class="mobile-icon mobile-hamburger-menu">
+                        <div class="hamburger">
+                            <div class="menui top-menu"></div>
+                            <div class="menui mid-menu"></div>
+                            <div class="menui bottom-menu"></div>
+                        </div>
+                    </span>
+                </div>
+				<div class="desktopnav">
+					<div class="menu-census-pages-container"><ul id="article-primary-menu" class="menu flexbox align-items-center"><li id="menu-item-3984" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3984 menu flexbox align-items-center__item"><a href="//census/us">U.S. Census Content Hub</a></li>
+<li id="menu-item-3924" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3924 menu flexbox align-items-center__item"><a href="//research?tr_funnel=supersearch&amp;utm_campaign=supersearch&amp;tr_country=US&amp;utm_source=organic_census&amp;utm_medium=census&amp;tr_creative=1950Census&amp;utm_content=1950Census">Search historical records</a></li>
+<li id="menu-item-3925" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3925 menu flexbox align-items-center__item"><a href="//?tr_funnel=web&amp;utm_campaign=web&amp;tr_country=US&amp;utm_source=organic_census&amp;utm_medium=census&amp;tr_creative=1950Census&amp;utm_content=1950Census">Start your family tree</a></li>
+</ul></div>				</div>
+				<div class="mobilenav" style="display: none;">
+					<div class="menu-item menu-item-type-custom menu-item-object-custom menu__item"><div class='container'><a  href="//census/us" data-menu-id="3984">U.S. Census Content Hub</a></div></div></li>
+<div class="menu-item menu-item-type-custom menu-item-object-custom menu__item"><div class='container'><a  href="//research?tr_funnel=supersearch&amp;utm_campaign=supersearch&amp;tr_country=US&amp;utm_source=organic_census&amp;utm_medium=census&amp;tr_creative=1950Census&amp;utm_content=1950Census" data-menu-id="3924">Search historical records</a></div></div></li>
+<div class="menu-item menu-item-type-custom menu-item-object-custom menu__item"><div class='container'><a  href="//?tr_funnel=web&amp;utm_campaign=web&amp;tr_country=US&amp;utm_source=organic_census&amp;utm_medium=census&amp;tr_creative=1950Census&amp;utm_content=1950Census" data-menu-id="3925">Start your family tree</a></div></div></li>
+
+							
+			    </div>
+			</nav><!-- #site-navigation -->
+					</div><!-- .container -->
+		
+	</header><!-- #masthead -->
+	<div id="content" class="site-content wrapper">
+
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main">
+			<div class="breadcrumbs"><a class="breadcrumbs-link" href="//census/">Census</a> > <a class="breadcrumbs-link" href="//census/us/">U.S.</a> > <span class="breadcrumbs-current">1950</span></div>			
+<article id="post-3839" class="cm-article-content post-3839 page type-page status-publish has-post-thumbnail hentry">
+	<div class="entry-content">
+		<div class="cm-article-header clearfix">
+			<div class="cm-article-title">
+				<h1 class="article-title">The 1950 U.S. Census: Discover Your Family History from 1950</h1>
+			</div><!-- .cm-article-title -->
+			<div class="cm-article-meta">
+										<div class="article-author-date">
+							February 22, 2022 													</div><!-- .article-author-date -->
+														<div class="reading_time">
+						<span class="span-reading-time rt-reading-time"><span class="rt-label rt-prefix"></span> <span class="rt-time"> 11</span> <span class="rt-label rt-postfix">min read</span></span>					</div>
+							</div><!-- .cm-article-meta -->
+			<div class="article-top-share-container article-share-container clearfix">
+			    <a href="#" class="trigger-for-copy-link" data-current-url="https://cm.myheritage.com/census/us/1950census/">
+						<svg xmlns="http://www.w3.org/2000/svg" width="42" height="40" viewBox="0 0 42 40">
+                    <g fill="none" fill-rule="evenodd">
+                        <ellipse cx="20.738" cy="19.957" fill="#EFEFEF" rx="20.738" ry="19.957"></ellipse>
+                        <path fill="#000" d="M21.908 17.826c.271.228.297.645.057.93-.24.286-.654.333-.926.106-.959-.805-2.404-.675-3.295.272l-.1.113-2.317 2.76c-.88 1.048-.785 2.575.21 3.41.96.805 2.405.675 3.296-.271l.1-.113 1.242-1.48c.24-.286.654-.333.926-.105a.654.654 0 01.112.856l-.055.074-1.241 1.48c-1.36 1.62-3.71 1.886-5.248.595-1.494-1.253-1.675-3.513-.441-5.126l.116-.145 2.316-2.76c1.36-1.62 3.709-1.887 5.248-.596zm4.504-4.279c1.494 1.253 1.675 3.513.441 5.126l-.116.145-2.316 2.76c-1.36 1.62-3.709 1.887-5.248.596-.271-.228-.297-.645-.057-.93.24-.286.655-.333.926-.106.959.805 2.404.675 3.295-.272l.1-.113 2.317-2.76c.88-1.048.785-2.575-.21-3.41-.96-.805-2.405-.675-3.296.271l-.1.113-1.242 1.48c-.24.286-.654.333-.926.105a.654.654 0 01-.112-.856l.055-.074 1.242-1.48c1.359-1.62 3.708-1.886 5.247-.595z"></path>
+                    </g>
+            </svg>
+					</a>
+			    <div class="addtoany_shortcode"><div class="a2a_kit a2a_kit_size_32 addtoany_list" data-a2a-url="https://cm.myheritage.com/census/us/1950census/" data-a2a-title="The 1950 U.S. Census: Discover Your Family History from 1950"><a class="a2a_button_facebook" href="https://www.addtoany.com/add_to/facebook?linkurl=https%3A%2F%2Fcm.myheritage.com%2Fcensus%2Fus%2F1950census%2F&amp;linkname=The%201950%20U.S.%20Census%3A%20Discover%20Your%20Family%20History%20from%201950" title="Facebook" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_facebook_messenger" href="https://www.addtoany.com/add_to/facebook_messenger?linkurl=https%3A%2F%2Fcm.myheritage.com%2Fcensus%2Fus%2F1950census%2F&amp;linkname=The%201950%20U.S.%20Census%3A%20Discover%20Your%20Family%20History%20from%201950" title="Messenger" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_twitter" href="https://www.addtoany.com/add_to/twitter?linkurl=https%3A%2F%2Fcm.myheritage.com%2Fcensus%2Fus%2F1950census%2F&amp;linkname=The%201950%20U.S.%20Census%3A%20Discover%20Your%20Family%20History%20from%201950" title="Twitter" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_pinterest" href="https://www.addtoany.com/add_to/pinterest?linkurl=https%3A%2F%2Fcm.myheritage.com%2Fcensus%2Fus%2F1950census%2F&amp;linkname=The%201950%20U.S.%20Census%3A%20Discover%20Your%20Family%20History%20from%201950" title="Pinterest" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_email" href="https://www.addtoany.com/add_to/email?linkurl=https%3A%2F%2Fcm.myheritage.com%2Fcensus%2Fus%2F1950census%2F&amp;linkname=The%201950%20U.S.%20Census%3A%20Discover%20Your%20Family%20History%20from%201950" title="Email" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_linkedin" href="https://www.addtoany.com/add_to/linkedin?linkurl=https%3A%2F%2Fcm.myheritage.com%2Fcensus%2Fus%2F1950census%2F&amp;linkname=The%201950%20U.S.%20Census%3A%20Discover%20Your%20Family%20History%20from%201950" title="LinkedIn" rel="nofollow noopener" target="_blank"></a></div></div>
+					<div class="url-copied-modal custom-toast" style="display: none;">
+						 <span> URL is copied to your clipboard.					</div>
+					<div class="url-copied-overlay" style="display:none;"></div>
+			</div><!-- .article-bottom-share-container -->
+		</div><!-- .cm-article-header -->
+		<div class="cm-article-content-container">
+									<div class="article-hero-image">
+							<picture>
+<source type="image/webp" srcset="https://cm.myheritage.com/wp-content/uploads/2022/03/1950_-900X576-2-300x192.png.webp 300w, https://cm.myheritage.com/wp-content/uploads/2022/03/1950_-900X576-2-768x492.png.webp 768w, https://cm.myheritage.com/wp-content/uploads/2022/03/1950_-900X576-2.png.webp 900w" sizes="(max-width: 50em) 87vw, 680px"/>
+<img src="https://cm.myheritage.com/wp-content/uploads/2022/03/1950_-900X576-2.png" srcset="https://cm.myheritage.com/wp-content/uploads/2022/03/1950_-900X576-2-300x192.png 300w, https://cm.myheritage.com/wp-content/uploads/2022/03/1950_-900X576-2-768x492.png 768w, https://cm.myheritage.com/wp-content/uploads/2022/03/1950_-900X576-2.png 900w" sizes="(max-width: 50em) 87vw, 680px"/>
+</picture>
+
+						</div><!-- .article-hero-image -->
+									
+			<div class="article-content">
+				<p><span style="font-weight: 400;">The 1950 U.S. Census can provide an intriguing window into the lives of your ancestors during the very middle of the 20th century. Taken in April of 1950, this census provides rich details on the lives of the 150 million Americans living in the United States and its territories during this fascinating period.</span></p>
+<p><span style="font-weight: 400;">Who knows what you might discover about your own ancestors in the 1950 U.S. Census?</span></p>
+<h2><span style="font-weight: 400;">Search the 1950 Census for Free on MyHeritage!</span></h2>
+<p><span style="font-weight: 400;"><a href="//research/collection-11006/1950-united-states-federal-census">The 1950 U.S. Federal Census</a> was officially available to the public starting on April 1, 2022 — exactly 72 years after the enumeration began. MyHeritage was the first commercial company to offer all of the 1950 census images as a collection. Soon after, MyHeritage began publishing the fully searchable 1950 United States Census Index collection, which includes the indexed records and their accompanying images, in regular installments. As of April 20, the fully indexed states and territories available to search on MyHeritage include Wyoming, Delaware, Vermont, Alaska, New Hampshire, Rhode Island, South Dakota, and a number of additional regions. The index is growing every few days and will be continuously updated until it encompasses the entire 1950 Census. All of the records are available to search, view, and add to your family tree on MyHeritage for free!</span></p>
+    <section id="search-ancestors-api" class="search-ancestors-shortcode year-and-place">
+        <form id="ancestors_ad_search_form-1339357408" method="GET" action="../../research%EF%B9%96lang=RU.html" target="_blank" enctype="multipart/form-data">
+            <div class="site-content wrapper">
+                <div class="card">
+                    <div class="card__inner">
+                        <div class="card__left">
+                            <h3>Search the 1950 U.S. census records on MyHeritage</h3>
+                            <span>
+                                Enter the name of an ancestor to begin your search                            </span>
+
+                            
+                                                                                                <input type="hidden" id="sc_utmtags_tr_funnel" name="tr_funnel" value="supersearch">
+                                                                    <input type="hidden" id="sc_utmtags_utm_campaign" name="utm_campaign" value="supersearch">
+                                                                    <input type="hidden" id="sc_utmtags_tr_country" name="tr_country" value="US">
+                                                                    <input type="hidden" id="sc_utmtags_utm_source" name="utm_source" value="organic_census">
+                                                                    <input type="hidden" id="sc_utmtags_utm_medium" name="utm_medium" value="census">
+                                                                    <input type="hidden" id="sc_utmtags_tr_creative" name="tr_creative" value="1950Census">
+                                                                    <input type="hidden" id="sc_utmtags_utm_content" name="utm_content" value="1950Census">
+                                                                                        <div class="hidden_inputs"></div>
+
+                            <div class="form-group">
+                                <input id="first_name" name="fn" type="text" placeholder="First name" class="ancestors_ad_form_input_fields">
+                                <input id="last_name" name="ln" type="text" placeholder="Last name" class="ancestors_ad_form_input_fields">
+                                                                    <input id="year_of_birth" name="yob" type="text" placeholder="Year of birth" class="ancestors_ad_form_input_fields">
+                                    <input id="place" name="place" type="text" placeholder="State, City" class="ancestors_ad_form_input_fields">
+                                                            </div>
+
+                            <input name="source" value="en_blog" type="hidden">
+                        </div>
+                        <div class="card__right">
+                            <div class="card__cta">
+                                <button type="submit" class="btn cta cta-orange search-ancestors-api__submit" disabled>Search now</button>
+                            </div>
+                        </div>
+
+
+                                                    <input type="hidden" id="sc_formId" name="formId" value="census" />
+                            <input type="hidden" id="sc_formMode" name="formMode" value="0" />
+                            <input type="hidden" id="sc_action" name="action" value="query" />
+                                                                                                                <input type="hidden" id="sc_qevents-event1" name="qevents-event1" value="">
+                            <input type="hidden" id="sc_qevents-any/1event_1" name="qevents-any/1event_1" value="">
+                            <input type="hidden" id="sc_qevents" name="qevents" value="List">
+                                                                                                                <input type="hidden" id="sc_colId" name="colId" value="11006">
+                                                        <input type="hidden" id="sc_qname" name="qname" value="" />
+
+                                <script type="rocketlazyloadscript">
+    jQuery(function() {
+        var $ = jQuery;
+
+        function appendHiddenInput(name, value) {
+            $(".hidden_inputs").append('<input type="hidden" id="sc_' + name + '" name="' + name + '" value="' + value + '">');
+        }
+
+        function addCustomParamHiddenField() {
+            var queryString = window.location.search;
+            var urlParams = new URLSearchParams(queryString);
+            var entries = urlParams.entries();
+            for(entry of entries) {
+            var param_name = entry[0];
+            var param_value = entry[1];
+            appendHiddenInput(param_name, param_value);
+            }
+        }
+                                
+        var utm_tags = "";
+        utm_tags = utm_tags.split('&');
+        var queryString = window.location.search;
+        var urlParams = new URLSearchParams(queryString);
+        var found_utm = false;
+
+        $.each( utm_tags, function( key, value ) {
+            var tag = value.split('=');
+            if(urlParams.has(tag[0]) === true) {
+                found_utm = true;
+                return false;
+            }
+        });
+
+        $(".hidden_inputs").empty();
+        if(found_utm === true) {
+            $("input[id^='sc_utmtags_']").remove();
+            addCustomParamHiddenField();
+        } else {
+            addCustomParamHiddenField();
+        }
+    });
+</script>
+                            <script type="rocketlazyloadscript">
+                                jQuery(function() {
+                                    var $ = jQuery;
+
+                                    function specialChars(text) {
+                                        text = text.replaceAll(' ', '/3');
+                                        text = text.replaceAll('.', '/2');
+                                        text = text.replaceAll('-', '/1');
+
+                                        return text;
+                                    }
+
+                                    $('#last_name').keyup(function() {
+                                        if ($(this).val() === '') {
+                                            $('#ancestors_ad_search_form-1339357408 .search-ancestors-api__submit').attr('disabled', 'disabled');
+                                        } else {
+                                            $('#ancestors_ad_search_form-1339357408 .search-ancestors-api__submit').removeAttr('disabled');
+                                        }
+                                    });
+
+                                    $('#ancestors_ad_search_form-1339357408 .search-ancestors-api__submit').on('click', function(e) {
+                                        e.preventDefault();
+
+                                        $form = $('#ancestors_ad_search_form-1339357408');
+
+                                        firstName = specialChars($form.find('#first_name').val());
+                                        lastName = specialChars($form.find('#last_name').val());
+
+                                        $form.find('#sc_qname').val('Name fn.'+firstName+' ln.'+lastName+' fnmo.1');
+
+                                                                                place = specialChars($form.find('#place').val());
+                                        yearOfBirth = specialChars($form.find('#year_of_birth').val());
+
+                                        if ($form.find('#sc_qevents-event1').length == 0) {
+                                            $form.append('<input type="hidden" id="sc_qevents-event1" name="qevents-event1" value="">');
+                                        }
+                                        if ($form.find('#sc_qevents-any\\/1event_1').length == 0) {
+                                            $form.append('<input type="hidden" id="sc_qevents-any/1event_1" name="qevents-any/1event_1" value="">');
+                                        }
+                                        if ($form.find('#sc_qevents').length == 0) {
+                                            $form.append('<input type="hidden" id="sc_qevents" name="qevents" value="List">');
+                                        }
+
+                                        if (place && yearOfBirth) {
+                                            $form.find('#sc_qevents-event1').val('Event et.birth ey.' + yearOfBirth);
+                                            $form.find('#sc_qevents-any\\/1event_1').val('Event et.any ep.' + place + ' epmo.exact');
+                                        } else if (place) {
+                                            $form.find('#sc_qevents-event1').val('Event et.any ep.' + place + ' epmo.exact');
+                                            $form.find('#sc_qevents-any\\/1event_1').remove();
+                                        } else if (yearOfBirth) {
+                                            $form.find('#sc_qevents-event1').val('Event et.birth ey.' + yearOfBirth);
+                                            $form.find('#sc_qevents-any\\/1event_1').remove();
+                                        } else {
+                                            $form.find('#sc_qevents-event1').remove();
+                                            $form.find('#sc_qevents-any\\/1event_1').remove();
+                                            $form.find('#sc_qevents').remove();
+                                        }
+                                        
+                                        $form.submit();
+                                    });
+                                });
+                            </script>
+                                            </div>
+                </div>
+            </div>
+        </form>
+    </section>
+    
+<p>	    <section class="state-tables">
+        <div class="state-tables__in">
+            
+                            <div class="state-tables__title">
+                    <h3>
+                        <span class="state-tables__title-h3">Search the US 1950 Census Records by State</span>
+                    </h3>
+                </div>
+            
+                            <div class="state-tables__subtitle">
+                    <span>All States</span>
+                </div>
+            
+            <div class="state-tables__items">
+                                    <a href="//census/us/1950census/states/alaska" target="_blank" class="state-tables__link">
+                        <div class="state-tables__item">
+                            <div class="state-tables__item-text">
+                                <div class="state-tables__item-title">
+                                    Alaska                                </div>
+                                <div class="state-tables__item-subtitle">
+                                    92,505 records                                </div>
+                            </div>
+                            <div class="state-tables__item-icon">
+                                <svg width="21" height="20" viewBox="0 0 21 20"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                          d="M6.11365 18.1237C6.31856 18.363 6.656 18.4023 6.90382 18.2296L6.97526 18.1714L15.1098 10.4791C15.3566 10.2457 15.3772 9.85341 15.1715 9.59351L15.1098 9.52613L6.97526 1.83383C6.72481 1.597 6.33905 1.61833 6.11365 1.88148C5.90874 2.1207 5.90689 2.47742 6.09641 2.71824L6.159 2.78677L13.7898 10.0026L6.159 17.2184C5.93132 17.4337 5.89384 17.7883 6.05826 18.0487L6.11365 18.1237Z"
+                                          fill="black"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </a>
+                                    <a href="//census/us/1950census/states/new-mexico" target="_blank" class="state-tables__link">
+                        <div class="state-tables__item">
+                            <div class="state-tables__item-text">
+                                <div class="state-tables__item-title">
+                                    New Mexico                                </div>
+                                <div class="state-tables__item-subtitle">
+                                    657,001 records                                </div>
+                            </div>
+                            <div class="state-tables__item-icon">
+                                <svg width="21" height="20" viewBox="0 0 21 20"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                          d="M6.11365 18.1237C6.31856 18.363 6.656 18.4023 6.90382 18.2296L6.97526 18.1714L15.1098 10.4791C15.3566 10.2457 15.3772 9.85341 15.1715 9.59351L15.1098 9.52613L6.97526 1.83383C6.72481 1.597 6.33905 1.61833 6.11365 1.88148C5.90874 2.1207 5.90689 2.47742 6.09641 2.71824L6.159 2.78677L13.7898 10.0026L6.159 17.2184C5.93132 17.4337 5.89384 17.7883 6.05826 18.0487L6.11365 18.1237Z"
+                                          fill="black"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </a>
+                                    <a href="//census/us/1950census/states/arizona" target="_blank" class="state-tables__link">
+                        <div class="state-tables__item">
+                            <div class="state-tables__item-text">
+                                <div class="state-tables__item-title">
+                                    Arizona                                </div>
+                                <div class="state-tables__item-subtitle">
+                                    628,049 records                                </div>
+                            </div>
+                            <div class="state-tables__item-icon">
+                                <svg width="21" height="20" viewBox="0 0 21 20"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                          d="M6.11365 18.1237C6.31856 18.363 6.656 18.4023 6.90382 18.2296L6.97526 18.1714L15.1098 10.4791C15.3566 10.2457 15.3772 9.85341 15.1715 9.59351L15.1098 9.52613L6.97526 1.83383C6.72481 1.597 6.33905 1.61833 6.11365 1.88148C5.90874 2.1207 5.90689 2.47742 6.09641 2.71824L6.159 2.78677L13.7898 10.0026L6.159 17.2184C5.93132 17.4337 5.89384 17.7883 6.05826 18.0487L6.11365 18.1237Z"
+                                          fill="black"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </a>
+                                    <a href="//census/us/1950census/states/new-york" target="_blank" class="state-tables__link">
+                        <div class="state-tables__item">
+                            <div class="state-tables__item-text">
+                                <div class="state-tables__item-title">
+                                    New York                                </div>
+                                <div class="state-tables__item-subtitle">
+                                    166 records                                </div>
+                            </div>
+                            <div class="state-tables__item-icon">
+                                <svg width="21" height="20" viewBox="0 0 21 20"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                          d="M6.11365 18.1237C6.31856 18.363 6.656 18.4023 6.90382 18.2296L6.97526 18.1714L15.1098 10.4791C15.3566 10.2457 15.3772 9.85341 15.1715 9.59351L15.1098 9.52613L6.97526 1.83383C6.72481 1.597 6.33905 1.61833 6.11365 1.88148C5.90874 2.1207 5.90689 2.47742 6.09641 2.71824L6.159 2.78677L13.7898 10.0026L6.159 17.2184C5.93132 17.4337 5.89384 17.7883 6.05826 18.0487L6.11365 18.1237Z"
+                                          fill="black"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </a>
+                                    <a href="//census/us/1950census/states/california" target="_blank" class="state-tables__link">
+                        <div class="state-tables__item">
+                            <div class="state-tables__item-text">
+                                <div class="state-tables__item-title">
+                                    California                                </div>
+                                <div class="state-tables__item-subtitle">
+                                    1,181 records                                </div>
+                            </div>
+                            <div class="state-tables__item-icon">
+                                <svg width="21" height="20" viewBox="0 0 21 20"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                          d="M6.11365 18.1237C6.31856 18.363 6.656 18.4023 6.90382 18.2296L6.97526 18.1714L15.1098 10.4791C15.3566 10.2457 15.3772 9.85341 15.1715 9.59351L15.1098 9.52613L6.97526 1.83383C6.72481 1.597 6.33905 1.61833 6.11365 1.88148C5.90874 2.1207 5.90689 2.47742 6.09641 2.71824L6.159 2.78677L13.7898 10.0026L6.159 17.2184C5.93132 17.4337 5.89384 17.7883 6.05826 18.0487L6.11365 18.1237Z"
+                                          fill="black"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </a>
+                                    <a href="//census/us/1950census/states/north-dakota" target="_blank" class="state-tables__link">
+                        <div class="state-tables__item">
+                            <div class="state-tables__item-text">
+                                <div class="state-tables__item-title">
+                                    North Dakota                                </div>
+                                <div class="state-tables__item-subtitle">
+                                    5,268 records                                </div>
+                            </div>
+                            <div class="state-tables__item-icon">
+                                <svg width="21" height="20" viewBox="0 0 21 20"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                          d="M6.11365 18.1237C6.31856 18.363 6.656 18.4023 6.90382 18.2296L6.97526 18.1714L15.1098 10.4791C15.3566 10.2457 15.3772 9.85341 15.1715 9.59351L15.1098 9.52613L6.97526 1.83383C6.72481 1.597 6.33905 1.61833 6.11365 1.88148C5.90874 2.1207 5.90689 2.47742 6.09641 2.71824L6.159 2.78677L13.7898 10.0026L6.159 17.2184C5.93132 17.4337 5.89384 17.7883 6.05826 18.0487L6.11365 18.1237Z"
+                                          fill="black"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </a>
+                                    <a href="//census/us/1950census/states/colorado" target="_blank" class="state-tables__link">
+                        <div class="state-tables__item">
+                            <div class="state-tables__item-text">
+                                <div class="state-tables__item-title">
+                                    Colorado                                </div>
+                                <div class="state-tables__item-subtitle">
+                                    1,232,499 records                                </div>
+                            </div>
+                            <div class="state-tables__item-icon">
+                                <svg width="21" height="20" viewBox="0 0 21 20"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                          d="M6.11365 18.1237C6.31856 18.363 6.656 18.4023 6.90382 18.2296L6.97526 18.1714L15.1098 10.4791C15.3566 10.2457 15.3772 9.85341 15.1715 9.59351L15.1098 9.52613L6.97526 1.83383C6.72481 1.597 6.33905 1.61833 6.11365 1.88148C5.90874 2.1207 5.90689 2.47742 6.09641 2.71824L6.159 2.78677L13.7898 10.0026L6.159 17.2184C5.93132 17.4337 5.89384 17.7883 6.05826 18.0487L6.11365 18.1237Z"
+                                          fill="black"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </a>
+                                    <a href="//census/us/1950census/states/oregon" target="_blank" class="state-tables__link">
+                        <div class="state-tables__item">
+                            <div class="state-tables__item-text">
+                                <div class="state-tables__item-title">
+                                    Oregon                                </div>
+                                <div class="state-tables__item-subtitle">
+                                    1,272,444 records                                </div>
+                            </div>
+                            <div class="state-tables__item-icon">
+                                <svg width="21" height="20" viewBox="0 0 21 20"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                          d="M6.11365 18.1237C6.31856 18.363 6.656 18.4023 6.90382 18.2296L6.97526 18.1714L15.1098 10.4791C15.3566 10.2457 15.3772 9.85341 15.1715 9.59351L15.1098 9.52613L6.97526 1.83383C6.72481 1.597 6.33905 1.61833 6.11365 1.88148C5.90874 2.1207 5.90689 2.47742 6.09641 2.71824L6.159 2.78677L13.7898 10.0026L6.159 17.2184C5.93132 17.4337 5.89384 17.7883 6.05826 18.0487L6.11365 18.1237Z"
+                                          fill="black"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </a>
+                                    <a href="//census/us/1950census/states/delaware" target="_blank" class="state-tables__link">
+                        <div class="state-tables__item">
+                            <div class="state-tables__item-text">
+                                <div class="state-tables__item-title">
+                                    Delaware                                </div>
+                                <div class="state-tables__item-subtitle">
+                                    268,520 records                                </div>
+                            </div>
+                            <div class="state-tables__item-icon">
+                                <svg width="21" height="20" viewBox="0 0 21 20"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                          d="M6.11365 18.1237C6.31856 18.363 6.656 18.4023 6.90382 18.2296L6.97526 18.1714L15.1098 10.4791C15.3566 10.2457 15.3772 9.85341 15.1715 9.59351L15.1098 9.52613L6.97526 1.83383C6.72481 1.597 6.33905 1.61833 6.11365 1.88148C5.90874 2.1207 5.90689 2.47742 6.09641 2.71824L6.159 2.78677L13.7898 10.0026L6.159 17.2184C5.93132 17.4337 5.89384 17.7883 6.05826 18.0487L6.11365 18.1237Z"
+                                          fill="black"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </a>
+                                    <a href="//census/us/1950census/states/rhode-island" target="_blank" class="state-tables__link">
+                        <div class="state-tables__item">
+                            <div class="state-tables__item-text">
+                                <div class="state-tables__item-title">
+                                    Rhode Island                                </div>
+                                <div class="state-tables__item-subtitle">
+                                    621,338 records                                </div>
+                            </div>
+                            <div class="state-tables__item-icon">
+                                <svg width="21" height="20" viewBox="0 0 21 20"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                          d="M6.11365 18.1237C6.31856 18.363 6.656 18.4023 6.90382 18.2296L6.97526 18.1714L15.1098 10.4791C15.3566 10.2457 15.3772 9.85341 15.1715 9.59351L15.1098 9.52613L6.97526 1.83383C6.72481 1.597 6.33905 1.61833 6.11365 1.88148C5.90874 2.1207 5.90689 2.47742 6.09641 2.71824L6.159 2.78677L13.7898 10.0026L6.159 17.2184C5.93132 17.4337 5.89384 17.7883 6.05826 18.0487L6.11365 18.1237Z"
+                                          fill="black"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </a>
+                                    <a href="//census/us/1950census/states/florida" target="_blank" class="state-tables__link">
+                        <div class="state-tables__item">
+                            <div class="state-tables__item-text">
+                                <div class="state-tables__item-title">
+                                    Florida                                </div>
+                                <div class="state-tables__item-subtitle">
+                                    395 records                                </div>
+                            </div>
+                            <div class="state-tables__item-icon">
+                                <svg width="21" height="20" viewBox="0 0 21 20"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                          d="M6.11365 18.1237C6.31856 18.363 6.656 18.4023 6.90382 18.2296L6.97526 18.1714L15.1098 10.4791C15.3566 10.2457 15.3772 9.85341 15.1715 9.59351L15.1098 9.52613L6.97526 1.83383C6.72481 1.597 6.33905 1.61833 6.11365 1.88148C5.90874 2.1207 5.90689 2.47742 6.09641 2.71824L6.159 2.78677L13.7898 10.0026L6.159 17.2184C5.93132 17.4337 5.89384 17.7883 6.05826 18.0487L6.11365 18.1237Z"
+                                          fill="black"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </a>
+                                    <a href="//census/us/1950census/states/south-dakota" target="_blank" class="state-tables__link">
+                        <div class="state-tables__item">
+                            <div class="state-tables__item-text">
+                                <div class="state-tables__item-title">
+                                    South Dakota                                </div>
+                                <div class="state-tables__item-subtitle">
+                                    538,080 records                                </div>
+                            </div>
+                            <div class="state-tables__item-icon">
+                                <svg width="21" height="20" viewBox="0 0 21 20"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                          d="M6.11365 18.1237C6.31856 18.363 6.656 18.4023 6.90382 18.2296L6.97526 18.1714L15.1098 10.4791C15.3566 10.2457 15.3772 9.85341 15.1715 9.59351L15.1098 9.52613L6.97526 1.83383C6.72481 1.597 6.33905 1.61833 6.11365 1.88148C5.90874 2.1207 5.90689 2.47742 6.09641 2.71824L6.159 2.78677L13.7898 10.0026L6.159 17.2184C5.93132 17.4337 5.89384 17.7883 6.05826 18.0487L6.11365 18.1237Z"
+                                          fill="black"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </a>
+                                    <a href="//census/us/1950census/states/hawaii" target="_blank" class="state-tables__link">
+                        <div class="state-tables__item">
+                            <div class="state-tables__item-text">
+                                <div class="state-tables__item-title">
+                                    Hawaii                                </div>
+                                <div class="state-tables__item-subtitle">
+                                    383,644 records                                </div>
+                            </div>
+                            <div class="state-tables__item-icon">
+                                <svg width="21" height="20" viewBox="0 0 21 20"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                          d="M6.11365 18.1237C6.31856 18.363 6.656 18.4023 6.90382 18.2296L6.97526 18.1714L15.1098 10.4791C15.3566 10.2457 15.3772 9.85341 15.1715 9.59351L15.1098 9.52613L6.97526 1.83383C6.72481 1.597 6.33905 1.61833 6.11365 1.88148C5.90874 2.1207 5.90689 2.47742 6.09641 2.71824L6.159 2.78677L13.7898 10.0026L6.159 17.2184C5.93132 17.4337 5.89384 17.7883 6.05826 18.0487L6.11365 18.1237Z"
+                                          fill="black"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </a>
+                                    <a href="//census/us/1950census/states/us-territories" target="_blank" class="state-tables__link">
+                        <div class="state-tables__item">
+                            <div class="state-tables__item-text">
+                                <div class="state-tables__item-title">
+                                    U.S. Territories                                </div>
+                                <div class="state-tables__item-subtitle">
+                                    1,138,403 records                                </div>
+                            </div>
+                            <div class="state-tables__item-icon">
+                                <svg width="21" height="20" viewBox="0 0 21 20"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                          d="M6.11365 18.1237C6.31856 18.363 6.656 18.4023 6.90382 18.2296L6.97526 18.1714L15.1098 10.4791C15.3566 10.2457 15.3772 9.85341 15.1715 9.59351L15.1098 9.52613L6.97526 1.83383C6.72481 1.597 6.33905 1.61833 6.11365 1.88148C5.90874 2.1207 5.90689 2.47742 6.09641 2.71824L6.159 2.78677L13.7898 10.0026L6.159 17.2184C5.93132 17.4337 5.89384 17.7883 6.05826 18.0487L6.11365 18.1237Z"
+                                          fill="black"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </a>
+                                    <a href="//census/us/1950census/states/idaho" target="_blank" class="state-tables__link">
+                        <div class="state-tables__item">
+                            <div class="state-tables__item-text">
+                                <div class="state-tables__item-title">
+                                    Idaho                                </div>
+                                <div class="state-tables__item-subtitle">
+                                    504,597 records                                </div>
+                            </div>
+                            <div class="state-tables__item-icon">
+                                <svg width="21" height="20" viewBox="0 0 21 20"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                          d="M6.11365 18.1237C6.31856 18.363 6.656 18.4023 6.90382 18.2296L6.97526 18.1714L15.1098 10.4791C15.3566 10.2457 15.3772 9.85341 15.1715 9.59351L15.1098 9.52613L6.97526 1.83383C6.72481 1.597 6.33905 1.61833 6.11365 1.88148C5.90874 2.1207 5.90689 2.47742 6.09641 2.71824L6.159 2.78677L13.7898 10.0026L6.159 17.2184C5.93132 17.4337 5.89384 17.7883 6.05826 18.0487L6.11365 18.1237Z"
+                                          fill="black"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </a>
+                                    <a href="//census/us/1950census/states/utah" target="_blank" class="state-tables__link">
+                        <div class="state-tables__item">
+                            <div class="state-tables__item-text">
+                                <div class="state-tables__item-title">
+                                    Utah                                </div>
+                                <div class="state-tables__item-subtitle">
+                                    658,172 records                                </div>
+                            </div>
+                            <div class="state-tables__item-icon">
+                                <svg width="21" height="20" viewBox="0 0 21 20"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                          d="M6.11365 18.1237C6.31856 18.363 6.656 18.4023 6.90382 18.2296L6.97526 18.1714L15.1098 10.4791C15.3566 10.2457 15.3772 9.85341 15.1715 9.59351L15.1098 9.52613L6.97526 1.83383C6.72481 1.597 6.33905 1.61833 6.11365 1.88148C5.90874 2.1207 5.90689 2.47742 6.09641 2.71824L6.159 2.78677L13.7898 10.0026L6.159 17.2184C5.93132 17.4337 5.89384 17.7883 6.05826 18.0487L6.11365 18.1237Z"
+                                          fill="black"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </a>
+                                    <a href="//census/us/1950census/states/minnesota" target="_blank" class="state-tables__link">
+                        <div class="state-tables__item">
+                            <div class="state-tables__item-text">
+                                <div class="state-tables__item-title">
+                                    Minnesota                                </div>
+                                <div class="state-tables__item-subtitle">
+                                    2,502,449 records                                </div>
+                            </div>
+                            <div class="state-tables__item-icon">
+                                <svg width="21" height="20" viewBox="0 0 21 20"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                          d="M6.11365 18.1237C6.31856 18.363 6.656 18.4023 6.90382 18.2296L6.97526 18.1714L15.1098 10.4791C15.3566 10.2457 15.3772 9.85341 15.1715 9.59351L15.1098 9.52613L6.97526 1.83383C6.72481 1.597 6.33905 1.61833 6.11365 1.88148C5.90874 2.1207 5.90689 2.47742 6.09641 2.71824L6.159 2.78677L13.7898 10.0026L6.159 17.2184C5.93132 17.4337 5.89384 17.7883 6.05826 18.0487L6.11365 18.1237Z"
+                                          fill="black"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </a>
+                                    <a href="//census/us/1950census/states/vermont" target="_blank" class="state-tables__link">
+                        <div class="state-tables__item">
+                            <div class="state-tables__item-text">
+                                <div class="state-tables__item-title">
+                                    Vermont                                </div>
+                                <div class="state-tables__item-subtitle">
+                                    329,034 records                                </div>
+                            </div>
+                            <div class="state-tables__item-icon">
+                                <svg width="21" height="20" viewBox="0 0 21 20"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                          d="M6.11365 18.1237C6.31856 18.363 6.656 18.4023 6.90382 18.2296L6.97526 18.1714L15.1098 10.4791C15.3566 10.2457 15.3772 9.85341 15.1715 9.59351L15.1098 9.52613L6.97526 1.83383C6.72481 1.597 6.33905 1.61833 6.11365 1.88148C5.90874 2.1207 5.90689 2.47742 6.09641 2.71824L6.159 2.78677L13.7898 10.0026L6.159 17.2184C5.93132 17.4337 5.89384 17.7883 6.05826 18.0487L6.11365 18.1237Z"
+                                          fill="black"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </a>
+                                    <a href="//census/us/1950census/states/montana" target="_blank" class="state-tables__link">
+                        <div class="state-tables__item">
+                            <div class="state-tables__item-text">
+                                <div class="state-tables__item-title">
+                                    Montana                                </div>
+                                <div class="state-tables__item-subtitle">
+                                    9,345 records                                </div>
+                            </div>
+                            <div class="state-tables__item-icon">
+                                <svg width="21" height="20" viewBox="0 0 21 20"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                          d="M6.11365 18.1237C6.31856 18.363 6.656 18.4023 6.90382 18.2296L6.97526 18.1714L15.1098 10.4791C15.3566 10.2457 15.3772 9.85341 15.1715 9.59351L15.1098 9.52613L6.97526 1.83383C6.72481 1.597 6.33905 1.61833 6.11365 1.88148C5.90874 2.1207 5.90689 2.47742 6.09641 2.71824L6.159 2.78677L13.7898 10.0026L6.159 17.2184C5.93132 17.4337 5.89384 17.7883 6.05826 18.0487L6.11365 18.1237Z"
+                                          fill="black"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </a>
+                                    <a href="//census/us/1950census/states/washington" target="_blank" class="state-tables__link">
+                        <div class="state-tables__item">
+                            <div class="state-tables__item-text">
+                                <div class="state-tables__item-title">
+                                    Washington                                </div>
+                                <div class="state-tables__item-subtitle">
+                                    5,679 records                                </div>
+                            </div>
+                            <div class="state-tables__item-icon">
+                                <svg width="21" height="20" viewBox="0 0 21 20"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                          d="M6.11365 18.1237C6.31856 18.363 6.656 18.4023 6.90382 18.2296L6.97526 18.1714L15.1098 10.4791C15.3566 10.2457 15.3772 9.85341 15.1715 9.59351L15.1098 9.52613L6.97526 1.83383C6.72481 1.597 6.33905 1.61833 6.11365 1.88148C5.90874 2.1207 5.90689 2.47742 6.09641 2.71824L6.159 2.78677L13.7898 10.0026L6.159 17.2184C5.93132 17.4337 5.89384 17.7883 6.05826 18.0487L6.11365 18.1237Z"
+                                          fill="black"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </a>
+                                    <a href="//census/us/1950census/states/nevada" target="_blank" class="state-tables__link">
+                        <div class="state-tables__item">
+                            <div class="state-tables__item-text">
+                                <div class="state-tables__item-title">
+                                    Nevada                                </div>
+                                <div class="state-tables__item-subtitle">
+                                    143,449 records                                </div>
+                            </div>
+                            <div class="state-tables__item-icon">
+                                <svg width="21" height="20" viewBox="0 0 21 20"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                          d="M6.11365 18.1237C6.31856 18.363 6.656 18.4023 6.90382 18.2296L6.97526 18.1714L15.1098 10.4791C15.3566 10.2457 15.3772 9.85341 15.1715 9.59351L15.1098 9.52613L6.97526 1.83383C6.72481 1.597 6.33905 1.61833 6.11365 1.88148C5.90874 2.1207 5.90689 2.47742 6.09641 2.71824L6.159 2.78677L13.7898 10.0026L6.159 17.2184C5.93132 17.4337 5.89384 17.7883 6.05826 18.0487L6.11365 18.1237Z"
+                                          fill="black"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </a>
+                                    <a href="//census/us/1950census/states/wisconsin" target="_blank" class="state-tables__link">
+                        <div class="state-tables__item">
+                            <div class="state-tables__item-text">
+                                <div class="state-tables__item-title">
+                                    Wisconsin                                </div>
+                                <div class="state-tables__item-subtitle">
+                                    5,642 records                                </div>
+                            </div>
+                            <div class="state-tables__item-icon">
+                                <svg width="21" height="20" viewBox="0 0 21 20"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                          d="M6.11365 18.1237C6.31856 18.363 6.656 18.4023 6.90382 18.2296L6.97526 18.1714L15.1098 10.4791C15.3566 10.2457 15.3772 9.85341 15.1715 9.59351L15.1098 9.52613L6.97526 1.83383C6.72481 1.597 6.33905 1.61833 6.11365 1.88148C5.90874 2.1207 5.90689 2.47742 6.09641 2.71824L6.159 2.78677L13.7898 10.0026L6.159 17.2184C5.93132 17.4337 5.89384 17.7883 6.05826 18.0487L6.11365 18.1237Z"
+                                          fill="black"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </a>
+                                    <a href="//census/us/1950census/states/new-hampshire" target="_blank" class="state-tables__link">
+                        <div class="state-tables__item">
+                            <div class="state-tables__item-text">
+                                <div class="state-tables__item-title">
+                                    New Hampshire                                </div>
+                                <div class="state-tables__item-subtitle">
+                                    459,245 records                                </div>
+                            </div>
+                            <div class="state-tables__item-icon">
+                                <svg width="21" height="20" viewBox="0 0 21 20"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                          d="M6.11365 18.1237C6.31856 18.363 6.656 18.4023 6.90382 18.2296L6.97526 18.1714L15.1098 10.4791C15.3566 10.2457 15.3772 9.85341 15.1715 9.59351L15.1098 9.52613L6.97526 1.83383C6.72481 1.597 6.33905 1.61833 6.11365 1.88148C5.90874 2.1207 5.90689 2.47742 6.09641 2.71824L6.159 2.78677L13.7898 10.0026L6.159 17.2184C5.93132 17.4337 5.89384 17.7883 6.05826 18.0487L6.11365 18.1237Z"
+                                          fill="black"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </a>
+                                    <a href="//census/us/1950census/states/wyoming" target="_blank" class="state-tables__link">
+                        <div class="state-tables__item">
+                            <div class="state-tables__item-text">
+                                <div class="state-tables__item-title">
+                                    Wyoming                                </div>
+                                <div class="state-tables__item-subtitle">
+                                    246,462 records                                </div>
+                            </div>
+                            <div class="state-tables__item-icon">
+                                <svg width="21" height="20" viewBox="0 0 21 20"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                          d="M6.11365 18.1237C6.31856 18.363 6.656 18.4023 6.90382 18.2296L6.97526 18.1714L15.1098 10.4791C15.3566 10.2457 15.3772 9.85341 15.1715 9.59351L15.1098 9.52613L6.97526 1.83383C6.72481 1.597 6.33905 1.61833 6.11365 1.88148C5.90874 2.1207 5.90689 2.47742 6.09641 2.71824L6.159 2.78677L13.7898 10.0026L6.159 17.2184C5.93132 17.4337 5.89384 17.7883 6.05826 18.0487L6.11365 18.1237Z"
+                                          fill="black"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </a>
+                            </div>
+
+        </div>
+    </section>
+<br />
+<span style="font-weight: 400;"><br />
+Read more about the 1950 Census release in our blog post, <a href="https://blog.myheritage.com/2022/01/1950-census-release-is-coming-up-soon/">The 1950 U.S. Census is coming to MyHeritage! Free!</a></span></p>
+<h2>Searching the 1950 Census on MyHeritage</h2>
+<p><span style="font-weight: 400;">Though census records are available to the public on the National Archives website, searching on MyHeritage offers invaluable additional benefits:</span></p>
+<ul>
+<li><b>Advanced search capabilities:</b><span style="font-weight: 400;"> Using MyHeritage’s search engine, you can search for your ancestors according to any criteria and not just name, home address, or enumeration district. MyHeritage’s sophisticated search algorithms can even identify nicknames and name variations from other languages.</span></li>
+<li aria-level="1"><b>Easily flip between records within the family:</b><span style="font-weight: 400;"> MyHeritage allows you to easily flip between census records of individuals in the same family group. Family members are listed on the record page, and you can click their names to go to their records.</span></li>
+<li aria-level="1"><b>Explore related records:</b><span style="font-weight: 400;"> When you are viewing records on MyHeritage, you’ll see additional historical records that mention the person you are researching. Our database includes more than 16 billion records and is constantly growing.</span></li>
+<li aria-level="1"><b>Receive automatic Record Matches:</b><span style="font-weight: 400;"> When you build a family tree on MyHeritage, you won’t even need to search actively. MyHeritage finds historical records that mention the people in your family tree and delivers them straight to your inbox.</span></li>
+<li aria-level="1"><b>Extract new information straight to your family tree:</b><span style="font-weight: 400;"> Extracting information from historical records and placing it on your online family tree is as simple as a few clicks on MyHeritage.</span></li>
+</ul>
+<p>Get more tips by watching <a href="https://youtu.be/fNaPjjIuPR0">Preparing for the 1950 Census: How-to Search the U.S. Census Records</a>:</p>
+<p><iframe loading="lazy" title="Preparing for the 1950 Census: How to Search U.S. Census Records on MyHeritage" width="500" height="281" src="about:blank" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen data-rocket-lazyload="fitvidscompatible" data-lazy-src="https://www.youtube.com/embed/fNaPjjIuPR0?feature=oembed"></iframe><noscript><iframe title="Preparing for the 1950 Census: How to Search U.S. Census Records on MyHeritage" width="500" height="281" src="https://www.youtube.com/embed/fNaPjjIuPR0?feature=oembed" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></noscript></p>
+<h2><span style="font-weight: 400;">What can the 1950s Census show us about our ancestors?</span></h2>
+<p><span style="font-weight: 400;">The 1950 Census will reveal important details about our ancestors’ lives, for example:</span></p>
+<ul>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Their place of residence</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">The people they were living with</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Their occupations</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Their ages</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Their birthplaces</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Their immigration statuses</span></li>
+</ul>
+<p><span style="font-weight: 400;">Reviewing these details can help you discover new details about your ancestors, or confirm what you already know.</span></p>
+<p><span style="font-weight: 400;">The 1950 Census covered a larger geographic area than any census that came before, and it was also the first to include Americans living abroad. This means you just might come across some ancestors who didn’t show up in previous censuses.</span></p>
+<p><span style="font-weight: 400;">We’ll elaborate on the exact information collected on the census below.</span></p>
+<h2><span style="font-weight: 400;">What changed from the 1940 Census to the 1950 Census?</span></h2>
+<p><span style="font-weight: 400;">The decade that passed between 1940 and 1950 was one of the most eventful in human history. World War II had only just started when the 1940 Census was completed. The war ended in 1945, and by 1950, the post-war baby boom was well underway. Scientific and technological discoveries were moving forward at lightning speed, from the hereditary properties of DNA to the first successful digital computer.</span></p>
+<p><span style="font-weight: 400;">The population of the United States grew 14.5% from 132,164,569 to 151,325,798 — almost double the growth rate from the previous decade. This population boom made the task of enumeration particularly daunting. The 1950 Census was the last U.S. census to be done in person — by 1960, the census was taken by mail-in questionnaires. It was no small feat to send out enumerators to knock on every door in the United States with more than 150 million residents!</span></p>
+<p><span style="font-weight: 400;">Accordingly, some changes were made to ensure that the outcome was as accurate and complete as possible. These measures included:</span></p>
+<ul>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Better training and organization for enumerators</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Detailed maps of enumeration districts</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Special infant cards for babies born between January and March 1950, since young infants were easily missed</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">A planned special enumeration of “transients” took place on April 11 for hotels, tourist courts, etc.</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">“Missed Person” forms were published in newspapers so people who thought they were missed could fill out a form and mail it to the district supervisors</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">A post-enumeration survey</span></li>
+</ul>
+<h2><span style="font-weight: 400;">How were people counted in the 1950 Census?</span></h2>
+<p><span style="font-weight: 400;">The primary goal of the census is to understand how many people were living in the United States at the time. Therefore, the methodology of enumeration was based around the place of residence. Enumerators were each assigned a specific district where they were to go door to door, ask the residents the questions on the form, and fill out the information. This is how the vast majority of people were counted on the census.</span></p>
+<p><span style="font-weight: 400;">To avoid duplicate records, enumerators did not count people who were visiting a household temporarily, domestic workers who slept in a different living space, people who ate regularly at the household but slept elsewhere, household members who were inmates in prisons or other institutions, and other people who were to be counted in their current places of residence.</span></p>
+<p><span style="font-weight: 400;">Enumeration of “transients,” or people living in temporary housing, was always a challenge. In 1950, as mentioned above, a particular date was set for enumeration of transients: the enumerators visited hotels, hostels, YMCAs, campsites, and other places where people might have been living temporarily, and asked people living in those places to fill out their own census form. They were asked to fill out their own forms (Individual Census Report form or ICR) rather than answer the questions out loud out of concern for their privacy in these public spaces.</span></p>
+<p><span style="font-weight: 400;">To ensure that no one was missed, enumerators would also check the registers of these places and add any information they were not able to get first-hand. If you see the abbreviation REG next to your ancestor’s name in the 1950 Census, that means this information was collected from the register and not from the person.</span></p>
+<p><span style="font-weight: 400;">As mentioned above, the 1950 Census was also the first to count Americans living abroad. These Americans included:</span></p>
+<ul>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Members of the armed forces</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Crew members of vessels at sea</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Employees of the U.S. government and their families living abroad</span></li>
+</ul>
+<p><span style="font-weight: 400;">It’s important to note that information on U.S. citizens abroad was collected from family members or even neighbors still living in the U.S., so it may not be as reliable as census data that was collected directly from the person.</span></p>
+<h2><span style="font-weight: 400;">Information included in the 1950 Census</span></h2>
+<p><span style="font-weight: 400;">In each census during the 100 years between 1850 and 1950, the same 6 basic facts about each person were established:</span></p>
+<ul>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Name</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Gender</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Race</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Occupation</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Place of birth</span></li>
+</ul>
+<p><span style="font-weight: 400;">Starting in 1880, “relationship to head of household” was added, and citizenship status of foreign-born people was added in 1890. Additional questions were added, changed, or removed from census to census.</span></p>
+<p><span style="font-weight: 400;">The 1950 Census included information on marital status, employment, and housing. For a certain number of interviewees, it also included information on income, education, military service, and more. We’ll elaborate further below.</span></p>
+<h2><span style="font-weight: 400;">Sample lines</span></h2>
+<p><span style="font-weight: 400;">Did you know that not every person enumerated in the 1950 Census answered the same questions?</span></p>
+<p><span style="font-weight: 400;">A new data collection strategy was implemented in the 1940 Census and further refined in the 1950 Census: “sample lines.” These lines were randomly distributed among the census forms and were designed to collect additional information on the population in general without burdening the interviewees with too many questions and the U.S. Census Bureau with too much data. In 1940, there were 2 sample lines on every page of 40 lines. This allowed the government to collect information based on a sample size of 5% of the population.</span></p>
+<p><span style="font-weight: 400;">In 1950, due to the significant increase in population since the previous census, the government decided to reduce the number of questions that everyone would answer, and instead increase the sampling from 5% to 20%. In addition, an “extra” sample line was added to collect additional information from 0.3% of those counted. The 1950 Census form included 30 lines per page, with 6 sample lines on each page, one of which was singled out for 5 additional questions.</span></p>
+<p><span style="font-weight: 400;">If you’re lucky, your ancestors might have been included in the sample lines, and you’ll be able to learn even more about them: where they lived the year before, where their parents were born, their schooling, their income in 1949, or whether they served in the U.S. military and if so, during which wars they fought in. If you’re extra lucky, your ancestor will have fallen on the “extra” sample line and answered questions about previous employment, previous marriages, and number of children.</span></p>
+<h2><span style="font-weight: 400;">What areas were covered by the 1950 U.S. Census?</span></h2>
+<p><span style="font-weight: 400;">Aside from the continental U.S., the regions covered by the 1950 Census included:</span></p>
+<ul>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">The territories of Alaska and Hawaii (which had not become states yet)</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">American Samoa</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">The Canal Zone</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Guam</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Puerto Rico</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">The U.S. Virgin Islands</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Additional smaller island territories</span></li>
+</ul>
+<h2><span style="font-weight: 400;">What did a blank 1950 Census form look like?</span></h2>
+<p><span style="font-weight: 400;">Getting familiar with the census form is key to understanding what insights you might be able to gain about your ancestors in these records. <a href="https://www.census.gov/history/pdf/1950_population_questionnaire.pdf">Click here to view a blank form of the 1950 census on the census.gov site</a>.</span></p>
+<h2><span style="font-weight: 400;">Questions included in the 1950 Census form</span></h2>
+<p><span style="font-weight: 400;">The 1950 Census form included 20 questions for all residents, 13 additional questions for people listed on “sample lines,” and an additional 5 questions for one “sample line.” The first 6 of the general questions were directed at the head of the household; the following 8 were for all persons counted; and the remaining 6 were for persons aged 14 and older. The sample questions were also divided into questions for all ages and questions for people aged 14 and up.</span></p>
+<p><span style="font-weight: 400;">Here&#8217;s a summary of the information requested in the form:</span></p>
+<ul>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Address</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Whether the house was on a farm</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Whether the house was located on an area of 3 acres or more</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Name</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Relationship to head of household</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Race</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Sex</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Age</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Marital status</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Birthplace</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Whether this person was naturalized</span></li>
+</ul>
+<p><span style="font-weight: 400;">For people aged 14 and over:</span></p>
+<ul>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Employment status</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Hours worked in a week</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Occupation</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Industry</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Class of worker</span></li>
+</ul>
+<p><span style="font-weight: 400;">The sample line questions asked for:</span></p>
+<ul>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Information on where this person lived a year ago</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Birthplace of parents</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Education status</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Income in 1949</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">If male, whether served in the US Military, and if so, whether it was World War I, World War II, or a different armed conflict</span></li>
+</ul>
+<p><span style="font-weight: 400;">And the extra sample line questions asked for:</span></p>
+<ul>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Information on previous job</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">Whether this person has been married more than once</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">How long this person has been married, divorced, separated, or widowed, if applicable</span></li>
+<li style="font-weight: 400;" aria-level="1"><span style="font-weight: 400;">If female, how many children she has given birth to, excluding stillbirths</span></li>
+</ul>
+<h2><span style="font-weight: 400;">Full list of questions in the 1950 U.S. Census</span></h2>
+<p><span style="font-weight: 400;">Below is a comprehensive list of all the questions asked on the form.</span></p>
+<p><span style="font-weight: 400;">FOR HEAD OF HOUSEHOLD:</span></p>
+<p><span style="font-weight: 400;">1. Name of street, avenue, or road</span></p>
+<p><span style="font-weight: 400;">2. House (and apartment) number</span></p>
+<p><span style="font-weight: 400;">3. Serial number of dwelling unit</span></p>
+<p><span style="font-weight: 400;">4. Is this house on a farm (or ranch)? (Yes or No)</span></p>
+<p><span style="font-weight: 400;">5. If No in item 4 — Is this house on a place of three or more acres? (Yes or No)</span></p>
+<p><span style="font-weight: 400;">6. Agriculture questionnaire number</span></p>
+<p><span style="font-weight: 400;">FOR ALL PERSONS:</span></p>
+<p><span style="font-weight: 400;">7. NAME: what is the name of the head of this household? What are the names of all other persons who live here? </span>List in this order: The head, his wife, unmarried sons and daughters (in order of age), married sons and daughters and their families, other relatives, other persons, such as lodgers, roomers, maids, or hired hands who live in, and their relatives</p>
+<p><span style="font-weight: 400;">8. RELATIONSHIP: Enter relationship of person to head of household, as: </span>Head, Wife, Daughter, Grandson, Mother-in-law, Lodger, Lodger’s wife, Maid, Hired hand, Patient, etc.</p>
+<p><span style="font-weight: 400;">9. RACE:</span>White (W), <span style="font-weight: 400;">Negro (Neg), </span><span style="font-weight: 400;">American Indian (Ind), </span><span style="font-weight: 400;">Japanese (Jap), </span><span style="font-weight: 400;">Chinese (Chi), </span><span style="font-weight: 400;">Filipino (Fil), </span><span style="font-weight: 400;">Other race — spell out</span></p>
+<p>&nbsp;</p>
+<p><span style="font-weight: 400;">10. SEX: Male (M), Female (F)</span></p>
+<p><span style="font-weight: 400;">11. How old was he on his last birthday? (If under one year of age, enter month of birth, such as April, May, Dec., etc.)</span></p>
+<p><span style="font-weight: 400;">12. Is he now married, widowed, divorced, separated, or never married? (Mar, Wd, D, Sep., Nev)</span></p>
+<p><span style="font-weight: 400;">13. What State (or foreign country) was he born in? </span><span style="font-weight: 400;">If born outside Continental United States, enter name of Territory, possession, or foreign country. </span><span style="font-weight: 400;">Distinguish Canada-French from Canada-other</span></p>
+<p><span style="font-weight: 400;">14. If foreign born — is he naturalized? (Yes, No, or AP for born abroad of American parents)</span></p>
+<p>&nbsp;</p>
+<p><span style="font-weight: 400;">FOR PERSONS 14 YEARS OF AGE AND OVER:</span></p>
+<p><span style="font-weight: 400;">15. What was this person doing most of last week — working, keeping house, or something else? (Wk, H, Ot, or U for unable to work)</span></p>
+<p><span style="font-weight: 400;">16. If H or Ot in item 15 — Did this person do any work at all last week, not counting work around the house? (Include work for pay, in own business, profession, on farm, or unpaid family work) (Yes or No)</span></p>
+<p><span style="font-weight: 400;">17. If No in item 16 — Was this person looking for work? (See Special Cases below) (Yes or No)</span></p>
+<p><span style="font-weight: 400;">18. If No in item 17 — Even though he didn’t work last week, does he have a job or business? (Yes or No)</span></p>
+<p><span style="font-weight: 400;">19. If Wk in item 15 or Yes in item 16 — How many hours did he work last week? (Include unpaid work on family farm or business) (Number of hours)</span></p>
+<p><span style="font-weight: 400;">20. a) What kind of work was he doing? </span><span style="font-weight: 400;">For example: </span><span style="font-weight: 400;">Nail heels on shoes, </span><span style="font-weight: 400;">Chemistry professor, </span><span style="font-weight: 400;">Farmer, </span><span style="font-weight: 400;">Farm helper, </span><span style="font-weight: 400;">Armed forces, </span><span style="font-weight: 400;">Never worked </span><span style="font-weight: 400;">(Occupation)</span></p>
+<p><span style="font-weight: 400;">20. b) What kind of business or industry was he working in? </span><span style="font-weight: 400;">For example: </span><span style="font-weight: 400;">Shoe factory, </span><span style="font-weight: 400;">State university, </span><span style="font-weight: 400;">Farm, </span><span style="font-weight: 400;">Farm </span><span style="font-weight: 400;">(Industry)</span></p>
+<p><span style="font-weight: 400;">20. c) Class of worker: </span><span style="font-weight: 400;">For PRIVATE employer (P), </span><span style="font-weight: 400;">For GOVERNMENT (G), </span><span style="font-weight: 400;">In OWN business (O), </span><span style="font-weight: 400;">WITHOUT PAY on family farm or business (NP) </span><span style="font-weight: 400;">(P, G, O, or NP)</span></p>
+<h3><strong>Sample line questions:</strong></h3>
+<p><span style="font-weight: 400;">FOR ALL AGES</span></p>
+<p><span style="font-weight: 400;">21. Was he living in this same house a year ago? (Yes/No)</span></p>
+<p><span style="font-weight: 400;">22. If No in item 21 — Was he living on a farm a year ago? (Yes/No)</span></p>
+<p><span style="font-weight: 400;">23. If No in item 21 — Was he living in this same county a year ago? (Yes/No)</span></p>
+<p><span style="font-weight: 400;">24. If No in item 23 — What county and State was he living in a year ago?</span></p>
+<p><span style="font-weight: 400;">24. a) County (If county unknown, enter name of place or nearest place)</span></p>
+<p><span style="font-weight: 400;">24. b) State or foreign country</span></p>
+<p><span style="font-weight: 400;">25. What country were his father and mother born in? (Enter US or name of Territory, possession, or foreign country) (Father:/Mother:)</span></p>
+<p><span style="font-weight: 400;">26. What is the highest grade of school that he has attended? (Enter one grade — see codes below</span></p>
+<p><span style="font-weight: 400;">27. Did he finish this grade? (Yes/No)</span></p>
+<p><span style="font-weight: 400;">28. Has he attended school at any time since February 1st? (For those under 30 years of age check Yes or No; for those 30 years or over, check 30 or over)</span></p>
+<p><span style="font-weight: 400;">FOR PERSONS 14 YEARS OF AGE AND OVER:</span></p>
+<p><span style="font-weight: 400;">29. If looking for work (Yes in item 17) — How many weeks has he been looking for work? (Number of weeks)</span></p>
+<p><span style="font-weight: 400;">30. Last year, in how many weeks did this person do any work at all, not counting work around the house? (Number of weeks in 1949)</span></p>
+<p><span style="font-weight: 400;">31. a) Income received by this person in 1949: </span><span style="font-weight: 400;">Last year (1949), how much money did he earn working as an employee for wages or salary? (Enter amount before deductions for taxes, etc.)</span></p>
+<p><span style="font-weight: 400;">31. b) Last year, how much money did he earn working in his own business, professional practice, or farm? (Enter net income)</span></p>
+<p><span style="font-weight: 400;">31. c) Last year, how much money did he receive from interest, dividends, veteran’s allowances, pensions, rents, or other income (aside from earnings)?</span></p>
+<p><span style="font-weight: 400;">32. a) If this person is a family head (see definition below) — Income received by his relatives in this household: </span>Last year (1949), how much money did his relatives in this household earn working for wages or salary? (Amount before deductions for taxes, etc.)</p>
+<p><span style="font-weight: 400;">32. b) Last year, how much money did his relatives in this household earn in own business, professional practice, or farm? (Net income)</span></p>
+<p><span style="font-weight: 400;">32. c) Last year, how much money did his relatives in this household receive from interest, dividends, veteran’s allowances, pensions, rents, or other income (aside from earnings)?</span></p>
+<p><span style="font-weight: 400;">33. If Male — (Ask each question) Did he ever serve in the U.S. Armed Forces during —</span></p>
+<p><span style="font-weight: 400;">a) World War II</span></p>
+<p><span style="font-weight: 400;">b) World War I</span></p>
+<p><span style="font-weight: 400;">c) Any other time, including present service</span></p>
+<h3><strong>Extra sample line questions:</strong></h3>
+<p><span style="font-weight: 400;">34. To enumerator: If worked last year (1 or more weeks in item 30): Is there any entry in items 20a, 20b, and 20c? (Yes — Skip to item 36/No — Make entries in items 35a, 35b, and 35c)</span></p>
+<p><span style="font-weight: 400;">35. a) What kind of work did this person do in his last job?</span></p>
+<p><span style="font-weight: 400;">35. b) What kind of business or industry did he work in?</span></p>
+<p><span style="font-weight: 400;">35. c) Class of worker (P, G, O, or NP, as in item 20c)</span></p>
+<p><span style="font-weight: 400;">36. If ever married (Mar, Wd, D, or Sep in item 12) — Has this person been married more than once? (Yes/No)</span></p>
+<p><span style="font-weight: 400;">37. If Mar — How many years since this person was (last) married? If Wd — How many years since this person was widowed? If D — how many years since this person was divorced? If Sep — How many years since this person was separated? (___years, or Less than 1 year)</span></p>
+<p><span style="font-weight: 400;">38. If female and ever married (Mar, Wd, D, or Sep in item 12) — How many children has she ever borne, not counting stillbirths? (__ children, or None)</span></p>
+<p>&nbsp;</p>
+<p><span style="font-weight: 400;">Are you ready to search for your ancestors in the 1950 U.S. Census? <a href="https://blog.myheritage.com/2022/01/1950-census-release-is-coming-up-soon/">Read our blog post to learn what you can do now to prepare for the upcoming release!</a></span></p>
+			</div><!-- .article-content -->
+
+			<div class="article-bottom-share-container article-share-container clearfix">
+				<a href="#" class="trigger-for-copy-link" data-current-url="https://cm.myheritage.com/census/us/1950census/">
+					<svg xmlns="http://www.w3.org/2000/svg" width="42" height="40" viewBox="0 0 42 40">
+									<g fill="none" fill-rule="evenodd">
+											<ellipse cx="20.738" cy="19.957" fill="#EFEFEF" rx="20.738" ry="19.957"></ellipse>
+											<path fill="#000" d="M21.908 17.826c.271.228.297.645.057.93-.24.286-.654.333-.926.106-.959-.805-2.404-.675-3.295.272l-.1.113-2.317 2.76c-.88 1.048-.785 2.575.21 3.41.96.805 2.405.675 3.296-.271l.1-.113 1.242-1.48c.24-.286.654-.333.926-.105a.654.654 0 01.112.856l-.055.074-1.241 1.48c-1.36 1.62-3.71 1.886-5.248.595-1.494-1.253-1.675-3.513-.441-5.126l.116-.145 2.316-2.76c1.36-1.62 3.709-1.887 5.248-.596zm4.504-4.279c1.494 1.253 1.675 3.513.441 5.126l-.116.145-2.316 2.76c-1.36 1.62-3.709 1.887-5.248.596-.271-.228-.297-.645-.057-.93.24-.286.655-.333.926-.106.959.805 2.404.675 3.295-.272l.1-.113 2.317-2.76c.88-1.048.785-2.575-.21-3.41-.96-.805-2.405-.675-3.296.271l-.1.113-1.242 1.48c-.24.286-.654.333-.926.105a.654.654 0 01-.112-.856l.055-.074 1.242-1.48c1.359-1.62 3.708-1.886 5.247-.595z"></path>
+									</g>
+					</svg>
+				</a>
+			    <div class="addtoany_shortcode"><div class="a2a_kit a2a_kit_size_32 addtoany_list" data-a2a-url="https://cm.myheritage.com/census/us/1950census/" data-a2a-title="The 1950 U.S. Census: Discover Your Family History from 1950"><a class="a2a_button_facebook" href="https://www.addtoany.com/add_to/facebook?linkurl=https%3A%2F%2Fcm.myheritage.com%2Fcensus%2Fus%2F1950census%2F&amp;linkname=The%201950%20U.S.%20Census%3A%20Discover%20Your%20Family%20History%20from%201950" title="Facebook" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_facebook_messenger" href="https://www.addtoany.com/add_to/facebook_messenger?linkurl=https%3A%2F%2Fcm.myheritage.com%2Fcensus%2Fus%2F1950census%2F&amp;linkname=The%201950%20U.S.%20Census%3A%20Discover%20Your%20Family%20History%20from%201950" title="Messenger" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_twitter" href="https://www.addtoany.com/add_to/twitter?linkurl=https%3A%2F%2Fcm.myheritage.com%2Fcensus%2Fus%2F1950census%2F&amp;linkname=The%201950%20U.S.%20Census%3A%20Discover%20Your%20Family%20History%20from%201950" title="Twitter" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_pinterest" href="https://www.addtoany.com/add_to/pinterest?linkurl=https%3A%2F%2Fcm.myheritage.com%2Fcensus%2Fus%2F1950census%2F&amp;linkname=The%201950%20U.S.%20Census%3A%20Discover%20Your%20Family%20History%20from%201950" title="Pinterest" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_email" href="https://www.addtoany.com/add_to/email?linkurl=https%3A%2F%2Fcm.myheritage.com%2Fcensus%2Fus%2F1950census%2F&amp;linkname=The%201950%20U.S.%20Census%3A%20Discover%20Your%20Family%20History%20from%201950" title="Email" rel="nofollow noopener" target="_blank"></a><a class="a2a_button_linkedin" href="https://www.addtoany.com/add_to/linkedin?linkurl=https%3A%2F%2Fcm.myheritage.com%2Fcensus%2Fus%2F1950census%2F&amp;linkname=The%201950%20U.S.%20Census%3A%20Discover%20Your%20Family%20History%20from%201950" title="LinkedIn" rel="nofollow noopener" target="_blank"></a></div></div>			</div><!-- .article-bottom-share-container -->
+
+			<div class="bottom-section">
+								<section id="cm-related-posts" class="cm-related-posts clearfix">
+					<h2 class="related-title">Related Censuses</h2>
+												<div class="post-item">
+														<a href="//census/us/1940census">
+								<div class="related-thumb-outer-container">
+									<picture class="related-thumb-container">
+<source type="image/webp" srcset="https://cm.myheritage.com/wp-content/uploads/2022/03/1940_-900X576-2-1-526x400.png.webp"/>
+<img src="https://cm.myheritage.com/wp-content/uploads/2022/03/1940_-900X576-2-1-526x400.png"/>
+</picture>
+
+								</div>
+								<h3>The 1940 U.S. Census: Discover Your Family History from 1940</h3>
+							</a>
+						</div>
+												<div class="post-item">
+														<a href="//census/us/1920census/">
+								<div class="related-thumb-outer-container">
+									<picture class="related-thumb-container">
+<source type="image/webp" srcset="https://cm.myheritage.com/wp-content/uploads/2022/03/1920_-900X576-1-1-526x400.png.webp"/>
+<img src="https://cm.myheritage.com/wp-content/uploads/2022/03/1920_-900X576-1-1-526x400.png"/>
+</picture>
+
+								</div>
+								<h3>The 1920 U.S. Census: Discover Your Family History from 1920</h3>
+							</a>
+						</div>
+												<div class="post-item">
+														<a href="//census/us/1930census">
+								<div class="related-thumb-outer-container">
+									<picture class="related-thumb-container">
+<source type="image/webp" srcset="https://cm.myheritage.com/wp-content/uploads/2022/03/1930_-900X576-2-526x400.png.webp"/>
+<img src="https://cm.myheritage.com/wp-content/uploads/2022/03/1930_-900X576-2-526x400.png"/>
+</picture>
+
+								</div>
+								<h3>1930 U.S. Census: Discover Your Family History from 1930</h3>
+							</a>
+						</div>
+										</section>
+							</div>
+		</div><!-- .cm-article-content-container -->
+		<div class="cm-sidebar-container">
+										<ins class='dcmads' style='display:inline-block;width:300px;height:250px'
+				    data-dcm-placement='N217801.2401712MYHERITAGE.COM/B20654698.329448376'
+				    data-dcm-rendering-mode='iframe'
+				    data-dcm-https-only
+					data-dcm-ltd='false'
+				    data-dcm-resettable-device-id=''
+				    data-dcm-app-id=''>
+				  <script src='https://www.googletagservices.com/dcm/dcmads.js'></script>
+				</ins>
+					</div><!-- .cm-sidebar-container -->
+	</div><!-- .entry-content -->
+</article><!-- #post-3839 -->
+
+<div id="copyLinkModal" style="display: none;">
+	<div class="field-container">
+		<h2 class="modal-title">Copy URL</h2>
+	    <input type="text" class="field-input" value="https://cm.myheritage.com/census/us/1950census/" id="permalinkField" />
+        <p class="modal-p">Ctrl+C/&#8984;+C</p>
+	</div><!-- .field-container -->
+	<a href="#" id="closeLinkModal" rel="modal:close" style="display: none;">close</a>
+</div>
+		</main><!-- #main -->
+	</div><!-- #primary -->
+	</div><!-- #content -->
+	<footer id="colophon" class="site-footer">
+		<div class="wrapper">
+			<div class="site-info">
+									<img src="https://cm.myheritage.com/wp-content/themes/myheritage-lp/assets/dist/img/myheritage-logo-f8f5ee.png" class=" footer-logo logo-f8f5ee" alt="My Heritage" />
+								<p class="copy">Copyright &copy; 2023 MyHeritage Ltd.</p>
+				<p class="myheritage">1-800-MYHERITAGE</p>
+				<div class="social-media social-media-dt">
+											<a href="https://www.facebook.com/myheritage" target="_blank"><img src="https://cm.myheritage.com/wp-content/themes/myheritage-lp/assets/img/facebook.svg"></a>
+																<a href="https://twitter.com/myheritage" target="_blank"><img src="https://cm.myheritage.com/wp-content/themes/myheritage-lp/assets/img/twitter.svg" class="twitter"></a>
+									</div>
+				<img src="https://cm.myheritage.com/wp-content/themes/myheritage-lp/assets/dist/img/article-logo-bbb-alt@2x.png" class="logo-bbb logo-bbb-dt" />
+				<div class="footer-social-bbb-container clearfix">
+					<div class="social-media social-media-mob">
+													<a href="https://www.facebook.com/myheritage" target="_blank"><img src="https://cm.myheritage.com/wp-content/themes/myheritage-lp/assets/img/facebook.svg"></a>
+																			<a href="https://twitter.com/myheritage" target="_blank"><img src="https://cm.myheritage.com/wp-content/themes/myheritage-lp/assets/img/twitter.svg" class="twitter"></a>
+											</div>
+					<img src="https://cm.myheritage.com/wp-content/themes/myheritage-lp/assets/dist/img/article-logo-bbb-alt@2x.png" class="logo-bbb logo-bbb-mobile">
+				</div><!-- .footer-social-bbb-container -->
+				<div class="border"></div>
+			</div><!-- .site-info -->
+		</div><!-- .wrapper -->
+	</footer><!-- #colophon -->
+</div><!-- #page -->
+
+            <script type="rocketlazyloadscript">
+                (function () {
+                    document.addEventListener("DOMContentLoaded", function (e) {
+                        if (document.hasOwnProperty("visibilityState") && document.visibilityState === "prerender") {
+                            return;
+                        }
+
+                        if (navigator.webdriver || /bot|crawler|spider|crawling/i.test(navigator.userAgent)) {
+                            return;
+                        }
+
+                        let referrer_url = null;
+
+                        if (typeof document.referrer === 'string' && document.referrer.length > 0) {
+                            referrer_url = document.referrer;
+                        }
+
+                        const params = location.search.slice(1).split('&').reduce((acc, s) => {
+                            const [k, v] = s.split('=')
+                            return Object.assign(acc, {[k]: v})
+                        }, {})
+
+                        const url = "https://cm.myheritage.com/wp-json/iawp/search"
+                        const body = {
+                            referrer_url,
+                            utm_source: params.utm_source,
+                            utm_medium: params.utm_medium,
+                            utm_campaign: params.utm_campaign,
+                            utm_term: params.utm_term,
+                            utm_content: params.utm_content,
+                            ...{"payload":{"resource":"singular","singular_id":3839,"page":1},"signature":"ac323fab36332afe4744f557843081dd"}                        }
+                        const xhr = new XMLHttpRequest()
+                        xhr.open("POST", url, true)
+                        xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8")
+                        xhr.send(JSON.stringify(body))
+                    })
+                })();
+            </script>
+            <script type='text/javascript' src='https://cm.myheritage.com/wp-content/themes/myheritage-lp/assets/dist/js/vendors.min.js?ver=1672208198' id='vendor-js'></script>
+<script type='text/javascript' src='https://cm.myheritage.com/wp-content/themes/myheritage-lp/assets/js/jquery.touchSwipe.min.js?ver=1672208198' id='my_heritage_ts-js'></script>
+<script data-minify="1" type='text/javascript' src='https://cm.myheritage.com/wp-content/cache/min/1/wp-content/themes/myheritage-lp/assets/js/dcm_loader.js?ver=1683209578' id='my_heritage_dcm-js'></script>
+<script data-minify="1" type='text/javascript' src='https://cm.myheritage.com/wp-content/cache/min/1/wp-content/themes/myheritage-lp/assets/js/imgLiquid.js?ver=1683209578' id='my_heritage_imgLiquid-js'></script>
+<script data-minify="1" type='text/javascript' src='https://cm.myheritage.com/wp-content/cache/min/1/wp-content/themes/myheritage-lp/assets/js/jquery.collapse.js?ver=1683209578' id='my_heritage_collapse-js'></script>
+<script data-minify="1" type='text/javascript' src='https://cm.myheritage.com/wp-content/cache/min/1/wp-content/themes/myheritage-lp/assets/js/waypoints.js?ver=1683209578' id='my_heritage_waypoints-js'></script>
+<script data-minify="1" type='text/javascript' src='https://cm.myheritage.com/wp-content/cache/min/1/wp-content/themes/myheritage-lp/assets/js/lity.js?ver=1683209578' id='my_heritage_lity-js'></script>
+<script type='text/javascript' src='https://cm.myheritage.com/wp-content/themes/myheritage-lp/assets/dist/js/main.min.js?ver=1682330757' id='my_heritage_lp-js'></script>
+<script data-minify="1" type='text/javascript' src='https://cm.myheritage.com/wp-content/cache/min/1/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js?ver=1683209579' id='fancybox-js-js'></script>
+<script>window.lazyLoadOptions={elements_selector:"iframe[data-lazy-src]",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}};window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(var i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async src="https://cm.myheritage.com/wp-content/plugins/wp-rocket/assets/js/lazyload/17.5/lazyload.min.js"></script><script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+	jQuery(document).ready(function(){
+		var $target;
+		jQuery('.social-media-single').on('click', function(e){
+			e.preventDefault();
+			$target = jQuery('.addthis_inline_share_toolbox');
+			if( $target.hasClass('open') ){
+				jQuery('.addthis_inline_share_toolbox').removeClass('open');
+				return;
+			}
+			jQuery('.addthis_inline_share_toolbox').addClass('open');
+		});
+
+		var getUrlParameter = function getUrlParameter(sParam) {
+		    var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+		        sURLVariables = sPageURL.split('&'),
+		        sParameterName,
+		        i;
+
+		    for (i = 0; i < sURLVariables.length; i++) {
+		        sParameterName = sURLVariables[i].split('=');
+
+		        if (sParameterName[0] === sParam) {
+		            return sParameterName[1] === undefined ? true : sParameterName[1];
+		        }
+		    }
+		};
+
+		var insertURLParameters = function() {
+			jQuery('a').each(function(){
+				if( typeof getUrlParameter('utm_campaign') != 'undefined' && typeof getUrlParameter('utm_campaign') != 'undefined' ){
+					if(urlHaveParams(jQuery(this).attr('href'))) {
+						var newHref = jQuery(this).attr('href')+"&utm_source="+getUrlParameter('utm_source')+"&utm_campaign="+getUrlParameter('utm_campaign');
+						jQuery(this).attr('href', newHref);
+					}
+					else {
+						var newHref = jQuery(this).attr('href')+"?utm_source="+getUrlParameter('utm_source')+"&utm_campaign="+getUrlParameter('utm_campaign');
+						jQuery(this).attr('href', newHref);
+					}
+				}
+
+
+			});
+		}
+
+		var urlHaveParams = function(url) {
+			if(url != "" && typeof url != 'undefined'){
+				return url.split('?').length > 1 ? true : false;
+			}
+
+		}
+
+		insertURLParameters();
+
+	});
+</script>
+</body>
+</html>
+
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me -->

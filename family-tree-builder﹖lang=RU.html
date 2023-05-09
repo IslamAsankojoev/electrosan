@@ -1,0 +1,732 @@
+<!DOCTYPE HTML>
+
+<html lang="RU"
+      dir="LTR">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+    <link rel="preconnect" href="https://cf.mhcache.com"><link rel="canonical" href="family-tree-builder%EF%B9%96lang=RU.html" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <script type="text/javascript" >
+        var currentUserAccountID = 1000000000;
+        var currentPageManagerClass = 'CompanyBuilderOverviewPageManager';
+            var languageCode = 'RU';
+    var displayLanguageDirection = 'left';
+    var displayLanguageOppositeDirection = 'right';
+    var imageDir = 'img';
+</script>    <title>Family Tree Builder – Бесплатная генеалогическая программа - MyHeritage</title>
+    <meta name="description" content="Загрузите Family Tree Builder - замечательное бесплатное генеалогическое программное обеспечение. Загружено более 5 миллионов раз.">
+    <meta name="keywords" content="Бесплатная генеалогия, загрузить бесплатную программу для создания генеалогических деревьев, GEDCOM, Family tree builder, пустое семейное дерево, бесплатные схемы семейных деревьев для печати, схема родословной, создать шаблон семейного дерева, нарисовать диаграмму семейного дерева, Яд ва-Шем, школьные проекты по генеалогии, бесплатное программное обеспечение для генеалогии, семейные корни, остров Эллис, еврейская генеалогия, генеалогия Logiciel, подарок бабушке на рождество, подарок дедушке на праздник, предки и потомки, Yahrzeit calculator">
+        <meta property="og:site_name" content="MyHeritage">
+<meta property="og:image" content="https://cf.mhcache.com/FP/Assets/Images/Social/mh_logo_350x350.png">
+<meta property="og:image:width" content="350">
+<meta property="og:image:height" content="350">
+    <script >var deferredScripts = (function() {
+            var list = [];
+            return {
+                add: function(func) { list.push(func) },
+                run: function() { list.forEach(function(func) {func()}) }
+            }
+       })();</script><script type="text/javascript" >
+    function getParamsToRemove() {
+        return ["authenticate","auth"];
+    }
+
+        function removeParamFromUrl(url, removeParamsArray) {
+        var fragment = url.split('#');
+        var urlParts = fragment[0].split('?');
+
+        if (urlParts.length >= 2) {
+            var urlBase = urlParts.shift();           // Get first part, and remove from array
+            var queryString = urlParts.join('?');     // Join it back
+
+            var params = queryString.split(/[&;]/g);
+            for (var i = params.length; i-- > 0;) {               // Reverse iteration as may be destructive
+                var param = params[i].split('=');
+                if (removeParamsArray.indexOf(param[0]) !== -1) {   // Idiom for array.contains
+                    params.splice(i, 1);
+                }
+            }
+            url = urlBase + (params.length > 0 ? '?' + params.join('&') : '');
+            if (fragment[1]) {
+                url += "#" + fragment[1];
+            }
+        }
+
+        return url;
+    }
+</script>
+<script src="https://cf.mhcache.com/FP/Assets/Cache/output/sentryBrowserLibrary.min_v1MV19bf37e0c4e2b4a668a85c336cd0831b.js" type="text/javascript"  crossorigin="anonymous"></script>
+<script type="text/javascript" >
+(function() {
+    function init() {
+        Sentry.init(getConfig());
+        Sentry.configureScope(function(scope) {
+            scope.setTag("server_host_name", 'www.myheritage.com');
+            scope.setTag("current_page_manager_class",  window.currentPageManagerClass || null);
+            scope.setTag("canonical-page-id", '/ftb/');
+            scope.setTag("lang", window.languageCode || null);
+            scope.setTag({"is_embed": ''});
+            scope.setUser({"id": 'T_v5j94ax6bv7clm71_17a6857ybc4sre9m'});
+        });
+    }
+
+    function getConfig() {
+        var scriptRegexArr = [/https?:\/\/\w*\.?myheritage/, /https?:\/\/\w*\.mhcache.com/, /https:\/\/www.myheritage-storage.com/];
+        return {
+            dsn: 'https://56f5f1f845634f1d867501809aa8082b@sentry.io/152140',
+            environment: 'production',
+            serverName: 'web-117',
+            release: 'trunk-b384f64ad34087f41bffd82b19d5fd805fef3020',
+            beforeSend: function (event, hint) { // See docs about using hint: https://docs.sentry.io/platforms/javascript/configuration/filtering/#event-hints
+                try {
+                    if (!shouldExcludeErrorFromReportingModule(event, hint)) {
+                        event.tags = event.tags || {};
+                        event.extra = event.extra || {};
+                        event.request = event.request || {url: ''};
+                        removeParamsFromUrl(event);
+                        handleCanonicalPageId(event);
+                        handleGtmDataLayer(event);
+                        handleCustomMetadata(event);
+                        return event;
+                    }
+                } catch (e) {
+                    // Our processing failed for some reason, let sentry do its thing and don't filter the event
+                    return event;
+                }
+
+                return null;
+            },
+            allowUrls: scriptRegexArr,
+        };
+    }
+
+    function removeParamsFromUrl(event) {
+        event.request.url = removeParamFromUrl(event.request.url, getParamsToRemove());
+    }
+
+    function handleCanonicalPageId(event) {
+        if (typeof gtmDataLayer != 'undefined' && gtmDataLayer.length > 0 && gtmDataLayer[0]['canonical-page-id']) {
+            event.extra.original_url = event.request.url;
+            event.request.url = gtmDataLayer[0]['canonical-page-id'];
+        }
+    }
+
+    function handleGtmDataLayer(event) {
+        if (typeof gtmDataLayer != 'undefined' && gtmDataLayer.length > 0) {
+            var vars = gtmDataLayer[0];
+
+            for (var key in vars) {
+                if (vars.hasOwnProperty(key)) {
+                    var val = vars[key];
+                    if (val && val !== '0000-00-00 00:00:00') {
+                        var valType = typeof val;
+                        if (valType === 'string' || valType === 'number') {
+                            event.tags[key] = val;
+                        }
+                        else {
+                            event.extra[key] = val;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    function handleCustomMetadata(event) {
+        event.extra['feature-flags'] = '[]';
+        event.tags['has_clientSideErrorHandler'] = !!window.clientSideErrorHandler;
+    }
+
+    function shouldExcludeErrorFromReportingModule(event, hint) {
+        var shouldExclude;
+
+        if (event.request.url.indexOf('https://') !== 0) {
+            shouldExclude = true;
+        } else if (window.clientSideErrorHandler) {
+            var error;
+            if (hint && hint.originalException) {
+                error = hint.originalException;
+             } else {
+                error = event.exception && Array.isArray(event.exception.values) && event.exception.values[0];
+             }
+            shouldExclude = !!window.clientSideErrorHandler.getExcludeErrorReason(error, 'Sentry');
+        } else {
+            shouldExclude = true;
+        }
+
+        return shouldExclude;
+    }
+    if(typeof(Sentry) !==  "undefined") {
+        init();
+    }
+})();
+</script>
+
+    <link href="https://cf.mhcache.com/FP/Assets/Cache/main/base-standard_ltr_v1MV31e5c70db63c7a7fc61bec9f5457345ao.css" rel="stylesheet" type="text/css" crossorigin="anonymous"><link href="https://cf.mhcache.com/FP/Assets/Cache/Themes/Themes_bundle_ltr_v1MV22c06333c41b64102ec096b0038b9c32o.css" rel="stylesheet" type="text/css" crossorigin="anonymous">
+    
+    
+
+    
+    
+    
+    <script type="text/javascript" >
+        var isStandardPage = true;
+        var isTablet = false;
+var isMobile = false;
+var isBot = false;
+var currentSiteId = 1;
+var isUploadFlowRevampEnabled = false;
+var mhXsrfToken = "D_7apuxf11b587496c_bo6u1493d7c5a7hc.1683692844.87147426c65571ec432350d2814faffe";
+var scriptOrigin = "6SRqr7dwhmEH36yrzZV402pz6l1SkkI8vvocxLd\/mvqUs0D17qKgvnmvC2ZBhVCc";
+var clientSideErrorConfiguration = JSON.parse('{\"exclude\":[{\"message\":\"elt\\\\.parentNode\",\"userAgent\":\"Safari\"},{\"message\":\"__gCrWeb\"},{\"message\":\"DOM Exception 18\",\"userAgent\":\"CriOS\"},{\"message\":\"\\\\[canonical id\\\\].*Unexpected error\"},{\"message\":\"getExtension\"},{\"userAgent\":\"Opera\"},{\"userAgent\":\"android.*firefox\"},{\"userAgent\":\"fxios\"},{\"message\":\"Array\\\\.from\"},{\"message\":\"from\"},{\"source\":\"connect\\\\.facebook\"},{\"source\":\"googleads\\\\.g\"},{\"source\":\"googleadservices\"},{\"source\":\"googletagmanager\"},{\"source\":\"gstatic\"},{\"source\":\"kaspersky\"},{\"source\":\"checkoutshopper\"},{\"source\":\"dwin1\"},{\"message\":\"jQuery is not defined\"},{\"message\":\"$ is not defined\"},{\"userAgent\":\"PhantomJS\"},{\"message\":\"removeNightMode\"},{\"message\":\"mwg-internal\"},{\"message\":\"BetterJsPop\"},{\"message\":\"mraid\"},{\"message\":\"checkMRAID\"},{\"message\":\"jQueryAppsee\"},{\"message\":\"MoatMAK\"},{\"message\":\"default\\\\.queit\\\\.in\"},{\"message\":\"} could not be cloned\"},{\"message\":\"__firefox__\\\\.\"},{\"message\":\"MmJsBridge\"},{\"message\":\"_isMatchingDomain is not defined\"},{\"message\":\"InvalidStateError\",\"userAgent\":\"firefox\"},{\"message\":\"UnknownError\",\"userAgent\":\"firefox\"},{\"userAgent\":\"MSIE ([2-9]|(10))\\\\.\"},{\"message\":\"_ is not defined\"},{\"message\":\"disp is not defined\"},{\"userAgent\":\"Bytespider\"},{\"userAgent\":\"YandexBot\"},{\"message\":\"InvalidStateError\",\"userAgent\":\"Safari\"},{\"message\":\"The object is in an invalid state\"},{\"message\":\"\\\\[canonical id\\\\]\",\"userAgent\":\" Request aborted\"},{\"message\":\"a\\\\[b\\\\]\\\\.target\\\\.className\\\\.indexOf is not a function\",\"userAgent\":\"Safari\"},{\"message\":\"redefine non\\\\-configurable property\",\"userAgent\":\"firefox\"},{\"message\":\"digest already in progress\"},{\"message\":\"System.ServiceModel.CommunicationObjectFaultedException\"},{\"message\":\"Unexpected token <\",\"userAgent\":\"Chrome\\\\\\/(75|76)\"},{\"message\":\"favicon.ico\"},{\"message\":\"webkit.messageHandlers\"},{\"message\":\"Network Error\"},{\"message\":\"Request aborted\"},{\"message\":\"this.each is not a function\",\"userAgent\":\"MiuiBrowser\"},{\"message\":\"Object Not Found Matching Id\",\"userAgent\":\"Chrome,\",\"source\":\"Edge\"},{\"message\":\"_AutofillCallbackHandler\"},{\"message\":\"Object Not Found Matching Id\"},{\"message\":\"Non-Error promise rejection captured with value\"},{\"message\":\"_leaflet_pos\"},{\"message\":\"timeout of 0ms exceeded\"},{\"message\":\"Hydration failed because the initial UI does not match what was rendered on the server\"},{\"message\":\"There was an error while hydrating\"},{\"message\":\"Minified React error #418\"},{\"message\":\"Minified React error #423\"},{\"message\":\"The request is not allowed by the user agent or the platform in the current context, possibly because the user denied permission\"},{\"message\":\"sendEventV3\"}],\"stackTraceIgnoreLinesRules\":[],\"monitoredErrorRules\":[{\"activityId\":\"XFrameOptions\",\"regex\":\"x-frame-options\"},{\"activityId\":\"PerformancePolyfill\",\"regex\":\"performance\"}],\"excludeUnsupportedBrowsersEnabled\":true}');
+var shouldWriteActivityIndicatorBeAlwaysAsync = true;
+var languageDirection = "LTR";
+var isFtb = false;
+var optOut = false;
+var process = {"env":{"NODE_ENV":"production"}};
+var currentPageCanonicalId = "\/ftb\/";
+var cookiePreferencesClientData = JSON.parse('{\"isCookiePreferencesExposed\":true,\"isUseSameSettingsDialogForAllBannersExposed\":true,\"isUnsupportedBrowser\":false,\"isCookiePreferencesOptInExposed\":false,\"isIntrusiveBanner\":false,\"isFetchDataOnlyOnServerExposed\":true,\"isLoadedByExternalSite\":false,\"bannerText\":\"\\u041f\\u0440\\u043e\\u0434\\u043e\\u043b\\u0436\\u0430\\u044f \\u0438\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u0442\\u044c \\u043d\\u0430\\u0448 \\u0441\\u0430\\u0439\\u0442, \\u0412\\u044b \\u0441\\u043e\\u0433\\u043b\\u0430\\u0448\\u0430\\u0435\\u0442\\u0435\\u0441\\u044c \\u0441 \\u043d\\u0430\\u0448\\u0435\\u0439 <a id=\\\"cpb_cookie_policy_link\\\" href=\\\"https:\\/\\/www.myheritage.com\\/cookie-policy?lang=RU\\\" class=\\\"link\\\" target=\\\"_blank\\\" rel=\\\"noopener\\\" data-automations=\\\"cpb_cookie_policy_link\\\">\\u043f\\u043e\\u043b\\u0438\\u0442\\u0438\\u043a\\u043e\\u0439 \\u043e\\u0442\\u043d\\u043e\\u0441\\u0438\\u0442\\u0435\\u043b\\u044c\\u043d\\u043e cookie-\\u0444\\u0430\\u0439\\u043b\\u043e\\u0432<\\/a>. \\u0412\\u044b \\u043c\\u043e\\u0436\\u0435\\u0442\\u0435 <a id=\\\"cpb_cookie_preferences_link\\\" href=\\\"#\\\" class=\\\"link\\\" target=\\\"_blank\\\" rel=\\\"noopener\\\" data-automations=\\\"cpb_cookie_preferences_link\\\">\\u043e\\u0442\\u043a\\u0430\\u0437\\u0430\\u0442\\u044c\\u0441\\u044f<\\/a> \\u043e\\u0442 \\u043d\\u0435\\u043a\\u043e\\u0442\\u043e\\u0440\\u044b\\u0445 cookie-\\u0444\\u0430\\u0439\\u043b\\u043e\\u0432.\",\"cookieAcceptAllButtonText\":\"\\u041f\\u0440\\u0438\\u043d\\u044f\\u0442\\u044c \\u0432\\u0441\\u0435\",\"cookieAcceptOnlyMandatoryButtonText\":\"\\u041f\\u0440\\u0438\\u043d\\u044f\\u0442\\u044c \\u043e\\u0431\\u044f\\u0437\\u0430\\u0442\\u0435\\u043b\\u044c\\u043d\\u044b\\u0435 \\u043f\\u043e\\u043b\\u044f\",\"userCountry\":\"KG\",\"userGender\":false,\"fgToken\":\"2.179c5e5ca6da13642b272fa8e8e7b614.1000000000.1683606444.1440.1140854913.09bbe3010da747817e43f861b0a0b032f453adb61c5103c975645b802d343ec5\",\"guestId\":\"T_v5j94ax6bv7clm71_17a6857ybc4sre9m\",\"accountId\":1000000000,\"isGuest\":true,\"cookiePreferencesDialogStrings\":{\"FamilyTreeWizard\":{\"Save\":\"\\u0421\\u043e\\u0445\\u0440\\u0430\\u043d\\u0438\\u0442\\u044c\"},\"Events\":{\"Name\":\"\\u0418\\u043c\\u044f\",\"Duration\":\"\\u0414\\u043b\\u0438\\u0442\\u0435\\u043b\\u044c\\u043d\\u043e\\u0441\\u0442\\u044c\",\"Html description\":\"\\u041e\\u043f\\u0438\\u0441\\u0430\\u043d\\u0438\\u0435\"},\"AccountCenter\":{\"Remaining day\":\"\\u041e\\u0434\\u0438\\u043d \\u0434\\u0435\\u043d\\u044c\",\"Remaining days\":\"%1 \\u0434\\u043d\\u0435\\u0439\",\"Remaining year\":\"\\u041e\\u0434\\u0438\\u043d \\u0433\\u043e\\u0434\",\"Remaining years\":\"\\u043b\\u0435\\u0442: %1\"},\"SubscriptionPlans\":{\"Duration months value\":\"{duration} \\u043c\\u0435\\u0441\\u044f\\u0446\\u0435\\u0432\",\"1 month\":\"1 \\u043c\\u0435\\u0441\\u044f\\u0446\"},\"GlossaryGood\":{\"General_verb_To Close\":\"\\u0417\\u0430\\u043a\\u0440\\u044b\\u0442\\u044c\"},\"GenealogySearchDictionary\":{\"Age in minutes\":\"%1 \\u043c\\u0438\\u043d\\u0443\\u0442(-\\u044b)\",\"Age in hours\":\"%1 \\u0447\\u0430\\u0441\\u0430(-\\u043e\\u0432)\"},\"Privacy\":{\"Cookies preferences popup title\":\"\\u041d\\u0430\\u0441\\u0442\\u0440\\u043e\\u0439\\u043a\\u0438 \\u0444\\u0430\\u0439\\u043b\\u043e\\u0432 cookie\",\"Cookies preferences popup about cookies title\":\"\\u041e \\u0444\\u0430\\u0439\\u043b\\u0430\\u0445 cookie\",\"Cookies preferences popup about cookies tab title\":\"\\u041e \\u0444\\u0430\\u0439\\u043b\\u0430\\u0445 cookie\",\"Cookies preferences popup mandatory cookies title\":\"\\u041e\\u0431\\u044f\\u0437\\u0430\\u0442\\u0435\\u043b\\u044c\\u043d\\u044b\\u0435 \\u0444\\u0430\\u0439\\u043b\\u044b cookie\",\"Cookies preferences popup mandatory cookies tab title\":\"\\u041e\\u0431\\u044f\\u0437\\u0430\\u0442\\u0435\\u043b\\u044c-<br>\\u043d\\u044b\\u0435 \\u0444\\u0430\\u0439\\u043b\\u044b <br>cookie\",\"Cookies preferences popup active option\":\"\\u0412\\u043a\\u043b\\u044e\\u0447\\u0435\\u043d\\u044b\",\"Cookies preferences popup always active option\":\"\\u0412\\u0441\\u0435\\u0433\\u0434\\u0430 \\u0432\\u043a\\u043b\\u044e\\u0447\\u0435\\u043d\\u044b\",\"Cookies preferences popup cookie policy text\":\"\\u0414\\u0430\\u043d\\u043d\\u0430\\u044f [link url=&quot;https:\\/\\/www.myheritage.com\\/cookie-policy?lang=RU&quot; target=&quot;_blank&quot; title=&quot;\\u041f\\u043e\\u043b\\u0438\\u0442\\u0438\\u043a\\u0430 \\u0444\\u0430\\u0439\\u043b\\u043e\\u0432 cookie&quot; class=&quot;link&quot;] \\u043e\\u0431\\u044a\\u044f\\u0441\\u043d\\u044f\\u0435\\u0442, \\u0447\\u0442\\u043e \\u0442\\u0430\\u043a\\u043e\\u0435 \\u0444\\u0430\\u0439\\u043b\\u044b cookie, \\u0440\\u0430\\u0437\\u043d\\u044b\\u0435 \\u0442\\u0438\\u043f\\u044b \\u0444\\u0430\\u0439\\u043b\\u043e\\u0432 cookie, \\u043a\\u0430\\u043a \\u043c\\u044b \\u0438\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u0443\\u0435\\u043c \\u0438\\u0445, \\u043a\\u043e\\u0433\\u0434\\u0430 \\u0412\\u044b \\u043f\\u043e\\u0441\\u0435\\u0449\\u0430\\u0435\\u0442\\u0435 \\u043d\\u0430\\u0448 \\u0441\\u0430\\u0439\\u0442 [link url=&quot;https:\\/\\/www.myheritage.com\\/index.php?lang=RU&quot; target=&quot;blank&quot; title=&quot;https:\\/\\/www.myheritage.com\\/index.php?lang=RU&quot; id=&quot;cookie_policy_home_page_id&quot; class=&quot;link&quot;] \\u0438 \\u043a\\u0430\\u043a \\u0412\\u044b \\u043c\\u043e\\u0436\\u0435\\u0442\\u0435 \\u043a\\u043e\\u043d\\u0442\\u0440\\u043e\\u043b\\u0438\\u0440\\u043e\\u0432\\u0430\\u0442\\u044c \\u043d\\u0430\\u0448\\u0435 \\u0438\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u043d\\u0438\\u0435 \\u0444\\u0430\\u0439\\u043b\\u043e\\u0432 cookie.\",\"CookiePolicy Title\":\"\\u041f\\u043e\\u043b\\u0438\\u0442\\u0438\\u043a\\u0430 \\u0432 \\u043e\\u0442\\u043d\\u043e\\u0448\\u0435\\u043d\\u0438\\u0438 \\u0444\\u0430\\u0439\\u043b\\u043e\\u0432 cookie\",\"CookiePolicy tab Title\":\"\\u041f\\u043e\\u043b\\u0438\\u0442\\u0438\\u043a\\u0430 \\u0432 \\u043e\\u0442\\u043d\\u043e\\u0448\\u0435\\u043d\\u0438\\u0438 \\u0444\\u0430\\u0439\\u043b\\u043e\\u0432 cookie\",\"Cookies preferences popup about cookies tab title opt in\":\"\\u041e cookie-\\u0444\\u0430\\u0439\\u043b\\u0430\\u0445 \\u0438 \\u043d\\u0430\\u0448\\u0438\\u0445 \\u043f\\u0440\\u0430\\u0432\\u0438\\u043b\\u0430\\u0445 \\u0438\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u043d\\u0438\\u044f cookie-\\u0444\\u0430\\u0439\\u043b\\u043e\\u0432\",\"Cookies preferences popup about cookies text opt in paragraph 1\":\"\\u041a\\u043e\\u0433\\u0434\\u0430 \\u0432\\u044b \\u043f\\u043e\\u0441\\u0435\\u0449\\u0430\\u0435\\u0442\\u0435 \\u043b\\u044e\\u0431\\u043e\\u0439 \\u0441\\u0430\\u0439\\u0442, \\u043e\\u043d \\u043c\\u043e\\u0436\\u0435\\u0442 \\u0441\\u043e\\u0445\\u0440\\u0430\\u043d\\u044f\\u0442\\u044c \\u0438\\u043b\\u0438 \\u0438\\u0437\\u0432\\u043b\\u0435\\u043a\\u0430\\u0442\\u044c \\u0438\\u043d\\u0444\\u043e\\u0440\\u043c\\u0430\\u0446\\u0438\\u044e \\u0432 \\u0432\\u0430\\u0448\\u0435\\u043c \\u0431\\u0440\\u0430\\u0443\\u0437\\u0435\\u0440\\u0435, \\u0432 \\u043e\\u0441\\u043d\\u043e\\u0432\\u043d\\u043e\\u043c \\u0432 \\u0432\\u0438\\u0434\\u0435 cookie-\\u0444\\u0430\\u0439\\u043b\\u043e\\u0432, \\u0432\\u043a\\u043b\\u044e\\u0447\\u0430\\u044f \\u0441\\u0442\\u043e\\u0440\\u043e\\u043d\\u043d\\u0438\\u0435 cookie-\\u0444\\u0430\\u0439\\u043b\\u044b, \\u043a\\u0430\\u043a \\u0431\\u043e\\u043b\\u0435\\u0435 \\u043f\\u043e\\u0434\\u0440\\u043e\\u0431\\u043d\\u043e \\u043e\\u043f\\u0438\\u0441\\u0430\\u043d\\u043e \\u043d\\u0438\\u0436\\u0435. \\u042d\\u0442\\u0430 \\u0438\\u043d\\u0444\\u043e\\u0440\\u043c\\u0430\\u0446\\u0438\\u044f \\u043c\\u043e\\u0436\\u0435\\u0442 \\u043a\\u0430\\u0441\\u0430\\u0442\\u044c\\u0441\\u044f \\u0432\\u0430\\u0441, \\u0432\\u0430\\u0448\\u0438\\u0445 \\u043f\\u0440\\u0435\\u0434\\u043f\\u043e\\u0447\\u0442\\u0435\\u043d\\u0438\\u0439 \\u0438\\u043b\\u0438 \\u0432\\u0430\\u0448\\u0435\\u0433\\u043e \\u0443\\u0441\\u0442\\u0440\\u043e\\u0439\\u0441\\u0442\\u0432\\u0430 \\u0438 \\u0438\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u0443\\u0435\\u0442\\u0441\\u044f \\u0434\\u043b\\u044f \\u043e\\u0431\\u0435\\u0441\\u043f\\u0435\\u0447\\u0435\\u043d\\u0438\\u044f \\u043d\\u0430\\u0434\\u043b\\u0435\\u0436\\u0430\\u0449\\u0435\\u0433\\u043e \\u0444\\u0443\\u043d\\u043a\\u0446\\u0438\\u043e\\u043d\\u0438\\u0440\\u043e\\u0432\\u0430\\u043d\\u0438\\u044f \\u0438 \\u0431\\u0435\\u0437\\u043e\\u043f\\u0430\\u0441\\u043d\\u043e\\u0441\\u0442\\u0438 \\u043d\\u0430\\u0448\\u0435\\u0433\\u043e \\u0441\\u0430\\u0439\\u0442\\u0430 \\u0432 \\u0430\\u043d\\u0430\\u043b\\u0438\\u0442\\u0438\\u0447\\u0435\\u0441\\u043a\\u0438\\u0445 \\u0438 \\u043c\\u0430\\u0440\\u043a\\u0435\\u0442\\u0438\\u043d\\u0433\\u043e\\u0432\\u044b\\u0445 \\u0446\\u0435\\u043b\\u044f\\u0445. \\u041d\\u0430\\u0436\\u0438\\u043c\\u0430\\u0439\\u0442\\u0435 \\u043d\\u0430 \\u0437\\u0430\\u0433\\u043e\\u043b\\u043e\\u0432\\u043a\\u0438 \\u043a\\u0430\\u0442\\u0435\\u0433\\u043e\\u0440\\u0438\\u0439, \\u0447\\u0442\\u043e\\u0431\\u044b \\u0443\\u0437\\u043d\\u0430\\u0442\\u044c \\u0431\\u043e\\u043b\\u044c\\u0448\\u0435 \\u0438 \\u0438\\u0437\\u043c\\u0435\\u043d\\u0438\\u0442\\u044c \\u043d\\u0430\\u0441\\u0442\\u0440\\u043e\\u0439\\u043a\\u0438 \\u043f\\u043e \\u0443\\u043c\\u043e\\u043b\\u0447\\u0430\\u043d\\u0438\\u044e. \\u041f\\u043e\\u0441\\u043a\\u043e\\u043b\\u044c\\u043a\\u0443 \\u043c\\u044b \\u0443\\u0432\\u0430\\u0436\\u0430\\u0435\\u043c \\u043a\\u043e\\u043d\\u0444\\u0438\\u0434\\u0435\\u043d\\u0446\\u0438\\u0430\\u043b\\u044c\\u043d\\u043e\\u0441\\u0442\\u044c \\u0432\\u0430\\u0448\\u0435\\u0439 \\u0438\\u043d\\u0444\\u043e\\u0440\\u043c\\u0430\\u0446\\u0438\\u0438, \\u0432\\u044b \\u043c\\u043e\\u0436\\u0435\\u0442\\u0435 \\u0437\\u0430\\u043f\\u0440\\u0435\\u0442\\u0438\\u0442\\u044c \\u0438\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u043d\\u0438\\u0435 \\u043d\\u0435\\u043a\\u043e\\u0442\\u043e\\u0440\\u044b\\u0445 \\u0442\\u0438\\u043f\\u043e\\u0432 cookie-\\u0444\\u0430\\u0439\\u043b\\u043e\\u0432.\",\"Cookies preferences popup about cookies text opt in paragraph 2\":\"\\u0414\\u0430\\u0432 \\u0441\\u043e\\u0433\\u043b\\u0430\\u0441\\u0438\\u0435 \\u043d\\u0430 \\u0438\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u043d\\u0438\\u0435 cookie-\\u0444\\u0430\\u0439\\u043b\\u043e\\u0432, \\u0432\\u044b \\u043c\\u043e\\u0436\\u0435\\u0442\\u0435 \\u043e\\u0442\\u043e\\u0437\\u0432\\u0430\\u0442\\u044c \\u0435\\u0433\\u043e \\u0432 \\u043b\\u044e\\u0431\\u043e\\u0435 \\u0432\\u0440\\u0435\\u043c\\u044f \\u043f\\u0443\\u0442\\u0435\\u043c \\u043d\\u0430\\u0436\\u0430\\u0442\\u0438\\u044f \\u043d\\u0430 \\u0441\\u0441\\u044b\\u043b\\u043a\\u0443 \\u00ab\\u041d\\u0430\\u0441\\u0442\\u0440\\u043e\\u0439\\u043a\\u0438 cookie-\\u0444\\u0430\\u0439\\u043b\\u043e\\u0432\\u00bb \\u0432 \\u043d\\u0438\\u0436\\u043d\\u0435\\u043c \\u043a\\u043e\\u043b\\u043e\\u043d\\u0442\\u0438\\u0442\\u0443\\u043b\\u0435. \\u041e\\u0431\\u0440\\u0430\\u0442\\u0438\\u0442\\u0435 \\u0432\\u043d\\u0438\\u043c\\u0430\\u043d\\u0438\\u0435, \\u0447\\u0442\\u043e \\u043d\\u0435\\u043a\\u043e\\u0442\\u043e\\u0440\\u044b\\u043c\\u0438 \\u0441\\u0442\\u043e\\u0440\\u043e\\u043d\\u043d\\u0438\\u043c\\u0438 cookie-\\u0444\\u0430\\u0439\\u043b\\u0430\\u043c\\u0438 \\u043c\\u043e\\u0436\\u043d\\u043e \\u0443\\u043f\\u0440\\u0430\\u0432\\u043b\\u044f\\u0442\\u044c \\u0442\\u043e\\u043b\\u044c\\u043a\\u043e \\u0447\\u0435\\u0440\\u0435\\u0437 \\u0432\\u0430\\u0448 \\u0431\\u0440\\u0430\\u0443\\u0437\\u0435\\u0440.\",\"Cookies preferences popup about cookies text opt in paragraph 3\":\"\\u0418\\u043c\\u0435\\u0439\\u0442\\u0435 \\u0432 \\u0432\\u0438\\u0434\\u0443, \\u0447\\u0442\\u043e \\u043e\\u0442\\u043a\\u0430\\u0437 \\u043e\\u0442 \\u043b\\u044e\\u0431\\u043e\\u0433\\u043e \\u0442\\u0438\\u043f\\u0430 \\u044d\\u0442\\u0438\\u0445 cookie-\\u0444\\u0430\\u0439\\u043b\\u043e\\u0432 \\u043c\\u043e\\u0436\\u0435\\u0442 \\u043f\\u043e\\u0432\\u043b\\u0438\\u044f\\u0442\\u044c \\u043d\\u0430 \\u0438\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u043d\\u0438\\u0435 \\u0432\\u0430\\u043c\\u0438 \\u0441\\u0430\\u0439\\u0442\\u0430 \\u0438 \\u0443\\u0441\\u043b\\u0443\\u0433, \\u043a\\u043e\\u0442\\u043e\\u0440\\u044b\\u0435 \\u043c\\u044b \\u043c\\u043e\\u0436\\u0435\\u043c \\u043f\\u0440\\u0435\\u0434\\u043b\\u043e\\u0436\\u0438\\u0442\\u044c.\",\"Cookies preferences popup about cookies text opt in paragraph 4\":\"\\u0414\\u043b\\u044f \\u043f\\u043e\\u043b\\u0443\\u0447\\u0435\\u043d\\u0438\\u044f \\u0434\\u043e\\u043f\\u043e\\u043b\\u043d\\u0438\\u0442\\u0435\\u043b\\u044c\\u043d\\u043e\\u0439 \\u0438\\u043d\\u0444\\u043e\\u0440\\u043c\\u0430\\u0446\\u0438\\u0438 \\u0441\\u043c. \\u043d\\u0430\\u0448\\u0438 \\u043f\\u043e\\u043b\\u043d\\u044b\\u0435 [link url=&quot;{cookie_policy_link}&quot; target=&quot;blank&quot; title=&quot;\\u041f\\u0440\\u0430\\u0432\\u0438\\u043b\\u0430 \\u0438\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u043d\\u0438\\u044f cookie-\\u0444\\u0430\\u0439\\u043b\\u043e\\u0432&quot;] \\u0438 [link url=&quot;{privacy_policy_link}&quot; target=&quot;blank&quot; title=&quot;\\u041f\\u043e\\u043b\\u0438\\u0442\\u0438\\u043a\\u0443 \\u043a\\u043e\\u043d\\u0444\\u0438\\u0434\\u0435\\u043d\\u0446\\u0438\\u0430\\u043b\\u044c\\u043d\\u043e\\u0441\\u0442\\u0438&quot;].\",\"Cookies preferences popup mandatory cookies text opt in paragraph 1\":\"\\u041e\\u0431\\u044f\\u0437\\u0430\\u0442\\u0435\\u043b\\u044c\\u043d\\u044b\\u0435 cookie-\\u0444\\u0430\\u0439\\u043b\\u044b \\u043d\\u0435\\u043e\\u0431\\u0445\\u043e\\u0434\\u0438\\u043c\\u044b \\u0434\\u043b\\u044f \\u043f\\u0440\\u0430\\u0432\\u0438\\u043b\\u044c\\u043d\\u043e\\u0439 \\u0440\\u0430\\u0431\\u043e\\u0442\\u044b \\u0438 \\u043e\\u0442\\u043e\\u0431\\u0440\\u0430\\u0436\\u0435\\u043d\\u0438\\u044f \\u0441\\u0430\\u0439\\u0442\\u0430, \\u0438 \\u0438\\u0445 \\u043d\\u0435\\u043b\\u044c\\u0437\\u044f \\u043e\\u0442\\u043a\\u043b\\u044e\\u0447\\u0438\\u0442\\u044c \\u041e\\u043d\\u0438 \\u0438\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u0443\\u044e\\u0442\\u0441\\u044f \\u0434\\u043b\\u044f \\u043f\\u0440\\u0435\\u0434\\u043e\\u0442\\u0432\\u0440\\u0430\\u0449\\u0435\\u043d\\u0438\\u044f \\u0443\\u0433\\u0440\\u043e\\u0437 \\u0431\\u0435\\u0437\\u043e\\u043f\\u0430\\u0441\\u043d\\u043e\\u0441\\u0442\\u0438 (\\u043d\\u0430\\u043f\\u0440\\u0438\\u043c\\u0435\\u0440, \\u0441 \\u043f\\u043e\\u043c\\u043e\\u0449\\u044c\\u044e cookie-\\u0444\\u0430\\u0439\\u043b\\u043e\\u0432 \\u043e\\u0442 Google reCAPTCHA), \\u0432\\u0445\\u043e\\u0434\\u0430 \\u0432 \\u0441\\u0438\\u0441\\u0442\\u0435\\u043c\\u0443, \\u0441\\u043e\\u0433\\u043b\\u0430\\u0441\\u043e\\u0432\\u0430\\u043d\\u0438\\u044f \\u043d\\u0430\\u0448\\u0438\\u0445 \\u043f\\u0440\\u0435\\u0434\\u043b\\u043e\\u0436\\u0435\\u043d\\u0438\\u0439 \\u0443\\u0441\\u043b\\u0443\\u0433 \\u0441 \\u0432\\u0430\\u0448\\u0438\\u043c \\u043c\\u0435\\u0441\\u0442\\u043e\\u043f\\u043e\\u043b\\u043e\\u0436\\u0435\\u043d\\u0438\\u0435\\u043c, \\u0437\\u0430\\u043f\\u043e\\u043b\\u043d\\u0435\\u043d\\u0438\\u044f \\u0444\\u043e\\u0440\\u043c \\u0438 \\u0437\\u0430\\u043f\\u043e\\u043c\\u0438\\u043d\\u0430\\u043d\\u0438\\u044f \\u0442\\u043e\\u0432\\u0430\\u0440\\u043e\\u0432 \\u0432 \\u0432\\u0430\\u0448\\u0435\\u0439 \\u043a\\u043e\\u0440\\u0437\\u0438\\u043d\\u0435 \\u043f\\u043e\\u043a\\u0443\\u043f\\u043e\\u043a. \\u041c\\u044b \\u043c\\u043e\\u0436\\u0435\\u043c \\u0445\\u0440\\u0430\\u043d\\u0438\\u0442\\u044c cookie-\\u0444\\u0430\\u0439\\u043b\\u044b \\u043f\\u0435\\u0440\\u0432\\u043e\\u0433\\u043e \\u043b\\u0438\\u0446\\u0430 (first-party cookies) \\u0434\\u043e \\u043e\\u0434\\u043d\\u043e\\u0433\\u043e \\u0433\\u043e\\u0434\\u0430.\",\"Cookies preferences popup mandatory cookies text opt in paragraph 2\":\"\\u041d\\u0435\\u043a\\u043e\\u0442\\u043e\\u0440\\u044b\\u0435 \\u043e\\u0431\\u044f\\u0437\\u0430\\u0442\\u0435\\u043b\\u044c\\u043d\\u044b\\u0435 cookie-\\u0444\\u0430\\u0439\\u043b\\u044b \\u0443\\u043f\\u0440\\u0430\\u0432\\u043b\\u044f\\u044e\\u0442\\u0441\\u044f \\u0438\\u043b\\u0438 \\u0440\\u0430\\u0437\\u043c\\u0435\\u0449\\u0430\\u044e\\u0442\\u0441\\u044f \\u0434\\u043b\\u044f \\u043d\\u0430\\u0441 \\u0442\\u0440\\u0435\\u0442\\u044c\\u0438\\u043c\\u0438 \\u0441\\u0442\\u043e\\u0440\\u043e\\u043d\\u0430\\u043c\\u0438 \\u0441\\u043b\\u0435\\u0434\\u0443\\u044e\\u0449\\u0438\\u043c \\u043e\\u0431\\u0440\\u0430\\u0437\\u043e\\u043c:\",\"Click to show cookie list\":\"\\u041f\\u043e\\u043a\\u0430\\u0437\\u0430\\u0442\\u044c cookie-\\u0444\\u0430\\u0439\\u043b\\u044b\",\"Click to hide cookie list\":\"\\u0421\\u043a\\u0440\\u044b\\u0442\\u044c cookie-\\u0444\\u0430\\u0439\\u043b\\u044b\",\"Cookie provider\":\"\\u041f\\u043e\\u0441\\u0442\\u0430\\u0432\\u0449\\u0438\\u043a \\u0443\\u0441\\u043b\\u0443\\u0433\",\"Cookies preferences popup analytics cookies title\":\"\\u0410\\u043d\\u0430\\u043b\\u0438\\u0442\\u0438-<br>\\u0447\\u0435\\u0441\\u043a\\u0438\\u0435 <br>\\u0444\\u0430\\u0439\\u043b\\u044b cookie\",\"Cookies preferences popup analytics cookies tab title\":\"\\u0410\\u043d\\u0430\\u043b\\u0438\\u0442\\u0438\\u0447\\u0435\\u0441\\u043a\\u0438\\u0435 cookie-\\u0444\\u0430\\u0439\\u043b\\u044b\",\"Cookies preferences popup analytics cookies text paragraph 1\":\"\\u0410\\u043d\\u0430\\u043b\\u0438\\u0442\\u0438\\u0447\\u0435\\u0441\\u043a\\u0438\\u0435 cookie-\\u0444\\u0430\\u0439\\u043b\\u044b \\u0441\\u043e\\u0431\\u0438\\u0440\\u0430\\u044e\\u0442 \\u0438\\u043d\\u0444\\u043e\\u0440\\u043c\\u0430\\u0446\\u0438\\u044e \\u043e \\u0442\\u043e\\u043c, \\u043a\\u0430\\u043a \\u0432\\u044b \\u0432\\u0437\\u0430\\u0438\\u043c\\u043e\\u0434\\u0435\\u0439\\u0441\\u0442\\u0432\\u0443\\u0435\\u0442\\u0435 \\u0441 \\u0441\\u0430\\u0439\\u0442\\u043e\\u043c. \\u041e\\u043d\\u0438 \\u043f\\u043e\\u0437\\u0432\\u043e\\u043b\\u044f\\u044e\\u0442 \\u043d\\u0430\\u043c \\u043f\\u043e\\u0434\\u0441\\u0447\\u0438\\u0442\\u044b\\u0432\\u0430\\u0442\\u044c \\u043f\\u043e\\u0441\\u0435\\u0449\\u0435\\u043d\\u0438\\u044f \\u0438 \\u0438\\u0441\\u0442\\u043e\\u0447\\u043d\\u0438\\u043a\\u0438 \\u0442\\u0440\\u0430\\u0444\\u0438\\u043a\\u0430, \\u0447\\u0442\\u043e\\u0431\\u044b \\u0438\\u0437\\u043c\\u0435\\u0440\\u0438\\u0442\\u044c \\u0438 \\u0443\\u043b\\u0443\\u0447\\u0448\\u0438\\u0442\\u044c \\u043f\\u0440\\u043e\\u0438\\u0437\\u0432\\u043e\\u0434\\u0438\\u0442\\u0435\\u043b\\u044c\\u043d\\u043e\\u0441\\u0442\\u044c \\u043d\\u0430\\u0448\\u0435\\u0433\\u043e \\u0441\\u0430\\u0439\\u0442\\u0430, \\u043f\\u043e\\u043d\\u044f\\u0442\\u044c, \\u0447\\u0442\\u043e \\u0438\\u043d\\u0442\\u0435\\u0440\\u0435\\u0441\\u0443\\u0435\\u0442 \\u043d\\u0430\\u0448\\u0438\\u0445 \\u043f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u0442\\u0435\\u043b\\u0435\\u0439, \\u0438 \\u0438\\u0437\\u043c\\u0435\\u0440\\u0438\\u0442\\u044c \\u044d\\u0444\\u0444\\u0435\\u043a\\u0442\\u0438\\u0432\\u043d\\u043e\\u0441\\u0442\\u044c \\u043d\\u0430\\u0448\\u0435\\u0433\\u043e \\u043a\\u043e\\u043d\\u0442\\u0435\\u043d\\u0442\\u0430.\",\"Cookies preferences popup analytics cookies text paragraph 2\":\"\\u0410\\u043d\\u0430\\u043b\\u0438\\u0442\\u0438\\u0447\\u0435\\u0441\\u043a\\u0438\\u0435 cookie-\\u0444\\u0430\\u0439\\u043b\\u044b \\u0443\\u043f\\u0440\\u0430\\u0432\\u043b\\u044f\\u044e\\u0442\\u0441\\u044f \\u0438\\u043b\\u0438 \\u0440\\u0430\\u0437\\u043c\\u0435\\u0449\\u0430\\u044e\\u0442\\u0441\\u044f \\u0434\\u043b\\u044f \\u043d\\u0430\\u0441 \\u0442\\u0440\\u0435\\u0442\\u044c\\u0438\\u043c\\u0438 \\u0441\\u0442\\u043e\\u0440\\u043e\\u043d\\u0430\\u043c\\u0438 \\u0441\\u043b\\u0435\\u0434\\u0443\\u044e\\u0449\\u0438\\u043c \\u043e\\u0431\\u0440\\u0430\\u0437\\u043e\\u043c:\",\"Cookies preferences popup advertising cookies title\":\"\\u0420\\u0435\\u043a\\u043b\\u0430\\u043c\\u043d\\u044b\\u0435 cookie-\\u0444\\u0430\\u0439\\u043b\\u044b\",\"Cookies preferences popup advertising cookies tab title\":\"\\u0420\\u0435\\u043a\\u043b\\u0430\\u043c\\u043d\\u044b\\u0435 <br>\\u0444\\u0430\\u0439\\u043b\\u044b<br>cookie\",\"Cookies preferences popup advertising cookies text paragraph 1\":\"\\u0420\\u0435\\u043a\\u043b\\u0430\\u043c\\u043d\\u044b\\u0435 cookie-\\u0444\\u0430\\u0439\\u043b\\u044b (\\u0438\\u043b\\u0438 \\u0446\\u0435\\u043b\\u0435\\u0432\\u044b\\u0435 cookie-\\u0444\\u0430\\u0439\\u043b\\u044b) \\u0438\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u0443\\u044e\\u0442\\u0441\\u044f \\u0434\\u043b\\u044f \\u043b\\u0443\\u0447\\u0448\\u0435\\u0433\\u043e \\u043f\\u043e\\u043d\\u0438\\u043c\\u0430\\u043d\\u0438\\u044f \\u0432\\u0430\\u0448\\u0438\\u0445 \\u0438\\u043d\\u0442\\u0435\\u0440\\u0435\\u0441\\u043e\\u0432, \\u0432 \\u0442\\u043e\\u043c \\u0447\\u0438\\u0441\\u043b\\u0435 \\u0434\\u043b\\u044f \\u0442\\u043e\\u0433\\u043e, \\u0447\\u0442\\u043e\\u0431\\u044b \\u043f\\u043e\\u043d\\u044f\\u0442\\u044c, \\u043d\\u0430 \\u043a\\u0430\\u043a\\u0438\\u0435 \\u0441\\u0430\\u0439\\u0442\\u044b \\u0438 \\u0440\\u0435\\u043a\\u043b\\u0430\\u043c\\u043d\\u044b\\u0435 \\u043e\\u0431\\u044a\\u044f\\u0432\\u043b\\u0435\\u043d\\u0438\\u044f \\u0432\\u044b \\u043f\\u0435\\u0440\\u0435\\u0445\\u043e\\u0434\\u0438\\u0442\\u0435, \\u0430 \\u0442\\u0430\\u043a\\u0436\\u0435 \\u0434\\u043b\\u044f \\u043f\\u0440\\u0435\\u0434\\u043e\\u0441\\u0442\\u0430\\u0432\\u043b\\u0435\\u043d\\u0438\\u044f \\u043f\\u0435\\u0440\\u0441\\u043e\\u043d\\u0430\\u043b\\u0438\\u0437\\u0438\\u0440\\u043e\\u0432\\u0430\\u043d\\u043d\\u043e\\u0439 \\u0440\\u0435\\u043a\\u043b\\u0430\\u043c\\u044b, \\u043a\\u043e\\u0442\\u043e\\u0440\\u0430\\u044f \\u043c\\u043e\\u0436\\u0435\\u0442 \\u0432\\u0430\\u0441 \\u0437\\u0430\\u0438\\u043d\\u0442\\u0435\\u0440\\u0435\\u0441\\u043e\\u0432\\u0430\\u0442\\u044c. \\u041e\\u043d\\u0438 \\u0442\\u0430\\u043a\\u0436\\u0435 \\u043e\\u0433\\u0440\\u0430\\u043d\\u0438\\u0447\\u0438\\u0432\\u0430\\u044e\\u0442 \\u043a\\u043e\\u043b\\u0438\\u0447\\u0435\\u0441\\u0442\\u0432\\u043e \\u043f\\u0440\\u043e\\u0441\\u043c\\u043e\\u0442\\u0440\\u043e\\u0432 \\u0440\\u0435\\u043a\\u043b\\u0430\\u043c\\u044b \\u0438 \\u043f\\u043e\\u043c\\u043e\\u0433\\u0430\\u044e\\u0442 \\u043d\\u0430\\u043c \\u0438\\u0437\\u043c\\u0435\\u0440\\u044f\\u0442\\u044c \\u044d\\u0444\\u0444\\u0435\\u043a\\u0442\\u0438\\u0432\\u043d\\u043e\\u0441\\u0442\\u044c \\u043d\\u0430\\u0448\\u0438\\u0445 \\u0440\\u0435\\u043a\\u043b\\u0430\\u043c\\u043d\\u044b\\u0445 \\u043a\\u0430\\u043c\\u043f\\u0430\\u043d\\u0438\\u0439. \\u041e\\u0442\\u043a\\u043b\\u044e\\u0447\\u0438\\u0432 \\u044d\\u0442\\u0438 cookie-\\u0444\\u0430\\u0439\\u043b\\u044b, \\u0432\\u044b \\u043b\\u0438\\u0448\\u0438\\u0442\\u0435\\u0441\\u044c \\u0442\\u0430\\u043a\\u0438\\u0445 \\u043f\\u0440\\u0435\\u0438\\u043c\\u0443\\u0449\\u0435\\u0441\\u0442\\u0432, \\u043a\\u0430\\u043a \\u0442\\u0430\\u0440\\u0433\\u0435\\u0442\\u0438\\u0440\\u043e\\u0432\\u0430\\u043d\\u043d\\u0430\\u044f \\u0440\\u0435\\u043a\\u043b\\u0430\\u043c\\u0430, \\u043a\\u043e\\u0442\\u043e\\u0440\\u0430\\u044f \\u043f\\u043e\\u0437\\u0432\\u043e\\u043b\\u0438\\u0442 \\u0432\\u0430\\u043c \\u0443\\u0437\\u043d\\u0430\\u0432\\u0430\\u0442\\u044c \\u043e \\u043d\\u0430\\u0448\\u0438\\u0445 \\u0437\\u0430\\u043c\\u0435\\u0447\\u0430\\u0442\\u0435\\u043b\\u044c\\u043d\\u044b\\u0445 \\u043f\\u0440\\u043e\\u0434\\u0443\\u043a\\u0442\\u0430\\u0445, \\u0430 \\u0442\\u0430\\u043a\\u0436\\u0435 \\u043f\\u043e\\u043b\\u0443\\u0447\\u0430\\u0442\\u044c \\u0441\\u043f\\u0435\\u0446\\u0438\\u0430\\u043b\\u044c\\u043d\\u044b\\u0435 \\u043f\\u0440\\u0435\\u0434\\u043b\\u043e\\u0436\\u0435\\u043d\\u0438\\u044f, \\u043d\\u043e\\u0432\\u043e\\u0441\\u0442\\u0438 \\u0438 \\u0438\\u043d\\u0444\\u043e\\u0440\\u043c\\u0430\\u0446\\u0438\\u044e.\",\"Cookies preferences popup advertising cookies text paragraph 2\":\"\\u0420\\u0435\\u043a\\u043b\\u0430\\u043c\\u043d\\u044b\\u0435 cookie-\\u0444\\u0430\\u0439\\u043b\\u044b \\u0443\\u043f\\u0440\\u0430\\u0432\\u043b\\u044f\\u044e\\u0442\\u0441\\u044f \\u0438\\u043b\\u0438 \\u0440\\u0430\\u0437\\u043c\\u0435\\u0449\\u0430\\u044e\\u0442\\u0441\\u044f \\u0434\\u043b\\u044f \\u043d\\u0430\\u0441 \\u0442\\u0440\\u0435\\u0442\\u044c\\u0438\\u043c\\u0438 \\u0441\\u0442\\u043e\\u0440\\u043e\\u043d\\u0430\\u043c\\u0438 \\u0441\\u043b\\u0435\\u0434\\u0443\\u044e\\u0449\\u0438\\u043c \\u043e\\u0431\\u0440\\u0430\\u0437\\u043e\\u043c:\",\"Toggle option opt in\":\"\\u041f\\u0440\\u0438\\u043d\\u044f\\u0442\\u044c\",\"Toggle option opt out\":\"\\u041e\\u0442\\u043a\\u0430\\u0437\\u0430\\u0442\\u044c\\u0441\\u044f\",\"Cookies preferences popup accept all cookies button\":\"\\u041f\\u0440\\u0438\\u043d\\u044f\\u0442\\u044c \\u0432\\u0441\\u0435 cookie-\\u0444\\u0430\\u0439\\u043b\\u044b\",\"Cookie duration one minute\":\"\\u041e\\u0434\\u043d\\u0430 \\u043c\\u0438\\u043d\\u0443\\u0442\\u0430\",\"Cookie duration session\":\"\\u0421\\u0435\\u0430\\u043d\\u0441\",\"Cookie duration permanent\":\"\\u041f\\u043e\\u0441\\u0442\\u043e\\u044f\\u043d\\u043d\\u044b\\u0439\",\"Cookie duration weeks\":\"{number_of_weeks} \\u043d\\u0435\\u0434\\u0435\\u043b\\u044c(\\u0438)\",\"Cookie duration up to years\":\"\\u0414\\u043e {years}-\\u0445 \\u043b\\u0435\\u0442\",\"Mandatory cookie description 2\":\"\\u0423\\u0441\\u0442\\u0430\\u043d\\u0430\\u0432\\u043b\\u0438\\u0432\\u0430\\u0435\\u0442\\u0441\\u044f, \\u043a\\u043e\\u0433\\u0434\\u0430 \\u0432\\u044b \\u0440\\u0430\\u0437\\u043c\\u0435\\u0449\\u0430\\u0435\\u0442\\u0435 \\u0437\\u0430\\u043a\\u0430\\u0437 \\u043d\\u0430 \\u0441\\u0442\\u0440\\u0430\\u043d\\u0438\\u0446\\u0435 \\u043e\\u043f\\u043b\\u0430\\u0442\\u044b MyHeritage. \\u0424\\u0430\\u0439\\u043b\\u044b cookie \\u0441\\u0438\\u0441\\u0442\\u0435\\u043c\\u044b CloudFare \\u0438\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u0443\\u044e\\u0442\\u0441\\u044f \\u0442\\u043e\\u0433\\u0434\\u0430, \\u043a\\u043e\\u0433\\u0434\\u0430 \\u043d\\u0435\\u0441\\u043a\\u043e\\u043b\\u044c\\u043a\\u043e \\u043f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u0442\\u0435\\u043b\\u0435\\u0439 \\u043f\\u043e\\u043b\\u044c\\u0437\\u0443\\u044e\\u0442\\u0441\\u044f \\u043e\\u0434\\u043d\\u0438\\u043c \\u0438 \\u0442\\u0435\\u043c \\u0436\\u0435 IP-\\u0430\\u0434\\u0440\\u0435\\u0441\\u043e\\u043c. \\u041a\\u0430\\u0436\\u0434\\u043e\\u043c\\u0443 \\u043f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u0442\\u0435\\u043b\\u044e \\u043f\\u0440\\u0438\\u0441\\u0432\\u0430\\u0438\\u0432\\u0430\\u0435\\u0442\\u0441\\u044f \\u0443\\u043d\\u0438\\u043a\\u0430\\u043b\\u044c\\u043d\\u044b\\u0439 \\u0444\\u0430\\u0439\\u043b cookie, \\u0447\\u0442\\u043e\\u0431\\u044b \\u043f\\u0440\\u0435\\u0434\\u043e\\u0442\\u0432\\u0440\\u0430\\u0442\\u0438\\u0442\\u044c \\u043e\\u0433\\u0440\\u0430\\u043d\\u0438\\u0447\\u0435\\u043d\\u0438\\u0435 \\u0441\\u043a\\u043e\\u0440\\u043e\\u0441\\u0442\\u0438 \\u0441\\u0432\\u044f\\u0437\\u0438 \\u0434\\u043b\\u044f \\u0432\\u0441\\u0435\\u0445 \\u043f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u0442\\u0435\\u043b\\u0435\\u0439 \\u0432 \\u0442\\u043e\\u043c \\u0441\\u043b\\u0443\\u0447\\u0430\\u0435, \\u0435\\u0441\\u043b\\u0438 \\u043e\\u0434\\u0438\\u043d \\u0438\\u0437 \\u043d\\u0438\\u0445 \\u043f\\u0440\\u0435\\u0432\\u044b\\u0441\\u0438\\u0442 \\u043f\\u0440\\u0435\\u0434\\u0435\\u043b \\u0441\\u043a\\u043e\\u0440\\u043e\\u0441\\u0442\\u0438.\",\"Mandatory cookie description 3\":\"\\u0423\\u0441\\u0442\\u0430\\u043d\\u0430\\u0432\\u043b\\u0438\\u0432\\u0430\\u0435\\u0442\\u0441\\u044f \\u0432 \\u043c\\u043e\\u043c\\u0435\\u043d\\u0442 \\u0440\\u0435\\u0433\\u0438\\u0441\\u0442\\u0440\\u0430\\u0446\\u0438\\u0438 \\u0438\\u043b\\u0438 \\u0432\\u0445\\u043e\\u0434\\u0430 \\u0432 MyHeritage \\u0441 \\u0438\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u043d\\u0438\\u0435\\u043c \\u0443\\u0447\\u0435\\u0442\\u043d\\u043e\\u0439 \\u0437\\u0430\\u043f\\u0438\\u0441\\u0438 Google. \\u0418\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u0443\\u0435\\u0442\\u0441\\u044f \\u0434\\u043b\\u044f \\u0430\\u0432\\u0442\\u043e\\u0440\\u0438\\u0437\\u0430\\u0446\\u0438\\u0438 \\u043f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u0442\\u0435\\u043b\\u0435\\u0439, \\u0447\\u0442\\u043e\\u0431\\u044b \\u0432\\u043e\\u0437\\u043c\\u043e\\u0436\\u043d\\u043e\\u0441\\u0442\\u044c \\u0434\\u043e\\u0441\\u0442\\u0443\\u043f\\u0430 \\u043a \\u0443\\u0447\\u0435\\u0442\\u043d\\u043e\\u0439 \\u0437\\u0430\\u043f\\u0438\\u0441\\u0438 \\u0438\\u043c\\u0435\\u043b \\u0442\\u043e\\u043b\\u044c\\u043a\\u043e \\u0435\\u0435 \\u0432\\u043b\\u0430\\u0434\\u0435\\u043b\\u0435\\u0446. \\u042d\\u0442\\u0438 \\u0444\\u0430\\u0439\\u043b\\u044b cookie \\u0441\\u043e\\u0434\\u0435\\u0440\\u0436\\u0430\\u0442 \\u043f\\u043e\\u0434\\u043f\\u0438\\u0441\\u0430\\u043d\\u043d\\u044b\\u0435 \\u044d\\u043b\\u0435\\u043a\\u0442\\u0440\\u043e\\u043d\\u043d\\u043e-\\u0446\\u0438\\u0444\\u0440\\u043e\\u0432\\u043e\\u0439 \\u043f\\u043e\\u0434\\u043f\\u0438\\u0441\\u044c\\u044e \\u0438 \\u0437\\u0430\\u0448\\u0438\\u0444\\u0440\\u043e\\u0432\\u0430\\u043d\\u043d\\u044b\\u0435 \\u0434\\u0430\\u043d\\u043d\\u044b\\u0435 \\u043e\\u0431 \\u0438\\u0434\\u0435\\u043d\\u0442\\u0438\\u0444\\u0438\\u043a\\u0430\\u0446\\u0438\\u043e\\u043d\\u043d\\u043e\\u043c \\u043d\\u043e\\u043c\\u0435\\u0440\\u0435 \\u0443\\u0447\\u0435\\u0442\\u043d\\u043e\\u0439 \\u0437\\u0430\\u043f\\u0438\\u0441\\u0438 Google \\u043f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u0442\\u0435\\u043b\\u044f \\u0438 \\u0434\\u0430\\u043d\\u043d\\u044b\\u0435 \\u043e \\u0432\\u0440\\u0435\\u043c\\u0435\\u043d\\u0438 \\u043f\\u043e\\u0441\\u043b\\u0435\\u0434\\u043d\\u0435\\u0433\\u043e \\u0432\\u0445\\u043e\\u0434\\u0430 \\u0432 \\u0443\\u0447\\u0435\\u0442\\u043d\\u0443\\u044e \\u0437\\u0430\\u043f\\u0438\\u0441\\u044c. \\u0421\\u043e\\u0447\\u0435\\u0442\\u0430\\u043d\\u0438\\u0435 \\u044d\\u0442\\u0438\\u0445 \\u0444\\u0430\\u0439\\u043b\\u043e\\u0432 cookie \\u043f\\u043e\\u0437\\u0432\\u043e\\u043b\\u044f\\u0435\\u0442 Google \\u0431\\u043b\\u043e\\u043a\\u0438\\u0440\\u043e\\u0432\\u0430\\u0442\\u044c \\u043c\\u043d\\u043e\\u0433\\u0438\\u0435 \\u0432\\u0438\\u0434\\u044b \\u0430\\u0442\\u0430\\u043a, \\u0432 \\u0447\\u0430\\u0441\\u0442\\u043d\\u043e\\u0441\\u0442\\u0438 \\u043f\\u043e\\u043f\\u044b\\u0442\\u043a\\u0438 \\u043f\\u043e\\u0445\\u0438\\u0449\\u0435\\u043d\\u0438\\u044f \\u0434\\u0430\\u043d\\u043d\\u044b\\u0445 \\u0444\\u043e\\u0440\\u043c, \\u0437\\u0430\\u043f\\u043e\\u043b\\u043d\\u0435\\u043d\\u043d\\u044b\\u0445 \\u0438 \\u043e\\u0442\\u043f\\u0440\\u0430\\u0432\\u043b\\u0435\\u043d\\u043d\\u044b\\u0445 \\u0432 \\u0441\\u0435\\u0440\\u0432\\u0438\\u0441\\u0430\\u0445 Google.\",\"Mandatory cookie description 6\":\"\\u0423\\u0441\\u0442\\u0430\\u043d\\u0430\\u0432\\u043b\\u0438\\u0432\\u0430\\u0435\\u0442\\u0441\\u044f \\u0432 \\u043c\\u043e\\u043c\\u0435\\u043d\\u0442 \\u0440\\u0435\\u0433\\u0438\\u0441\\u0442\\u0440\\u0430\\u0446\\u0438\\u0438 \\u0438\\u043b\\u0438 \\u0432\\u0445\\u043e\\u0434\\u0430 \\u0432 MyHeritage \\u0441 \\u0438\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u043d\\u0438\\u0435\\u043c \\u0443\\u0447\\u0435\\u0442\\u043d\\u043e\\u0439 \\u0437\\u0430\\u043f\\u0438\\u0441\\u0438 Facebook. \\u0418\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u0443\\u0435\\u0442\\u0441\\u044f \\u0434\\u043b\\u044f \\u0437\\u0430\\u043f\\u043e\\u043c\\u0438\\u043d\\u0430\\u043d\\u0438\\u044f \\u0440\\u0435\\u0433\\u0438\\u0441\\u0442\\u0440\\u0430\\u0446\\u0438\\u043e\\u043d\\u043d\\u043e\\u0439 \\u0438\\u043d\\u0444\\u043e\\u0440\\u043c\\u0430\\u0446\\u0438\\u0438.\",\"Mandatory cookie description 8\":\"\\u0423\\u0441\\u0442\\u0430\\u043d\\u0430\\u0432\\u043b\\u0438\\u0432\\u0430\\u0435\\u0442\\u0441\\u044f \\u0432 \\u043c\\u043e\\u043c\\u0435\\u043d\\u0442 \\u0440\\u0435\\u0433\\u0438\\u0441\\u0442\\u0440\\u0430\\u0446\\u0438\\u0438 \\u0438\\u043b\\u0438 \\u0432\\u0445\\u043e\\u0434\\u0430 \\u0432 MyHeritage \\u0441 \\u0438\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u043d\\u0438\\u0435\\u043c \\u0443\\u0447\\u0435\\u0442\\u043d\\u043e\\u0439 \\u0437\\u0430\\u043f\\u0438\\u0441\\u0438 Facebook. \\u0418\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u0443\\u0435\\u0442\\u0441\\u044f \\u0434\\u043b\\u044f \\u0438\\u0434\\u0435\\u043d\\u0442\\u0438\\u0444\\u0438\\u043a\\u0430\\u0446\\u0438\\u0438 \\u0438 \\u0430\\u0443\\u0442\\u0435\\u043d\\u0442\\u0438\\u0444\\u0438\\u043a\\u0430\\u0446\\u0438\\u0438 \\u0431\\u0440\\u0430\\u0443\\u0437\\u0435\\u0440\\u0430.\",\"Mandatory cookie description 10\":\"\\u0423\\u0441\\u0442\\u0430\\u043d\\u0430\\u0432\\u043b\\u0438\\u0432\\u0430\\u0435\\u0442\\u0441\\u044f \\u0432 \\u043c\\u043e\\u043c\\u0435\\u043d\\u0442 \\u0440\\u0435\\u0433\\u0438\\u0441\\u0442\\u0440\\u0430\\u0446\\u0438\\u0438 \\u0438\\u043b\\u0438 \\u0432\\u0445\\u043e\\u0434\\u0430 \\u0432 MyHeritage \\u0441 \\u0438\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u043d\\u0438\\u0435\\u043c \\u0443\\u0447\\u0435\\u0442\\u043d\\u043e\\u0439 \\u0437\\u0430\\u043f\\u0438\\u0441\\u0438 Facebook. \\u041e\\u043f\\u0440\\u0435\\u0434\\u0435\\u043b\\u044f\\u0435\\u0442 \\u0438\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u0443\\u0435\\u043c\\u044b\\u0439 \\u0432\\u0435\\u0431-\\u0431\\u0440\\u0430\\u0443\\u0437\\u0435\\u0440 \\u0438 \\u043e\\u0431\\u0435\\u0441\\u043f\\u0435\\u0447\\u0438\\u0432\\u0430\\u0435\\u0442 \\u0431\\u0435\\u0437\\u043e\\u043f\\u0430\\u0441\\u043d\\u043e\\u0435 \\u0441\\u043e\\u0435\\u0434\\u0438\\u043d\\u0435\\u043d\\u0438\\u0435 \\u0441 Facebook.\",\"Mandatory cookie description 11\":\"\\u0423\\u0441\\u0442\\u0430\\u043d\\u0430\\u0432\\u043b\\u0438\\u0432\\u0430\\u0435\\u0442\\u0441\\u044f \\u0441\\u0435\\u0440\\u0432\\u0438\\u0441\\u043e\\u043c Google reCAPTCHA, \\u043a\\u043e\\u0442\\u043e\\u0440\\u044b\\u0439 \\u0437\\u0430\\u0449\\u0438\\u0449\\u0430\\u0435\\u0442 \\u0432\\u0435\\u0431-\\u0441\\u0430\\u0439\\u0442 \\u043e\\u0442 \\u043c\\u043e\\u0448\\u0435\\u043d\\u043d\\u0438\\u0447\\u0435\\u0441\\u0442\\u0432\\u0430 \\u0438 \\u0437\\u043b\\u043e\\u0443\\u043c\\u044b\\u0448\\u043b\\u0435\\u043d\\u043d\\u044b\\u0445 \\u0434\\u0435\\u0439\\u0441\\u0442\\u0432\\u0438\\u0439.\",\"Mandatory cookie description 13\":\"\\u0423\\u0441\\u0442\\u0430\\u043d\\u0430\\u0432\\u043b\\u0438\\u0432\\u0430\\u0435\\u0442\\u0441\\u044f \\u0441\\u0435\\u0440\\u0432\\u0438\\u0441\\u043e\\u043c \\u043a\\u0438\\u0431\\u0435\\u0440\\u0431\\u0435\\u0437\\u043e\\u043f\\u0430\\u0441\\u043d\\u043e\\u0441\\u0442\\u0438 Imperva. \\u0418\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u0443\\u0435\\u0442\\u0441\\u044f \\u0434\\u043b\\u044f \\u0443\\u043f\\u0440\\u0430\\u0432\\u043b\\u0435\\u043d\\u0438\\u044f \\u0441\\u0435\\u0441\\u0441\\u0438\\u044f\\u043c\\u0438. \\u0421 \\u043f\\u043e\\u043c\\u043e\\u0449\\u044c\\u044e \\u0434\\u0430\\u043d\\u043d\\u043e\\u0433\\u043e \\u0444\\u0430\\u0439\\u043b\\u0430 cookie \\u0437\\u0430\\u043f\\u0440\\u043e\\u0441\\u044b HTTP \\u0440\\u0430\\u0441\\u043f\\u0440\\u0435\\u0434\\u0435\\u043b\\u044f\\u044e\\u0442\\u0441\\u044f \\u043c\\u0435\\u0436\\u0434\\u0443 \\u0441\\u0435\\u0441\\u0441\\u0438\\u044f\\u043c\\u0438. \\u041f\\u043e\\u0432\\u0442\\u043e\\u0440\\u043d\\u044b\\u0439 \\u0437\\u0430\\u043f\\u0443\\u0441\\u043a \\u0431\\u0440\\u0430\\u0443\\u0437\\u0435\\u0440\\u0430 \\u0438 \\u043e\\u0442\\u043a\\u0440\\u044b\\u0442\\u0438\\u0435 \\u0442\\u043e\\u0433\\u043e \\u0436\\u0435 \\u0441\\u0430\\u0439\\u0442\\u0430 \\u0441\\u0447\\u0438\\u0442\\u0430\\u0435\\u0442\\u0441\\u044f \\u043e\\u0442\\u0434\\u0435\\u043b\\u044c\\u043d\\u044b\\u043c \\u043f\\u043e\\u0441\\u0435\\u0449\\u0435\\u043d\\u0438\\u0435\\u043c.\",\"Mandatory cookie description 14\":\"\\u0423\\u0441\\u0442\\u0430\\u043d\\u0430\\u0432\\u043b\\u0438\\u0432\\u0430\\u0435\\u0442\\u0441\\u044f \\u0441\\u0435\\u0440\\u0432\\u0438\\u0441\\u043e\\u043c \\u043a\\u0438\\u0431\\u0435\\u0440\\u0431\\u0435\\u0437\\u043e\\u043f\\u0430\\u0441\\u043d\\u043e\\u0441\\u0442\\u0438 Imperva. \\u0424\\u0430\\u0439\\u043b cookie, \\u043f\\u043e \\u043a\\u043e\\u0442\\u043e\\u0440\\u043e\\u043c\\u0443 \\u043e\\u043f\\u0440\\u0435\\u0434\\u0435\\u043b\\u044f\\u044e\\u0442 \\u043f\\u0440\\u0438\\u043d\\u0430\\u0434\\u043b\\u0435\\u0436\\u043d\\u043e\\u0441\\u0442\\u044c \\u0441\\u0435\\u0441\\u0441\\u0438\\u0438 \\u043a\\u043e\\u043d\\u043a\\u0440\\u0435\\u0442\\u043d\\u043e\\u043c\\u0443 \\u043f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u0442\\u0435\\u043b\\u044e (\\u043f\\u043e\\u0441\\u0435\\u0442\\u0438\\u0442\\u0435\\u043b\\u044e, \\u0438\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u0443\\u044e\\u0449\\u0435\\u043c\\u0443 \\u043a\\u043e\\u043d\\u043a\\u0440\\u0435\\u0442\\u043d\\u044b\\u0439 \\u0431\\u0440\\u0430\\u0443\\u0437\\u0435\\u0440 \\u043d\\u0430 \\u043a\\u043e\\u043d\\u043a\\u0440\\u0435\\u0442\\u043d\\u043e\\u043c \\u043a\\u043e\\u043c\\u043f\\u044c\\u044e\\u0442\\u0435\\u0440\\u0435).\",\"Mandatory cookie description 15\":\"\\u0423\\u0441\\u0442\\u0430\\u043d\\u0430\\u0432\\u043b\\u0438\\u0432\\u0430\\u0435\\u0442\\u0441\\u044f \\u0441\\u0435\\u0440\\u0432\\u0438\\u0441\\u043e\\u043c \\u043a\\u0438\\u0431\\u0435\\u0440\\u0431\\u0435\\u0437\\u043e\\u043f\\u0430\\u0441\\u043d\\u043e\\u0441\\u0442\\u0438 Imperva. \\u041e\\u0431\\u0435\\u0441\\u043f\\u0435\\u0447\\u0438\\u0432\\u0430\\u0435\\u0442 \\u043d\\u0430\\u043f\\u0440\\u0430\\u0432\\u043b\\u0435\\u043d\\u0438\\u0435 \\u0437\\u0430\\u043f\\u0440\\u043e\\u0441\\u043e\\u0432 \\u043a\\u043b\\u0438\\u0435\\u043d\\u0442\\u0430 \\u043e\\u0434\\u043d\\u043e\\u043c\\u0443 \\u0438 \\u0442\\u043e\\u043c\\u0443 \\u0436\\u0435 \\u0441\\u0435\\u0440\\u0432\\u0435\\u0440\\u0443 \\u0438\\u0441\\u0442\\u043e\\u0447\\u043d\\u0438\\u043a\\u0430.\",\"Mandatory cookie description 16\":\"\\u0423\\u0441\\u0442\\u0430\\u043d\\u0430\\u0432\\u043b\\u0438\\u0432\\u0430\\u0435\\u0442\\u0441\\u044f \\u0432 \\u043c\\u043e\\u043c\\u0435\\u043d\\u0442 \\u0440\\u0435\\u0433\\u0438\\u0441\\u0442\\u0440\\u0430\\u0446\\u0438\\u0438 \\u0438\\u043b\\u0438 \\u0432\\u0445\\u043e\\u0434\\u0430 \\u0432 MyHeritage \\u0441 \\u0438\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u043d\\u0438\\u0435\\u043c \\u0443\\u0447\\u0435\\u0442\\u043d\\u043e\\u0439 \\u0437\\u0430\\u043f\\u0438\\u0441\\u0438 Facebook. \\u042d\\u0442\\u043e \\u0438\\u0434\\u0435\\u043d\\u0442\\u0438\\u0444\\u0438\\u043a\\u0430\\u0442\\u043e\\u0440 \\u0437\\u0430\\u043f\\u0440\\u043e\\u0441\\u0430 \\u043d\\u0430 \\u0432\\u0445\\u043e\\u0434, \\u043a\\u043e\\u0442\\u043e\\u0440\\u044b\\u0439 \\u0431\\u0443\\u0434\\u0435\\u0442 \\u043e\\u0442\\u043c\\u0435\\u0447\\u0435\\u043d, \\u043a\\u0430\\u043a \\u0442\\u043e\\u043b\\u044c\\u043a\\u043e \\u0432\\u044b \\u0432\\u043e\\u0439\\u0434\\u0435\\u0442\\u0435 \\u0432 \\u0441\\u0438\\u0441\\u0442\\u0435\\u043c\\u0443.\",\"Mandatory cookie description 18\":\"\\u0423\\u0441\\u0442\\u0430\\u043d\\u0430\\u0432\\u043b\\u0438\\u0432\\u0430\\u0435\\u0442\\u0441\\u044f \\u0432\\u0438\\u0434\\u0435\\u043e\\u0441\\u0435\\u0440\\u0432\\u0438\\u0441\\u043e\\u043c Vimeo. MyHeritage \\u0438\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u0443\\u0435\\u0442 Vimeo \\u0434\\u043b\\u044f \\u0432\\u0441\\u0442\\u0440\\u0430\\u0438\\u0432\\u0430\\u043d\\u0438\\u044f \\u0432\\u0438\\u0434\\u0435\\u043e\\u0440\\u043e\\u043b\\u0438\\u043a\\u043e\\u0432 \\u043e \\u0442\\u043e\\u043c, \\u043a\\u0430\\u043a \\u0438\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u0442\\u044c \\u043f\\u0440\\u043e\\u0434\\u0443\\u043a\\u0442\\u044b MyHeritage. \\u041a\\u043e\\u0433\\u0434\\u0430 \\u0432\\u044b \\u043d\\u0430\\u0436\\u0438\\u043c\\u0430\\u0435\\u0442\\u0435 \\u043d\\u0430 \\u043a\\u043d\\u043e\\u043f\\u043a\\u0443 \\u0432\\u043e\\u0441\\u043f\\u0440\\u043e\\u0438\\u0437\\u0432\\u0435\\u0434\\u0435\\u043d\\u0438\\u044f, Vimeo \\u0443\\u0441\\u0442\\u0430\\u043d\\u0430\\u0432\\u043b\\u0438\\u0432\\u0430\\u0435\\u0442 \\u044d\\u0442\\u043e\\u0442 \\u0444\\u0430\\u0439\\u043b cookie, \\u0447\\u0442\\u043e\\u0431\\u044b \\u0432\\u0438\\u0434\\u0435\\u043e \\u043d\\u0430\\u0447\\u0430\\u043b\\u043e \\u0432\\u043e\\u0441\\u043f\\u0440\\u043e\\u0438\\u0437\\u0432\\u043e\\u0434\\u0438\\u0442\\u044c\\u0441\\u044f \\u0438 \\u0447\\u0442\\u043e\\u0431\\u044b \\u0441\\u043e\\u0431\\u0440\\u0430\\u0442\\u044c \\u0430\\u043d\\u0430\\u043b\\u0438\\u0442\\u0438\\u0447\\u0435\\u0441\\u043a\\u0438\\u0435 \\u0434\\u0430\\u043d\\u043d\\u044b\\u0435, \\u043d\\u0430\\u043f\\u0440\\u0438\\u043c\\u0435\\u0440 \\u0438\\u043d\\u0444\\u043e\\u0440\\u043c\\u0430\\u0446\\u0438\\u044e \\u043e \\u0442\\u043e\\u043c, \\u043a\\u0430\\u043a \\u0434\\u043e\\u043b\\u0433\\u043e \\u0437\\u0440\\u0438\\u0442\\u0435\\u043b\\u044c \\u043f\\u0440\\u043e\\u0441\\u043c\\u0430\\u0442\\u0440\\u0438\\u0432\\u0430\\u043b \\u0432\\u0438\\u0434\\u0435\\u043e. \\u042d\\u0442\\u043e\\u0442 \\u0444\\u0430\\u0439\\u043b cookie \\u043d\\u0435 \\u043e\\u0441\\u0443\\u0449\\u0435\\u0441\\u0442\\u0432\\u043b\\u044f\\u0435\\u0442 \\u043d\\u0430\\u0431\\u043b\\u044e\\u0434\\u0435\\u043d\\u0438\\u044f \\u0437\\u0430 \\u0447\\u0430\\u0441\\u0442\\u043d\\u044b\\u043c\\u0438 \\u043b\\u0438\\u0446\\u0430\\u043c\\u0438.\",\"Mandatory cookie description 20\":\"\\u0418\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u0443\\u0435\\u0442\\u0441\\u044f \\u0434\\u043b\\u044f \\u0441\\u0438\\u0441\\u0442\\u0435\\u043c\\u044b \\u0435\\u0434\\u0438\\u043d\\u043e\\u0433\\u043e \\u0432\\u0445\\u043e\\u0434\\u0430 Google.\",\"Mandatory cookie description 22\":\"\\u0423\\u0441\\u0442\\u0430\\u043d\\u0430\\u0432\\u043b\\u0438\\u0432\\u0430\\u0435\\u0442\\u0441\\u044f \\u0432 \\u043c\\u043e\\u043c\\u0435\\u043d\\u0442 \\u0440\\u0435\\u0433\\u0438\\u0441\\u0442\\u0440\\u0430\\u0446\\u0438\\u0438 \\u0438\\u043b\\u0438 \\u0432\\u0445\\u043e\\u0434\\u0430 \\u0432 MyHeritage \\u0441 \\u0438\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u043d\\u0438\\u0435\\u043c \\u0443\\u0447\\u0435\\u0442\\u043d\\u043e\\u0439 \\u0437\\u0430\\u043f\\u0438\\u0441\\u0438 Google.\",\"Mandatory cookie description 23\":\"\\u0423\\u0441\\u0442\\u0430\\u043d\\u0430\\u0432\\u043b\\u0438\\u0432\\u0430\\u0435\\u0442\\u0441\\u044f \\u0441\\u0435\\u0440\\u0432\\u0438\\u0441\\u043e\\u043c \\u043e\\u043d\\u043b\\u0430\\u0439\\u043d-\\u043f\\u043b\\u0430\\u0442\\u0435\\u0436\\u0435\\u0439 Stripe, \\u043a\\u043e\\u0433\\u0434\\u0430 \\u0432\\u044b \\u0440\\u0430\\u0437\\u043c\\u0435\\u0449\\u0430\\u0435\\u0442\\u0435 \\u0437\\u0430\\u043a\\u0430\\u0437. \\u0418\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u0443\\u0435\\u0442\\u0441\\u044f \\u0434\\u043b\\u044f \\u043f\\u0440\\u0435\\u0434\\u043e\\u0442\\u0432\\u0440\\u0430\\u0449\\u0435\\u043d\\u0438\\u044f \\u043c\\u043e\\u0448\\u0435\\u043d\\u043d\\u0438\\u0447\\u0435\\u0441\\u0442\\u0432\\u0430.\",\"Mandatory cookie description 24\":\"\\u0423\\u0441\\u0442\\u0430\\u043d\\u0430\\u0432\\u043b\\u0438\\u0432\\u0430\\u0435\\u0442\\u0441\\u044f \\u0432 \\u043c\\u043e\\u043c\\u0435\\u043d\\u0442 \\u0432\\u0445\\u043e\\u0434\\u0430 \\u0438\\u043b\\u0438 \\u0440\\u0435\\u0433\\u0438\\u0441\\u0442\\u0440\\u0430\\u0446\\u0438\\u0438 \\u0432 MyHeritage \\u0441 \\u0438\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u043d\\u0438\\u0435\\u043c \\u0443\\u0447\\u0435\\u0442\\u043d\\u043e\\u0439 \\u0437\\u0430\\u043f\\u0438\\u0441\\u0438 Google. \\u0421\\u043e\\u0434\\u0435\\u0440\\u0436\\u0438\\u0442 \\u0443\\u043d\\u0438\\u043a\\u0430\\u043b\\u044c\\u043d\\u044b\\u0439 \\u0438\\u0434\\u0435\\u043d\\u0442\\u0438\\u0444\\u0438\\u043a\\u0430\\u0446\\u0438\\u043e\\u043d\\u043d\\u044b\\u0439 \\u043d\\u043e\\u043c\\u0435\\u0440, \\u0438\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u0443\\u044e\\u0449\\u0438\\u0439\\u0441\\u044f \\u0434\\u043b\\u044f \\u0441\\u043e\\u0445\\u0440\\u0430\\u043d\\u0435\\u043d\\u0438\\u044f \\u0432\\u0430\\u0448\\u0438\\u0445 \\u043d\\u0430\\u0441\\u0442\\u0440\\u043e\\u0435\\u043a, \\u0432 \\u0442\\u043e\\u043c \\u0447\\u0438\\u0441\\u043b\\u0435 \\u043f\\u0440\\u0435\\u0434\\u043f\\u043e\\u0447\\u0438\\u0442\\u0430\\u0435\\u043c\\u043e\\u0433\\u043e \\u044f\\u0437\\u044b\\u043a\\u0430, \\u043a\\u043e\\u043b\\u0438\\u0447\\u0435\\u0441\\u0442\\u0432\\u0430 \\u0440\\u0435\\u0437\\u0443\\u043b\\u044c\\u0442\\u0430\\u0442\\u043e\\u0432 \\u043f\\u043e\\u0438\\u0441\\u043a\\u0430, \\u0432\\u044b\\u0434\\u0430\\u0432\\u0430\\u0435\\u043c\\u044b\\u0445 \\u043d\\u0430 \\u0441\\u0442\\u0440\\u0430\\u043d\\u0438\\u0446\\u0443 (\\u043d\\u0430\\u043f\\u0440\\u0438\\u043c\\u0435\\u0440, 10 \\u0438\\u043b\\u0438 20), \\u0438 \\u043f\\u0440\\u043e\\u0447\\u0435\\u0439 \\u0438\\u043d\\u0444\\u043e\\u0440\\u043c\\u0430\\u0446\\u0438\\u0438, \\u043d\\u0430\\u043f\\u0440\\u0438\\u043c\\u0435\\u0440 \\u0445\\u043e\\u0442\\u0438\\u0442\\u0435 \\u043b\\u0438 \\u0432\\u044b, \\u0447\\u0442\\u043e\\u0431\\u044b \\u0444\\u0438\\u043b\\u044c\\u0442\\u0440 SafeSearch \\u043e\\u0442 Google \\u0431\\u044b\\u043b \\u0430\\u043a\\u0442\\u0438\\u0432\\u0438\\u0440\\u043e\\u0432\\u0430\\u043d.\",\"Mandatory cookie description 25\":\"\\u0418\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u0443\\u0435\\u0442\\u0441\\u044f \\u0434\\u043b\\u044f \\u0445\\u0440\\u0430\\u043d\\u0435\\u043d\\u0438\\u044f \\u043d\\u0430\\u0441\\u0442\\u0440\\u043e\\u0435\\u043a cookie-\\u0444\\u0430\\u0439\\u043b\\u043e\\u0432.\",\"Mandatory cookie description 26\":\"\\u0418\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u0443\\u0435\\u0442\\u0441\\u044f \\u0434\\u043b\\u044f \\u0438\\u0434\\u0435\\u043d\\u0442\\u0438\\u0444\\u0438\\u043a\\u0430\\u0446\\u0438\\u0438.\",\"Mandatory cookie description 27\":\"\\u0421\\u043e\\u0445\\u0440\\u0430\\u043d\\u044f\\u0435\\u0442 \\u043f\\u0440\\u0435\\u0434\\u043f\\u043e\\u0447\\u0442\\u0435\\u043d\\u0438\\u044f \\u043f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u0442\\u0435\\u043b\\u044f \\u0434\\u043b\\u044f \\u043e\\u043f\\u0442\\u0438\\u043c\\u0438\\u0437\\u0430\\u0446\\u0438\\u0438 \\u0438\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u043d\\u0438\\u044f \\u0441\\u0430\\u0439\\u0442\\u0430.\",\"Mandatory cookie description 28\":\"\\u0421\\u043e\\u0445\\u0440\\u0430\\u043d\\u044f\\u0435\\u0442 \\u043f\\u0440\\u0435\\u0434\\u043f\\u043e\\u0447\\u0442\\u0435\\u043d\\u0438\\u044f \\u043f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u0442\\u0435\\u043b\\u044f \\u0434\\u043b\\u044f \\u043e\\u043f\\u0442\\u0438\\u043c\\u0438\\u0437\\u0430\\u0446\\u0438\\u0438 \\u0438\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u043d\\u0438\\u044f \\u0441\\u0430\\u0439\\u0442\\u0430.\",\"Mandatory cookie description 29\":\"\\u0425\\u0440\\u0430\\u043d\\u0438\\u0442 \\u043a\\u043e\\u043b\\u0438\\u0447\\u0435\\u0441\\u0442\\u0432\\u043e \\u0440\\u0435\\u0437\\u0443\\u043b\\u044c\\u0442\\u0430\\u0442\\u043e\\u0432, \\u043a\\u043e\\u0442\\u043e\\u0440\\u044b\\u0435 \\u043e\\u0442\\u043e\\u0431\\u0440\\u0430\\u0436\\u0430\\u044e\\u0442\\u0441\\u044f \\u043d\\u0430 \\u0441\\u0442\\u0440\\u0430\\u043d\\u0438\\u0446\\u0435 MyHeritage SuperSearch \\u2013 \\u0438\\u043d\\u0441\\u0442\\u0440\\u0443\\u043c\\u0435\\u043d\\u0442\\u0430, \\u043e\\u0441\\u0443\\u0449\\u0435\\u0441\\u0442\\u0432\\u043b\\u044f\\u044e\\u0449\\u0435\\u0433\\u043e \\u043f\\u043e\\u0438\\u0441\\u043a \\u0438\\u0441\\u0442\\u043e\\u0440\\u0438\\u0447\\u0435\\u0441\\u043a\\u0438\\u0445 \\u0437\\u0430\\u043f\\u0438\\u0441\\u0435\\u0439.\",\"Mandatory cookie description 30\":\"\\u0418\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u0443\\u0435\\u0442\\u0441\\u044f \\u0434\\u043b\\u044f \\u0443\\u043b\\u0443\\u0447\\u0448\\u0435\\u043d\\u0438\\u044f \\u0440\\u0430\\u0431\\u043e\\u0442\\u044b \\u0441\\u0430\\u0439\\u0442\\u0430.\",\"Mandatory cookie description 31\":\"\\u0421\\u043e\\u0445\\u0440\\u0430\\u043d\\u044f\\u0435\\u0442 \\u043f\\u0440\\u0435\\u0434\\u043f\\u043e\\u0447\\u0442\\u0435\\u043d\\u0438\\u044f \\u043f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u0442\\u0435\\u043b\\u044f \\u0434\\u043b\\u044f \\u043e\\u043f\\u0442\\u0438\\u043c\\u0438\\u0437\\u0430\\u0446\\u0438\\u0438 \\u0438\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u043d\\u0438\\u044f \\u0441\\u0430\\u0439\\u0442\\u0430.\",\"Mandatory cookie description 32\":\"\\u0418\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u0443\\u0435\\u0442\\u0441\\u044f \\u0434\\u043b\\u044f \\u0445\\u0440\\u0430\\u043d\\u0435\\u043d\\u0438\\u044f \\u043d\\u0430\\u0441\\u0442\\u0440\\u043e\\u0435\\u043a cookie-\\u0444\\u0430\\u0439\\u043b\\u043e\\u0432.\",\"Mandatory cookie description 33\":\"\\u0418\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u0443\\u0435\\u0442\\u0441\\u044f \\u0434\\u043b\\u044f \\u0438\\u0434\\u0435\\u043d\\u0442\\u0438\\u0444\\u0438\\u043a\\u0430\\u0446\\u0438\\u0438.\",\"Mandatory cookie description 34\":\"\\u0421\\u043e\\u0445\\u0440\\u0430\\u043d\\u044f\\u0435\\u0442 \\u043f\\u0440\\u0435\\u0434\\u043f\\u043e\\u0447\\u0442\\u0435\\u043d\\u0438\\u044f \\u043f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u0442\\u0435\\u043b\\u044f \\u0434\\u043b\\u044f \\u043e\\u043f\\u0442\\u0438\\u043c\\u0438\\u0437\\u0430\\u0446\\u0438\\u0438 \\u0438\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u043d\\u0438\\u044f \\u0441\\u0430\\u0439\\u0442\\u0430.\",\"Mandatory cookie description 35\":\"\\u0418\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u0443\\u0435\\u0442\\u0441\\u044f \\u0434\\u043b\\u044f \\u0438\\u0434\\u0435\\u043d\\u0442\\u0438\\u0444\\u0438\\u043a\\u0430\\u0446\\u0438\\u0438.\",\"Mandatory cookie description 36\":\"\\u0421\\u043e\\u0445\\u0440\\u0430\\u043d\\u044f\\u0435\\u0442 \\u0434\\u0430\\u043d\\u043d\\u044b\\u0435 \\u043e \\u0442\\u0435\\u043a\\u0443\\u0449\\u0435\\u043c \\u0447\\u0430\\u0441\\u043e\\u0432\\u043e\\u043c \\u043f\\u043e\\u044f\\u0441\\u0435, \\u0443\\u043a\\u0430\\u0437\\u0430\\u043d\\u043d\\u043e\\u043c \\u0432 \\u0431\\u0440\\u0430\\u0443\\u0437\\u0435\\u0440\\u0435.\",\"Mandatory cookie description 37\":\"\\u0421\\u043e\\u0445\\u0440\\u0430\\u043d\\u044f\\u0435\\u0442 \\u043f\\u0440\\u0435\\u0434\\u043f\\u043e\\u0447\\u0442\\u0435\\u043d\\u0438\\u044f \\u043f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u0442\\u0435\\u043b\\u044f \\u0434\\u043b\\u044f \\u043e\\u043f\\u0442\\u0438\\u043c\\u0438\\u0437\\u0430\\u0446\\u0438\\u0438 \\u0438\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u043d\\u0438\\u044f \\u0441\\u0430\\u0439\\u0442\\u0430.\",\"Mandatory cookie description 38\":\"\\u0421\\u043e\\u0445\\u0440\\u0430\\u043d\\u044f\\u0435\\u0442 \\u0434\\u0430\\u043d\\u043d\\u044b\\u0435 \\u043e \\u0442\\u0435\\u043a\\u0443\\u0449\\u0435\\u043c \\u0432\\u044b\\u0431\\u043e\\u0440\\u0435 \\u044f\\u0437\\u044b\\u043a\\u0430.\",\"Mandatory cookie description 39\":\"\\u0418\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u0443\\u0435\\u0442\\u0441\\u044f \\u0434\\u043b\\u044f \\u0438\\u0434\\u0435\\u043d\\u0442\\u0438\\u0444\\u0438\\u043a\\u0430\\u0446\\u0438\\u0438.\",\"Mandatory cookie description 40\":\"\\u0421\\u043e\\u0445\\u0440\\u0430\\u043d\\u044f\\u0435\\u0442 \\u043f\\u0440\\u0435\\u0434\\u043f\\u043e\\u0447\\u0442\\u0435\\u043d\\u0438\\u044f \\u043f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u0442\\u0435\\u043b\\u044f \\u0434\\u043b\\u044f \\u043e\\u043f\\u0442\\u0438\\u043c\\u0438\\u0437\\u0430\\u0446\\u0438\\u0438 \\u0438\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u043d\\u0438\\u044f \\u0441\\u0430\\u0439\\u0442\\u0430.\",\"Mandatory cookie description 41\":\"\\u0418\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u0443\\u0435\\u0442\\u0441\\u044f \\u0434\\u043b\\u044f \\u0445\\u0440\\u0430\\u043d\\u0435\\u043d\\u0438\\u044f \\u043d\\u0430\\u0441\\u0442\\u0440\\u043e\\u0435\\u043a cookie-\\u0444\\u0430\\u0439\\u043b\\u043e\\u0432.\",\"Mandatory cookie description 42\":\"\\u0421\\u043e\\u0445\\u0440\\u0430\\u043d\\u044f\\u0435\\u0442 \\u043f\\u0440\\u0435\\u0434\\u043f\\u043e\\u0447\\u0442\\u0435\\u043d\\u0438\\u044f \\u043f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u0442\\u0435\\u043b\\u044f \\u0434\\u043b\\u044f \\u043e\\u043f\\u0442\\u0438\\u043c\\u0438\\u0437\\u0430\\u0446\\u0438\\u0438 \\u0438\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u043d\\u0438\\u044f \\u0441\\u0430\\u0439\\u0442\\u0430.\",\"Mandatory cookie description 43\":\"\\u0421\\u043e\\u0445\\u0440\\u0430\\u043d\\u044f\\u0435\\u0442 \\u043f\\u0440\\u0435\\u0434\\u043f\\u043e\\u0447\\u0442\\u0435\\u043d\\u0438\\u044f \\u043f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u0442\\u0435\\u043b\\u044f \\u0434\\u043b\\u044f \\u043e\\u043f\\u0442\\u0438\\u043c\\u0438\\u0437\\u0430\\u0446\\u0438\\u0438 \\u0438\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u043d\\u0438\\u044f \\u0441\\u0430\\u0439\\u0442\\u0430.\",\"Analytics cookie description 3\":\"\\u0418\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u0443\\u0435\\u0442\\u0441\\u044f \\u0441\\u0435\\u0440\\u0432\\u0438\\u0441\\u043e\\u043c Google Analytics \\u0434\\u043b\\u044f \\u0434\\u0438\\u0444\\u0444\\u0435\\u0440\\u0435\\u043d\\u0446\\u0438\\u0430\\u0446\\u0438\\u0438 \\u043f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u0442\\u0435\\u043b\\u0435\\u0439.\",\"Analytics cookie description 5\":\"\\u0424\\u0430\\u0439\\u043b \\u0441ookie \\u0441\\u0438\\u0441\\u0442\\u0435\\u043c\\u044b Google Analytics. \\u0418\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u0443\\u0435\\u0442\\u0441\\u044f \\u0434\\u043b\\u044f \\u0441\\u0431\\u043e\\u0440\\u0430 \\u0438\\u043d\\u0444\\u043e\\u0440\\u043c\\u0430\\u0446\\u0438\\u0438 \\u043e \\u0442\\u043e\\u043c, \\u043a\\u0430\\u043a \\u043f\\u043e\\u0441\\u0435\\u0442\\u0438\\u0442\\u0435\\u043b\\u0438 \\u0438\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u0443\\u044e\\u0442 \\u0432\\u0435\\u0431-\\u0441\\u0430\\u0439\\u0442 MyHeritage.\",\"Analytics cookie description 6\":\"\\u0424\\u0430\\u0439\\u043b cookie \\u0441\\u0438\\u0441\\u0442\\u0435\\u043c\\u044b \\u043e\\u0431\\u0440\\u0430\\u0431\\u043e\\u0442\\u043a\\u0438 \\u0442\\u044d\\u0433\\u043e\\u0432 Google. \\u0418\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u0443\\u0435\\u0442\\u0441\\u044f \\u0434\\u043b\\u044f \\u0443\\u0432\\u0435\\u043b\\u0438\\u0447\\u0435\\u043d\\u0438\\u044f \\u0441\\u043a\\u043e\\u0440\\u043e\\u0441\\u0442\\u0438 \\u043e\\u0431\\u0440\\u0430\\u0431\\u043e\\u0442\\u043a\\u0438 \\u0437\\u0430\\u043f\\u0440\\u043e\\u0441\\u043e\\u0432.\",\"Advertising cookie description 1\":\"\\u0418\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u0443\\u0435\\u0442\\u0441\\u044f \\u0434\\u043b\\u044f \\u0438\\u0434\\u0435\\u043d\\u0442\\u0438\\u0444\\u0438\\u043a\\u0430\\u0446\\u0438\\u0438 \\u0430\\u0432\\u0442\\u043e\\u0440\\u0438\\u0437\\u043e\\u0432\\u0430\\u0432\\u0448\\u0435\\u0433\\u043e\\u0441\\u044f \\u043f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u0442\\u0435\\u043b\\u044f \\u0441\\u0430\\u0439\\u0442\\u0430\\u043c\\u0438, \\u043d\\u0435 \\u0432\\u0445\\u043e\\u0434\\u044f\\u0449\\u0438\\u043c\\u0438 \\u0432 \\u0441\\u0438\\u0441\\u0442\\u0435\\u043c\\u0443 Google, \\u0438 \\u0441\\u043e\\u0434\\u0435\\u0440\\u0436\\u0438\\u0442 \\u0438\\u043d\\u0444\\u043e\\u0440\\u043c\\u0430\\u0446\\u0438\\u044e \\u043e \\u0442\\u043e\\u043c, \\u0434\\u0430\\u0432\\u0430\\u043b \\u043b\\u0438 \\u043f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u0442\\u0435\\u043b\\u044c \\u0441\\u0432\\u043e\\u0435 \\u0441\\u043e\\u0433\\u043b\\u0430\\u0441\\u0438\\u0435 \\u043d\\u0430 \\u043f\\u0435\\u0440\\u0441\\u043e\\u043d\\u0430\\u043b\\u0438\\u0437\\u0430\\u0446\\u0438\\u044e \\u0440\\u0435\\u043a\\u043b\\u0430\\u043c\\u044b.\",\"Advertising cookie description 2\":\"\\u0424\\u0430\\u0439\\u043b cookie \\u043a\\u043e\\u043c\\u043f\\u0430\\u043d\\u0438\\u0438 Microsoft \\u043a\\u043e\\u0442\\u043e\\u0440\\u044b\\u0439 \\u0441\\u043e\\u0434\\u0435\\u0440\\u0436\\u0438\\u0442 \\u0433\\u043b\\u043e\\u0431\\u0430\\u043b\\u044c\\u043d\\u044b\\u0439 \\u0443\\u043d\\u0438\\u043a\\u0430\\u043b\\u044c\\u043d\\u044b\\u0439 \\u0438\\u0434\\u0435\\u043d\\u0442\\u0438\\u0444\\u0438\\u043a\\u0430\\u0446\\u0438\\u043e\\u043d\\u043d\\u044b\\u0439 \\u043d\\u043e\\u043c\\u0435\\u0440 (GUID), \\u043f\\u0440\\u0438\\u0441\\u0432\\u043e\\u0435\\u043d\\u043d\\u044b\\u0439 \\u0432\\u0430\\u0448\\u0435\\u043c\\u0443 \\u0431\\u0440\\u0430\\u0443\\u0437\\u0435\\u0440\\u0443. \\u0423\\u0441\\u0442\\u0430\\u043d\\u0430\\u0432\\u043b\\u0438\\u0432\\u0430\\u0435\\u0442\\u0441\\u044f, \\u043a\\u043e\\u0433\\u0434\\u0430 \\u0432\\u044b \\u0432\\u0437\\u0430\\u0438\\u043c\\u043e\\u0434\\u0435\\u0439\\u0441\\u0442\\u0432\\u0443\\u0435\\u0442\\u0435 \\u0441 \\u0440\\u0435\\u0441\\u0443\\u0440\\u0441\\u0430\\u043c\\u0438 Microsoft, \\u0432\\u043a\\u043b\\u044e\\u0447\\u0430\\u044f \\u043c\\u0435\\u0442\\u043a\\u0443 UET, \\u0438\\u043b\\u0438 \\u043f\\u043e\\u0441\\u0435\\u0449\\u0430\\u0435\\u0442\\u0435 \\u0440\\u0435\\u0441\\u0443\\u0440\\u0441\\u044b Microsoft \\u043f\\u0440\\u0438 \\u043f\\u043e\\u043c\\u043e\\u0449\\u0438 \\u0441\\u0432\\u043e\\u0435\\u0433\\u043e \\u0431\\u0440\\u0430\\u0443\\u0437\\u0435\\u0440\\u0430. Microsoft Advertising \\u043d\\u0435 \\u043e\\u0441\\u0443\\u0449\\u0435\\u0441\\u0442\\u0432\\u043b\\u044f\\u0435\\u0442 \\u043f\\u0440\\u043e\\u0434\\u0430\\u0436\\u0438 \\u044d\\u0442\\u0438\\u0445 \\u0434\\u0430\\u043d\\u043d\\u044b\\u0445 \\u0442\\u0440\\u0435\\u0442\\u044c\\u0438\\u043c \\u043b\\u0438\\u0446\\u0430\\u043c, \\u0430 \\u0442\\u0430\\u043a\\u0436\\u0435 \\u043d\\u0435 \\u0440\\u0430\\u0441\\u043f\\u0440\\u043e\\u0441\\u0442\\u0440\\u0430\\u043d\\u044f\\u0435\\u0442 \\u0438\\u0445 \\u0441\\u0440\\u0435\\u0434\\u0438 \\u0434\\u0440\\u0443\\u0433\\u0438\\u0445 \\u0440\\u0435\\u043a\\u043b\\u0430\\u043c\\u043e\\u0434\\u0430\\u0442\\u0435\\u043b\\u0435\\u0439.\",\"Advertising cookie description 4\":\"RoktRecogniser \\u2014 \\u044d\\u0442\\u043e \\u0442\\u0435\\u0445\\u043d\\u043e\\u043b\\u043e\\u0433\\u0438\\u044f \\u043e\\u0442\\u0441\\u043b\\u0435\\u0436\\u0438\\u0432\\u0430\\u043d\\u0438\\u044f, \\u043a\\u043e\\u0442\\u043e\\u0440\\u0430\\u044f \\u043f\\u043e\\u043c\\u043e\\u0433\\u0430\\u0435\\u0442 \\u043d\\u0430\\u043c \\u043e\\u043f\\u0440\\u0435\\u0434\\u0435\\u043b\\u0438\\u0442\\u044c, \\u0447\\u0442\\u043e \\u0412\\u044b \\u044f\\u0432\\u043b\\u044f\\u0435\\u0442\\u0435\\u0441\\u044c \\u043e\\u0434\\u043d\\u0438\\u043c \\u0438 \\u0442\\u0435\\u043c \\u0436\\u0435 \\u043f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u0442\\u0435\\u043b\\u0435\\u043c \\u043d\\u0430 \\u0440\\u0430\\u0437\\u043d\\u044b\\u0445 \\u0443\\u0441\\u0442\\u0440\\u043e\\u0439\\u0441\\u0442\\u0432\\u0430\\u0445 \\u0438 \\u0432 \\u0440\\u0430\\u0437\\u043d\\u044b\\u0445 \\u0431\\u0440\\u0430\\u0443\\u0437\\u0435\\u0440\\u0430\\u0445, \\u0438\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u0443\\u044f \\u043e\\u0442\\u0441\\u043b\\u0435\\u0436\\u0438\\u0432\\u0430\\u043d\\u0438\\u0435 \\u0432 \\u0441\\u043e\\u043e\\u0442\\u0432\\u0435\\u0442\\u0441\\u0442\\u0432\\u0438\\u0438 \\u0441 \\u043d\\u0430\\u0441\\u0442\\u0440\\u043e\\u0439\\u043a\\u0430\\u043c\\u0438 \\u0412\\u0430\\u0448\\u0435\\u0433\\u043e \\u0431\\u0440\\u0430\\u0443\\u0437\\u0435\\u0440\\u0430, \\u043f\\u0440\\u043e\\u0442\\u043e\\u043a\\u043e\\u043b eTag, \\u0434\\u0430\\u043d\\u043d\\u044b\\u0435 1-\\u0433\\u043e \\u0438 3-\\u0433\\u043e \\u043b\\u0438\\u0446\\u0430, \\u0430 \\u0442\\u0430\\u043a\\u0436\\u0435 \\u043b\\u043e\\u043a\\u0430\\u043b\\u044c\\u043d\\u043e\\u0435 \\u0445\\u0440\\u0430\\u043d\\u0438\\u043b\\u0438\\u0449\\u0435 1-\\u0433\\u043e \\u0438 3-\\u0433\\u043e \\u043b\\u0438\\u0446\\u0430. \\u042d\\u0442\\u0438 \\u0434\\u043e\\u043f\\u043e\\u043b\\u043d\\u0438\\u0442\\u0435\\u043b\\u044c\\u043d\\u044b\\u0435 \\u043f\\u0430\\u0440\\u0430\\u043c\\u0435\\u0442\\u0440\\u044b \\u043f\\u043e\\u0437\\u0432\\u043e\\u043b\\u044f\\u044e\\u0442 Rokt \\u043e\\u0442\\u0441\\u043b\\u0435\\u0436\\u0438\\u0432\\u0430\\u0442\\u044c \\u043f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u0442\\u0435\\u043b\\u044f \\u043f\\u043e\\u043c\\u0438\\u043c\\u043e \\u0435\\u0433\\u043e \\u0430\\u0434\\u0440\\u0435\\u0441\\u0430 \\u044d\\u043b\\u0435\\u043a\\u0442\\u0440\\u043e\\u043d\\u043d\\u043e\\u0439 \\u043f\\u043e\\u0447\\u0442\\u044b \\u043f\\u043e\\u0441\\u043b\\u0435 \\u0442\\u043e\\u0433\\u043e, \\u043a\\u0430\\u043a \\u043e\\u043d \\u0432\\u044b\\u0431\\u0440\\u0430\\u043b \\u043f\\u0440\\u0435\\u0434\\u043b\\u043e\\u0436\\u0435\\u043d\\u0438\\u044f Rokt.\",\"Advertising cookie description 11\":\"\\u0418\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u0443\\u0435\\u0442\\u0441\\u044f \\u0434\\u043b\\u044f \\u0440\\u0435\\u043a\\u043b\\u0430\\u043c\\u044b, \\u0432 \\u0442\\u043e\\u043c \\u0447\\u0438\\u0441\\u043b\\u0435 \\u0434\\u043b\\u044f \\u0434\\u0435\\u043c\\u043e\\u043d\\u0441\\u0442\\u0440\\u0430\\u0446\\u0438\\u0438 \\u0438 \\u043f\\u0440\\u0435\\u0434\\u043e\\u0441\\u0442\\u0430\\u0432\\u043b\\u0435\\u043d\\u0438\\u044f \\u0440\\u0435\\u043a\\u043b\\u0430\\u043c\\u044b, \\u043f\\u0435\\u0440\\u0441\\u043e\\u043d\\u0430\\u043b\\u0438\\u0437\\u0430\\u0446\\u0438\\u0438 \\u0440\\u0435\\u043a\\u043b\\u0430\\u043c\\u043d\\u044b\\u0445 \\u0441\\u043e\\u043e\\u0431\\u0449\\u0435\\u043d\\u0438\\u0439 (\\u0432 \\u0437\\u0430\\u0432\\u0438\\u0441\\u0438\\u043c\\u043e\\u0441\\u0442\\u0438 \\u043e\\u0442 \\u043d\\u0430\\u0441\\u0442\\u0440\\u043e\\u0435\\u043a \\u043f\\u043e\\u043a\\u0430\\u0437\\u0430 \\u0440\\u0435\\u043a\\u043b\\u0430\\u043c\\u044b \\u043f\\u043e \\u0430\\u0434\\u0440\\u0435\\u0441\\u0443 g.co\\/adsettings), \\u043e\\u0433\\u0440\\u0430\\u043d\\u0438\\u0447\\u0435\\u043d\\u0438\\u044f \\u043a\\u043e\\u043b\\u0438\\u0447\\u0435\\u0441\\u0442\\u0432\\u0430 \\u043f\\u043e\\u043a\\u0430\\u0437\\u043e\\u0432 \\u0440\\u0435\\u043a\\u043b\\u0430\\u043c\\u043d\\u044b\\u0445 \\u043e\\u0431\\u044a\\u044f\\u0432\\u043b\\u0435\\u043d\\u0438\\u0439 \\u043f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u0442\\u0435\\u043b\\u044e, \\u043e\\u0442\\u043a\\u043b\\u044e\\u0447\\u0435\\u043d\\u0438\\u044f \\u043f\\u043e\\u043a\\u0430\\u0437\\u0430 \\u0440\\u0435\\u043a\\u043b\\u0430\\u043c\\u043d\\u044b\\u0445 \\u043e\\u0431\\u044a\\u044f\\u0432\\u043b\\u0435\\u043d\\u0438\\u0439 \\u043f\\u043e \\u0432\\u0430\\u0448\\u0435\\u043c\\u0443 \\u0432\\u044b\\u0431\\u043e\\u0440\\u0443 \\u0438 \\u0438\\u0437\\u043c\\u0435\\u0440\\u0435\\u043d\\u0438\\u044f \\u043f\\u043e\\u043a\\u0430\\u0437\\u0430\\u0442\\u0435\\u043b\\u0435\\u0439 \\u044d\\u0444\\u0444\\u0435\\u043a\\u0442\\u0438\\u0432\\u043d\\u043e\\u0441\\u0442\\u0438 \\u0440\\u0435\\u043a\\u043b\\u0430\\u043c\\u043d\\u044b\\u0445 \\u043e\\u0431\\u044a\\u044f\\u0432\\u043b\\u0435\\u043d\\u0438\\u0439.\",\"Advertising cookie description 12\":\"\\u0418\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u0443\\u0435\\u0442\\u0441\\u044f \\u0434\\u043b\\u044f \\u043f\\u0440\\u0435\\u0434\\u043e\\u0441\\u0442\\u0430\\u0432\\u043b\\u0435\\u043d\\u0438\\u044f, \\u043e\\u0446\\u0435\\u043d\\u043a\\u0438 \\u0438 \\u043f\\u043e\\u0432\\u044b\\u0448\\u0435\\u043d\\u0438\\u044f \\u0440\\u0435\\u043b\\u0435\\u0432\\u0430\\u043d\\u0442\\u043d\\u043e\\u0441\\u0442\\u0438 \\u0440\\u0435\\u043a\\u043b\\u0430\\u043c\\u043d\\u044b\\u0445 \\u043e\\u0431\\u044a\\u044f\\u0432\\u043b\\u0435\\u043d\\u0438\\u0439.\",\"Advertising cookie description 13\":\"\\u041f\\u043e\\u0437\\u0432\\u043e\\u043b\\u044f\\u0435\\u0442 \\u0438\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u0442\\u044c \\u0444\\u0443\\u043d\\u043a\\u0446\\u0438\\u0438 Twitter \\u0431\\u0435\\u0437 \\u043d\\u0435\\u043e\\u0431\\u0445\\u043e\\u0434\\u0438\\u043c\\u043e\\u0441\\u0442\\u0438 \\u0432\\u0445\\u043e\\u0434\\u0430 \\u0432 \\u0441\\u0438\\u0441\\u0442\\u0435\\u043c\\u0443.\",\"Advertising cookie description 14\":\"\\u0424\\u0430\\u0439\\u043b cookie \\u0441\\u043e\\u0446\\u0438\\u0430\\u043b\\u044c\\u043d\\u043e\\u0439 \\u0441\\u0435\\u0442\\u0438 Twitter, \\u0441\\u043e\\u0434\\u0435\\u0440\\u0436\\u0430\\u0449\\u0438\\u0439\\u0441\\u044f \\u043d\\u0430 \\u0441\\u0442\\u0440\\u0430\\u043d\\u0438\\u0446\\u0430\\u0445 \\u0441 \\u043a\\u043d\\u043e\\u043f\\u043a\\u043e\\u0439 \\u00abTweet\\u00bb \\u0438 \\u0441\\u043b\\u0443\\u0436\\u0430\\u0449\\u0438\\u0439 \\u0434\\u043b\\u044f \\u0438\\u0434\\u0435\\u043d\\u0442\\u0438\\u0444\\u0438\\u043a\\u0430\\u0446\\u0438\\u0438 \\u043f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u0442\\u0435\\u043b\\u044f \\u0441 \\u0443\\u043d\\u0438\\u043a\\u0430\\u043b\\u044c\\u043d\\u044b\\u043c \\u043d\\u043e\\u043c\\u0435\\u0440\\u043e\\u043c \\u0432 \\u0441\\u0435\\u0442\\u0438 Twitter.\",\"Advertising cookie description 15\":\"\\u0423\\u0441\\u0442\\u0430\\u043d\\u0430\\u0432\\u043b\\u0438\\u0432\\u0430\\u0435\\u0442\\u0441\\u044f \\u0432 \\u0446\\u0435\\u043b\\u044f\\u0445 \\u0438\\u043d\\u0442\\u0435\\u0433\\u0440\\u0430\\u0446\\u0438\\u0438 Twitter \\u0441 \\u0434\\u0440\\u0443\\u0433\\u0438\\u043c\\u0438 \\u0441\\u043e\\u0446\\u0438\\u0430\\u043b\\u044c\\u043d\\u044b\\u043c\\u0438 \\u0441\\u0435\\u0442\\u044f\\u043c\\u0438.\",\"Advertising cookie description 16\":\"\\u0418\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u0443\\u0435\\u0442\\u0441\\u044f \\u0434\\u043b\\u044f \\u0438\\u0437\\u043c\\u0435\\u0440\\u0435\\u043d\\u0438\\u044f \\u043f\\u043e\\u043a\\u0430\\u0437\\u0430\\u0442\\u0435\\u043b\\u0435\\u0439 \\u0440\\u0435\\u043a\\u043b\\u0430\\u043c\\u043d\\u043e\\u0433\\u043e \\u043e\\u0431\\u044a\\u044f\\u0432\\u043b\\u0435\\u043d\\u0438\\u044f \\u0438 \\u0440\\u0435\\u043a\\u043b\\u0430\\u043c\\u043d\\u043e\\u0439 \\u043a\\u0430\\u043c\\u043f\\u0430\\u043d\\u0438\\u0438 \\u0438 \\u043a\\u043e\\u044d\\u0444\\u0444\\u0438\\u0446\\u0438\\u0435\\u043d\\u0442\\u043e\\u0432 \\u043f\\u0435\\u0440\\u0435\\u0432\\u043e\\u0434\\u0430 \\u0440\\u0435\\u043a\\u043b\\u0430\\u043c\\u043d\\u044b\\u0445 \\u043e\\u0431\\u044a\\u044f\\u0432\\u043b\\u0435\\u043d\\u0438\\u0439 Google \\u043d\\u0430 \\u0441\\u0430\\u0439\\u0442\\u0435, \\u043a\\u043e\\u0442\\u043e\\u0440\\u044b\\u0439 \\u0432\\u044b \\u043f\\u043e\\u0441\\u0435\\u0449\\u0430\\u0435\\u0442\\u0435.\",\"Advertising cookie description 17\":\"\\u041f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u0442\\u0435\\u043b\\u0438 \\u043f\\u043e\\u043c\\u043e\\u0433\\u0430\\u044e\\u0442 \\u0440\\u0435\\u043a\\u043b\\u0430\\u043c\\u043e\\u0434\\u0430\\u0442\\u0435\\u043b\\u044f\\u043c \\u043e\\u043f\\u0440\\u0435\\u0434\\u0435\\u043b\\u0438\\u0442\\u044c, \\u043a\\u0430\\u043a \\u0447\\u0430\\u0441\\u0442\\u043e \\u043f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u0442\\u0435\\u043b\\u0438, \\u0437\\u0430\\u043f\\u0443\\u0441\\u043a\\u0430\\u044e\\u0449\\u0438\\u0435 \\u0440\\u0435\\u043a\\u043b\\u0430\\u043c\\u043d\\u0443\\u044e \\u0441\\u0441\\u044b\\u043b\\u043a\\u0443, \\u0441\\u043e\\u0432\\u0435\\u0440\\u0448\\u0430\\u044e\\u0442 \\u0434\\u0435\\u0439\\u0441\\u0442\\u0432\\u0438\\u044f \\u043d\\u0430 \\u0438\\u0445 \\u0441\\u0430\\u0439\\u0442\\u0430\\u0445, \\u043d\\u0430\\u043f\\u0440\\u0438\\u043c\\u0435\\u0440 \\u0441\\u043e\\u0432\\u0435\\u0440\\u0448\\u0430\\u044e\\u0442 \\u043f\\u043e\\u043a\\u0443\\u043f\\u043a\\u0443. \\u0424\\u0430\\u0439\\u043b\\u044b cookie, \\u0438\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u0443\\u044e\\u0449\\u0438\\u0435\\u0441\\u044f \\u0434\\u043b\\u044f \\u0438\\u0437\\u043c\\u0435\\u0440\\u0435\\u043d\\u0438\\u044f \\u043a\\u043e\\u044d\\u0444\\u0444\\u0438\\u0446\\u0438\\u0435\\u043d\\u0442\\u043e\\u0432 \\u043f\\u0435\\u0440\\u0435\\u0432\\u043e\\u0434\\u0430, \\u043d\\u0435 \\u0438\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u0443\\u044e\\u0442\\u0441\\u044f \\u0434\\u043b\\u044f \\u043f\\u0435\\u0440\\u0441\\u043e\\u043d\\u0430\\u043b\\u0438\\u0437\\u0430\\u0446\\u0438\\u0438 \\u0440\\u0435\\u043a\\u043b\\u0430\\u043c\\u043d\\u044b\\u0445 \\u043e\\u0431\\u044a\\u044f\\u0432\\u043b\\u0435\\u043d\\u0438\\u0439.\",\"Advertising cookie description 20\":\"\\u041e\\u0441\\u0443\\u0449\\u0435\\u0441\\u0442\\u0432\\u043b\\u044f\\u0435\\u0442 \\u0438\\u0434\\u0435\\u043d\\u0442\\u0438\\u0444\\u0438\\u043a\\u0430\\u0446\\u0438\\u044e \\u0431\\u0440\\u0430\\u0443\\u0437\\u0435\\u0440\\u043e\\u0432 \\u0441 \\u0446\\u0435\\u043b\\u044c\\u044e \\u043f\\u0440\\u0435\\u0434\\u043e\\u0441\\u0442\\u0430\\u0432\\u043b\\u0435\\u043d\\u0438\\u044f \\u0443\\u0441\\u043b\\u0443\\u0433 \\u043f\\u043e \\u0440\\u0435\\u043a\\u043b\\u0430\\u043c\\u0435 \\u0438 \\u0430\\u043d\\u0430\\u043b\\u0438\\u0442\\u0438\\u043a\\u0435 \\u0441\\u0430\\u0439\\u0442\\u0430.\",\"Advertising cookie description 22\":\"\\u0418\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u0443\\u0435\\u0442\\u0441\\u044f \\u0434\\u043b\\u044f \\u043f\\u0435\\u0440\\u0435\\u0434\\u0430\\u0447\\u0438 \\u043e\\u043f\\u0442\\u0438\\u043c\\u0430\\u043b\\u044c\\u043d\\u043e\\u0433\\u043e \\u0438\\u043d\\u0442\\u0435\\u0440\\u0444\\u0435\\u0439\\u0441\\u0430 \\u043d\\u0430 \\u044d\\u043a\\u0440\\u0430\\u043d \\u0432\\u0430\\u0448\\u0435\\u0433\\u043e \\u0443\\u0441\\u0442\\u0440\\u043e\\u0439\\u0441\\u0442\\u0432\\u0430.\",\"Advertising cookie description 23\":\"\\u0421\\u0438\\u0441\\u0442\\u0435\\u043c\\u0430 \\u0443\\u043d\\u0438\\u0432\\u0435\\u0440\\u0441\\u0430\\u043b\\u044c\\u043d\\u043e\\u0433\\u043e \\u043e\\u0442\\u0441\\u043b\\u0435\\u0436\\u0438\\u0432\\u0430\\u043d\\u0438\\u044f \\u0441\\u043e\\u0431\\u044b\\u0442\\u0438\\u0439 (UET) \\u043f\\u0440\\u0438\\u0441\\u0432\\u0430\\u0438\\u0432\\u0430\\u0435\\u0442 \\u0443\\u043d\\u0438\\u043a\\u0430\\u043b\\u044c\\u043d\\u044b\\u0439 \\u0430\\u043d\\u043e\\u043d\\u0438\\u043c\\u043d\\u044b\\u0439 \\u0438\\u0434\\u0435\\u043d\\u0442\\u0438\\u0444\\u0438\\u043a\\u0430\\u0446\\u0438\\u043e\\u043d\\u043d\\u044b\\u0439 \\u043d\\u043e\\u043c\\u0435\\u0440 \\u043f\\u043e\\u0441\\u0435\\u0442\\u0438\\u0442\\u0435\\u043b\\u044f. UET \\u0441\\u043e\\u0445\\u0440\\u0430\\u043d\\u044f\\u0435\\u0442 \\u044d\\u0442\\u0438 \\u0434\\u0430\\u043d\\u043d\\u044b\\u0435 \\u0432 \\u0441\\u043e\\u0431\\u0441\\u0442\\u0432\\u0435\\u043d\\u043d\\u043e\\u043c \\u0444\\u0430\\u0439\\u043b\\u0435 cookie. Microsoft Advertising \\u043d\\u0435 \\u043e\\u0441\\u0443\\u0449\\u0435\\u0441\\u0442\\u0432\\u043b\\u044f\\u0435\\u0442 \\u043f\\u0440\\u043e\\u0434\\u0430\\u0436\\u0438 \\u044d\\u0442\\u0438\\u0445 \\u0434\\u0430\\u043d\\u043d\\u044b\\u0445 \\u0442\\u0440\\u0435\\u0442\\u044c\\u0438\\u043c \\u043b\\u0438\\u0446\\u0430\\u043c, \\u0430 \\u0442\\u0430\\u043a\\u0436\\u0435 \\u043d\\u0435 \\u0440\\u0430\\u0441\\u043f\\u0440\\u043e\\u0441\\u0442\\u0440\\u0430\\u043d\\u044f\\u0435\\u0442 \\u0438\\u0445 \\u0441\\u0440\\u0435\\u0434\\u0438 \\u0434\\u0440\\u0443\\u0433\\u0438\\u0445 \\u0440\\u0435\\u043a\\u043b\\u0430\\u043c\\u043e\\u0434\\u0430\\u0442\\u0435\\u043b\\u0435\\u0439.\",\"Advertising cookie description 24\":\"\\u0421\\u043e\\u0434\\u0435\\u0440\\u0436\\u0438\\u0442 \\u0438\\u0434\\u0435\\u043d\\u0442\\u0438\\u0444\\u0438\\u043a\\u0430\\u0446\\u0438\\u043e\\u043d\\u043d\\u044b\\u0439 \\u043d\\u043e\\u043c\\u0435\\u0440 \\u0441\\u0435\\u0441\\u0441\\u0438\\u0438 \\u0434\\u043b\\u044f \\u043e\\u0442\\u0434\\u0435\\u043b\\u044c\\u043d\\u043e\\u0439 \\u0441\\u0435\\u0441\\u0441\\u0438\\u0438 \\u043d\\u0430 \\u0441\\u0430\\u0439\\u0442\\u0435. Microsoft Advertising \\u043d\\u0435 \\u043e\\u0441\\u0443\\u0449\\u0435\\u0441\\u0442\\u0432\\u043b\\u044f\\u0435\\u0442 \\u043f\\u0440\\u043e\\u0434\\u0430\\u0436\\u0438 \\u044d\\u0442\\u0438\\u0445 \\u0434\\u0430\\u043d\\u043d\\u044b\\u0445 \\u0442\\u0440\\u0435\\u0442\\u044c\\u0438\\u043c \\u043b\\u0438\\u0446\\u0430\\u043c, \\u0430 \\u0442\\u0430\\u043a\\u0436\\u0435 \\u043d\\u0435 \\u0440\\u0430\\u0441\\u043f\\u0440\\u043e\\u0441\\u0442\\u0440\\u0430\\u043d\\u044f\\u0435\\u0442 \\u0438\\u0445 \\u0441\\u0440\\u0435\\u0434\\u0438 \\u0434\\u0440\\u0443\\u0433\\u0438\\u0445 \\u0440\\u0435\\u043a\\u043b\\u0430\\u043c\\u043e\\u0434\\u0430\\u0442\\u0435\\u043b\\u0435\\u0439.\",\"Advertising cookie description 25\":\"\\u0418\\u0441\\u043f\\u043e\\u043b\\u044c\\u0437\\u0443\\u0435\\u0442\\u0441\\u044f, \\u0447\\u0442\\u043e\\u0431\\u044b \\u043f\\u0440\\u043e\\u0432\\u0435\\u0440\\u0438\\u0442\\u044c, \\u0432\\u043a\\u043b\\u044e\\u0447\\u0435\\u043d\\u0430 \\u043b\\u0438 \\u043f\\u043e\\u0434\\u0434\\u0435\\u0440\\u0436\\u043a\\u0430 \\u0444\\u0430\\u0439\\u043b\\u043e\\u0432 cookie \\u0432 \\u0431\\u0440\\u0430\\u0443\\u0437\\u0435\\u0440\\u0435 \\u043f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u0442\\u0435\\u043b\\u044f.\",\"Advertising cookie description 26\":\"\\u0423\\u043a\\u0430\\u0437\\u044b\\u0432\\u0430\\u0435\\u0442, \\u0447\\u0442\\u043e \\u043f\\u043e\\u043b\\u044c\\u0437\\u043e\\u0432\\u0430\\u0442\\u0435\\u043b\\u044c \\u043d\\u0430\\u0436\\u0430\\u043b \\u043d\\u0430 \\u044d\\u043b\\u0435\\u043c\\u0435\\u043d\\u0442, \\u0440\\u0435\\u043a\\u043e\\u043c\\u0435\\u043d\\u0434\\u0443\\u0435\\u043c\\u044b\\u0439 \\u0441\\u0435\\u0440\\u0432\\u0438\\u0441\\u0430\\u043c\\u0438 Taboola.\"}},\"cookiePolicyLink\":\"https:\\/\\/www.myheritage.com\\/cookie-policy?lang=RU\",\"privacyPolicyLink\":\"https:\\/\\/www.myheritage.com\\/privacy-policy?lang=RU\",\"dialogDependencies\":{\"js\":[[\"https:\\/\\/cf.mhcache.com\\/FP\\/Assets\\/Cache\\/output\\/reactLibrary.min_v1MV106c78b1e2efdafb02b70d1c44357014.js\",\"https:\\/\\/cf.mhcache.com\\/FP\\/Assets\\/Cache\\/output\\/reduxLibrary.min_v1MVe15ea1f0a54822dfb9c1c8a6e422d08f.js\",\"https:\\/\\/cf.mhcache.com\\/FP\\/Assets\\/Cache\\/output\\/propTypesLibrary.min_v1MVfeceab9f7e1ea50e983ab69b28a02cdd.js\"],[\"https:\\/\\/cf.mhcache.com\\/FP\\/Assets\\/Cache\\/output\\/reactDomLibrary.min_v1MV919eccb1dfb465608b50294c4fa49d49.js\",\"https:\\/\\/cf.mhcache.com\\/FP\\/Assets\\/Cache\\/output\\/reduxThunkLibrary.min_v1MV44360c33da9651b52a7d1d55e5ec85e1.js\",\"https:\\/\\/cf.mhcache.com\\/FP\\/Assets\\/Cache\\/output\\/immutableLibrary.min_v1MVac5911e0e6bc2c342bad36ac78734b9f.js\"],[\"https:\\/\\/cf.mhcache.com\\/FP\\/Assets\\/Cache\\/output\\/reactReduxLibrary.min_v1MV76332da6793d9403981c193f87ff062e.js\",\"https:\\/\\/cf.mhcache.com\\/FP\\/Assets\\/Cache\\/output\\/reactRouterDeprecatedLibrary.min_v1MV3c56802fb832b5faee1d7ce43daecd1f.js\"],[\"https:\\/\\/cf.mhcache.com\\/FP\\/Assets\\/Cache\\/output\\/CookiesPreferencesDialogBundled_v1MV10b51b8086a9c7accaec8c46d4f3342e.js\"]],\"css\":[\"https:\\/\\/cf.mhcache.com\\/FP\\/Assets\\/Cache\\/CookiesPreferencesDialog\\/CookiesPreferencesDialog_bundle_ltr_v1MVb5c0255e00925678d7e04d569732305bo.css\"]},\"bannerDependencies\":{\"js\":[[\"https:\\/\\/cf.mhcache.com\\/FP\\/Assets\\/Cache\\/output\\/CookiePreferencesBannerVanillaBundled_v1MV76dcb1b1c63273510608c915a8e9dc28.js\"]],\"css\":[\"https:\\/\\/cf.mhcache.com\\/FP\\/Assets\\/Cache\\/CookiePreferencesBannerVanilla\\/CookiePreferencesBannerVanilla_bundle_ltr_v1MVef7f2e728e28d1e0da40dc8e88b56fdao.css\"]},\"optionalDependencies\":{\"underscore\":\"https:\\/\\/cf.mhcache.com\\/FP\\/Assets\\/Cache\\/output\\/underscoreLibrary.min_v1MV5f3eec73075cad7184e1aa9ac0a50356.js\"},\"persistencyCookiePreferences\":{\"opt_in_flags\":null,\"opt_date\":null}}');
+var googleAnalyticsExposedInIframe = true;
+
+var mhRequestId = "0A8101D1:52FA_0A810213:1F90_6459CBAC_26FF4414:0C6C";
+var shouldLoadExtendedContainer = true;
+var isCovidDomain = false;
+var clientLoggerConfiguration = JSON.parse('{\"newRelicLoggerConfig\":{\"exposed\":false},\"consoleLoggerConfig\":{\"exposed\":false},\"endpointLoggerConfig\":{\"exposed\":false,\"bufferingTime\":10000,\"maxBufferItems\":10},\"minimumLogLevel\":\"error\",\"maxLogLimit\":100,\"contextIdentifiers\":{\"PageCanonicalId\":\"\\/ftb\\/\",\"mhRequestId\":\"0A8101D1:52FA_0A810213:1F90_6459CBAC_26FF4414:0C6C\"}}');
+var isServiceWorkerRegisterExposed = false;
+var serviceWorkerLogLevel = "debug";
+var isServiceWorkerFgqlCachingExposed = false;
+var serviceWorkerFgqlConfig = "[]";
+var performanceReportingConfig = {"isPerformanceReportingExposed":false};
+var isEnableRevokePwaFgqlCacheByMessageExposed = true;
+var isClientSideStatisticsReportingExposed = true;
+var isClientSideTrackingEventReportingExposed = true;
+var recaptchaSiteKeys = {"checkbox":"6Lfl53oaAAAAAI8UdTAKTtb36fCXgQiIwH0Gd1U7","score":"6LesHXsaAAAAAFaRbXEx8Tb1AYyPnr40MPVVvlrK"};
+var langPopupDialogExposed = true;
+var signupLoginPopupDialogExposed = true;
+var dialogWithoutJqueryExposed = true;
+var lazyScriptDownloaderWithoutJQueryExposed = true;
+var illegalPasswordCharacters = [];
+var isMobileNotificationPanelVariantExposed = false;
+var isGoogleIdentityServicesExposed = true;                var notificationPanelURL = '//FP/get-notification-panel.php?lang=RU&title=&body=&icon=&type=';
+var languageDirection = 'LTR';
+var MB_OK = 1;
+var MB_CLOSE = 512;    </script>
+
+
+    <script src="https://cf.mhcache.com/FP/Assets/Cache/output/axiosLibrary.min_v1MVcacd1410688a13d794683efa0c9bb69a.js" type="text/javascript"  crossorigin="anonymous"></script><script src="https://cf.mhcache.com/FP/Assets/Cache/HTML5/modernizr_v1MVc9c5234726c2de1b83bf668f34918c76.js" type="text/javascript" ></script><script src="https://cf.mhcache.com/FP/Assets/Cache/jQuery/jquery-lib_v1MVa2a30f4f6d5dc0e783be1f66bc9e5f61.js" type="text/javascript"  crossorigin="anonymous"></script><script src="https://cf.mhcache.com/FP/Assets/Cache/jQuery/jquery-ui-lib_v1MV8b915ed5cbb8d193598ef13904eae63d.js" type="text/javascript"  crossorigin="anonymous" async></script><script src="https://cf.mhcache.com/FP/Assets/Cache/jQuery/jquery-plugins_v1MV83ea6c79ee7f9305f0e3a77bd978f40f.js" type="text/javascript"  crossorigin="anonymous"></script>        <script >
+            if (typeof jQuery != "undefined") {
+                jQuery.parseJSON = function (json) {
+                    return JSON.parse(json + '');
+                };
+                jQuery.ajaxSetup({
+                    converters: {
+                        'text json': jQuery.parseJSON,
+                    }
+                });
+            }
+        </script>
+        <script src="https://cf.mhcache.com/FP/Assets/Cache/output/underscoreLibrary.min_v1MV5f3eec73075cad7184e1aa9ac0a50356.js" type="text/javascript"  crossorigin="anonymous"></script>        <script type="text/javascript" >
+            var ASSET_DOMAIN_ALIAS_GENERAL = 'cf.mhcache.com';
+        </script>
+        <script src="https://cf.mhcache.com/FP/Assets/Cache/output/MainFullInitializeBundled_v1MV47176e177e656701e9319d457e743003.js" type="text/javascript"  crossorigin="anonymous"></script>
+    
+    <script type="text/javascript" >
+var GTM_ACCOUNT_ID = 'GTM-J44C';
+var gtmDataLayer = [{"user_type":"guest","pageViewURL":"\/company\/family-tree-builder.php","canonical-page-id":"\/ftb\/","pageDomainName":"myheritage.com","ftb_version":"none","ip_country":"KG","ip_state_or_province":"GB","should_load_extended_gtm_container":"true","device":"desktop","ever_had_data_subscription":"never-had-data-subscription","ever_had_ftb_heartbeat":"never-had-ftb-heartbeat","ftb_download_intent":"had-ftb-download-intent","highest_ever_site_plan":"basic","highest_ever_user_type":"guest","free_trial_status":"no_free_trial","individuals_all_trees_in_all_sites":0,"is_site_creator":"not-a-site-creator","registration_reason":"no-registration-reason","num_supersearch_searches":0,"site_of_interest":"not-in-site-of-interest","site_visits":1,"free_trial_start_date":"0000-00-00 00:00:00","ftb_download_intent_time":"2023-05-08 23:27:24","last_visit":"2023-05-08 23:27:19","most_recent_expired_site":"0000-00-00 00:00:00","nearest_expiration_non_recurring_site_subscription":"0000-00-00 00:00:00","registration_date":"0000-00-00 00:00:00","ever_visited_homepage":"visited-homepage","last_mobile_sighting":"0000-00-00 00:00:00","last_seen_device_type":"unknown-device-type","browser_name":null,"r_marketing_events":"","days_from_registration":"-","num_visits_paywall":0,"last_visit_paywall":"0000-00-00 00:00:00","num_visits_checkout":0,"last_visit_checkout":"0000-00-00 00:00:00","paid_clicks":0,"num_sites":0,"num_kits_purchased":0,"request_id":"0A8101D1:52FA_0A810213:1F90_6459CBAC_26FF4414:0C6C","existing_subscription_types":"N\/A","current_subscriptions":"guest","in_free_trial":"not-in-free-trial","connection_protocol_type":"https"}];
+</script>
+
+    
+    <link href="https://cf.mhcache.com/FP/Assets/Cache/main/thin-base-responsive_ltr_v1MV8aa0e1fcee34bca462f77e0bdfd07ec1o.css" rel="stylesheet" type="text/css" crossorigin="anonymous"><link href="https://cf.mhcache.com/FP/Assets/Cache/FtbDownload/FtbDownload_ltr_v1MV154311cd3be47b5a3d6e62b49ee98421o.css" rel="stylesheet" type="text/css" crossorigin="anonymous">
+
+<!-- Facebook Meta Tags -->
+<meta property="og:image" content="https://cf.mhcache.com/FP/Assets/Images/Facebook/Ads/Ad01_EN.jpg"/>
+<meta property="og:image" content="https://cf.mhcache.com/FP/Assets/Images/Facebook/Ads/Ad02_ES.jpg"/>
+<meta property="og:image" content="https://cf.mhcache.com/FP/Assets/Images/Facebook/Ads/Ad03_HU.jpg"/>
+<meta property="og:image" content="https://cf.mhcache.com/FP/Assets/Images/Facebook/Ads/Ad04_RU.jpg"/>
+<meta property="og:image" content="https://cf.mhcache.com/FP/Assets/Images/Facebook/Ads/Ad05_TR.jpg"/>
+
+<script type="text/javascript">
+    jQuery(function () {
+        jQuery('.slideshow').fadeGallery({
+            slides: '.slide',
+            btnPrev: 'a.previous_button',
+            btnNext: 'a.next_button',
+            generatePagination: '.pagination',
+            event: 'click',
+            autoRotation: true,
+            autoHeight: true,
+            switchTime: 4000,
+            animSpeed: 500
+        });
+    });
+</script>
+        <script type="text/javascript" >
+    // Because the request is made from an iframe it wont be monkey patched with the csrf-token.
+    var onLoadGoalConversionURL = '//FP/Company/conversionTracker.php?langISOCode=ru_RU&csrf_token=D_7apuxf11b587496c_bo6u1493d7c5a7hc.1683692844.87147426c65571ec432350d2814faffe';
+var goalTrackingBaseURL = '//FP/Company/conversionTracker.php?langISOCode=ru_RU&type=___TYPE___&csrf_token=D_7apuxf11b587496c_bo6u1493d7c5a7hc.1683692844.87147426c65571ec432350d2814faffe';
+</script><link href="https://cf.mhcache.com/favicon.ico?v=3" rel="icon"><meta name="theme-color" content="#e76f2f"><script src="https://cf.mhcache.com/FP/Assets/Cache/output/RecaptchaInitiatorBundled_v1MVb5715b22b9f7375267b40228fd907acb.js" type="text/javascript"  crossorigin="anonymous"></script><script src="https://www.google.com/recaptcha/enterprise.js?onload=onRecaptchaLoaded&amp;render=6LesHXsaAAAAAFaRbXEx8Tb1AYyPnr40MPVVvlrK" type="text/javascript" ></script></head>
+<body class="ftb_download_container mh_standard mh_desktop lang_RU" onload="window.updatePageStatistics && window.updatePageStatistics();window.loadCookiePreferencesBanner && window.loadCookiePreferencesBanner();window.loadNonMandatoryContainer && window.loadNonMandatoryContainer();" >
+<script >
+    </script>
+
+
+<div id="pk_master_wrapper" class="page_with_seo_footer">
+    <div id="pk_master_content_container">
+        <!-- I am web-117  -->
+        <a name="notificationPanelAnchor"></a>
+                    <!-- Header Start -->
+            <div id="masterPageHeader"
+                 style="min-width:960px;">
+                <div class="navigation_header container-fluid "><script >
+            if (window.innerWidth > 767) {
+                window.isUserStripInReactEnabled = true;
+            }
+            var userStripData = {};
+            userStripData.clientData = {"is_logo_clickable":true,"is_user_strip_visible":true,"siteId":1,"userGender":false,"language_code":"RU","show_social_sign_up":true,"help_menu":{"help_menu_name":"\u041f\u043e\u043c\u043e\u0449\u044c","help_menu_photo_url":"https:\/\/cf.mhcache.com\/FP\/Images\/spacer.gif","help_menu_links":[{"id":"user_strip_help_drop_down_help_center","data":{"activity":"HelpDropDown.HelpCenter","automations":"user_strip_help_drop_down_help_center"},"url":"https:\/\/www.myheritage.com\/help-center?lang=RU","text":"\u0426\u0435\u043d\u0442\u0440 \u041f\u043e\u043c\u043e\u0449\u0438"},{"id":"user_strip_help_drop_down_contact_us","activity":"HelpDropDown.ContactUs","data":{"activity":"HelpDropDown.ContactUs","automations":"user_strip_help_drop_down_contact_us"},"url":"https:\/\/www.myheritage.com\/contact-myheritage?lang=RU&originId=3","text":"\u0421\u0432\u044f\u0437\u0430\u0442\u044c\u0441\u044f \u0441 \u043d\u0430\u043c\u0438"},{"id":"user_strip_help_drop_down_hire_an_expert","data":{"activity":"HelpDropDown.HireAnExpert","href":"https:\/\/legacytree.com\/myheritage\/","automations":"user_strip_help_drop_down_hire_an_expert"},"text":"\u041d\u0430\u043d\u044f\u0442\u044c \u044d\u043a\u0441\u043f\u0435\u0440\u0442\u0430"}],"class_name":"help_menu_container","data_automations_suffix":"help_menu"},"shouldDisplaySpecialOfferBanner":false,"header_logo":{"logo_url":"https:\/\/www.myheritage.com\/index.php?lang=RU","is_logo_clickable":true},"notification_not_logged_in":{"activityName":"plans.new_nav_go_premium_click","actionName":"\u041f\u0435\u0440\u0435\u0439\u0442\u0438 \u043d\u0430 Premium","extendOrUpgradeUrl":"https:\/\/www.myheritage.com\/FP\/create-new-site.php?lang=RU","service":"NewFooterStatisticsService","signUpReason":"upgrade button","lang":"RU","type":"NOT_LOGGED_IN","actions":[{"text":"\u0410\u0432\u0442\u043e\u0440\u0438\u0437\u0430\u0446\u0438\u044f","click":"logIn","arguments":[]},{"text":"\u0420\u0435\u0433\u0438\u0441\u0442\u0440\u0430\u0446\u0438\u044f","url":"https:\/\/www.myheritage.com\/index.php?lang=RU"}],"severity":"warning","tooltipCaption":"\u0412\u044b \u043d\u0435 \u0430\u0432\u0442\u043e\u0440\u0438\u0437\u043e\u0432\u0430\u043d\u044b","tooltipText":"\u0412 \u043d\u0430\u0441\u0442\u043e\u044f\u0449\u0435\u0435 \u0432\u0440\u0435\u043c\u044f \u0412\u044b \u043d\u0435 \u0437\u0430\u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d\u044b \u043d\u0430 \u0441\u0430\u0439\u0442\u0435 \u0432 \u043a\u0430\u0447\u0435\u0441\u0442\u0432\u0435 \u0443\u0447\u0430\u0441\u0442\u043d\u0438\u043a\u0430 MyHeritage. \u041d\u0435\u043a\u043e\u0442\u043e\u0440\u0430\u044f \u0438\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u044f \u043c\u043e\u0436\u0435\u0442 \u0431\u044b\u0442\u044c \u043e\u0433\u0440\u0430\u043d\u0438\u0447\u0435\u043d\u0430."},"navigation_text":""};
+            userStripData.fileDependencies = {js: [["https:\/\/cf.mhcache.com\/FP\/Assets\/Cache\/output\/reactLibrary.min_v1MV106c78b1e2efdafb02b70d1c44357014.js","https:\/\/cf.mhcache.com\/FP\/Assets\/Cache\/output\/reduxLibrary.min_v1MVe15ea1f0a54822dfb9c1c8a6e422d08f.js"],["https:\/\/cf.mhcache.com\/FP\/Assets\/Cache\/output\/propTypesLibrary.min_v1MVfeceab9f7e1ea50e983ab69b28a02cdd.js","https:\/\/cf.mhcache.com\/FP\/Assets\/Cache\/output\/reactDomLibrary.min_v1MV919eccb1dfb465608b50294c4fa49d49.js","https:\/\/cf.mhcache.com\/FP\/Assets\/Cache\/output\/reduxThunkLibrary.min_v1MV44360c33da9651b52a7d1d55e5ec85e1.js","https:\/\/cf.mhcache.com\/FP\/Assets\/Cache\/output\/immutableLibrary.min_v1MVac5911e0e6bc2c342bad36ac78734b9f.js"],["https:\/\/cf.mhcache.com\/FP\/Assets\/Cache\/output\/reactReduxLibrary.min_v1MV76332da6793d9403981c193f87ff062e.js"],["https:\/\/cf.mhcache.com\/FP\/Assets\/Cache\/output\/UserStripBundled_v1MV5b86d847b508f397758aaa8838e249c9.js"]], css: ["https:\/\/cf.mhcache.com\/FP\/Assets\/Cache\/UserStrip\/UserStrip_bundle_ltr_v1MVa32c29023d4ccc519ee777dac7809a7eo.css"]}
+            var notificationPanelData = {};
+            var notificationTooltipData = {};
+
+            window.addEventListener('DOMContentLoaded', function () {
+                // Dojo recreates define which causes problems with es6 imports (necessary for React loading)
+                var dojoDefine = window.define;
+                delete window.define;
+                if (window.lazyAssetLoad) {
+                    window.lazyAssetLoad({js: [], css: userStripData.fileDependencies.css}, 'UserStrip.LazyLoadFailure')
+                        .then(function () {
+                            return window.lazyAssetLoad({js: userStripData.fileDependencies.js}, 'UserStrip.LazyLoadFailure');
+                        }).finally(function () {
+                            // resetting dojo define
+                            window.define = dojoDefine;
+                    });
+                }
+            });
+        </script><div class="notification_tooltip" data-dsa-key="nt_dsa" data-dsa="0">
+    <span>В настоящее время Вы не зарегистрированы на сайте в качестве участника MyHeritage. Некоторая информация может быть ограничена. </span><a class="tooltip_login_action" href="#">Авторизация</a><span>&nbsp;или&nbsp;</span><a class="tooltip_signup_action" href="#">Регистрация</a><script >
+                (function () {
+                    var loginElement = document.querySelector(".notification_tooltip .tooltip_login_action");
+                    var signupElement = document.querySelector(".notification_tooltip .tooltip_signup_action");
+                    if (loginElement && !loginElement.dataset.hasOwnProperty("clickHandlerAdded")) {
+                        loginElement.addEventListener("click", function (event) {
+                            event.preventDefault();
+                            if (typeof logIn === "function") {
+                                logIn();
+                            }
+                            return false;
+                        });
+                        loginElement.dataset.clickHandlerAdded = true;
+                    }
+                    if (signupElement && !signupElement.dataset.hasOwnProperty("clickHandlerAdded")) {
+                        signupElement.addEventListener("click", function (event) {
+                            event.preventDefault();
+if (window.FeatureExposureService) {
+    var featureExposureService = new window.FeatureExposureService();
+    featureExposureService.logExperimentActivity("Site.Header.SignupWithPopup.Experiment", "user_strip_signup_clicked");
+}
+if (typeof openSignupPopup === "function") {
+    window.successfulSignupCallback = function() { window.location.href = "//search-records?lang=RU&return_url=https%3A%2F%2Fwww.myheritage.com%2Ffamily-tree-builder%3Flang%3DRU&action=free-trial-checkout&context=UserStripSignupFreeTrial"};
+    openSignupPopup("RU", {startWith: "signup", showSocialSignUp: true, popupType: "combined", signupReason: "user strip", createTreeOnSignup: true, shouldDefineSignupPopupContentAdjustmentFunction: true, flavor: "liteSignup", shouldIncludesParents: true, signupTitle: "Начните с использования бесплатной пробной версии"});
+}
+                        });
+                        signupElement.dataset.clickHandlerAdded = true;
+                    }
+                })();
+            </script><a class="close" href="#"><span></span></a></div>
+    
+    <div class="row"><div class="mobile_header ">
+    
+            <a class="hamburger" href="#"></a><a class="logo" href="index.php%EF%B9%96lang=RU.html"></a></div>    </div><div class="row">
+            <script >
+    window.isNewFooterExposed = "1";
+    window.userStripShowSocialSignUp = true;
+</script><div class="user_strip">
+    <div class="user_strip_start" aria-live="assertive" aria-relevant="additions"><div class="user_strip_site_data">
+                                </div></div>
+
+    <div class="user_strip_end"><div class="user_strip_item user_strip_notification warning">
+    <div class="notification tooltip_hit_area"><span class="text warning">Вы не авторизованы</span></div><div class="actions"><a href="#"
+                   class="user_strip_item user_strip_item_1 warning"
+                   data-automations="notification_cta_item_1_warning"
+                                            role="button"
+                                    ><span>Авторизация</span><script type="application/javascript" >
+                            (function () {
+                                var elements = document.getElementsByClassName('user_strip_item_1');
+                                for (var i = 0; i < elements.length; i++) {
+                                    if (elements[i] && !elements[i].dataset.hasOwnProperty("clickHandlerAdded")) {
+                                        elements[i].addEventListener("click", function (event) {
+                                            event.preventDefault();
+                                            logIn();
+                                            return false;
+                                        });
+                                        elements[i].dataset.clickHandlerAdded = true;
+                                    }
+                                }
+                            })();
+                        </script></a><a href="#"
+                   class="user_strip_item user_strip_item_2 warning"
+                   data-automations="notification_cta_item_2_normal"
+                                            role="button"
+                                    ><span>Регистрация</span><script type="application/javascript" >
+                            (function () {
+                                var elements = document.getElementsByClassName('user_strip_item_2');
+                                for (var i = 0; i < elements.length; i++) {
+                                    if (elements[i] && !elements[i].dataset.hasOwnProperty("clickHandlerAdded")) {
+                                        elements[i].addEventListener("click", function (event) {
+                                            event.preventDefault();
+                                            if (window.FeatureExposureService) {
+    var featureExposureService = new window.FeatureExposureService();
+    featureExposureService.logExperimentActivity("Site.Header.SignupWithPopup.Experiment", "user_strip_signup_clicked");
+}window.successfulSignupCallback = function() { window.location.href = "//search-records?lang=RU&return_url=https%3A%2F%2Fwww.myheritage.com%2Ffamily-tree-builder%3Flang%3DRU&action=free-trial-checkout&context=UserStripSignupFreeTrial"};openSignupPopup("RU", {startWith: "signup", showSocialSignUp: true, popupType: "combined", signupReason: "user strip", createTreeOnSignup: true, shouldDefineSignupPopupContentAdjustmentFunction: true, flavor: "liteSignup", shouldIncludesParents: true, signupTitle: "Начните с использования бесплатной пробной версии"});
+                                            return false;
+                                        });
+                                        elements[i].dataset.clickHandlerAdded = true;
+                                    }
+                                }
+                            })();
+                        </script></a></div></div><div class="button-wrapper button-wrapper--new">
+                <a
+    id="go_premium"
+
+    class="css_button css_button_small css_button_success css_button_431232736 "
+
+    role="button"
+
+            href="#"
+    
+    
+    
+    
+    aria-label="Перейти на Premium"
+
+>Перейти на Premium
+<script type="application/javascript" >
+    (function () {
+        var elements = document.getElementsByClassName('css_button_431232736');
+        for (var i = 0; i < elements.length; i++) {
+            elements[i].addEventListener("click", function (ev) {
+                                    ev.preventDefault();
+                                                                    writeActivityIndicator('plans.new_nav_guest_go_premium_click', undefined, undefined, undefined, 'NewFooterStatisticsService' );
+                          window.successfulSignupCallback = undefined;
+                openSignupPopup("RU", {popupType: "signupOnly", signupReason: "upgrade button", createTreeOnSignup: true, shouldDefineSignupPopupContentAdjustmentFunction: true, flavor: "noPasswordConfirmationSignup", destinationURLToPaywall: true, should_redirect_to_magic7: true, onCloseByCancel: function() { enableCssButton("go_premium") }});; return false;
+                            });
+            elements[i].addEventListener("keypress", function (ev) {
+                ev.preventDefault();
+                if (typeof ev != 'undefined' && ev.which === 13) {
+                    this.onclick(event);
+                }
+                return false;
+            });
+        }
+    })();
+</script></a>            </div><div id="user_strip_help_menu" class="user_strip_help_menu" aria-live="assertive" aria-relevant="additions">
+                <a class="account_menu" href="#" aria-label="Account menu" role="button" aria-haspopup="true" aria-expanded="false" aria-owns="account_menu_links"><div class= help_menu_container>
+                    <div class="account_menu_photo"><img class="photo" src="https://cf.mhcache.com/FP/Images/spacer.gif" role="presentation">
+            </div><span class="account_menu_name" data-automations="account_menu_name_help_menu">Помощь</span><div class="account_menu_arrow back_button_reverted" data-automations="account_menu_arrow_help_menu"></div></div>
+</a><div class="account_menu_links" id="account_menu_links">
+    <div class="content"><div class="links help-links" role="menu" aria-label="Список">
+                    <a class="link"
+               id="user_strip_help_drop_down_help_center"
+                     href="help-center%EF%B9%96lang=RU.html"               role="menuitem"
+                                                                                    data-activity="HelpDropDown.HelpCenter"
+                                            data-automations="user_strip_help_drop_down_help_center"
+                                ><div>
+                    <span class="title">Центр Помощи</span></div>
+                            </a><a class="link"
+               id="user_strip_help_drop_down_contact_us"
+                     href="//contact-myheritage?lang=RU&amp;originId=3"               role="menuitem"
+                                                                                    data-activity="HelpDropDown.ContactUs"
+                                            data-automations="user_strip_help_drop_down_contact_us"
+                                >
+                <div><span class="title">Связаться с нами</span></div>
+                            </a><a class="link"
+               id="user_strip_help_drop_down_hire_an_expert"
+                                   role="menuitem"
+                                                                                    data-activity="HelpDropDown.HireAnExpert"
+                                            data-href="https://legacytree.com/myheritage/"
+                                            data-automations="user_strip_help_drop_down_hire_an_expert"
+                                >
+                <div><span class="title">Нанять эксперта</span></div>
+                            </a></div>
+</div></div>            </div><a id="user_strip_language_picker" class="user_strip_item" href="#" title="Изменить языковую версию" role="button" aria-label="Изменить языковую версию" aria-haspopup="true">
+    <div class="user_strip_language_picker"><img class="language_picker_image" src="https://cf.mhcache.com/FP/Images/spacer.gif" role="presentation">
+        <span class="language_name">Русский</span><div class="back_button_reverted"></div></div>
+</a><script type="application/javascript" >
+    (function () {
+        var el = document.getElementById('user_strip_language_picker');
+        if (el) {
+            el.addEventListener("click", function (ev) {
+                ev.preventDefault();
+                window.pk_openLanguageSelector && pk_openLanguageSelector(1, 'RU');
+                return false;
+            });
+        }
+    })();
+</script></div>
+</div></div>
+    
+    
+        
+    <div class="container navigation_container"><div class="mobile_container">
+            <div class="mobile_header_sites_menu row"><div class="sites_menu off"></div></div>
+
+                            <div class="navigation container_12 row"><div class="grid_12">
+                        <div class="navigation_box"><a id="header_logo" class="logo" href="index.php%EF%B9%96lang=RU.html" role="heading" aria-level="1"
+       title="MyHeritage – Генеалогическое дерево - Семейные сайты"></a></div>
+                    </div></div>
+            
+            
+                            <div class="mobile_header_help_menu row"><a class="help_menu" href="#"></a></div>
+            
+                            <div class="mobile_header_language_menu row"><a class="language_menu" href="#"></a></div>
+            
+            
+            
+            <div class="mobile_header_menu_links row"><div class="mobile_menu_links">
+                    <div class="header"><div class="back_button">
+                            <a href="#"></a></div>
+                        <div class="title"></div></div>
+                    <div class="link_list"></div></div>
+            </div><div class="mobile_header_notifications">
+                <div class="message"></div><div class="actions"></div></div>
+        </div><div class="mobile_subscribe">
+        </div></div>
+    <div class="navigation_placeholder"></div></div>
+            </div>
+            <!-- Header End -->
+                                        <iframe id="notificationPanelIFrame" src="" style="display:none;"></iframe>
+        <div class="container">
+            <div class="container_12 row">
+                <div id="notificationPanel" class="grid_12" style="margin:10px 10px 0;display:none;"></div>
+                <div class="clear"></div>
+            </div>
+        </div>
+
+
+        <div class="container">
+            
+            <div class="container_12 row">
+                <div id="main_content_container" class="grid_12" role="main">
+                    
+                        <!-- Main Start -->
+                        
+<div class="container"><h1>Самое популярно в мире<br>генеалогическое приложение</h1><div class="sub_headline">Сейчас доступно и для Mac!</div><div class="slideshow">
+        <div class="mask"><div class="slideset">
+                                    <div class="slide"><img src="https://cf.mhcache.com/FP/Assets/Images/FTB/Download/ftb_download_page_slideshow_01.jpg?v=1"></div><div class="slide"><img src="https://cf.mhcache.com/FP/Assets/Images/FTB/Download/ftb_download_page_slideshow_02.jpg?v=1"></div><div class="slide"><img src="https://cf.mhcache.com/FP/Assets/Images/FTB/Download/ftb_download_page_slideshow_03.jpg?v=1"></div></div>
+            <a class="previous_button" href="#">Назад</a><a class="next_button" href="#">Далее</a></div>
+        <div class="pagination"></div></div>
+
+    <div class="header_content"><h2>Family Tree Builder</h2><p>C помощью нашей программы, которой пользуются миллионы людей во всем мире, вы сможете исследовать свою семейную историю, построить генеалогическое древо, добавить в него фотографии, исторические документы и многое другое.</p><a
+    id="topDownloadButton"
+
+    class="css_button css_button_huge css_button_default css_button_1553810619 "
+
+    role="button"
+
+            href="family-tree-builder/thank-you%EF%B9%96lang=RU&amp;source=ftb-overview.html"
+    
+    
+    
+    
+    aria-label="Скачать бесплатно"
+
+>Скачать бесплатно
+<script type="application/javascript" >
+    (function () {
+        var elements = document.getElementsByClassName('css_button_1553810619');
+        for (var i = 0; i < elements.length; i++) {
+            elements[i].addEventListener("click", function (ev) {
+                                                    disableCssButton('topDownloadButton');
+                                            });
+            elements[i].addEventListener("keypress", function (ev) {
+                ev.preventDefault();
+                if (typeof ev != 'undefined' && ev.which === 13) {
+                    this.onclick(event);
+                }
+                return false;
+            });
+        }
+    })();
+</script></a>
+        <ul class="badges_list"><li>
+                <div class="badge bbb_badge rating_a_plus" title="BBB"></div></li>
+            <li><div class="badge verisign_badge" title="Verisign"></div></li>
+            <li><div class="badge ftm_badge" title="Family Tree Magazine"></div></li>
+        </ul></div>
+
+    <div class="clear"></div><div class="testimonials_container">
+        <h2>Отзывы пользователей:</h2><div id="testimonial_1" class="testimonial_container">
+                <div class="thumbnail"><img src="https://cf.mhcache.com/FP/Assets/Images/Testimonials/Beer.jpg">
+</div><div class="quote">
+    <span class="start_quote">&rdquo;</span><span class="text">Я хочу выразить свою благодарность за сайт MyHeritage, который дал мне шанс восполнить пробелы информации о своих родственниках и предках. Семья – самое ценное, что у меня есть, и с вашей помощью я чувствую себя счастливым. Спасибо!</span><span class="end_quote">&ldquo;</span></div>
+<div class="details"><span class="name">С. Бир</span><span class="location">Ноблетон, Онтарио, Канада</span></div>
+            </div><div id="testimonial_2" class="testimonial_container">
+                <div class="thumbnail"><img src="https://cf.mhcache.com/FP/Assets/Images/Testimonials/Sloan.jpg">
+</div><div class="quote">
+    <span class="start_quote">&rdquo;</span><span class="text">Программа, созданная MyHeritage, просто великолепна! Я не мог представить, что, обладая совсем небольшим количеством первичной информации, я смогу так быстро и легко построить семейное древо. Эта программа — лучшее из всего, что я когда-либо видел. Спасибо! Спасибо! Спасибо!</span><span class="end_quote">&ldquo;</span></div>
+<div class="details"><span class="name">Р. Солан</span><span class="location">Хендерсонвиль, Теннесси, США</span></div>
+            </div></div>
+
+    <h1>Что вы получите?</h1><ul>
+                    <li class="what_you_get"><div class="what_you_get_image what_you_get_image_1"
+                     title="Лучшая генеалогическая программа">
+                </div><div class="text">
+                    <h2>Лучшая генеалогическая программа</h2><p>Создайте собственный проект семейного древа и добавьте в него людей, быстро и легко. Поддерживаются более 40 языков.</p></div>
+            </li><li class="what_you_get">
+                <div class="what_you_get_image what_you_get_image_2"
+                     title="Технология Smart Matches™"></div>
+                <div class="text"><h2>Технология Smart Matches™</h2><p>Получайте уведомления о совпадениях между вашим проектом и миллионами других деревьев на MyHeritagе и находите новых родственников!</p></div>
+            </li><li class="what_you_get">
+                <div class="what_you_get_image what_you_get_image_3"
+                     title="Графики и отчеты"></div>
+                <div class="text"><h2>Графики и отчеты</h2><p>Создавайте и печатайте графики и отчеты, а также постройте полный график для отображения всех людей в древе.</p></div>
+            </li><li class="what_you_get">
+                <div class="what_you_get_image what_you_get_image_4"
+                     title="Технология Record Matching"></div>
+                <div class="text"><h2>Технология Record Matching</h2><p>Получайте автоматические уведомления о найденных исторических записях, касающихся ваших предков.</p></div>
+            </li><li class="what_you_get">
+                <div class="what_you_get_image what_you_get_image_5"
+                     title="Персональный семейный сайт"></div>
+                <div class="text"><h2>Персональный семейный сайт</h2><p>Создайте собственный семейный сайт и пригласите на него ваших родственников.</p></div>
+            </li><li class="what_you_get">
+                <div class="what_you_get_image what_you_get_image_6"
+                     title="Расширенные настройки конфиденциальности"></div>
+                <div class="text"><h2>Расширенные настройки конфиденциальности</h2><p>Управляйте настройками конфиденциальности на сайте и в программе.</p></div>
+            </li><li class="what_you_get">
+                <div class="what_you_get_image what_you_get_image_7"
+                     title="Функциональность и простота использования"></div>
+                <div class="text"><h2>Функциональность и простота использования</h2><p>Импортируйте ваш файл GEDCOM и продолжайте строить семейное древо.</p></div>
+            </li><li class="what_you_get">
+                <div class="what_you_get_image what_you_get_image_8"
+                     title="Карты"></div>
+                <div class="text"><h2>Карты</h2><p>Обозначьте на карте места, откуда родом ваши предки, чтобы сделать свой проект еще более визуально наглядным и интересным.</p></div>
+            </li><li class="what_you_get">
+                <div class="what_you_get_image what_you_get_image_9"
+                     title="Синхронизация с мобильным устройством"></div>
+                <div class="text"><h2>Синхронизация с мобильным устройством</h2><p>Редактируйте свое семейное дерево всегда и везде, используя наше бесплатное приложение для мобильных устройств.</p></div>
+            </li></ul>
+
+    <div class="bottom_content"><p class="and_so_much_more">
+            ... и многое другое!
+        </p><a
+    id="bottomDownloadButton"
+
+    class="css_button css_button_huge css_button_default css_button_38411825 "
+
+    role="button"
+
+            href="family-tree-builder/thank-you%EF%B9%96lang=RU&amp;source=ftb-overview.html"
+    
+    
+    
+    
+    aria-label="Загрузить сейчас!"
+
+>Загрузить сейчас!
+<script type="application/javascript" >
+    (function () {
+        var elements = document.getElementsByClassName('css_button_38411825');
+        for (var i = 0; i < elements.length; i++) {
+            elements[i].addEventListener("click", function (ev) {
+                                                    disableCssButton('bottomDownloadButton');
+                                            });
+            elements[i].addEventListener("keypress", function (ev) {
+                ev.preventDefault();
+                if (typeof ev != 'undefined' && ev.which === 13) {
+                    this.onclick(event);
+                }
+                return false;
+            });
+        }
+    })();
+</script></a>    </div><div class="as_seen_on clearfix">
+        <h2>Как отмечено на:</h2><div class="logo_container">
+            <div class="logo forbes" title="Forbes"></div></div>
+        <div class="logo_container"><div class="logo nbc" title="NBC"></div></div>
+        <div class="logo_container"><div class="logo ftm" title="Family Tree Magazine"></div></div>
+        <div class="logo_container"><div class="logo cnn" title="CNN"></div></div>
+
+    </div></div>
+                        <!-- Main End -->
+
+                                        </div>
+            </div>
+        </div>
+                                            <div class="footer_padding"></div>
+                        </div>
+
+    <div id="pk_master_footer_container"
+         class="new_footer_container">
+        <!-- Footer Start -->
+                    <div id="masterPageFooter">
+                <div id="footer_new" class="footer_mini_wrapper content_visibility_auto"><footer class="footer footer_mini footer_seo">
+        <div class="footer_links"><ul class="footer_links_container"><li class="footer_nav_list_item"><a href="dna%EF%B9%96lang=RU.html"  class=" footer_links_header" id="Dna" data-automations="Dna" title="ДНК" >ДНК</a></li><li class="footer_nav_list_item"><a href="family-tree%EF%B9%96lang=RU.html"  class=" footer_link" id="FamilyTree" data-automations="FamilyTree" title="Постройте своё семейное дерево" >Древо</a></li><li class="footer_nav_list_item"><a href="research%EF%B9%96lang=RU.html"  class=" footer_link" id="historicalRecords" data-automations="historicalRecords" title="Исторические записи" >Исторические записи</a></li><li class="footer_nav_list_item"><a href="pricing%EF%B9%96lang=RU.html"  class=" footer_link" id="pricing" data-automations="pricing" title="Тарифы" >Тарифы</a></li><li class="footer_nav_list_item"><a href="https://blog.myheritage.com"  class=" footer_link" id="Blog" data-automations="Blog" title="MyHeritage блог — что нового на MyHeritage" >Блог</a></li><li class="footer_nav_list_item"><a href="terms-and-conditions%EF%B9%96lang=RU.html"  class=" footer_link" id="Terms" data-automations="Terms" title="Условия и положения MyHeritage" >Условия<script >
+    (function () {
+        var element = document.getElementById("Terms");
+        if (element) {
+            element.addEventListener("click", function (event) {
+                event.preventDefault();
+                window.open('//terms-and-conditions?lang=RU',this.target,'width=742,height=567,left='+((screen.width-745)/2)+',top='+(((screen.height-570)/2)-50)+',scrollbars=0,location=no,toolbar=no,menubar=no,status=no,resizable=no')
+            });
+        }
+    })();
+</script></a></li><li class="footer_nav_list_item"><a href="#"  class=" footer_link" id="cookieInfo" data-automations="cookieInfo" title="Информация о файлах куки" hide=true target=popup>Информация о файлах куки<script >
+    (function () {
+        var element = document.getElementById("cookieInfo");
+        if (element) {
+            element.addEventListener("click", function (event) {
+                event.preventDefault();
+                openCookiePreferencesDialog();
+            });
+        }
+    })();
+</script></a></li><li class="footer_nav_list_item"><a href="privacy-policy%EF%B9%96lang=RU.html"  class=" footer_link" id="Privacy" data-automations="Privacy" title="Политика конфиденциальности MyHeritage" >Конфиденциальность<script >
+    (function () {
+        var element = document.getElementById("Privacy");
+        if (element) {
+            element.addEventListener("click", function (event) {
+                event.preventDefault();
+                window.open('//privacy-policy?lang=RU',this.target,'width=742,height=567,left='+((screen.width-745)/2)+',top='+(((screen.height-570)/2)-50)+',scrollbars=0,location=no,toolbar=no,menubar=no,status=no,resizable=no')
+            });
+        }
+    })();
+</script></a></li><li class="footer_nav_list_item"><a href="about-myheritage/index%EF%B9%96lang=RU.html"  class=" footer_link" id="About" data-automations="About" title="О нас" >О нас</a></li></ul></div>
+
+        <div class="footer_copyright"><div class="footer_company">
+                <span>Copyright © 2023 MyHeritage Ltd.</span></div>
+
+                                        <div class="footer_social"><a class="facebook" role="button" href="http://www.facebook.com/myheritage" target="_blank" rel="nofollow noopener noreferrer"
+           aria-label="Facebook"></a><a class="twitter" role="button" href="http://twitter.com/#!/MyHeritage" target="_blank" rel="nofollow noopener noreferrer"
+           aria-label="Twitter"></a></div></div>
+    </footer></div>            </div>
+                <!-- Footer End -->
+    </div>
+
+    <script src="https://cf.mhcache.com/FP/Assets/Cache/output/globalVendorsLibrary.min_v1MVb81d6fd0e9fa1ef93d543b164eba9f5d.js" type="text/javascript"  crossorigin="anonymous"></script><script src="https://cf.mhcache.com/FP/Assets/Cache/output/MainFullStandAloneBundled_v1MV6af947f0cb4f40dcd69d664ef22ea9f9.js" type="text/javascript"  crossorigin="anonymous"></script>
+    <script >
+        window.features && window.features.exposureService && window.features.exposureService.setFeatureFlags({"Navigation.MobileWeb.ShowGoPremiumButton.Exposure":{"isFeatureEnabled":true,"configValue":"100"},"Performance.ReportClientStatisticsWithBeacon.Exposure":{"isFeatureEnabled":false,"configValue":"5"}});    </script>
+
+    
+    <div style="z-index:2050" id="dragCover">&nbsp;</div>
+
+    <script type="text/javascript" >
+	var targetURLOnceLoggedIn = "\/family-tree-builder?lang=RU";
+
+		var memberLoginURL = '//FP/memberLogin.php?lang=RU&caption=Member+login&sourceForSuccess=4';
+	
+		var signUpURL = '//index.php?lang=RU';
+
+	var signUpStandAloneHeight = 506;
+</script>
+
+    <script >
+            </script>
+
+    
+    </div>
+<script >deferredScripts.run()</script>
+<div id="popup_container" aria-live="assertive" aria-relevant="additions" aria-atomic="true" aria-label="Popup"></div>
+            <iframe id="gtm_iframe" src="https://myheritage-container.com/family-tree-builder?gtm_iframe=1&amp;lang=RU"></iframe>
+            <script src="https://cf.mhcache.com/FP/Assets/Cache/output/ServiceWorkerBootstrapperBundled_v1MV25b80da1b8376dcd7c5cb17e4fb7c12b.js" type="text/javascript" nonce="b95d1e6639882a549712a45b40a1ef3c" defer></script></body>
+</html>
